@@ -1,55 +1,38 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-06-28T20:16:42.455259+00:00",
-  "source_date": "2026-06-28",
+  "generated_at": "2026-06-29T20:51:33.627601+00:00",
+  "source_date": "2026-06-29",
   "count": 25,
   "papers": [
     {
-      "arxiv_id": "2606.26671v1",
-      "title": "NebulaExp-8B: An Empirical Post-Training Pipeline via Full-Scale Ablation Research",
-      "abstract": "Post-training alignment determines the reasoning and human preference following capabilities of large language models, yet most existing works withhold detailed data construction, filtering rules and training recipes, which hinders community reproducibility and lightweight model optimization. This work presents NebulaExp, a fully transparent, ablation-driven post-training pipeline built on Qwen3-8B-base, covering two orthogonal model branches: general instruct model and complex reasoning-specialized model. We curate a raw corpus of 3.84M multi-source SFT samples and a 200K verifiable RL candidate pool, and design an end-to-end data processing stack including response distillation, multi-dimensional cross-verification filtering, fine-grained difficulty grading, task classification and diversity-aware sampling. For the Instruct branch, our three-stage optimized supervised fine-tuning approach NebulaExp-Ins-SFT improves the average benchmark score from the 55.01 baseline of Qwen3-8B-nothink to 60.99. GRPO reinforcement learning then further elevates the average score to 61.85. For the Reasoning branch, medium-difficulty GRPO RL improves average reasoning score from 73.88 to 75.17. To address RL's dependency on task verifiers, we systematically investigate single-teacher and multi-teacher OPD (MOPD): utilizing merely 4K instruction-following samples and outperforms RL baseline by 3.26 points on IFEval with +4.43 average overall gain; MOPD fuses four domain-specialist teachers with merely 10K samples, lifting average performance by 4.18 over the base model. This report provides a fully reproducible empirical post-training recipe for 8B-scale LLMs, and comprehensively dissects the capability trade-offs among instruction adherence, mathematical reasoning, code generation and general knowledge.",
+      "arxiv_id": "2606.28011v1",
+      "title": "From Detection to Action: Using LLM Agents for Fault-Tolerant Control",
+      "abstract": "We propose an agentic Large Language Model (LLM) framework for active Fault-Tolerant Control (FTC) that transforms fault detection outputs into constraint-aware recovery actions grounded in plant-specific knowledge. The approach couples (i) a multi-agent workflow that decomposes operator duties into monitoring, planning, action synthesis, simulation, validation, and reprompting; (ii) a Digital Process Plant Twin (DPPT) that exposes plant data, models, and a simulation service for pre-execution testing; and (iii) a Graph Retrieval-Augmented Generation (Graph RAG) layer built on the CPSMod ontology, which organizes plant knowledge (structure, function, hybrid dynamics, control context, and fault semantics) into a graph that supports relation-aware, multi-hop retrieval for the agents. Corrective actions are generated as minimal-risk state-machine recovery paths and corresponding discrete commands or continuous setpoint adaptations, then validated deterministically against interlocks, envelopes, and dynamic feasibility before any actuation. If no acceptable plan is found within a bounded time window, control is handed to a safety fallback. The framework is evaluated in simulation on two representative benchmarks: a discrete batch Mixing Module and a Continuous Stirred-Tank Reactor (CSTR) under closed-loop PID regulation. Results with lightweight LLMs (GPT-4o-mini and GPT-4.1-mini) show that semantically grounded agents can derive valid recovery decisions within latency budgets compatible with the respective process dynamics, demonstrating a practical pathway from detection to validated corrective action across both discrete and continuous FTC tasks.",
       "authors": [
-        "Qiaobo Hao",
-        "Yangqian Wu",
-        "Shunyi Wang",
-        "Zhongjian Zhang",
-        "Ziqun Li",
-        "Yayin He",
-        "Muqing Li",
-        "Chen Zhong"
+        "Javal Vyas",
+        "Milapji Singh Gill",
+        "Artan Markaj",
+        "Felix Gehlhoff",
+        "Mehmet Mercangöz"
       ],
-      "published": "2026-06-25T07:03:25+00:00",
-      "updated": "2026-06-25T07:03:25+00:00",
+      "published": "2026-06-26T12:13:58+00:00",
+      "updated": "2026-06-26T12:13:58+00:00",
       "categories": [
-        "cs.AI"
+        "eess.SY",
+        "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.26671v1",
-      "headline": "手頃なAIが賢くなる、失敗しない追加学習の黄金レシピ",
-      "one_liner": "80億パラメータという軽量なAIを、高品質なデータ選別と「先生役AI」からの学習（蒸留）により、複雑な論理思考や細かい指示への忠実さを大幅に向上させる手法を確立しました。",
-      "key_points": [
-        "「先生役AI」から質の高い答えを学ぶ（蒸留）ことで、効率的にモデルを賢くできる",
-        "ゴミデータを徹底的に排除する選別ルールにより、AIの「思い込み（ハルシネーション）」を減らせる",
-        "難易度別に学習データを段階分けして教えることで、複雑な推論が必要な業務にも対応可能になる",
-        "検証用の正解データが少ない分野でも、複数の熟練AIに評価させる手法（MOPD）で精度を担保できる",
-        "比較的小さなAIでも、計算コストを抑えつつ専門特化型の高性能なツールとして実用化できる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.28011v1",
+      "headline": "From Detection to Action: Using LLM Agen",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "AIモデル最適化",
-        "推論ロジック強化",
-        "業務AI高度化"
+        "eess.SY",
+        "cs.LG"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "現場の安全規定や施工マニュアルの複雑なルールを読み解き、写真や報告書が「基準に適合しているか」を論理的に判定するチェックAI",
-        "BIMデータと設計図面の不整合を見つける際、膨大な関連法規を考慮しながら「なぜ不適合なのか」を説明できる照査アシスタント",
-        "工場やインフラ点検で、センサーが検知した複数の異常値から「故障の根本原因」を論理立てて推論する高度診断ツール"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 25.0,
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 22.5,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -57,163 +40,181 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 3.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 5.6,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.26758v1",
-      "title": "EGG: An Expert-Guided Agent Framework for Kernel Generation",
-      "abstract": "High-performance GPU kernels are critical for reducing the exponentially growing computational costs of large language models (LLMs), but their development heavily relies on manual tuning by domain experts. While recent advances in LLM-based approaches show promise for automating kernel generation, they still struggle to achieve both correctness and high performance. This limitation primarily arises from the lack of domain-specific optimization guidance, hindering effective exploration of the optimization space. We propose EGG, an Expert-Guided Agent Framework for Kernel Generation, which incorporates expert optimization principles to guide LLMs' decisions. Inspired by expert workflows, we decompose kernel generation into two hierarchical stages: 1) algorithmic structure design, which establishes a high-quality computational structure foundation; 2) hardware-specific tuning, which performs targeted adjustments through parallel mapping, tensor tiling, and memory optimization. This staged decomposition defines explicit optimization objectives, structuring the design space to achieve progressive refinement. To this end, a stage-aware multi-agent collaboration mechanism is designed for inter and intra-stage context management, ensuring stable optimization trajectories. Experiments on KernelBench and real-world workloads show that EGG achieves a 2.13x average speedup over PyTorch, outperforming existing agent-based and RL-based approaches.",
+      "arxiv_id": "2606.27976v1",
+      "title": "SHARD: cell-keyed residual splitting for alignment-resistant private dense retrieval",
+      "abstract": "Dense embeddings underpin semantic search and RAG, yet a leaked vector store hands much of the underlying text back to whoever holds it. The attacks that make this possible (few-shot alignment, zero-shot inversion, unsupervised cross-space translation) share one weakness: the protected store is a single global geometry that can be aligned to a known one. A secret global rotation, the usual lightweight defence, is no exception: orthogonal Procrustes recovers it once the attacker has about the subspace dimension in known pairs.\n  We introduce Shard, a retrieval-preserving embedding transform that removes this weak axis. The centred embedding is split into a short public prefix (for stage-1 retrieval) and a private residual sharded into C cells under separate secret keys; the residual is reranked under CKKS, where the keys cancel and leave the inner product exact. A single parameter C runs the design from the global-linear baseline it replaces (C=1) to per-document micro-keys (C=N). Because the rerank is full-dimensional, Shard returns the raw-space nDCG@10 that half-SVD truncation gives up; and because the residual is keyed cell-locally, mapping it back to a common frame under a diffuse known-plaintext leak costs roughly C times more anchors (median 200 to 102,400 at C=256), for a few encrypted queries. The short public prefix leaks far less neighbour structure, and a micro-key limit drives the residual graph to zero with an unlinkable, renewable template. The barrier holds against learned, non-linear and unsupervised aligners, and where a matched-utility noise defence de-anonymises almost every probe, Shard de-anonymises none. We are plain about the limits: within a cell the keys cancel, a targeted attacker needs only about d_priv anchors, and an overlapping reference corpus still leaks through the prefix. Shard is an attack-aware geometric defence, not a cryptographic guarantee.",
       "authors": [
-        "Yaochen Han",
-        "Ke Fan",
-        "Hongxu Jiang",
-        "Wanqi Xu",
-        "Weiyu Xie",
-        "Runhua Zhang",
-        "Chenhui Zhu",
-        "Yixiang Zhang"
+        "Sergey Kurilenko"
       ],
-      "published": "2026-06-25T08:44:26+00:00",
-      "updated": "2026-06-25T08:44:26+00:00",
+      "published": "2026-06-26T11:26:53+00:00",
+      "updated": "2026-06-26T11:26:53+00:00",
       "categories": [
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26758v1",
-      "headline": "AIの計算速度を2倍以上に高速化するプログラム自動生成技術",
-      "one_liner": "熟練プログラマーの思考を模倣したAIが、AIチップ（GPU）の計算効率を最大化する特殊なプログラムを自動作成する仕組みです。プログラムの「基本設計」と「ハードウェア向けの微調整（メモリ最適化など）」を段階的に行うことで、専門家級の性能を引き出します。",
-      "key_points": [
-        "専門家による「職人芸」が必要だったGPU向け計算プログラムの最適化をAIで自動化できる",
-        "標準的な計算ライブラリ（PyTorch）と比較して、平均で2.13倍の処理速度を達成できる",
-        "「正しい計算結果を出す」ことと「高速に動かす」ことを両立し、AIの誤作動を防げる",
-        "計算効率が上がることで、同じハードウェアでもより大規模・複雑な解析が実行可能になる",
-        "複数のAIが役割分担（設計担当と調整担当）して協力するため、最適化の失敗が少ない"
-      ],
-      "tags": [
-        "計算高速化",
-        "AIインフラ最適化",
-        "GPUプログラミング"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "インフラ点検の場面で、大容量の3D点群データの解析を高速化し、現場のタブレット上で即座にひび割れや腐食を判定するシステムに活用する",
-        "工場の外観検査において、高解像度カメラの映像処理を高速化し、生産ラインを止めることなく1秒あたりの検品数を倍増させる",
-        "BIM/CIMの巨大なモデルを用いた避難シミュレーションや風流解析を高速化し、設計変更の結果をリアルタイムに画面へ反映させる"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 20.3,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 5.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26787v1",
-      "title": "AIGP: An LLM-Based Framework for Long-Term Value Alignment in E-Commerce Pricing",
-      "abstract": "Traditional dynamic pricing models in large-scale e-commerce suffer from limited interpretability, poor utilization of unstructured information, and misalignment with long-term business objectives such as cumulative Gross Merchandise Value (GMV), Return on Investment (ROI) and milestone achievement. We propose AIGP, a novel framework that leverages a Large Language Model (LLM) prompted with domain knowledge, structured data and textual context to make interpretable, knowledge-aware pricing decisions. For efficient deployment while maintaining high-quality outputs, we employ supervised fine-tuning for knowledge distillation. Central to AIGP is the Long-Term Value Estimator (LTVE), trained via offline reinforcement learning on historical data, which serves as a reward model to score candidate pricing actions and select preference pairs for Direct Preference Optimization (DPO), thereby aligning the pricing policy with long-term business objectives. Extensive offline evaluations and large-scale online A/B tests on Tao Factory demonstrate that AIGP achieves significant improvements: +13.21% in GMV, +7.59% in ROI, and +8.20% in milestone achievement rate over 14 days compared to the production baseline, while simultaneously providing interpretable and transparent pricing rationales.",
-      "authors": [
-        "Chennan Ma",
-        "Yanning Zhang",
-        "Siqi Hong",
-        "Xiuchong Wang",
-        "Fei Xiao",
-        "Keping Yang"
-      ],
-      "published": "2026-06-25T09:21:42+00:00",
-      "updated": "2026-06-25T09:21:42+00:00",
-      "categories": [
-        "cs.LG",
+        "cs.CR",
         "cs.AI",
-        "cs.CL"
+        "cs.IR"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.26787v1",
-      "headline": "AIが根拠を説明しながら、長期的な売上を最大化する価格を決める",
-      "one_liner": "ネット通販の価格設定において、AIが市場動向や商品情報などの「言葉の情報」を読み解き、短期的な売上だけでなく「数週間後の目標達成」を見据えた最適な価格を理由付きで提案する仕組み（AIGP）です。",
-      "key_points": [
-        "AIが「なぜその価格にしたのか」を人間の言葉で説明してくれるため、担当者が納得して運用できる",
-        "売上データなどの数値だけでなく、市場のトレンドや商品説明などの「テキスト情報」を判断材料に含めることができる",
-        "目先の1件の売上だけでなく、14日後の目標達成（GMVや投資対効果）を最大化するように先読みして動く",
-        "過去の膨大な成功事例をAIに教え込む手法（DPO：直接選好最適化）により、AIの「思い込み」や的外れな判断を防いでいる",
-        "高度なAIの判断能力を軽量なモデルに移植（知識蒸留）しているため、大量の商品を扱う現場でも高速に動作する"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.27976v1",
+      "headline": "SHARD: cell-keyed residual splitting for",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "EC価格最適化",
-        "意思決定支援AI",
-        "長期利益最大化"
+        "cs.CR",
+        "cs.AI",
+        "cs.IR"
       ],
-      "who_should_read": [
-        "PM/プロダクトマネージャー",
-        "AI/MLエンジニア",
-        "研究者"
-      ],
-      "application_ideas": [
-        "建設案件の入札シミュレーションにおいて、過去の競合他社の動向や資材価格の変動（テキスト情報）を加味し、利益と受注率を両立する見積額を根拠付きで算出する",
-        "インフラ維持管理の長期計画において、限られた予算内で10年後の修繕コストが最小になるよう、点検の優先順位と実施タイミングをAIが理由を添えて提示する",
-        "工場の生産計画において、納期だけでなく設備の摩耗や作業員の習熟度（熟練者のメモなど）を考慮し、数ヶ月単位で生産効率が最大になるスケジュールを生成する"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 20.0,
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 22.0,
       "domain_relevance": {
-        "drawing_ai": "なし",
+        "drawing_ai": "高",
         "bim_cim": "なし",
-        "manufacturing": "高",
+        "manufacturing": "なし",
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 9.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 0.0,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.27210v1",
-      "title": "Paved with True Intents: Intent-Aware Training Improves LLM Safety Classification Across Training Regimes",
-      "abstract": "We argue that safety classifiers should model user intent as an explicit signal between the prompt and the final label. To study this, we introduce AIMS, a human-annotated dataset of 1,724 difficult safety prompts, each paired with an intent description and harm label. We use AIMS to evaluate intent-aware training across supervised fine-tuning, preference learning, reasoning distillation, and reinforcement learning. Despite its size, AIMS enables competitive safety classifiers across training regimes: DPO from model-generated intent errors improves over SFT, and intent-conditioned distillation outperforms reasoning-only distillation in most teacher-student pairs. Most notably, directly rewarding intent faithfulness with GRPO yields the strongest average performance across five external safety benchmarks, while our intent-aware models form the inference latency-F1 Pareto frontier. These results show that faithful intent modeling is a compact, high-quality supervision signal for more robust safety classifiers.",
+      "arxiv_id": "2606.27608v1",
+      "title": "Qwen-Image-2.0-RL Technical Report",
+      "abstract": "We present Qwen-Image-2.0-RL, a post-training pipeline that applies reinforcement learning from human feedback (RLHF) and on-policy distillation (OPD) to improve both the visual quality and instruction-following capability of the Qwen-Image-2.0 diffusion model. To provide reliable reward signals, we construct task-specific composite reward models by fine-tuning vision-language models with a pointwise scoring paradigm and chain-of-thought reasoning. For text-to-image generation, the reward models cover alignment, aesthetics, and portrait fidelity dimensions. For image editing tasks, the reward system addresses instruction-following accuracy and face identity preservation. Building on this reward system, we develop a scalable GRPO-based RL training framework, incorporating a hybrid classifier-free guidance (CFG) strategy to preserve pre-trained knowledge, prompt curation via intra-group reward range filtering, and per-category reward weight calibration. To merge the task-specialized RL policies for T2I and editing, we propose on-policy distillation as the final training stage, which consolidates multiple teachers into a single student model through trajectory-level velocity matching. Extensive evaluation shows that Qwen-Image-2.0-RL achieves 57.84 overall score on Qwen-Image-Bench (+2.61 over the base model), Elo ratings of 1193 in text-to-image arena (+78) and 1349 in image edit arena (+93), demonstrating consistent gains in aesthetic quality, prompt adherence, and editing accuracy.",
       "authors": [
-        "Jeremias Ferrao",
-        "Niclas Müller-Hof",
-        "Iustin Sîrbu",
-        "Traian Rebedea",
-        "Yftah Ziser"
+        "Yixian Xu",
+        "Kaiyuan Gao",
+        "Yuxiang Chen",
+        "Yilei Chen",
+        "Zecheng Tang",
+        "Zihao Liu",
+        "Zikai Zhou",
+        "Deqing Li",
+        "Hao Meng",
+        "Kuan Cao",
+        "Jiahao Li",
+        "Jie Zhang",
+        "Liang Peng",
+        "Lihan Jiang",
+        "Ningyuan Tang",
+        "Shengming Yin",
+        "Tianhe Wu",
+        "Xiaoyue Chen",
+        "Yan Shu",
+        "Yanran Zhang",
+        "Yi Wang",
+        "Yu Wu",
+        "Yujia Wu",
+        "Zekai Zhang",
+        "Zhendong Wang",
+        "Xiao Xu",
+        "Kun Yan",
+        "Chenfei Wu"
       ],
-      "published": "2026-06-25T16:03:57+00:00",
-      "updated": "2026-06-25T16:03:57+00:00",
+      "published": "2026-06-25T23:49:50+00:00",
+      "updated": "2026-06-25T23:49:50+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.27608v1",
+      "headline": "Qwen-Image-2.0-RL Technical Report",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 21.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.27871v1",
+      "title": "LocalNav: Distilling Frontier VLMs and Embodied RL for On-Device Object Goal Navigation",
+      "abstract": "Vision Language Models (VLMs) have emerged in the robotic domain as a powerful tool that enables environmental perception with language context, serving as a catalyst for open-vocabulary tasks like ObjectNav. Yet, their computational footprint typically confines them to cloud execution, hindering low-latency inference with local deployment on resource-constrained robots. To address this challenge, we present a distillation strategy that transfers complex spatial-semantic reasoning from large frontier models into a lightweight, 4B-parameter local VLM for edge execution on embedded GPU devices (e.g., Jetson Orin). We first establish a State of the Art (SotA), Scene Graph (SG)-based pipeline using Claude Sonnet 4.6, achieving a 39.7% Success Rate (SR) on the HM3D OVON benchmark. We then demonstrate that fine-tuning Qwen3.5-4B on just 500 frontier reasoning traces effectively enables navigation capabilities, yielding a SR of 34.5%, narrowing the gap to the performance of large cloud models. Finally, we introduce E-RLVR with Token Generation (TG) regularization to compress output sequence lengths for physical deployment while grounding the agent in its task. This downstream optimization reduces TG overhead by 72.1% and latency by 71.8%. Combined with quantization, this joint strategy yields a cumulative 82.8% reduction in overall inference latency without significantly sacrificing performance, presenting a viable paradigm for local, low-latency VLM execution on mobile robots.",
+      "authors": [
+        "Nicolas Baumann",
+        "Liam Boyle",
+        "Pu Deng",
+        "Edoardo Ghignone",
+        "Boyang Sun",
+        "Marc Pollefeys",
+        "Luca Benini",
+        "Michele Magno"
+      ],
+      "published": "2026-06-26T09:11:59+00:00",
+      "updated": "2026-06-26T09:11:59+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.27871v1",
+      "headline": "LocalNav: Distilling Frontier VLMs and E",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 19.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.27705v1",
+      "title": "Mitigating Position Bias in Transformers via Layer-Specific Positional Embedding Scaling",
+      "abstract": "Large Language Models (LLMs) still struggle with the ``lost-in-the-middle'' problem, where critical information located in the middle of long-context inputs is often underrepresented or lost. While existing methods attempt to address this by combining multi-scale rotary position embeddings (RoPE), they typically suffer from high latency or rely on suboptimal hand-crafted scaling strategies. To overcome these limitations, we introduce a layer-specific positional embedding scaling~(LPES) method that assigns distinct scaling factors to each layer. LPES achieves a more balanced attention distribution without fine-tuning model parameters or increasing inference delay. A specially designed genetic algorithm is employed to efficiently select the optimal scaling factors for each layer by incorporating Bézier curves to significantly reduce the search space. Extensive experiments demonstrate that LPES effectively mitigates positional attention bias and delivers consistent improvements across multiple long-context benchmarks, yielding up to an $11.2$\\% accuracy gain on the key-value retrieval dataset.",
+      "authors": [
+        "Changze Lv",
+        "Zhenghua Wang",
+        "Yiran Ding",
+        "Yixin Wu",
+        "Tianlong Li",
+        "Zhibo Xu",
+        "Muling Wu",
+        "Tianyuan Shi",
+        "Shizheng Li",
+        "Qi Qian",
+        "Xuanjing Huang",
+        "Xiaoqing Zheng"
+      ],
+      "published": "2026-06-26T04:07:41+00:00",
+      "updated": "2026-06-26T04:07:41+00:00",
       "categories": [
         "cs.CL"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.27210v1",
-      "headline": "AIが質問者の「意図」を理解し、不適切な要求を正確に見抜く",
-      "one_liner": "AIに「ユーザーが何をしようとしているか（真の意図）」を明示的に学習させることで、安全性の判定精度を向上させ、不必要な拒絶（過剰な制限）を減らす技術です。",
-      "key_points": [
-        "「なぜその質問をしたのか」という背景をAIが考えるため、悪意のある言葉と無害な専門用語の区別が正確になる",
-        "わずか1,700件程度の高品質なデータで、大規模な従来モデルに匹敵する「守りの堅さ」を実現できる",
-        "AIが判断の根拠（ユーザーの意図の解釈）を示すようになるため、判定結果の納得感が高まる",
-        "計算負荷を抑えつつ高い精度を維持できるため、現場のリアルタイムな対話システムに組み込みやすい",
-        "言葉の表面を繕った「AIを騙すような巧妙な指示」に対しても、背後の意図を見抜くことで防御力が上がる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.27705v1",
+      "headline": "Mitigating Position Bias in Transformers",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "コンプライアンスAI",
-        "セキュリティ対策",
-        "LLMガバナンス"
+        "cs.CL"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "現場の安全管理AIで、作業員の「この手順で大丈夫？」という質問の意図を汲み取り、危険な場合にのみ的確に警告を発する",
-        "社内情報の検索システムで、質問者が「情報の不正取得」を目論んでいるのか「業務上の正当な確認」なのかを意図から判別し、アクセスコントロールを行う",
-        "品質検査の記録において、単なる書き間違いと「意図的なデータ改ざんの兆候」をAIが意図を推測してフィルタリングする"
-      ],
-      "implementation_difficulty": "中",
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
       "relevance_score": 18.2,
       "domain_relevance": {
         "drawing_ai": "なし",
@@ -222,429 +223,43 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 1.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 2.8,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.27146v1",
-      "title": "PhysReflect-VLA: Physical Feasibility and Self-Reflective Regulation for Reliable Vision-Language-Action Policies",
-      "abstract": "Long-horizon robotic manipulation is highly sensitive to physically infeasible transitions, contact-induced disturbances, and the lack of effective self-correction during execution. Although Vision-Language-Action (VLA) models provide strong task grounding through multimodal learning, they typically generate actions in a feed-forward manner without explicitly checking physical feasibility or diagnosing execution errors online. We present PhysReflect-VLA, a plug-and-play execution-time reliability framework that augments VLA policies with physical feasibility evaluation and structured self-reflection in a closed-loop control pipeline. A Feasibility Operator evaluates whether candidate actions induce dynamically consistent state transitions; an Action Explanation Operator verifies transition coherence; and an LLM-based Reflection Module analyzes state discrepancies to generate corrective guidance for subsequent actions. A two-stage training procedure stabilizes feasibility modeling and integrates reflection into the control loop. Experiments on multi-stage, contact-rich real-world manipulation tasks show consistent improvements in stage-wise stability and overall task success compared with representative VLA baselines with an average gain of 5.4\\%. Ablation results further indicate that feasibility checking and reflection-based correction both contribute to improved execution robustness. These results highlight the importance of embedding physical consistency checks and online self-reflection for reliable long-horizon robotic manipulation.",
+      "arxiv_id": "2606.28186v1",
+      "title": "Cognitive Episodes in LLM Reasoning Traces Enable Interpretable Human Item Difficulty Prediction",
+      "abstract": "Predicting human item difficulty is central to educational assessment, where reliable estimates support fairness and effective test construction. Existing methods often depend on costly human calibration or item-level textual representations, providing limited evidence about the cognitive processes that make items difficult. We argue that difficulty should be viewed not only as a property of item text, but also as an observable consequence of the problem-solving burden an item induces. Large Reasoning Models (LRMs) offer scalable process evidence through reasoning traces, but such evidence must be structured to support interpretable modeling. To this end, we introduce Epi2Diff (Episode to Difficulty), a framework that maps LRM reasoning traces into cognitively grounded episode sequences. These episodes group trace segments into functional problem-solving states, enabling difficulty to be modeled through reasoning scale, effort allocation, and state transitions. Epi2Diff extracts compact episode-dynamic features and combines them with semantic item representations for human difficulty prediction. Experiments on four real-world human difficulty datasets show that Epi2Diff consistently outperforms strong baselines, including fine-tuned small language models, LLM in-context learning, and supervised LLM adaptation. On SAT-derived classification benchmarks, Epi2Diff achieves an 8.1% average relative gain over supervised LLM fine-tuning baselines. Further analyses show that harder items induce more effortful, iterative, and implementation-centered episode dynamics, rather than merely longer responses. These results demonstrate that cognitive episodes in LRM reasoning traces provide a predictive and interpretable process representation for human item difficulty, offering a new lens for educational measurement with reasoning models.",
       "authors": [
-        "Jiayu Yang",
-        "Tao Yang",
-        "Weijun Li",
-        "Xiang Chang",
-        "Fei Chao",
-        "Changjing Shang",
-        "Qiang Shen"
+        "Chenguang Wang",
+        "Ming Li",
+        "Xinyue Zeng",
+        "Zhuochun Li",
+        "Hong Jiao",
+        "Tianyi Zhou",
+        "Dawei Zhou"
       ],
-      "published": "2026-06-25T15:18:10+00:00",
-      "updated": "2026-06-25T15:18:10+00:00",
-      "categories": [
-        "cs.RO"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.27146v1",
-      "headline": "ロボットが「物理的な無理」に気づき、失敗を自ら修正できる",
-      "one_liner": "ロボットの動作が物理的に可能か（物理的妥当性）を実行前にチェックし、失敗した際もAIが「なぜダメだったか」を自己分析（自己反省）してやり直せるようにする技術です。",
-      "key_points": [
-        "「この動きは無理だ」と実行前に判断し、無駄な失敗や事故を防げる",
-        "作業ミスが起きても、AIが原因を分析して即座に修正案を自分で出せる",
-        "手順の多い複雑な作業でも、一歩ずつ確認しながら進めるので安定性が高い",
-        "物に触れるデリケートな作業でも、物理的な法則に沿った正確な動きが可能になる",
-        "既存のAIモデルに後付け（プラグアンドプレイ）で導入でき、開発効率が良い"
-      ],
-      "tags": [
-        "ロボット制御AI",
-        "異常検知・自動復旧",
-        "製造・物流DX"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "工場の部品組み付け工程で、部品が引っかかった際にAIが「角度が悪い」と自己分析し、自動で持ち直して作業を続行する仕組み",
-        "インフラ点検ロボットが、障害物で進めない場合に「別のルートなら物理的に通過可能か」をシミュレーションして自律的に回避するナビゲーション",
-        "物流倉庫のピッキングで、荷物が崩れそうな無理な掴み方を事前に検知し、より安定した位置へ自動で修正して事故を防ぐシステム"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 16.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 3.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.27047v1",
-      "title": "NuclearQAv2: A Structured Benchmark for Evaluating Domain-Science Competence in Large Language Models",
-      "abstract": "Large language models (LLMs) have demonstrated strong performance across a wide range of tasks, but ensuring their reliability in highly technical domains remains a significant challenge. In nuclear engineering, problem solving often requires not only factual knowledge but also quantitative reasoning and conceptual understanding. To address the need for systematic evaluation in this domain, we introduce NuclearQAv2, a benchmark for assessing LLMs on nuclear engineering knowledge. The benchmark comprises approximately 1,240 question-answer pairs spanning three categories: boolean, numeric, and verbal. NuclearQAv2 is constructed using a hybrid pipeline that combines expert-authored questions, existing datasets, and LLM-assisted generation from domain-specific technical corpora. By leveraging structured prompting for both automated question generation and response evaluation, the proposed framework enables scalable benchmark construction and evaluation. We evaluate a diverse set of LLMs using NuclearQAv2 and observe substantial performance differences across task types. While the models generally perform well on factual questions, quantitative reasoning and conceptual understanding remain considerably more challenging. These results highlight the importance of multi-faceted evaluation frameworks and establish NuclearQAv2 as a scalable benchmark for assessing LLM capabilities in technical domains.",
-      "authors": [
-        "Henry Shaowu Yuchi",
-        "Michal Kucer",
-        "Benjamin H. Sims",
-        "Selma Peterson",
-        "Emily Taylor"
-      ],
-      "published": "2026-06-25T13:52:16+00:00",
-      "updated": "2026-06-25T13:52:16+00:00",
+      "published": "2026-06-26T15:32:17+00:00",
+      "updated": "2026-06-26T15:32:17+00:00",
       "categories": [
         "cs.CL",
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.27047v1",
-      "headline": "原子力工学の難問をAIが解けるか、正しく判定できるようになる",
-      "one_liner": "原子力工学という高度に専門的な分野で、AIが「知識の暗記」だけでなく「数値計算や概念の理解」まで正しくできているかを厳密に測定する1,240問のテスト（ベンチマーク）を開発しました。",
-      "key_points": [
-        "高度な専門知識が必要な分野で、AIの回答がどの程度信頼できるかを数値で可視化できる",
-        "単なる言葉の暗記だけでなく、数値計算（計算推論）や概念の理解度を切り分けて評価できる",
-        "専門家の知見とAIの生成能力を組み合わせることで、高品質な試験問題を効率的に作成できる",
-        "最新のAIでも「事実の知識」は得意だが「複雑な計算や理屈」にはまだ弱点があることが判明した",
-        "原子力以外の専門分野（土木・製造など）にも応用可能な、AIの「実力診断」の枠組みを提示している"
-      ],
-      "tags": [
-        "専門知識評価",
-        "原子力AI",
-        "信頼性検証"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "橋梁点検やトンネル工事の専門的な基準書をAIに学習させた際、法令や数値基準を正しく理解しているかを確認するための「自動検定システム」として応用する。",
-        "BIM/CIMの設計ガイドラインにおいて、AIが設計ミスを指摘する際、単なる「それっぽさ」ではなく、構造計算等の理屈に基づいているかをテストセットで検証する。",
-        "工場の特殊な製造装置のトラブル対応AIを構築する際、現場独自の専門用語や物理的な因果関係を正しく理解しているかを判断する「AI用卒業試験」の作成に活用する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 16.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 9.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26904v1",
-      "title": "Confidence-Aware Tool Orchestration for Robust Video Understanding",
-      "abstract": "Video reasoning language models implicitly assume that every input frame is equally reliable. This leads to what we term the Blind Trust Problem: under realistic perturbations such as motion blur, glare, or occlusion, frontier video reasoning models can suffer 15-30%p accuracy drops on real-world embodied benchmarks, while remaining unaware that their visual evidence has been degraded. To address this challenge, we propose Robust-TO, an agentic video understanding framework that explicitly integrates per-frame trustworthiness into every stage of reasoning. Robust-TO organizes heterogeneous visual perception tools under a unified evidence interface. Each tool receives a sub-query derived from the original question and a set of trustworthy frames selected by the reliability-relevance score. It returns evidence in a shared format: a concrete prediction (e.g., a bounding box, motion trajectory, recognized text, or action label), temporal grounding, and a calibrated reliability score. During reasoning, these calibrated scores guide evidence weighting in a three-tier synthesis process (high/medium/low) and define a confidence-cost GRPO reward that jointly optimizes correctness, evidence reliability, and efficiency. On two video reasoning benchmarks spanning eight tasks, Robust-TO achieves 56.4% average accuracy on clean inputs, surpassing the strongest open-source baseline by 10.6%p and outperforming Gemini-2.5-Pro (46.2%). Under five realistic corruption types, Robust-TO maintains 54.3% average accuracy, 5.8%p above the strongest open-source baseline, while exhibiting the smallest clean-to-corrupted accuracy drop among all compared methods.",
-      "authors": [
-        "Yangfan He",
-        "Yujin Choi",
-        "Jaehong Yoon"
-      ],
-      "published": "2026-06-25T11:37:51+00:00",
-      "updated": "2026-06-25T11:37:51+00:00",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26904v1",
-      "headline": "映像のボケや逆光をAIが自ら見抜き、正確に状況を判断できるようになる",
-      "one_liner": "映像解析AIが、手ブレや逆光などの「見えにくいシーン」を自ら検知し、信頼できるコマだけを選んで複数の解析ツールを使い分けることで、現実世界の劣悪な環境でも正確な答え（映像理解）を導き出します。",
-      "key_points": [
-        "映像のボケや反射などの「見えにくさ」をAIが1コマずつ自己採点し、怪しい情報は無視できる",
-        "文字認識や物体検知など、複数の専門ツールから得られた証拠を「信ぴょう性」に基づいて自動で整理する",
-        "AIが自分の判断にどれだけ自信があるか（信頼度スコア）を明示するため、でっち上げによる誤判定を防げる",
-        "証拠の質を「高・中・低」の3段階で評価し、重要な情報に絞って処理することで効率と精度を両立する",
-        "最新の高性能AI（Gemini等）を凌駕する精度を、ノイズの多い実社会の映像データで実証した"
-      ],
-      "tags": [
-        "映像解析",
-        "現場点検AI",
-        "異常検知"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "ウェアラブルカメラを用いた現場巡視において、歩行時の手ブレやトンネル内の暗所でも、AIが「読み取れる箇所」だけを自動抽出して点検記録を作成する。",
-        "クレーンや重機に取り付けたカメラ映像から、激しい振動や砂塵がある環境下でも、作業員の接近や危険な挙動を高い信頼度で検知し、誤報の少ない警報システムを構築する。",
-        "工場内の品質検査で、照明の反射で見えにくい製品が含まれていても、AIが自ら「この角度は判定不能」と回答し、人間の再チェックが必要な箇所を正確に仕分ける。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 16.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 10.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26744v1",
-      "title": "HyperDFlash: MHC-Aligned Block Speculative Decoding with Gated Residual Reduction",
-      "abstract": "We present HyperDFlash, a block-parallel speculative decoding framework tailored to the novel multi-hyper-connection (MHC) architecture proposed by DeepSeek-V4. Despite the strong initial-token drafting performance of the native Multi-Token Prediction (MTP) module in DeepSeek-V4, its draft accuracy degrades sharply at later positions, as error accumulation from unverified intermediate tokens harms acceptance rates. Although the original DFlash method supports efficient one-pass block drafting, it cannot be seamlessly adapted to the MHC paradigm, since the multi-path residual stream of DeepSeek-V4 induces feature misalignment with conventional drafting designs. To resolve this mismatch, we propose two model-aligned optimizations for MHC residual streams. First, we adopt pre-collapse residual states as the exclusive conditioning signal, preserving multi-path structural information and aligning the drafter with the native prediction pathway of the target model. Second, we replace the heavy generic linear compressor with a lightweight gated residual reducer, whose parameters are inherited from the built-in hyper-connection head. This design yields input-aware path aggregation with three orders of magnitude fewer parameters while maintaining architectural alignment. We further enhance training via a targeted KL distillation loss applied to the LM-head, which regularizes predictions against the full target probability distribution and improves draft quality at early training stages. Experiments across math reasoning, code synthesis, and conversational benchmarks show that HyperDFlash consistently outperforms both the native MTP baseline and vanilla DFlash adaptation. It achieves substantial gains in average accepted draft length and decoding speedup, validating the effectiveness of MHC alignment, gated reduction, and targeted distillation for high-performance speculative decoding.",
-      "authors": [
-        "Luxi Lin",
-        "Shuang Peng",
-        "Rui Ma",
-        "Junhao Hua",
-        "Shuwei Fan",
-        "Zhengda Qin",
-        "Qiang Wang",
-        "Hongjian Sun",
-        "Fangmin Chen",
-        "Songwei Liu"
-      ],
-      "published": "2026-06-25T08:31:53+00:00",
-      "updated": "2026-06-25T08:31:53+00:00",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26744v1",
-      "headline": "最新AIの回答待ちを解消！複雑なモデルを劇的に高速化する技術",
-      "one_liner": "最新の巨大AI（DeepSeek-V4）特有の複雑な内部構造に合わせ、次に続く言葉を数文字分まとめて「下書き（先読み予測）」することで、回答の正確さを保ったまま生成速度を大幅に引き上げる技術です。",
-      "key_points": [
-        "AIが次に言うべき言葉を「数文字先までまとめて予測」することで、処理時間を大幅に短縮できる",
-        "最新AIの複雑な信号経路（マルチハイパーコネクション）に最適化されており、従来手法より効率が良い",
-        "予測のズレを抑える「軽量な調整機能」により、長い文章でもスピードが落ちにくい",
-        "従来の1000分の1という極めて少ない追加データで動作するため、システムへの負担が軽い",
-        "数学やプログラミングなど、論理的な思考が必要な複雑な回答ほど高い高速化効果を発揮する"
-      ],
-      "tags": [
-        "生成AI高速化",
-        "推論効率化",
-        "DeepSeek-V4"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "「現場点検レポートの即時生成」：現場で撮影した写真からAIが報告書を作る際、待ち時間を数秒からコンマ数秒に減らし、その場ですぐに確認・修正できる環境を実現する。",
-        "「大量の図面・仕様書の高速Q&A」：数千枚のプロジェクト資料から情報を探す際、AIの回答速度を上げることで、技術者がストレスなく対話形式で仕様を確認できるようにする。",
-        "「設計自動化スクリプトの高速生成」：BIMやCIMを操作するための複雑なプログラムコードをAIに書かせる際、生成の待ち時間を減らすことで、設計の試行錯誤（PDCA）を高速化する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 16.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 3.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26686v1",
-      "title": "Do Safety Guardrails Need to Reason? LeanGuard: A Fast and Light Approach for Robust Moderation",
-      "abstract": "In order to screen a prompt or a response, the recent guardrail methods generate a chain-of-thought (CoT) before they issue a verdict. This design follows a common belief that step-by-step reasoning improves a decision. However, CoT also makes the guard heavy and slow, because the model must generate many tokens before it decides. This may not match how guardrails are actually deployed. A guardrail sometimes should not be heavy and slow, and it often runs on-device, for example on an embodied robot. In this paper, we pose a question whether a safety guardrail really needs to reason. To answer this question, we train a lightweight bidirectional encoder and a reasoning guard on the same corpus, and we then remove only the reasoning while we keep everything else fixed. With this controlled same-base comparison, we show that the chain does not improve moderation accuracy. We name the resulting guard LeanGuard. A 395M label-only encoder reaches an average F1 of 82.90 $\\pm$ 0.26 over public benchmarks. It matches a reasoning guard that is built on a much larger decoder, while it uses only a single forward pass over an input of at most 512 tokens. This is about a ~100x reduction in inference compute. We further show that this label-only encoder stays robust under training-label noise and retains far more recall at a strict false-positive rate than the reasoning guard, so a heavier reasoning guard is not the more robust choice either. Our finding suggests that the current guardrail benchmarks may not be hard enough to reward reasoning, and that the necessity of CoT for moderation is still not proven. We release all source codes and models including LeanGuard at https://github.com/ndb796/LeanGuard.",
-      "authors": [
-        "Dongbin Na"
-      ],
-      "published": "2026-06-25T07:15:33+00:00",
-      "updated": "2026-06-25T07:15:33+00:00",
-      "categories": [
         "cs.AI",
-        "cs.CL"
+        "cs.CY",
+        "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.26686v1",
-      "headline": "AIの安全判定を100倍速め、現場ロボットでも瞬時の危険検知が可能になる",
-      "one_liner": "生成AIの出力が安全かを判定する際、あえて「理由をじっくり考えさせない」手法により、精度を落とさず計算量を100分の1に削減。軽量な小型AIモデル（エンコーダー型）を活用し、ロボットなどの通信が限られる現場でもリアルタイムな監視を可能にします。",
-      "key_points": [
-        "「思考ステップ（CoT）」を省くことで、従来の100分の1の計算コストで安全判定ができる",
-        "大規模なサーバーが不要になり、小型デバイスやロボット単体（エッジ端末）での安全機能の実装が現実的になる",
-        "判定精度は大型モデルと同等であり、「考えさせること」が必ずしも安全性向上に繋がらないことを証明した",
-        "学習データに多少の誤り（ノイズ）があっても、安定して正しい判定を維持できる頑健さを持つ",
-        "誤検知を厳しく制限する設定においても、危険なケースを逃さず捉える高い「見逃し防止性能」を誇る"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.28186v1",
+      "headline": "Cognitive Episodes in LLM Reasoning Trac",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "AI安全対策",
-        "エッジAI",
-        "リアルタイム監視"
+        "cs.CL",
+        "cs.AI",
+        "cs.CY"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "音声操作型のアシスタントロボットにおいて、現場作業員からの指示が安全基準（危険区域への進入など）に反していないかを、コンマ数秒の遅延もなくその場で判定し停止させる機能として活用する",
-        "工場の品質検査記録や日報をAIで要約・作成する際、機密情報の流出や不適切な表現が含まれていないかを、安価なローカルPC上で高速にチェックするフィルタリング装置として導入する",
-        "インフラ点検用の自律走行ドローンにおいて、AIが生成した次の行動計画が安全プロトコルに合致しているかを、通信環境に依存せず機体内で瞬時に確認する安全装置として組み込む"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 15.7,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 10.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26928v1",
-      "title": "UAV-MapFusion: RTK-Aligned Uncertainty-Aware Coarse-to-Fine Multi-Session UAV Mapping",
-      "abstract": "Large-scale point cloud maps are essential for robotics and spatial intelligence tasks. UAVs provide an efficient means for large-scale map acquisition; however, due to limited flight endurance and onboard storage, mapping a large-scale scene within a single flight remains difficult. Existing multi-session map merging methods can extend the mapping range, yet in UAV scenarios they still struggle to simultaneously suppress long-range drift and preserve local geometric accuracy. To address this issue, an uncertainty-aware multi-session point cloud map merging and coarse-to-fine optimization system is proposed. The proposed method first performs initial multi-session map merging based on a scene graph, and then incorporates RTK observations through an RTK spatiotemporal alignment module, where temporal offsets are estimated using Dynamic Time Warping (DTW), and continuous RTK constraints are recovered using Multi-Output Gaussian Processes (MOGP) under incomplete sampling and frame dropouts. On this basis, a unified uncertainty-aware factor graph is constructed, and local geometric accuracy is further improved through iterative plane-factor refinement. Experiments on real-world datasets validate the effectiveness and robustness of the proposed method. To facilitate further research and development in the community, our code and dataset will be publicly released.",
-      "authors": [
-        "Feng Pan",
-        "Chunran Zheng",
-        "Bing Xue",
-        "Yukang Cui",
-        "Jiayu Wen",
-        "Zhiyu Chen",
-        "Wei Wang"
-      ],
-      "published": "2026-06-25T12:03:29+00:00",
-      "updated": "2026-06-25T12:03:29+00:00",
-      "categories": [
-        "cs.RO",
-        "cs.SI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26928v1",
-      "headline": "ドローンの複数回飛行でもズレのない巨大3D地図が作れる",
-      "one_liner": "バッテリー制限で分割して撮影したドローンのデータを、高精度位置情報（RTK）を活用して一つの精密な3D地図に統合し、AIの推定（ガウス過程）でデータの欠落も補いながら細部までくっきり再現する技術です。",
-      "key_points": [
-        "継ぎ目のない広域地図：複数回に分けて飛ばしたドローンのデータを、ズレを抑えて一つの大きな3Dモデルに合成できる",
-        "データの欠損をAIが補完：通信不良でGPS位置情報が途切れても、AIが滑らかな移動経路を予測して自動で補ってくれる",
-        "広範囲の歪みを自動修正：長距離を撮影する際に発生しがちな「端の方の歪み」を、高精度な位置データと照らし合わせて自動で正す",
-        "壁や地面がより鮮明に：平面を認識して整える機能により、ボヤけがちな3D点群の壁面や床面がシャープに再現される",
-        "手作業による位置合わせが不要：これまで手動で行っていた複数の地図データの統合作業を、高度な数学的処理で自動化できる"
-      ],
-      "tags": [
-        "3Dスキャン活用",
-        "橋梁点検",
-        "BIM連携"
-      ],
-      "who_should_read": [
-        "BIM/CIMエンジニア",
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー"
-      ],
-      "application_ideas": [
-        "広大なダムや造成現場の進捗管理において、毎日分割して撮影したドローンデータを自動で統合し、最新の3D現状図として設計値と比較する。",
-        "老朽化した橋梁やトンネルの点検で、複数回の飛行データを高精度に繋ぎ合わせ、ひび割れや腐食の位置を数センチ単位の精度で特定する。",
-        "大規模なプラントや工場のデジタルツイン（仮想空間への再現）作成で、屋内外を網羅した精密な3Dモデルを短期間で構築する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 15.5,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "高",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 3.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26829v1",
-      "title": "Identifying the Unknown: Prompt-Free Open Vocabulary Anomaly Recognition for Robot-Object Interaction",
-      "abstract": "Robots operating in real-world environments must in general be able to recognize previously unseen objects. As robotic systems move toward open-world autonomy, there is a growing, yet largely unmet, need for open vocabulary object detectors that are prompt-free and efficient enough for continuous deployment. We present AnomNOVIC, a two-stage known-workspace framework that combines a masked autoencoder (MAE) trained for anomaly detection, with NOVIC, a powerful real-time prompt-free open vocabulary image classifier. The MAE produces generic object-agnostic bounding boxes, allowing NOVIC to classify salient image regions without requiring a predefined candidate class list. We evaluate AnomNOVIC against strong open vocabulary baselines in a tabletop robot-object environment featuring the NICOL humanoid robot, reaching 47.1% AP / 57.5% AP50 for prompt-free recognition, and 59.0% AP / 72.5% AP50 if class candidates are provided. Across additional datasets, including an in-the-wild test set with 48 unique objects, AnomNOVIC reaches up to 82.6% prompt-free detection and classification accuracy. These results significantly surpass all tested open vocabulary baselines, including YOLO-World-v2, OWLv2, and YOLOE.",
-      "authors": [
-        "Philipp Allgeuer",
-        "Jan-Gerrit Habekost",
-        "Stefan Wermter"
-      ],
-      "published": "2026-06-25T10:09:32+00:00",
-      "updated": "2026-06-25T10:09:32+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26829v1",
-      "headline": "名前の分からない「未知の物体」を、指示なしでAIが自律検知",
-      "one_liner": "ロボットが初めて見る道具や部品でも、人間が「これを探して」と事前に名前を教える（プロンプト入力）ことなく、画像の中から自律的に見つけ出して特定できる技術です。",
-      "key_points": [
-        "名前リストの登録が不要：事前に「何を探すべきか」をリストアップしなくても、未知の物体を検知できます。",
-        "「何かおかしい」を検知：背景ではない「異質なもの（異常）」として捉えるため、想定外の物体も見落としません。",
-        "リアルタイムで動作：現場のロボットが動きながら瞬時に判断できるほど処理が高速です。",
-        "最新AIを超える精度：既存の有名な物体検知AI（YOLO-World等）と比較しても、より正確に物体を特定できます。",
-        "自ら学習・判断：特定の環境（ワークスペース）を覚えさせるだけで、そこにある「知らない物」を浮き彫りにします。"
-      ],
-      "tags": [
-        "ロボット自律化",
-        "未知物体検知",
-        "品質検査AI"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "工場の製造ラインで、あらかじめ登録された不良パターン以外の「原因不明の異物や欠損」を、指示なしで自動検知する。",
-        "建設現場の資材置き場で、多種多様なメーカーの資材が混在していても、名前を一つ一つ登録せずに「何がどこにいくつあるか」を自動判別する。",
-        "インフラ点検において、過去の事例にない未知の劣化や損傷パターンを「異常な箇所」としてドローンが自律的に発見する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 15.5,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "高",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 2.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.27128v1",
-      "title": "FlameVQA: A Physically-Grounded UAV Wildfire VQA Benchmark with Radiometric Thermal Supervision",
-      "abstract": "Wildfire monitoring from UAVs requires reliable reasoning over complex aerial scenes, where smoke, scale variation, and occlusions often limit RGB-only interpretation. We introduce FlameVQA, a multiple-choice visual question answering benchmark for UAV-based wildfire intelligence built on FLAME 3, leveraging paired RGB imagery and radiometric thermal TIFFs for temperature-grounded, safety-critical reasoning. FlameVQA includes 34 multiple-choice questions per image spanning six operational capability groups, covering tasks such as detection, localization, distribution/coverage estimation, cross-modal reasoning, and flight planning. To ensure label reliability, we combine MLLM-assisted annotation with deterministic thermal rules and cross-question consistency checks, followed by human auditing. We also evaluate representative MLLMs on FlameVQA to provide baselines for future work. Results show strong performance when explicit cross-modal cues are available, but notable failures on presence detection under heavy smoke and on coverage estimation. These findings suggest that current MLLMs require domain-specific adaptation to better support disaster and wildfire monitoring. The dataset and benchmark code are open-source at github.com/mobiiin/WildFire_VQA",
-      "authors": [
-        "Mobin Habibpour",
-        "John Spodnik",
-        "Niloufar Alipour Talemi",
-        "Fatemeh Afghah"
-      ],
-      "published": "2026-06-25T15:06:59+00:00",
-      "updated": "2026-06-25T15:06:59+00:00",
-      "categories": [
-        "cs.CV",
-        "cs.RO"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.27128v1",
-      "headline": "ドローンとAIが火災の「熱」を理解し状況判断を自動化する",
-      "one_liner": "煙で視界が悪い火災現場でも、ドローンの映像（可視光）と温度データ（熱画像）を組み合わせ、AIが「どこで燃えているか」や「次に飛ばすべきルート」を回答（画像応答）できる技術です。",
-      "key_points": [
-        "煙に隠れた火種も、カメラ映像と温度センサーの数値を連携させることでAIが正確に特定できる",
-        "「どこが一番熱い？」「延焼範囲は？」といった具体的な質問に、AIがチャット形式で即座に答える",
-        "目視では判断が難しい火災の広がり（面積や分布）を、AIが温度データに基づいて客観的に見積もれる",
-        "視覚情報と物理的な熱データをセットで扱うため、AIの「思い込み（でっち上げ）」を抑えた確実な判断が可能",
-        "ドローン操縦者に対し、リアルタイムで次に撮るべき場所や避難ルートなどの flight planning（飛行計画）を提案できる"
-      ],
-      "tags": [
-        "災害対応AI",
-        "ドローン活用",
-        "インフラ点検"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "太陽光パネルや工場の配管点検において、外観写真と赤外線カメラを同期させ、「異常発熱している箇所と故障リスク」をAIに自動判定させる。",
-        "橋梁やコンクリート構造物の点検で、内部の剥離や水分を「温度変化のパターン」からAIに推論させ、修理の優先順位を自動でランク付けする。",
-        "大規模プラントの夜間巡回において、ドローンが自律的に「不審な熱源」を検知し、管理者に現場の状況をテキストで即座に報告するシステムを構築する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 15.2,
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -653,56 +268,217 @@
         "ai_knowhow": "高"
       },
       "practicality_score": 7.0,
-      "first_seen": "2026-06-26"
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.26899v1",
-      "title": "Generative Retrieval via Diffusion Transformer with Metric-Ordered Sequence Training and Hybrid-Policy Preference Optimization",
-      "abstract": "Embedding-based retrieval ranks items by their similarity to a query in a shared vector space and usually aims to return the highest-scoring items. In many production settings this is not what is wanted: given a seed set that expresses a fine-grained pattern, one needs more items that both satisfy a target attribute and stay within that pattern. We formalize this as pattern-preserving attribute retrieval. The two goals pull against each other: averaging the seeds preserves the pattern but stays in a low-attribute region, while global attribute retrieval drifts to unrelated patterns. We approach the task with continuous generative retrieval, where a model reads a sequence of item embeddings and generates query embeddings for nearest-neighbor search. We propose MO-DiT+HPPO, a staged framework with raw-sequence pretraining, multi-domain metric-ordered continuation pretraining, tail-centroid fine-tuning, and HPPO. Metric-ordered training turns sparse online retrieval labels into in-pattern trajectories ordered from low to high predicted attribute density, teaching one model the metric-improvement direction across domains. HPPO aligns the generated query distribution with the true online objective by labeling a hybrid candidate pool with the online intersection metric and applying reference-anchored preference optimization. A Pareto pair filter keeps only winner pairs that do not lower same-pattern purity, raising the attribute metric without sacrificing the pattern. Across four attribute domains under item- and pattern-holdout protocols, metric-ordered DiT improves the intersection metric over a pretrained generative retriever, and HPPO improves it further, with significant gains on seven of eight domain-split cells and a marginal tie on the hardest split. Metric-predictor validation, order ablations, CPT/SFT comparisons, and a candidate-policy ablation show where the gains come from.",
+      "arxiv_id": "2606.28182v1",
+      "title": "LLawCo: Learning Laws of Cooperation for Modeling Embodied Multi-Agent Behavior",
+      "abstract": "Embodied agents operating in decentralized and partially observable environments have attracted growing attention in recent years. However, existing large language model (LLM)-based agents often exhibit behaviors that are misaligned with their partners or inconsistent with the environment state, leading to inefficient cooperation and poor task success. To address this challenge, we propose a novel framework, Learning Laws of Cooperation (LLawCo), that enables embodied agents to autonomously align with both their partners and task objectives. Our framework allows agents to reflect on past failures to extract misaligned behavioral patterns, which are used to derive high-level behavioral laws, such as \"Talk when necessary\" and \"Wait for partner.\" These laws are explicitly incorporated into the agents' chains of thought via supervised fine-tuning, aligning their reasoning with task requirements and the behavior of other agents. To evaluate our approach, we introduce PARTNR-Dialog, a large-scale multi-agent communicative and cooperative planning benchmark built on the PARTNR environment. Experiments on existing tasks and our new benchmark demonstrate significant improvements in cooperative efficiency and task success rates. Across four backbone LLMs, our method achieves average success rate improvements of 4.5% on the PARTNR-Dialog benchmark and 6.8% on the TDW-MAT benchmark over state-of-the-art open-source communicative agent frameworks. See the LLawCo project page for details: https://www.merl.com/research/highlights/LLawCo",
       "authors": [
-        "Chenghao Liu",
-        "Yu Zhang",
-        "Zhongtao Jiang",
-        "Kun Xu",
-        "Zhenwei An",
-        "Renzhi Wang",
-        "Zhao Wang",
-        "Jiachen Zhang",
-        "Yuxiao Zhang",
-        "Kun Xu",
-        "Songfang Huang"
+        "Qinhong Zhou",
+        "Chuang Gan",
+        "Anoop Cherian"
       ],
-      "published": "2026-06-25T11:29:51+00:00",
-      "updated": "2026-06-25T11:29:51+00:00",
+      "published": "2026-06-26T15:26:12+00:00",
+      "updated": "2026-06-26T15:26:12+00:00",
       "categories": [
-        "cs.AI"
+        "cs.LG",
+        "cs.AI",
+        "cs.CV",
+        "cs.RO"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.26899v1",
-      "headline": "こだわりの特徴を守りつつ、より理想に近い候補をAIが探し出す",
-      "one_liner": "手本となるデータの「共通パターン」を壊さずに、特定の「性能指標（属性）」がより高いものを探し出せる検索技術です。Diffusion Transformer（画像生成などで使われるAI構造）を用い、特徴を保ちながら品質を向上させる「改善の道筋」をAIが学習（Metric-Ordered Training）しています。",
-      "key_points": [
-        "手本データの「雰囲気」や「特徴」を維持したまま、より高性能なデータを検索できる",
-        "「似ているもの探し」にとどまらず、条件をより良く満たす「進化版」を提案できる",
-        "デザインの統一感と、コストや強度といった性能向上を同時に達成できる",
-        "AIが「どの方向に改善すればいいか」という改善プロセス自体を理解して動く",
-        "実際の検索結果の良し悪しをフィードバックして、精度をさらに高め続けられる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.28182v1",
+      "headline": "LLawCo: Learning Laws of Cooperation for",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "類似データ探索",
-        "デザイン・性能両立",
-        "AIレコメンド"
+        "cs.LG",
+        "cs.AI",
+        "cs.CV"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.27743v1",
+      "title": "End-to-End Dynamic Sparsity for Resource-Adaptive LLM Inference",
+      "abstract": "Large Language Models (LLMs) inference is typically deployed under a static resource assumption, where models execute a fixed computational graph regardless of the runtime environment. However, real-world cloud infrastructure is inherently dynamic, characterized by fluctuating availability (e.g., spot instance preemption) and tiered Quality-of-Service requirements. In such volatile settings, static models are inflexible: they either crash under resource constraints or waste compute on redundant operations. To bridge this gap, we propose Learning to Allocate (L2A), an end-to-end framework for resource-adaptive inference. Unlike prior methods that condition only on input difficulty, we formulate inference as a constrained allocation problem conditioned on both the input and the runtime resource budget itself. We introduce lightweight, budget-conditioned and input-aware gating networks integrated into the LLM. These gates are trained via a unified objective that jointly optimizes task performance, logical consistency, and resource costs along three axes matching how real-world dynamics manifest: layer skipping for memory and depth pressure, head pruning for throughput contention, and reasoning-token reduction for latency tightening. This lets the model learn a budget-aware policy beyond input difficulty alone: it adaptively configures its computational footprint with respect to real-time resource dynamics, maximizing reasoning depth when resources permit while enforcing strict frugality when budgets tighten. A single L2A model traces the entire compute-accuracy Pareto frontier on Llama-3-8B and Qwen-3-4B: at up to 34% realized layer sparsity, it stays within 0.6% of the dense baseline on GSM8K, with the same gap holding zero-shot on out-of-distribution tasks, while every static or heuristic baseline requires a separately tuned model and still drops by 5-10% at comparable inference time.",
+      "authors": [
+        "Yuhang Chen",
+        "Jinhao Duan",
+        "Ruichen Zhang",
+        "Mingfu Liang",
+        "Xiaohan Wei",
+        "Yunchen Pu",
+        "Fei Tian",
+        "Chonglin Sun",
+        "Parish Aggarwal",
+        "Frank Shyu",
+        "Luke Simon",
+        "Sandeep Pandey",
+        "Tianlong Chen",
+        "Xi Liu"
       ],
-      "application_ideas": [
-        "BIM設計の場面で、過去の美しい意匠デザイン（パターン）を保ちつつ、断熱性能や耐震性能（属性）がより高い部材構成を検索・提案することで、意匠と性能の両立を支援できる。",
-        "インフラ点検の場面で、特定のひび割れ形状（パターン）を持つ損傷箇所の中から、補修の緊急度（属性）が特に高いものを優先的に抽出することで、点検業務の優先順位付けが改善できそう。",
-        "工場の品質検査で、良品として許容される範囲内の形状（パターン）を維持しながら、摩耗が少なく耐久性が高い（属性）製品サンプルを検索・比較することで、製造条件の微調整に活用できそう。"
+      "published": "2026-06-26T05:48:21+00:00",
+      "updated": "2026-06-26T05:48:21+00:00",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
       ],
-      "implementation_difficulty": "中",
+      "abs_url": "http://arxiv.org/abs/2606.27743v1",
+      "headline": "End-to-End Dynamic Sparsity for Resource",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28294v1",
+      "title": "Democratic ICAI: Debating Our Way to Steering Principles from Preferences",
+      "abstract": "Preference-based alignment often struggles to capture the reasoning that underlies human judgments. Many evaluations rely on multiple interacting criteria, yet pairwise labels reveal only the final choice rather than the considerations that shape preferences. Inverse Constitutional AI (ICAI) improves interpretability in decision making by summarizing preferences into natural-language principles, but its single-pass explanations miss much of the nuance involved in complex decisions. We introduce Democratic ICAI, a novel approach that gathers multiple competing rationales through structured persona debate, offering a broader and more expressive account of the factors influencing each comparison. From these richer signals, we derive clearer and more comprehensive steering principles and use them to guide decision modeling through both LLM-based and decision-tree judges. Experiments on creative preference benchmarks, MuCE-Pref and LiTBench, across multiple creative task categories show that Democratic ICAI yields a more faithful preference structure. It improves average preference prediction across tasks relative to deliberative prompting and principle-based baselines, while producing constitutions that LLM annotators prefer.",
+      "authors": [
+        "Kevin Kingslin",
+        "Anish Natekar",
+        "Ashutosh Ranjan",
+        "Vivek Srivastava",
+        "Savita Bhat",
+        "Shirish Karande"
+      ],
+      "published": "2026-06-26T17:38:47+00:00",
+      "updated": "2026-06-26T17:38:47+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.28294v1",
+      "headline": "Democratic ICAI: Debating Our Way to Ste",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.MA"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.2,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28002v1",
+      "title": "Dialogue to Detection: A Multimodal Hybrid NLP Pipeline for Insurance Fraud Detection",
+      "abstract": "Insurance fraud imposes substantial financial losses and operational inefficiencies, raising premiums and impacting trust among legitimate policyholders. Early detection at FNOL remains a persistent challenge. Existing approaches rely largely on private, text-only datasets, limiting progress on multimodal methods that integrate linguistic, behavioural, and speaker-based indicators. We introduce a synthetic multimodal framework that replicates FNOL conditions. It generates agent-customer dialogue transcripts and two-speaker audios, performs ASR and diarisation. Downstream modules combine NER, regex-based feature extraction, LLM-RAG retrieval, and speaker embeddings in a rule-based risk score to flag narrative reuse, structural inconsistencies, and cross-case voice repetition while balancing sensitivity and false positives. Dataset validation and component-level evaluations show stability and transfer potential, offering a reproducible baseline beyond text-only fraud detection.",
+      "authors": [
+        "Muhammad Shakeel Akram",
+        "Amal Htait",
+        "Abdul Hamid Sadka",
+        "Emma Meisingseth",
+        "Karishma Jaitly"
+      ],
+      "published": "2026-06-26T11:59:05+00:00",
+      "updated": "2026-06-26T11:59:05+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "eess.AS"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.28002v1",
+      "headline": "Dialogue to Detection: A Multimodal Hybr",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI",
+        "eess.AS"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28322v1",
+      "title": "PerceptionRubrics: Calibrating Multimodal Evaluation to Human Perception",
+      "abstract": "We introduce PerceptionRubrics, a rubric-based evaluation framework that addresses the gap between saturated benchmark scores and real-world brittleness. Shifting evaluation from holistic semantic matching to rigorous atomic auditing, PerceptionRubrics pairs 1,038 information-dense images with over 12,000 instance-specific rubrics. These criteria are derived from golden captions constructed via a novel Circular Peer-Review consensus pipeline and then distilled into a dual-stream system of Must-Right (essential facts) and Easy-Wrong (fine-grained details) rubrics. Crucially, PerceptionRubrics implements a Gated Scoring mechanism: unlike linear averages, failure on mandatory visual facts triggers sharp binary penalties. Extensive evaluation yields critical insights: (1) The Reliability Gap: models often verify fragmented elements correctly yet fail strict conjunctive constraints, exposing brittleness in dense domains; (2) Open-Closed Stratification: contrary to reasoning trends, we reveal a persistent 8% perception deficit between open-source and proprietary frontiers; and (3) Human-Aligned Rigor: our gated metrics substantially out-align conventional benchmarks, validating that strict perceptual fidelity is the prerequisite for reliable generation.",
+      "authors": [
+        "Yana Wei",
+        "Hongbo Peng",
+        "Yanlin Lai",
+        "Liang Zhao",
+        "Kangheng Lin",
+        "En Yu",
+        "Keyu Lv",
+        "Han Zhou",
+        "Yin Tang",
+        "Haodong Li",
+        "Mitt Huang",
+        "Hangyu Guo",
+        "Jianjian Sun",
+        "Zheng Ge",
+        "Xiangyu Zhang",
+        "Daxin Jiang",
+        "Vishal M. Patel"
+      ],
+      "published": "2026-06-26T17:59:15+00:00",
+      "updated": "2026-06-26T17:59:15+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.28322v1",
+      "headline": "PerceptionRubrics: Calibrating Multimoda",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
       "relevance_score": 15.0,
       "domain_relevance": {
         "drawing_ai": "なし",
@@ -711,157 +487,169 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 5.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 5.6,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.26666v1",
-      "title": "PersistentKV: Page-Aware Decode Scheduling for Long-Context LLM Serving on Commodity GPUs",
-      "abstract": "Autoregressive large language model (LLM) serving is increasingly limited by key-value (KV) cache movement rather than dense matrix multiplication. Modern paged-attention systems reduce KV-cache fragmentation and mature kernels such as FlashInfer provide highly optimized native-paged decode attention. However, the best single-kernel implementation is not always the best serving schedule: low-active long-context decode can under-utilize commodity GPUs, while mixed sequence lengths introduce a tension between many exact-length launches and coarse padded batches. We present PersistentKV, a native block-table decode attention engine and page-aware scheduling study for grouped-query attention (GQA). PersistentKV maps work by KV-head group, is designed to reuse K,V tiles across grouped query heads, supports native page tables, and adds a compact workqueue schedule that executes only non-empty row-KV-head-sequence-split tasks. On an RTX 3060 with FP16, page size 16, Hq=32, Hkv=8, d=128, and identical correctness tolerance against FlashInfer, a calibrated adaptive policy selects FlashInfer for small active batches, PersistentKV sequence splitting for B1 long-context steps, and PersistentKV workqueue scheduling for B8 long-context steps. With thresholds and split counts fixed on calibration traces, one held-out trace seed improves synchronized wall throughput by 1.063-1.265x on B8 bimodal, uniform, and Zipf-like workloads and by 1.399x on a B1 bucketed trace. On the B4 bimodal boundary case, the policy avoids the PersistentKV regression by selecting FlashInfer. These results identify a concrete systems niche for adaptive page-aware decode scheduling and show that work assignment, not only attention math, is a decisive serving-system variable.",
+      "arxiv_id": "2606.28276v1",
+      "title": "SimFoundry: Modular and Automated Scene Generation for Policy Learning and Evaluation",
+      "abstract": "Training and evaluating robot policies in the real world is costly and difficult to scale. We introduce SimFoundry, a modular and automated system for zero-shot real-to-sim scene construction from a video. SimFoundry generates sim-ready digital twins and supports object, scene, and task editing, enabling the automated generation of diverse digital cousins: affordance-preserving variations of reconstructed real-world scenes. Policies trained on SimFoundry data transfer zero-shot to challenging real tasks involving multi-step manipulation, articulated object interaction, and bimanual interaction, and its digital cousins (variations of the original scene, objects, and tasks) facilitate generalization to new real-world conditions. Across 7 manipulation tasks and 5 policy architectures, SimFoundry simulation evaluations strongly predict real-world performance, with mean Pearson correlation 0.911 and mean maximum ranking violation 0.018. When evaluating sim-trained policies zero-shot in the real world, policies trained with object, scene, and task cousins in simulation show average task success rate improvements of 17%, 21%, and 40%, respectively. Additional details at https://research.nvidia.com/labs/gear/simfoundry/ .",
       "authors": [
-        "Muhammad Ahmed"
+        "Nadun Ranawaka",
+        "Josiah Wong",
+        "Wei-Lin Pai",
+        "Wei-Teng Chu",
+        "Tianyuan Dai",
+        "Masoud Moghani",
+        "Hang Yin",
+        "Yunfan Jiang",
+        "Wesley Durbano",
+        "Brandon Huynh",
+        "Yu Fang",
+        "Linxi Fan",
+        "Danfei Xu",
+        "Ruohan Zhang",
+        "Li Fei-Fei",
+        "Bowen Wen",
+        "Ajay Mandlekar",
+        "Yuke Zhu"
       ],
-      "published": "2026-06-25T06:56:43+00:00",
-      "updated": "2026-06-25T06:56:43+00:00",
+      "published": "2026-06-26T17:18:43+00:00",
+      "updated": "2026-06-26T17:18:43+00:00",
       "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.28276v1",
+      "headline": "SimFoundry: Modular and Automated Scene ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28027v1",
+      "title": "MLVC: Multi-platform Learned Video Codec for Real-World Deployment",
+      "abstract": "Neural video codecs have surpassed classical codecs in coding efficiency but remain impractical for deployment due to cross-platform incompatibility and high computational cost. Existing quantization-based solutions fail to produce deterministic results across diverse hardware platforms, leading to catastrophic decoding failures. We introduce MLVC, a hardware-robust neural video codec designed for practical cross-platform inference. The key idea is to explicitly transmit scale parameters through the hyperprior, which guarantees entropy coding consistency across devices without requiring bit-exact arithmetic. While this increases bitrate overhead, we recover most of the coding efficiency through architectural improvements (gated memory, ReGLU activation), a long-term reference recovery mechanism, and domain-specific perceptual training. On the VCD video conferencing benchmark, MLVC achieves >70% BD-rate (MOS) improvement over hardware HEVC, the strongest deployable baseline, while reaching subjective quality competitive with DCVC-RT, which cannot operate across diverse platforms. Both the encoder and decoder run at 100 FPS on average on commodity NPUs from Apple, Intel, and Qualcomm. MLVC is the first neural video codec to combine competitive compression performance, real-time speed, and cross-platform robustness across diverse consumer devices, making it suitable for widespread deployment. Code will be released.",
+      "authors": [
+        "Tanel Pärnamaa",
+        "Martin Lumiste",
+        "Ardi Loot",
+        "Evgenii Indenbom",
+        "Andrei Znobishchev",
+        "Ando Saabas"
+      ],
+      "published": "2026-06-26T12:32:50+00:00",
+      "updated": "2026-06-26T12:32:50+00:00",
+      "categories": [
+        "eess.IV",
+        "cs.AI",
+        "cs.CV",
         "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.26666v1",
-      "headline": "「長文AIの回答待ち」を家庭用GPUでも最大1.4倍速くする",
-      "one_liner": "AIが長文を処理する際の「記憶の読み出し（KVキャッシュ）」を賢く整理する技術です。AIへの仕事の割り振り方を最適化することで、安価なGPU（市販品）でも処理速度を最大1.4倍向上させます。",
-      "key_points": [
-        "長文の資料を読み込ませた際の、AIからの返答待ち時間を大幅に短縮できる",
-        "高価なサーバー用GPUだけでなく、市販の安価なGPUでも長文AIがサクサク動くようになる",
-        "「短い質問」と「数万文字の資料」が混ざった複雑な処理でも、AIが効率よくさばけるようになる",
-        "AIの頭脳（モデル）自体をいじらずに、計算の「段取り」を変えるだけで高速化が可能",
-        "メモリの無駄遣いを防ぎ、限られた計算リソースを100%使い切ることができる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.28027v1",
+      "headline": "MLVC: Multi-platform Learned Video Codec",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "長文文書解析",
-        "コスト削減",
-        "GPU最適化"
+        "eess.IV",
+        "cs.AI",
+        "cs.CV"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28016v1",
+      "title": "TempAct: Advancing Temporal Plausibility in Autoregressive Video Generation via Planner-Executor RL",
+      "abstract": "Autoregressive (AR) video diffusion models enable low-latency streaming generation by synthesizing videos chunk by chunk with cached visual context, but this chunk-wise formulation makes temporal instruction following ambiguous. A single global prompt does not specify which sub-event should be realized in each chunk, while naively switching to step-wise prompts often leads to delayed reactions, blended step semantics, and error propagation across prompt transitions. These failures are difficult to address with supervised fine-tuning or distillation alone: SFT suffers from exposure bias, while rollout-based distillation still optimizes low-level denoising or teacher-distribution matching rather than directly enforcing action ordering and prompt-transition correctness. We address these challenges with TempAct, a planner--executor reinforcement learning framework that jointly optimizes temporal decomposition and step-conditioned execution for temporally plausible AR video generation. TempAct uses an LLM planner to explore span-aware step prompts that are executable by the video model, and trains an AR diffusion executor to follow these prompts under its own generated histories. Its key mechanism is hierarchical group exploration: candidate plans form planning groups, and each plan induces an execution group of multiple continuations from a shared visual context, enabling plan-level credit assignment for long-horizon temporal outcomes and executor-level credit assignment for prompt-switch behavior. We further design hierarchical rewards that combine plan-quality and full-video temporal feedback for the planner with local transition-level step-following rewards, aesthetic regularization, and KL constraints for the executor. Experiments on Self-Forcing and LongLive show that TempAct improves temporal consistency while preserving overall visual quality.",
+      "authors": [
+        "Jing Wang",
+        "Xiangxin Zhou",
+        "Jiajun Liang",
+        "Kaiqi Liu",
+        "Wanyun Pang",
+        "Zhenyu Xie",
+        "Tianyu Pang",
+        "Xiaodan Liang"
       ],
-      "application_ideas": [
-        "数千ページの過去の点検記録や図面仕様書をAIに読み込ませ、現場のタブレット（ローカルGPU）から瞬時に整合性チェックを行う",
-        "工場内の大量のセンサーログ（長文時系列データ）を安価なPCでリアルタイム解析し、異常の予兆を高速に検知する",
-        "膨大なBIMの属性情報や施工要領書を横断的に検索するチャットボットにおいて、低コストなサーバー構成で快適なレスポンスを実現する"
+      "published": "2026-06-26T12:19:28+00:00",
+      "updated": "2026-06-26T12:19:28+00:00",
+      "categories": [
+        "cs.CV"
       ],
-      "implementation_difficulty": "中",
+      "abs_url": "http://arxiv.org/abs/2606.28016v1",
+      "headline": "TempAct: Advancing Temporal Plausibility",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
       "relevance_score": 14.8,
       "domain_relevance": {
         "drawing_ai": "なし",
-        "bim_cim": "高",
+        "bim_cim": "なし",
         "manufacturing": "なし",
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 2.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 1.4,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.27334v1",
-      "title": "Language-Based Digital Twins for Elderly Cognitive Assistance",
-      "abstract": "Digital twins have emerged as a promising paradigm for personalized healthcare, enabling modeling of individual behavior and health trajectories. In cognitive health, early detection of Mild Cognitive Impairment (MCI) remains challenging, where language and conversational patterns serve as non-invasive biomarkers. In this work, we propose a language-based digital twin framework that leverages large language models (LLMs) to mimic the conversational behavior of elderly individuals by incorporating stylometric cues and contextual metadata. To evaluate fidelity and cognitive consistency, we introduce a multi-head conditional variational autoencoder (cVAE) that jointly measures reconstruction quality and predicts cognitive scores. Experiments on the I-CONECT dataset show that the digital twin preserves identity-specific characteristics and achieves reconstruction and MoCA prediction errors comparable to real data, while outperforming baseline GPT-generated responses. These results highlight the potential of language-based digital twins as a scalable and non-invasive approach for personalized and continuous cognitive health monitoring.",
+      "arxiv_id": "2606.27611v1",
+      "title": "COOPA: A Modular LLM Agent Architecture for Operations Research Problems",
+      "abstract": "Operations Research (OR) provides a rigorous framework for high-stakes decision-making, but effective OR modeling requires substantial domain knowledge, mathematical abstraction, and solver expertise. Recent LLM-based systems automate parts of this pipeline, yet remain limited by low accuracy on complex problems, opaque outputs, and narrow solver support. We propose COOPA (COoperative OPerations Agent), a modular LLM-agent architecture for interpretable and scalable OR decision support. It combines three components: iterative confidence-based modeling, which generates multiple candidate formulations, self-evaluates them across modeling dimensions, and selects one using a max-min confidence criterion; element-level provenance and confidence explanations, which link variables, parameters, constraints, and objectives to quoted source text and provide an audit trail for human verification; and multi-solver routing to specialized optimizer agents for different OR problem classes. Across three OR benchmarks, eight LLM backbones, and four baselines under identical conditions, COOPA achieves the best macro-average accuracy on six of eight backbones and improves over the strongest baseline by up to 6.7 percentage points. A within-system ablation isolates the contribution of iterative confidence-based modeling, while additional analyses and case studies illustrate the value of source traceability and multi-solver dispatch.",
       "authors": [
-        "Mohammad Mehdi Hosseini",
-        "Mohammad H. Mahoor",
-        "Hiroko H. Dodge"
+        "Chuanhao Li",
+        "Xiaoan Xu",
+        "Dirk Bergemann",
+        "Ethan X. Fang",
+        "Yehua Wei",
+        "Zhuoran Yang"
       ],
-      "published": "2026-06-25T17:45:53+00:00",
-      "updated": "2026-06-25T17:45:53+00:00",
+      "published": "2026-06-25T23:56:58+00:00",
+      "updated": "2026-06-25T23:56:58+00:00",
       "categories": [
-        "cs.AI"
+        "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.27334v1",
-      "headline": "会話のクセから認知症の兆候をAIが早期発見できるようになる",
-      "one_liner": "お年寄り一人ひとりの話し方の特徴や文脈をコピーした「言葉のデジタルツイン（AIによる分身）」を作成し、会話のパターンから認知機能の低下を非侵襲（体に負担をかけない方法）で継続的にモニタリングする技術です。",
-      "key_points": [
-        "本人の「話し方のクセ」や語彙を忠実に再現したAI分身を構築できる",
-        "日常会話のわずかな変化から、認知症の前段階（MCI）を早期に見つけ出せる",
-        "何度もテストを繰り返しても患者が疲れず、リアルタイムでの健康監視が可能になる",
-        "従来の汎用的なAI（GPT等）よりも、特定の個人に特化した高い再現性を実現",
-        "専門的な認知機能検査のスコアを、AI分身を通じて高い精度で予測できる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.27611v1",
+      "headline": "COOPA: A Modular LLM Agent Architecture ",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "医療AI",
-        "ヘルスケアAI",
-        "デジタルツイン"
+        "cs.LG"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "熟練工の「点検報告書の書き方」や「判断基準」を言葉のデジタルツインとして再現し、若手の報告書をベテランの視点で自動添削・指導するシステム",
-        "現場監督の過去の指示出しパターンを学習したAIを作成し、現場の状況に応じた「危険予知（KY）活動」のコメントを監督者の口調で自動生成する",
-        "カスタマーサポートにおいて、ベテラン担当者の応対スタイルをデジタルツイン化し、新人が対応する際のリアルタイムな言い換えアドバイザーとして活用する"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 14.5,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "高",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 4.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26836v1",
-      "title": "The Capability Frontier: Benchmarks Miss 82% of Model Performance",
-      "abstract": "Existing benchmarks typically report accuracy for a single model on a single run. This systematically understates real-world LLM capabilities, particularly under heterogeneous data distributions: (i) different models get different questions correct according to their specializations, and (ii) given a budget, multiple generations can be sampled and selectively retained. To quantify this gap, we introduce the Capability Frontier: a Pareto frontier over a set of models that characterizes the best achievable performance at each cost level under optimal selection across models and generations (i.e., via an oracle). Our construction corrects for two opposing biases: underestimation from single-model evaluation and overestimation from taking maxima over noisy samples. We study 21 LLMs across 16 widely used benchmarks spanning coding, reasoning, medicine, factuality, instruction following, and agentic tasks, comparing Capability Frontier performance at matched cost to each benchmark's top-performing model. Correcting for single-model evaluation yields a 54% error rate reduction; additionally correcting for single runs yields an 82% improvement, with SOTA accuracy matched at 85% cost reduction. Complementing these empirical results, we use controlled probabilistic simulations to show that higher query topic entropy produces a near-monotonic increase in the performance gap between oracle routing and the best single model. Our findings suggest collective LLM capabilities are substantially underestimated, with implications for evaluation and deployment in data-heterogeneous, multi-domain settings.",
-      "authors": [
-        "Bradley Fowler",
-        "Ryan Smith",
-        "Daniel Thi Graviet",
-        "William Myers",
-        "Joshua Greaves",
-        "Narmeen Fatimah Oozeer",
-        "Antía García",
-        "Philip Quirke",
-        "Amirali Abdullah",
-        "Fazl Barez",
-        "Shriyash Kaustubh Upadhyay"
-      ],
-      "published": "2026-06-25T10:20:47+00:00",
-      "updated": "2026-06-25T10:20:47+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26836v1",
-      "headline": "AIの真の実力を引き出し、コストを85%削減できる",
-      "one_liner": "複数のAIを使い分け、何度も考えさせることで、1つの高性能AI（単一モデル）をそのまま使うよりも最大82%も高い精度を引き出し、同時に運用コストを大幅に抑える手法が確立されました。",
-      "key_points": [
-        "1つの「万能AI」に頼るより、得意分野が異なる複数のAIを組み合わせる方が圧倒的に高い成果が出る。",
-        "AIに一度だけ答えさせるのではなく、複数回回答させてから最適なものを選ぶだけで、AIの「思い込み（エラー）」を劇的に減らせる。",
-        "最高級のAIを1つ使うのと同等の精度を、安価なAIの賢い組み合わせによって「コスト85%減」で実現できる。",
-        "扱うタスクが複雑で多岐にわたるほど（例：図面、文章、画像が混在）、この「AIの使い分け」による恩恵が大きくなる。",
-        "従来のAI評価（ベンチマーク）は実力を過小評価しており、現場での運用の工夫次第でAIはもっと「使える」道具になる。"
-      ],
-      "tags": [
-        "AIモデル最適化",
-        "コスト削減",
-        "高精度化"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "工場検査の場面で、傷の判定に強いAIと汚れの判定に強いAIを使い分け、複数の回答を自動で照らし合わせることで、不良品の見落としを最小限に抑える。",
-        "橋梁点検の膨大な写真解析において、損傷の種類（ひび割れ、錆など）に応じて最適な解析モデルへ自動で振り分けることで、点検コストを抑えつつ専門家レベルの精度を維持する。",
-        "複雑な図面チェックにおいて、1つのAIの回答を鵜呑みにせず、複数のAIに繰り返し検証させる「ダブルチェック体制」をシステム上で構築し、修正漏れをゼロに近づける。"
-      ],
-      "implementation_difficulty": "中",
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
       "relevance_score": 14.5,
       "domain_relevance": {
         "drawing_ai": "なし",
@@ -870,57 +658,196 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 2.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 3.5,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.27154v1",
-      "title": "OpenRCA 2.0: From Outcome Labels to Causal Process Supervision",
-      "abstract": "Root cause analysis (RCA) poses a holistic test of LLM agentic capabilities, such as long-context understanding, multi-step reasoning, and tool use. However, existing datasets suffer from a fundamental gap: they label only the root cause, not the propagation path connecting it to the observed symptom, which largely simplifies the task to naive pattern matching. To support rigorous evaluation, we introduce PAVE, a step-wise labeling protocol that leverages known interventions from fault injection to reconstruct causal propagation paths. The mechanism is forward verification: reasoning from cause to effect rather than inferring backward from symptoms. Applying PAVE yields OpenRCA 2.0 (500 instances), the first cross-system RCA benchmark with step-wise causal annotations for LLM agents. Across 11 frontier LLMs, recovering the exact root-cause set succeeds in only 20.7% of cases on average. To locate where this difficulty lies, we relax the criterion and find what we call the ungrounded diagnosis: agents identify at least one correct root-cause service in 76.0% of cases, but ground that service in a verified causal propagation path to the observed symptom in only 61.5%. Outcome-only evaluation hides this failure mode; step-wise causal ground truth is the missing piece for trustworthy LLM-based RCA agents.",
+      "arxiv_id": "2606.28070v1",
+      "title": "JD Oxygen AI Item Center (Oxygen AIIC) V1: An Industrial-Scale LLM/VLM-Centric Solution for Item Understanding, Management, and Applications",
+      "abstract": "JD.com, one of the world's largest e-commerce platforms, serves over 700 million active users and millions of merchants, with a catalog of tens of billions of SKUs. At this scale, high-quality, structured item knowledge underpins a better consumer experience, lower management costs, and higher operational efficiency-yet producing and serving it poses three industrial-scale challenges: fast-emerging concepts, high-quality knowledge production for massive SKUs, and diverse downstream requirements. To address these challenges, we present the JD Oxygen AI Item Center (Oxygen AIIC), an industrial-scale platform built on LLMs/VLMs for item-knowledge production and service. Oxygen AIIC is built around four core pillars: (i) ontology engineering driven by efficient human-AI collaboration, which supports the dynamic evolution and agile expansion of an ontology with millions of entries; (ii) a \"Semantic Search then Discrimination\"(S2D) knowledge identification architecture that, combined with throughput improvement strategies, enables scalable, extensible, and high-throughput AI Item Library production for tens of billions of SKUs; (iii) self-evolving item-understanding LLMs/VLMs that improve in a stable and controllable manner, enabling knowledge production with 94.2% precision and 82.8% recall; and (iv) a unified item tunnel that serves as the data and service hub. Oxygen AIIC now covers tens of thousands of JD categories and processes hundreds of millions of item updates per day on Huawei Ascend NPUs. It has accumulated hundreds of billions of item-knowledge assets. Deployed across core business scenarios-including search, recommendation, operations, category planning-Oxygen AIIC has delivered measurable gains at scale. Search-traffic coverage reaches 80.4%, item-information quality issues drop by 37%, the automated fill rate of core attributes during item listing exceeds 80%.",
       "authors": [
-        "Aoyang Fang",
-        "Yifan Yang",
-        "Jin'ao Shang",
-        "Qisheng Lu",
-        "Junjielung Xu",
-        "Rui Wang",
-        "Songhan Zhang",
-        "Yuzhong Zhang",
-        "Boxi Yu",
-        "Pinjia He"
+        "Oxygen AIIC",
+        "Chan Long",
+        "Chao Liu",
+        "Chaofan Chen",
+        "Chaohui Dong",
+        "Chunyuan Guo",
+        "Danping Liu",
+        "Debin Liu",
+        "Deping Xiang",
+        "Fulai Xu",
+        "Guangyue Liu",
+        "Hao Li",
+        "Huichun Hu",
+        "Jian Yang",
+        "Jianan Wang",
+        "Jianbo Zhao",
+        "Jiaoyang Li",
+        "Jiaxing Wang",
+        "Jinglong Li",
+        "Jinjin Guo",
+        "Jun Fang",
+        "Jun Liu",
+        "Kai Zhou",
+        "Li Wang",
+        "Lili Gao",
+        "Liying Chen",
+        "Luning Yang",
+        "Mengdi Zhou",
+        "Pengzhang Liu",
+        "Qi Lv",
+        "Qianyun Wang",
+        "Qixia Jiang",
+        "Ruyue Li",
+        "Shimu Liang",
+        "Shuxing Wang",
+        "Sijie Zhang",
+        "Siqi Li",
+        "Tianhao Gao",
+        "Wang Ke",
+        "Weihu Huang",
+        "Wencan Lai",
+        "Wenjie Zhang",
+        "Xiaohui Zhang",
+        "Xiaojing Dong",
+        "Ya Liu",
+        "Yifeng Zhang",
+        "Yixiang Wang",
+        "Yongtai Zhang",
+        "Yongyi Liao",
+        "Zhaoru Chen",
+        "Zhen Chen",
+        "Zhiyong Ma",
+        "Zhiyuan Liu",
+        "Zhongwei Liu",
+        "Ziyan Xing"
       ],
-      "published": "2026-06-25T15:24:23+00:00",
-      "updated": "2026-06-25T15:24:23+00:00",
+      "published": "2026-06-26T13:33:27+00:00",
+      "updated": "2026-06-26T13:33:27+00:00",
       "categories": [
         "cs.AI"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.27154v1",
-      "headline": "故障の原因だけでなく「異常が広がる道筋」をAIが論理解説",
-      "one_liner": "複雑なシステムで不具合が起きた際、AIが単に原因を当てるだけでなく、原因から症状までの「波及のプロセス（因果の連鎖）」を論理的に説明できるかを厳格に評価・改善する技術です。",
-      "key_points": [
-        "故障の根本原因だけでなく、どう異常が伝わったかの「道筋」まで特定できる",
-        "AIが「たまたま正解を言い当てる」のを防ぎ、正しい論理で導いたかが判別できる",
-        "複雑に絡み合う複数のシステムを跨いだトラブルでも、根拠に基づいた分析が可能になる",
-        "理由が不明確な「AIの思い込み（ハルシネーション）」を抑制し、現場での信頼性を高める",
-        "推論プロセスをステップごとに評価することで、より高度な判断が必要な業務にAIを適応できる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.28070v1",
+      "headline": "JD Oxygen AI Item Center (Oxygen AIIC) V",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "故障診断AI",
-        "保守運用DX",
-        "信頼性向上"
+        "cs.AI"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "高",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28268v1",
+      "title": "Learning Topology-Aware Representations via Test-Time Adaptation for Anomaly Segmentation",
+      "abstract": "Test-time adaptation (TTA) has emerged as a promising paradigm for mitigating distribution shifts in deep models. However, existing TTA approaches for anomaly segmentation remain limited by their reliance on pixel-level heuristics, such as confidence thresholding or entropy minimisation, which fail to preserve structural consistency under noise and texture variation. Moreover, they typically treat anomaly maps as flat intensity fields, ignoring the higher-order spatial relationships that characterise complex defect geometries. We introduce TopoTTA (Topological Test-Time Adaptation), a novel framework that integrates persistent homology, a tool from topological data analysis, into the TTA pipeline to enforce geometric and structural coherence during adaptation. By applying multi-level cubical complex filtration to anomaly score maps, TopoTTA derives robust topological pseudo-labels that guide a lightweight test-time classifier, enhancing segmentation quality without retraining the backbone model. The approach avoids reliance on method-specific raw-score thresholding for mask binarisation, preserves connectivity, and generalises across both 2D and 3D modalities. Extensive experiments across six standard benchmarks (MVTec AD, VisA, Real-IAD, MVTec 3D-AD, AnomalyShapeNet, and MVTec LOCO) demonstrate an average 15% F1 improvement over state-of-the-art unsupervised anomaly detection and segmentation methods, with the largest gains on anomalies exhibiting complex geometric or structural variations. These findings suggest that integrating topological reasoning into test-time adaptation provides a principled route to structure-aware generalisation, bridging the gap between geometric learning and robust adaptation.",
+      "authors": [
+        "Ali Zia",
+        "Usman Ali",
+        "Abdul Rehman",
+        "Umer Ramzan",
+        "Kang Han",
+        "Muhammad Faheem",
+        "Shahnawaz Qureshi",
+        "Wei Xiang"
       ],
-      "application_ideas": [
-        "工場ラインの停止時に、単に「モーター故障」と答えるだけでなく、どの部品の劣化がどの電圧変動を招き停止に至ったかの「経緯」を可視化し、再発防止策を具体化する。",
-        "大規模ビル管理において、空調トラブルがどの配管やセンサーの異常から連鎖して発生したかをAIに特定させ、現場確認の手間を大幅に削減する。",
-        "インフラ点検で、表面の損傷が内部構造の劣化にどう波及しているかの因果関係をAIが説明し、補修の優先順位を客観的に判断する材料にする。"
+      "published": "2026-06-26T17:04:42+00:00",
+      "updated": "2026-06-26T17:04:42+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
       ],
-      "implementation_difficulty": "中",
+      "abs_url": "http://arxiv.org/abs/2606.28268v1",
+      "headline": "Learning Topology-Aware Representations ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
       "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 8.399999999999999,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.27672v1",
+      "title": "Are Time-Series Foundation Models Ready for E-Nose Data? An Empirical Assessment of Their Embeddings",
+      "abstract": "Inspired by advances in natural language processing and computer vision, \"time-series foundation models\" (TSFMs) have recently been introduced with the promise of strong generalization across diverse time-series tasks, including forecasting, classification, and anomaly detection, as well as across domains such as healthcare, climate science, and manufacturing. However, their utility for gas-sensing data remains largely unexplored. To address this gap, this paper systematically evaluates recent TSFMs on electronic nose (E-Nose) data. In particular, we investigate whether embeddings produced by representative TSFMs, including Chronos-2 and MOMENT, provide effective representations for gas identification and concentration prediction. Specifically, we show that fine-tuning is necessary to achieve satisfactory performance on E-Nose data, and fusing TSFM embeddings with representations learned by specialized predictive models can further improve the performance, suggesting both the potential and limitations of current TSFMs for gas-sensing applications.",
+      "authors": [
+        "Taeyeong Choi",
+        "Mohammed Kamruzzaman"
+      ],
+      "published": "2026-06-26T03:07:44+00:00",
+      "updated": "2026-06-26T03:07:44+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.27672v1",
+      "headline": "Are Time-Series Foundation Models Ready ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.0,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.27708v1",
+      "title": "ZooClaw-FashionSigLIP2: Distilled Fine-tuning for Robust Fashion Retrieval",
+      "abstract": "Adapting a foundation vision-language encoder to a specialized retrieval task creates a fundamental tradeoff: gains on the target distribution come at the cost of the foundation model's broad generalization, and fashion retrieval is a stringent instance of this problem. We present ZooClaw-FashionSigLIP2, a fashion-specialized SigLIP2-base model that resolves this tradeoff with a simple recipe -- full fine-tuning with knowledge distillation on curated in-domain data, followed by \\wiseft~\\citep{wortsman2022wiseft} weight interpolation with the base model -- and outperforms LoRA, larger backbones (up to 1B parameters), and external training data. Under fair evaluation, ZooClaw-FashionSigLIP2 outperforms all baselines on every benchmark in our suite. In addition, we release ZooClaw-Fashion, a new high-quality fashion retrieval benchmark, and a systematic quality analysis of widely-used benchmarks that exposes and mitigates structural biases in their public ground truth. We open-source the model weights and all evaluation artifacts to facilitate future research.",
+      "authors": [
+        "Siqiao Xue",
+        "Chunxue Xu"
+      ],
+      "published": "2026-06-26T04:13:32+00:00",
+      "updated": "2026-06-26T04:13:32+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.27708v1",
+      "headline": "ZooClaw-FashionSigLIP2: Distilled Fine-t",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -928,103 +855,46 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 5.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.27091v1",
-      "title": "Inherited Circuits, Learned Semantics: How Fine-Tuning Creates Evasion Vulnerabilities Invisible to Standard Evaluation",
-      "abstract": "LLMs fine-tuned for security classification are usually evaluated on held-out examples from the same distribution as their training data. We show that this can miss vulnerabilities introduced by fine-tuning itself: models can learn token-level indicator semantics that preserve canonical accuracy while failing under behavior-preserving transformations such as PowerShell alias substitution, command reconstruction, string construction, execution indirection, and case mutation. We study Foundation-Sec-8B-Instruct and its base model, Llama-3.1-8B-Instruct, on matched PowerShell classification cohorts. Causal interventions localize the classification circuit to a late-attention route inherited from Llama rather than created by fine-tuning. Fine-tuning concentrates and semantically specializes this inherited structure, improving baseline behavior while creating transformation-sensitive attack surfaces. A three-tier evasion benchmark finds Foundation-Sec misses on iwr substitution, Invoke-Expression reconstruction, and case-mutated Invoke-Expression/IEX variants that Llama does not share. We also derive a pre-deployment monitoring method: a linear probe at the classification boundary and an indicator-token sign test identify command families where canonical indicators change role after fine-tuning. These signals prioritize red-team variant generation using only canonical inputs, showing that security fine-tuning can improve task accuracy while expanding the evasion surface. These results caution against treating small task-specific fine-tunes as straightforwardly safer security classifiers: specialization can convert inherited model structure into brittle indicator rules that preserve held-out accuracy while expanding the evasion surface. Robust AI-enabled security will require specifying the full transformation space of the task and monitoring semantic drift through fine-tuning.",
+      "arxiv_id": "2606.27619v1",
+      "title": "DysLexLens: A Low-Resource LLM Framework for Analysing Dyslexic Learners Insights from Online Forums",
+      "abstract": "Dyslexic learners increasingly use artificial intelligence (AI) tools to support reading, writing, organisation, and study-related tasks. However, their lived experiences with these tools remain largely underexamined. This paper proposes DysLexLens, a low-resource LLM framework, designed to analyse dyslexic learners experience with AI through online forum discussions. DysLexLens is designed as an end-to-end, evidence-traceable architecture which transforms noisy social media posts into a dictionary-driven corpora, provides knowledge-graph (KG)-based question reasoning, generates verifiable query responses, and enables response evaluation through quantitative and human-grounded assessment. DysLexLens has four key features. First, it employs a dictionary-driven filtering method to construct a more focused Reddit corpus on dyslexia and AI, filtering out noisy and weakly related posts to improve the relevance of data collected from low-resource forum contexts. Second, it integrates LLM-assisted semantic analysis with KG-based query reasoning to uncover meaningful patterns. Third, it has quantitative evaluation metrics (RAGAS and Query Robustness) to measure LLM-generated response performance. Fourth, it provides structured qualitative validation guidelines for assessing response quality, with a specific focus on hallucination and evidence alignment. We demonstrate the effectiveness of DysLexLens using dyslexia-related Reddit forum data and 30 questions. The results show its potential generalisability to other low-resource forum data contexts. DysLexLens, sample data, questions and evaluation results are available at Github to support reproducibility.",
       "authors": [
-        "Ryan Fetterman"
+        "Dana Rezazadegan",
+        "Atie Kia",
+        "Phongpadid Nandavong",
+        "Dominique Carlon",
+        "Jeremy Nguyen",
+        "Abhik Banerjee",
+        "James Marshall",
+        "Anthony McCosker",
+        "Yong-Bin Kang"
       ],
-      "published": "2026-06-25T14:29:03+00:00",
-      "updated": "2026-06-25T14:29:03+00:00",
+      "published": "2026-06-26T00:32:32+00:00",
+      "updated": "2026-06-26T00:32:32+00:00",
       "categories": [
-        "cs.CR",
-        "cs.AI"
+        "cs.AI",
+        "cs.CL",
+        "cs.HC",
+        "cs.IR",
+        "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.27091v1",
-      "headline": "AIを特定業務に特化させると、巧妙な「すり抜け」に弱くなる",
-      "one_liner": "セキュリティ対策AIを特定のデータで追加学習（ファインチューニング）させると、表面的な正解率は向上する一方で、文字の書き換えなどの単純な偽装（エバジョン攻撃）を見逃しやすくなるという「AIの死角」を解明しました。",
-      "key_points": [
-        "通常の性能テストでは100点に近いAIでも、実は特定のキーワードに依存しているだけの「脆い判断」になっている可能性があると分かった。",
-        "大文字・小文字の変更や、コマンドの置き換えといった「中身は同じだが見た目が違う」変化に、AIが騙されやすくなるリスクを特定できる。",
-        "AIが元々持っていた「広い視野（汎用的な判断力）」が、追加学習によって「偏った思い込み」に上書きされてしまうメカニズムが判明した。",
-        "導入前にAIの「判断のクセ」を分析することで、どのような偽装に弱いかを事前に予測するモニタリング手法が開発された。",
-        "「正解率」という数字だけでは測れない、実務現場でのAIの信頼性や安全性を評価する新しい基準が示された。"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.27619v1",
+      "headline": "DysLexLens: A Low-Resource LLM Framework",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "セキュリティAI",
-        "モデル脆弱性診断",
-        "追加学習の最適化"
+        "cs.AI",
+        "cs.CL",
+        "cs.HC"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "図面チェックAIにおいて、特定の図記号だけでなく「線の太さの変更」や「微妙な配置のズレ」で隠されたミスをAIが見逃さないか、脆弱性テストとして応用する。",
-        "工場検査AIで、製品の汚れを「意図的に加工して隠蔽したパターン」を生成し、AIが特定の汚れ形状だけに反応する「思考の偏り」を持っていないかを事前に診断する。",
-        "インフラ点検AIで、ひび割れなどの重要項目を「背景と同化させるようなノイズ」を加えても正しく検知できるか判定し、現場での見落としリスクを数値化する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 14.0,
-      "domain_relevance": {
-        "drawing_ai": "高",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 2.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.27027v1",
-      "title": "ShareLock: A Stealthy Multi-Tool Threshold Poisoning Attack Against MCP",
-      "abstract": "With the rapid evolution of LLM-driven agents, Model Context Protocol (MCP), an open protocol bridging LLMs with external tools, has quickly become foundational to modern agent ecosystems. However, the expanding adoption of MCP has also introduced novel security concerns such as Tool Poisoning Attack (TPA), which exploit LLM-server interactions to inject malicious prompts. Existing poisoning schemes typically adopt a monolithic plaintext embedding paradigm, which fails to withstand manual inspection or automated detectors. Current research still lacks a systematic analysis on multi-tool poisoning, where multiple tools can be exploited cooperatively to disperse detection risk. In this paper, we introduce ShareLock, a multi-tool threshold poisoning framework that utilizes Shamir's threshold scheme to ensure exceptional stealth and fault tolerance. ShareLock distributes the malicious instruction as benign-looking secret shares across multiple tool descriptions, achieving both information-theoretic secrecy and attack robustness against moderate auditing. After a covert reconstruction trigger is planted during server update, the aggregated shares reconstruct the hidden instruction, resulting in critical breaches of system assets or private data. To evaluate the realistic threat of ShareLock, we constructed a comprehensive benchmark encompassing four multi-tool scenarios and conducted extensive experiments across mainstream LLMs on two distinct MCP clients. Our results demonstrate that ShareLock significantly outperforms existing single-tool poisoning strategies in tool description-based detection while maintaining an average attack success rate exceeding 90%.",
-      "authors": [
-        "Liwei Liu",
-        "Tianzhu Han",
-        "Zijian Liu",
-        "Zishu Dong",
-        "Na Ruan"
-      ],
-      "published": "2026-06-25T13:35:28+00:00",
-      "updated": "2026-06-25T13:35:28+00:00",
-      "categories": [
-        "cs.CR",
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.27027v1",
-      "headline": "AIへの指示を細切れにして隠し、検知をすり抜けて操る新手法",
-      "one_liner": "複数の外部ツールを連携させるAI（MCP対応AI）に対し、攻撃命令を「バラバラに分解して」各ツールの説明文に潜込ませることで、人間の目や検知システムを回避しながらAIを不正操作する手法が開発されました。",
-      "key_points": [
-        "「一見すると無害なツール」を複数組み合わせた瞬間に、隠された攻撃命令が完成しAIが乗っ取られる。",
-        "攻撃コードが断片化されているため、従来のセキュリティソフトや人間の目視確認では異常を見抜けない。",
-        "AIに外部の機密データを盗ませたり、システムの安全設定を解除させたりする「隠しコマンド」が埋め込まれるリスクがある。",
-        "主要な最新AIモデルにおいて、90%以上の高い確率でこの隠密攻撃が成功することが実証された。",
-        "AIエージェントが便利になり複数のツールを使いこなすほど、この「分散型」の攻撃に対して脆弱になる可能性がある。"
-      ],
-      "tags": [
-        "AIセキュリティ",
-        "AIエージェント",
-        "システム脆弱性"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "【BIM/CIM連携】外部の積算ソフトや工程管理ツールをAIで自動連携させる際、悪意あるプラグインが複数混入して機密情報を流出させないか、本手法を用いてシステムの堅牢性をテストする。",
-        "【工場品質検査】AI外観検査システムに連携する複数のカメラやセンサーの設定ファイルに、特定条件で「不良品を合格と見なす」コードを分散して隠し、それを見破る「多重チェック機能」の開発に活かす。",
-        "【インフラ点検】橋梁やトンネルの点検データを解析するAIにおいて、暗号化キーを本手法のように「複数の点検端末に分散して保持」させ、全てのデータが揃わない限り機密情報が見られないようにするセキュリティ強化に転用する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 14.0,
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -1033,163 +903,161 @@
         "ai_knowhow": "高"
       },
       "practicality_score": 10.0,
-      "first_seen": "2026-06-26"
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.26800v1",
-      "title": "SSI-Policy: Learning Structured Scene Interfaces for Vision-Language Robotic Manipulation",
-      "abstract": "Real-world robotic manipulation demands spatial grounding, task-aware reasoning, and precise control. Learning such capabilities becomes particularly challenging in the low-data regime. Prior methods often trade off scalable task-level reasoning and explicit physical structure: video-based approaches can drift geometrically over long horizons, 3D approaches often require depth sensing, and many flow/trajectory interfaces emphasize motion without an explicit RGB-only geometric representation. We introduce SSI-Policy, a modular framework built around a Structured Scene Interface (SSI) -- a unified, RGB-only intermediate representation that jointly encodes monocular depth features, language-grounded object layouts, and instruction-conditioned 2D motion trajectories. Critically, SSI is robot-agnostic and trainable from action-free video, decoupling perception from control so that the downstream policy can learn from few demonstrations. On the LIBERO benchmark with only 10 demonstrations per task, SSI-Policy improves over the strongest prior method by nearly 15\\% and remains competitive with 50-demo methods that leverage large-scale external pretraining. Ablations show that geometric and motion cues provide complementary benefits within the shared interface. We further validate on 13 real-world tasks spanning spatial reasoning, cross-embodiment transfer, and contact-rich manipulation.",
+      "arxiv_id": "2606.27634v1",
+      "title": "Continual Learning for Sequential Personalization of Small Language Models: A Stability Monitoring Analysis",
+      "abstract": "Small Language Models (SLMs) are increasingly being considered for deployment on edge devices such as laptops, enabling private, low-latency, and locally personalized applications. However, personalization requires models to adapt over time to evolving user- or task-specific data, placing them in a continual learning setting. This creates the risk of catastrophic forgetting, where learning new information degrades performance on previously learned tasks or broader model capabilities. Recent benchmarks such as TRACE have shown that continual fine-tuning can significantly degrade the general abilities of aligned large language models. In this work, we present a study for sequential LoRA personalization of SLMs. We save model checkpoints after each adaptation stage and evaluate them on current tasks, previously seen tasks, and a fixed reference set. This checkpoint-level protocol enables us to monitor task performance, forgetting, and reference set drift over time. We show that lightweight reference set distributional diagnostics can reveal model-specific instability patterns during sequential LoRA personalization of SLMs, including cases where task-level metrics alone hide harmful adaptation. We hope this can highlight new research avenues for monitoring stability of SLMs in a continual learning setting.",
       "authors": [
-        "Kaijun Wang",
-        "Zikai Ouyang",
-        "Xuping Wu",
-        "Jinyi Hong",
-        "Wei Pan",
-        "Haibo Lu",
-        "Jia Pan",
-        "Wei Zhang",
-        "Linfang Zheng"
+        "Thomas S. Paula",
+        "Lucas S. Kupssinskü",
+        "Rodrigo C. Barros"
       ],
-      "published": "2026-06-25T09:38:05+00:00",
-      "updated": "2026-06-25T09:38:05+00:00",
+      "published": "2026-06-26T01:16:03+00:00",
+      "updated": "2026-06-26T01:16:03+00:00",
       "categories": [
-        "cs.RO"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26800v1",
-      "headline": "たった10回の手本動画で、ロボットが複雑な作業を覚える",
-      "one_liner": "普通のカメラ1台の映像（RGB）から、物の配置・奥行き・動かし方をAIが自動で整理して理解する仕組みです。これにより、膨大な学習データ（自社データでの追加学習）がなくても、AIが言葉の指示通りに物理的な作業をこなせるようになります。",
-      "key_points": [
-        "奥行きセンサーなどの特殊な機材が不要で、安価な標準カメラ1台だけで高精度な空間把握ができる",
-        "ロボットを実際に動かした記録だけでなく、人が作業しているだけの「普通の動画」からも知識を吸収できる",
-        "従来は50回以上の練習が必要だった作業を、わずか10回の手本を見せるだけで習得できる",
-        "「見る力」と「動かす力」を分離したことで、一度学習した「現場の状況理解」を別のロボットにも転用できる",
-        "言葉による指示（「右の箱を避けて置いて」など）と、実際の空間的な動きを直感的に結びつけられる"
-      ],
-      "tags": [
-        "ロボット操作AI",
-        "少量データ学習",
-        "画像認識・解析"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "工場の多品種少量生産ラインにおいて、製品が変わるたびに行っていたAIの学習を「10回の実演」で完了させ、段取り替えコストを激減させる",
-        "インフラ点検ドローンにおいて、初見の構造物でも映像から「次にどこをどう確認すべきか」の軌道をAIが自律生成し、操縦の自動化を支援する",
-        "建設現場の資材整理において、カメラ映像から障害物と目標地点を即座に把握し、重機やロボットが「資材を傷つけずに運ぶ」動作を最小限の指示で実現する"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 14.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 8.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.27069v1",
-      "title": "Towards Explainable Adjudicative Variance: Quantifying Judicial Discretion via Gated Multi-Task Learning",
-      "abstract": "Legal outcome prediction must disentangle objective case facts from adjudicative context. Merit-based rulings rely on factual evidence while technical disposals may hinge on judicial discretion. We propose a Judge-Aware Gated Multi-Task Learning architecture that explicitly models this distinction. We introduce a fine-grained outcome taxonomy to supervise the encoder, enforcing a structural regularization that disentangles distinct semantic pathways. This granular legal curriculum enables our Gated Fusion mechanism to dynamically modulate reliance on judge identity. We evaluate our approach on 13,937 UK Employment Tribunal decisions. We benchmark our design against supervised fine-tuning (SFT) of a Gemma-4 26B-A4B backbone, in which judge identity and the taxonomy are injected as prompt tokens or autoregressive output targets. The two contextual signals compose only weakly when forced through a single autoregressive channel. In contrast, coupling a LoRA-adapted Gemma-4 encoder with our gated architecture defines a new state of the art on this benchmark while requiring an order of magnitude fewer trainable parameters than the generative SFT baselines, with gains concentrated on the most ambiguous and rarest outcome classes. Beyond accuracy, the architecture is interpretable; learned judge embeddings and calibration profiles localize the cases where adjudicative context drives the prediction. These results indicate that, for identity-conditioned classification of legal outcomes, the choice of conditioning interface dominates scale: differentiable structured composition yields more accurate, more parameter-efficient models than prompt-based composition over a substantially larger backbone.",
-      "authors": [
-        "Stanisław Sójka",
-        "Felix Steffek",
-        "Matthias Grabmair"
-      ],
-      "published": "2026-06-25T14:14:27+00:00",
-      "updated": "2026-06-25T14:14:27+00:00",
-      "categories": [
-        "cs.CL"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.27069v1",
-      "headline": "裁判官の「判断のクセ」を加味し、法的結論を正確に予測する",
-      "one_liner": "事案の「客観的な事実」と「判断者の個人的な傾向（裁判官の裁量）」を切り分けて分析することで、法的な結論を高い精度で予測する技術です。AIが「事実を重視すべきか、判断者の個性を考慮すべきか」を自動で切り替える仕組み（ゲート付きマルチタスク学習）により、複雑なケースでも納得感のある予測を可能にします。",
-      "key_points": [
-        "証拠などの「動かぬ事実」と、判断者特有の「判断基準の偏り」を別々に処理して統合できる",
-        "「この判断者が担当ならどうなるか」という属人的な要素を数値化（埋め込み）して分析に反映できる",
-        "判定が難しいグレーゾーンの案件や、滅多に起きない特殊なケースほど従来手法より高い精度を発揮する",
-        "巨大なAIモデルをそのまま使うより、特定の判断ルールを教え込む（構造化された学習）方が効率的で賢くなる",
-        "予測の根拠として「事実の影響」と「判断者の影響」のどちらが強かったかが見える化（説明可能性）される"
-      ],
-      "tags": [
-        "文書解析AI",
-        "意思決定支援",
-        "コンプライアンス"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "【工場検査のバラツキ是正】熟練工ごとに異なる「良品・不良品のボーダーライン（判断のクセ）」をAIが学習。検査員ごとの偏りを補正し、工場全体で均一な品質判定を実現する。",
-        "【審査機関別の図面指摘予測】自治体や審査機関によって微妙に異なる「建築確認の指摘傾向」を過去データから分析。申請前に「この機関ならここを指摘されやすい」というリスクを可視化し、手戻りを防ぐ。",
-        "【インフラ点検の判定支援】点検員によって分かれがちな「ひび割れの緊急度判定」を、過去の診断履歴と照らして分析。個人の主観に左右されない、より客観的なインフラ健全度スコアリングを算出する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 13.7,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 1.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.27330v1",
-      "title": "Empowering GUI Agents via Autonomous Experience Exploration and Hindsight Experience Utilization for Task Planning",
-      "abstract": "Multimodal web agents can assist humans in operating repetitive GUI tasks, where effective task planning is essential for decomposing complex tasks into executable actions. While small open source MLLMs are cost efficient and privacy preserving compared with commercial large models, they suffer from weak planning and limited cross website generalization. To address these limitations, we introduce the planning experience exploration and utilization (PEEU) method, which autonomously explores environments to discover experiences and utilizes hindsight experience to synthesize strictly aligned, high level training data. To quantitatively analyze the generalization behaviors driving this performance, we propose the task decomposition hierarchical analysis framework (TDHAF) to systematically study compositional generalization across three task granularities: low, middle and high levels. Our analysis reveals that mastering low level atomic skills does not guarantee high level planning competence, while high level task training yields stronger OOD generalization. Experiments on real world benchmarks demonstrate PEEU's superior effectiveness: our 7B model achieves 30.6% accuracy, outperforming the much larger Qwen2.5-VL-32B model. These demonstrate constructing hindsight high level tasks and leveraging experiences is crucial for OOD planning abilities of small MLLMs.",
-      "authors": [
-        "Tianyi Men",
-        "Zhuoran Jin",
-        "Pengfei Cao",
-        "Yubo Chen",
-        "Kang Liu",
-        "Jun Zhao"
-      ],
-      "published": "2026-06-25T17:44:48+00:00",
-      "updated": "2026-06-25T17:44:48+00:00",
-      "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.CV",
         "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.27330v1",
-      "headline": "小さなAIがPC操作を自ら学び、大規模AI超えの計画力を備える",
-      "one_liner": "AIがWebサイトやアプリを自律的に試行錯誤して操作方法を学び、「後知恵（実行後の振り返り）」をデータ化して再利用することで、小規模なAIでも複雑な事務作業の段取りを正確に組めるようになります。",
-      "key_points": [
-        "AIが自分でアプリを触って学習するため、人間が膨大な操作手順を教え込む手間が大幅に減ります。",
-        "操作に失敗しても「こうすれば良かった」と後から振り返る仕組みにより、質の高い学習データを自動で生成できます。",
-        "70億パラメータという軽量なAIで、その4倍以上のサイズ（320億）の最新AIを上回る操作精度を達成しました。",
-        "一度も見たことがない新しいWebサイトや複雑な画面構成に対しても、迷わずに操作を完結させる適応力があります。",
-        "「クリック」などの単純動作だけでなく、「予約を完了する」といった大きな目標に向けた論理的な手順書をAIが自ら作成できます。"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.27634v1",
+      "headline": "Continual Learning for Sequential Person",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "業務自動化AI",
-        "操作代行エージェント",
-        "RPA高度化"
+        "cs.LG"
       ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28215v1",
+      "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+      "abstract": "Extracting dynamic 4D object interactions from massive, in-the-wild monocular videos offers a highly efficient data collection pathway for scaling Embodied AI and training VLAs. However, existing monocular 4D reconstruction methods primarily focus on isolated objects, often failing under the severe occlusions and complex dynamics inherent in multi-object interactions. To bridge this gap, we propose HAT-4D, the first agentic framework designed to reconstruct the 3D geometry, temporal dynamics, and physical interactions of multiple objects from a single video. By integrating VLMs with a multi-level human-in-the-loop feedback mechanism, HAT-4D efficiently resolves depth ambiguities and interaction-induced occlusions during 3D generation and 4D propagation, yielding physically plausible assets without relying on expensive multicamera rigs. As a scalable data engine, HAT-4D facilitates the creation of MVOIK-4D, an open-world benchmark for monocular 4D interaction reconstruction, accompanied by a novel multi-dimensional evaluation protocol focused on physical plausibility and temporal consistency. Extensive experiments demonstrate that HAT-4D achieves SOTA performance on most evaluation metrics, while maintaining competitive semantic alignment. Ablation studies show that introducing a small amount of human feedback improves interaction reconstruction. Moreover, the data produced by HAT-4D effectively improves baseline performance when used for fine-tuning. Our data and code are available at https://lijiaxin0111.github.io/HAT4D/",
+      "authors": [
+        "Jiaxin Li",
+        "Yuxiang Wu",
+        "Zhenkai Zhang",
+        "Xinrui Shi",
+        "Haoyuan Wang",
+        "Yichen Zhao",
+        "Su Linxiang",
+        "Chenyang Yu",
+        "Mingyu Zhang",
+        "Yifan Ding",
+        "Boran Wen",
+        "Li Zhang",
+        "Ruiyang Liu",
+        "Yong-Lu Li"
       ],
-      "application_ideas": [
-        "BIMソフトやCADの複雑なメニュー操作をAIに自習させ、「この修正指示を反映して」と伝えるだけでAIがツールを操作して修正を完了させる。",
-        "点検写真や報告書を、社内の古い基幹システム（GUIが複雑なもの）にログインして適切な項目へ自動で入力・アップロードする代行ツール。",
-        "複数のWebサイトや社内ツールをまたいで、現場ごとに異なる資材の在庫確認と発注処理を、人間と同じように画面を見ながら自動で実行する。"
+      "published": "2026-06-26T16:05:58+00:00",
+      "updated": "2026-06-26T16:05:58+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
       ],
-      "implementation_difficulty": "中",
-      "relevance_score": 13.5,
+      "abs_url": "http://arxiv.org/abs/2606.28215v1",
+      "headline": "HAT-4D: Lifting Monocular Video for 4D M",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.GR"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 8.399999999999999,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28134v1",
+      "title": "Beyond Sparse Supervision: Diffusion-Guided Learning for Few-Shot Graph Fraud Detection",
+      "abstract": "Graph-based fraud detection is essential for safeguarding large-scale transaction systems, where undetected anomalies may lead to substantial financial losses and security risks. Real-world fraud graphs pose two coupled challenges: sparse and imbalanced supervision, where verified fraudulent labels are scarce and heavily skewed toward benign accounts, and representation dilution, where spatial message passing may oversmooth camouflaged anomalies while spectral filters may suppress fraud-relevant mid- and high-frequency irregularities. To address these challenges, we propose ADC-GNN, short for Attention-guided Diffusion-Contrastive Graph Neural Network, a unified framework that combines diffusion-guided feature augmentation, contrastive representation learning, and multi-hop spectral attention for few-shot graph fraud detection. The diffusion component is formulated as a feature-space denoising augmentation mechanism rather than a full topology-generative graph diffusion model: it constructs noise-perturbed node-feature views under a cosine schedule and uses contrastive learning to stabilize node representations across perturbations. The spectral attention module further adaptively emphasizes fraud-relevant hop-level and relation-level cues. We evaluate ADC-GNN primarily on three public benchmarks and additionally report a proprietary real-world telecom transaction dataset with approximately 60,000 records as a private case study. Under the 1% training setting, ADC-GNN achieves consistent improvements over original graph fraud baselines and four protocol-consistent recent graph anomaly/fraud baselines on the public benchmarks. Additional analyses on split stability, training ratios, oversampling alternatives, module-level ablations, diffusion schedules, and runtime and memory-consumption comparisons further characterize the effective operating regime of ADC-GNN.",
+      "authors": [
+        "Liming Liu",
+        "Chao Hu",
+        "Mingfei Lu",
+        "Yiwei Ge",
+        "Xingle Li",
+        "Heyuan Shi"
+      ],
+      "published": "2026-06-26T14:34:28+00:00",
+      "updated": "2026-06-26T14:34:28+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.28134v1",
+      "headline": "Beyond Sparse Supervision: Diffusion-Gui",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-06-29"
+    },
+    {
+      "arxiv_id": "2606.28089v1",
+      "title": "RPM-Distill: Physiology-guided Adaptive Cross-modal Distillation for Robust Remote Physiological Measurement",
+      "abstract": "Video-based remote physiological measurement (RPM) is highly accessible but remains fragile under varying illumination, skin tones, and motion. Radio frequency (RF) radar is largely invariant to illumination and appearance, providing complementary cardio-respiratory micro-motion cues; however, requiring radar at inference is often impractical due to its limited ubiquity and deployment overhead. We propose RPM-Distill, a physiology-guided cross-modal distillation framework that leverages synchronized radar only during training while retaining video-only inference. Our key observation is that although RGB and RF waveforms differ in sensing physics and time-domain morphology, they share similar latent periodic rhythm in the frequency domain. We thus distill physiology-structured spectral evidence to improve robustness, via losses that (i) anchor the fundamental peak, (ii) match the off-peak background distribution, and (iii) preserve spectral morphology and sharpness. To avoid negative transfer under sample-level teacher quality and alignment uncertainty, a spectral policy network predicts sample-level distillation gates and component weights from the student--teacher spectral relation map, learned with a meta bilevel objective on a small labeled validation split. Through extensive experiments in challenging conditions and cross-dataset settings, RPM-Distill brings 81\\% MAE and 21\\% correlation improvement over unimodal baselines. Code is at https://github.com/WJULYW/RPM-Distill.",
+      "authors": [
+        "Jiyao Wang",
+        "Qingyong Hu",
+        "Duoxun Tang",
+        "Xiao Yang",
+        "Kaishun Wu",
+        "Jiangbo Yu"
+      ],
+      "published": "2026-06-26T13:50:47+00:00",
+      "updated": "2026-06-26T13:50:47+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2606.28089v1",
+      "headline": "RPM-Distill: Physiology-guided Adaptive ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -1198,104 +1066,37 @@
         "ai_knowhow": "高"
       },
       "practicality_score": 7.0,
-      "first_seen": "2026-06-26"
+      "first_seen": "2026-06-29"
     },
     {
-      "arxiv_id": "2606.27023v1",
-      "title": "Just how sure are you? Improving Verbalized Uncertainty Calibration in Medical VQA",
-      "abstract": "Multimodal large language models (MLLMs) applied to Medical Visual Question Answering (VQA) tend to produce overconfident outputs regardless of actual correctness, and existing verbalized confidence calibration methods, developed primarily for text only LLMs, do not account for the multimodal nature of medical image understanding.\n  This work proposes a training based framework that finetunes MLLMs to improve their calibration using a composite loss function combining a Brier style calibration term, an anchor regularizer that prevents confidence collapse toward extreme values, a contrastive image text alignment term, and a KL based model stabilization term. The alignment signal is derived from a $2 \\times 2$ factorial perturbation design that crosses image presence with text integrity, probing the reliance of the model on visual modality input versus language priors. Finally, a top K KL divergence regularizer is used to protect the answering ability of the model during finetuning.\n  Across three Medical VQA benchmarks and two architectures (MedGemma 4B IT and Qwen2 VL 7B Instruct), our method reduces calibration error by 60% or more, and improves discrimination by 26% or more, while preserving predictive accuracy. On average across benchmarks, the technique outperforms prompting based, sampling based, and training based approaches, and ablation experiments confirm that each component of the loss function is indeed necessary for improving the calibration. All code for the experiments is publicly available.",
+      "arxiv_id": "2606.27785v1",
+      "title": "Output-Space Allocation Costs for Calibration-Guided LLM Compression: An Empirical Study",
+      "abstract": "Training-free compression methods for large language models (LLMs) often use calibration data to guide compression decisions. ROCKET, a recent method combining sparse-dictionary factorization with multi-choice knapsack problem (MCKP) allocation, derives its per-layer factorization from an output reconstruction objective but uses weight-space Frobenius error as the MCKP allocation cost. We investigate whether aligning the allocation cost with the output-space objective improves compressed model fidelity. On Qwen3-8B at 50\\% compression, our ROCKET-ActCost achieves +0.8 percentage points higher average accuracy across 8 zero-shot benchmarks (53.1\\% vs 52.3\\%), but increases WikiText perplexity by 16\\% (61.46 vs 52.98). This accuracy-perplexity tradeoff reveals that different allocation objectives favor different downstream metrics. The high correlation ($>$0.99) between weight-space and output-space errors limits allocation divergence, explaining the modest effect size. On Llama-3.2-1B at 20\\% compression, the two methods produce near-identical results (53.3\\% vs 53.5\\% accuracy, 14.45 vs 14.66 PPL), suggesting that the effect of the cost function is minor at lower compression ratios.",
       "authors": [
-        "Eren Senoglu",
-        "Federico Toschi",
-        "Nicolo Brunello",
-        "Andrea Sassella",
-        "Mark James Carman"
+        "Qiong Tang",
+        "Xiangkun Hu",
+        "Xiangyang Liu",
+        "Yiran Chen",
+        "Yunfan Shao"
       ],
-      "published": "2026-06-25T13:33:58+00:00",
-      "updated": "2026-06-25T13:33:58+00:00",
+      "published": "2026-06-26T07:15:17+00:00",
+      "updated": "2026-06-26T07:15:17+00:00",
       "categories": [
-        "cs.LG",
         "cs.CL",
-        "cs.CV"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.27023v1",
-      "headline": "AIが回答の「自信のなさ」を正直に伝え、判断ミスを防ぐ",
-      "one_liner": "画像とテキストを同時に扱うAIが、自分の回答がどの程度正しいかを正確に自己評価（信頼度の調整）できるようにし、根拠のない「自信満々な間違い」を大幅に減らす学習技術です。",
-      "key_points": [
-        "AIの「根拠のない自信」を抑え、分からない時に「自信がない」と正直に言えるようになる",
-        "画像と質問文のどちらをどれだけ重視して回答したかをAI自身が分析し、判断の根拠を明確にする",
-        "回答の正解率（精度）を落とすことなく、AIが提示する「信頼度スコア」の正確さだけを向上できる",
-        "医療診断のような「AIの判断を人間が最終確認する」シーンで、確認すべき優先順位が明確になる",
-        "特殊な学習用損失関数（計算式）を導入するだけで、既存のAIモデルを「謙虚で誠実」な性格に作り替えられる"
-      ],
-      "tags": [
-        "医療AI",
-        "画像認識",
-        "信頼性向上"
-      ],
-      "who_should_read": [
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "橋梁や道路のインフラ点検において、AIが検知した損傷に対して「80%の確信で要補修」か「20%の確信（汚れの可能性あり）」かを明示することで、技術者の再確認作業を効率化する。",
-        "工場の外観検査で、AIが「見たことのない異常」を検知した際に低い信頼度を出すようにし、AIの思い込み（でっち上げ）による見逃しや誤判定を未然に防ぐ。",
-        "複雑な建築図面の照査において、AIが法規違反の可能性を指摘する際、その指摘の「自信度」を併記することで、設計者がAIの誤指摘に振り回される時間を削減し、重要な問題に集中できるようにする。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 13.5,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 3.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26857v1",
-      "title": "LCAi: Life Cycle Assessment with big data fusion and retrieval-augmented generation-assisted interpretation",
-      "abstract": "The interpretation phase of life cycle assessment often lacks structured mechanisms for translating quantified improvement opportunities addressing environmental hotspots into actionable strategic pathways under technological, social, and policy uncertainty. To overcome this limitation, this study introduces a perspective-conditioned retrieval-augmented generation framework for LCA interpretation, where a multi-perspective retrieval and controlled synthesis is incorporated in the artificial intelligence (AI)-assisted LCA. To operationalise large language models in LCA interpretation, a perspective fusion RAG architecture was developed, covering academic, industry, public discourse, and European union (EU) funding datasets. Our approach comprises three steps: (1) a scenario anchor defining system boundaries and decarbonization targets, (2) a set of perspective-specific micro-queries with constrained retrieval, and (3) a neutral synthesis step integrating only ledger-stored outputs without further retrieval. The framework is demonstrated through a hydrogen-enabled diesel reduction use case in an Italian apple production facility using GPT-5 nano as the reasoning model. Overall, the structured retrieval and constrained synthesis are designed to mitigate the risk of hallucination while preserving cross-domain diversity. The approach presented can support more disciplined translation of impact results into strategic pathways and opens up new avenues for the use of advanced AI tools in LCA studies, particularly those focused on technologies that could be deployed at scale. This proof-of-concept demonstrates how AI-assisted, evidence-grounded interpretation can support implementation-oriented decision-making beyond conventional LCA studies.",
-      "authors": [
-        "Georgios Tsironis",
-        "Juan D. Medrano-Garcia",
-        "Gonzalo Guillen-Gosalbez"
-      ],
-      "published": "2026-06-25T10:41:48+00:00",
-      "updated": "2026-06-25T10:41:48+00:00",
-      "categories": [
         "cs.AI"
       ],
-      "abs_url": "http://arxiv.org/abs/2606.26857v1",
-      "headline": "脱炭素の分析結果から、具体的な経営戦略をAIが提案可能になる",
-      "one_liner": "環境負荷の評価（LCA：製品の製造から廃棄までの影響調査）で得られた膨大な数値を、AIが最新の論文や業界動向を調べた上で、具体的な「次の一手」として提案します。外部の確かな情報だけを根拠にする仕組み（RAG：検索拡張生成）により、AIの思い込み（ハルシネーション）を抑えつつ実用的な改善案を作れます。",
-      "key_points": [
-        "「CO2排出量が多い」という事実の提示だけでなく、具体的な削減ルートまでAIが提示できる",
-        "学術論文、業界ニュース、公的補助金データなど、多角的なデータに基づいた現実的な戦略が立てられる",
-        "根拠となるデータのみを抽出して回答を組み立てるため、AIの「でっち上げ」による誤判断を防げる",
-        "「ディーゼル燃料を水素に置き換える」といった具体的なシナリオを設定し、その実現性を深掘りできる",
-        "専門知識が必要だった環境データの解釈をAIが補助し、経営層が即座に意思決定できる形式へ翻訳できる"
-      ],
+      "abs_url": "http://arxiv.org/abs/2606.27785v1",
+      "headline": "Output-Space Allocation Costs for Calibr",
+      "one_liner": "",
+      "key_points": [],
       "tags": [
-        "脱炭素・LCA支援",
-        "意思決定最適化",
-        "農業AI"
+        "cs.CL",
+        "cs.AI"
       ],
-      "who_should_read": [
-        "PM/プロダクトマネージャー",
-        "AI/MLエンジニア",
-        "研究者"
-      ],
-      "application_ideas": [
-        "建設BIMとの連携：設計段階で算出された資材のCO2排出量に対し、AIが地域の最新規制や補助金情報を検索し、最もコスト・環境バランスの良い代替工法を提案する。",
-        "工場設備の更新計画：生産ラインのエネルギー消費データから、最新の省エネ技術や他社の導入事例をAIが収集・分析し、投資回収期間まで含めた設備更新ロードマップを自動作成する。",
-        "インフラ点検・修繕：橋梁などの点検結果（劣化状況）に基づき、最新の材料工学論文からその現場に最適な低環境負荷・高耐久な補修材をAIが推奨する。"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 13.5,
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.2,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -1303,64 +1104,8 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 10.0,
-      "first_seen": "2026-06-26"
-    },
-    {
-      "arxiv_id": "2606.26850v1",
-      "title": "Appearance-Preserving Refinement of Generated 3D Assets for Monochromatic Fabrication",
-      "abstract": "Recent advances in 3D mesh generation have enabled the creation of visually realistic assets. However, much of their visual fidelity is encoded in textures rather than geometry. When such assets are fabricated using monochromatic materials, texture information is largely lost, causing visually important details to disappear even when the original geometry is faithfully preserved. A key challenge is that the geometric perturbations required to recover texture-dependent appearance cues often introduce sharp local features and high-frequency surface structures, which may increase stress concentration and fabrication risk. In this paper, we present GenMF, an appearance-oriented geometry refinement framework for monochromatic fabrication. GenMF transforms texture-dependent visual cues into geometry-induced shading effects and formulates geometry refinement as a balance between appearance preservation and fabrication-oriented robustness. To discourage structurally and narrow the gap between simulation and physical manufacturing, we further introduce a differentiable stress-aware regularization based on a learned thermal-stress predictor. Experimental results demonstrate that GenMF significantly improves appearance preservation under monochromatic rendering while reducing stress concentration under a consistent thermo-mechanical simulation setting. Physical 3D printing examples further show that the refined geometries preserve more recognizable visual details while remaining suitable for fabrication. These results suggest that appearance-aware geometry refinement provides an effective bridge between generated 3D assets and fabrication-ready monochromatic objects.",
-      "authors": [
-        "Chentao Shen",
-        "Chen Jia",
-        "Mingjie Huang",
-        "Zhuang Zhang",
-        "Haisen Zhao",
-        "Xiangru Huang"
-      ],
-      "published": "2026-06-25T10:36:00+00:00",
-      "updated": "2026-06-25T10:36:00+00:00",
-      "categories": [
-        "cs.GR",
-        "cs.CV"
-      ],
-      "abs_url": "http://arxiv.org/abs/2606.26850v1",
-      "headline": "3Dプリントの質感を変えずに、壊れにくい形状へ自動修正する",
-      "one_liner": "AIが作った3Dモデルの色や模様を表面の凹凸（形状）に変換することで、一色の3Dプリントでも詳細を再現し、かつ壊れにくい形へ自動で磨き上げる（リファインメント）技術です。",
-      "key_points": [
-        "色の情報を『影』を作る凹凸に変換し、単色プリントでも模様をはっきり表現できる",
-        "見た目の美しさと、物理的な壊れにくさ（応力集中）をAIが同時に最適化する",
-        "3Dプリント時の熱による歪みや破損リスクを、AIが事前に予測して回避する",
-        "生成AIで作った『見た目重視』のモデルを、そのまま製造可能なデータへ変換できる",
-        "試作（プロトタイピング）における印刷の失敗や、強度不足による手戻りを減らせる"
-      ],
-      "tags": [
-        "3Dプリント",
-        "製造最適化",
-        "生成AI"
-      ],
-      "who_should_read": [
-        "BIM/CIMエンジニア",
-        "AI/MLエンジニア",
-        "PM/プロダクトマネージャー",
-        "研究者"
-      ],
-      "application_ideas": [
-        "建築コンペの模型製作で、外壁の質感（タイルの目地など）を一色の樹脂で再現しつつ、細い支柱の強度を自動で高めて印刷する",
-        "工場部品の試作において、表面の識別コードや刻印を『形状』として埋め込み、かつ応力が集中して割れやすい箇所を自動修正する",
-        "インフラ点検で記録したコンクリートのひび割れデータを、視覚的・触覚的に強調された立体模型として出力し、補修計画の検討用ツールにする"
-      ],
-      "implementation_difficulty": "中",
-      "relevance_score": 13.3,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "高",
-        "manufacturing": "高",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 5.0,
-      "first_seen": "2026-06-26"
+      "practicality_score": 2.8,
+      "first_seen": "2026-06-29"
     }
   ]
 }
