@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-07-28T20:20:20.901208+00:00",
-  "source_last_updated": "2026-07-28T20:20:14.981868+00:00",
-  "count": 3600,
+  "generated_at": "2026-07-29T20:16:03.086305+00:00",
+  "source_last_updated": "2026-07-29T20:15:56.323847+00:00",
+  "count": 3625,
   "papers": [
     {
       "arxiv_id": "2512.10674v1",
@@ -193497,6 +193497,961 @@
       },
       "practicality_score": 2.8,
       "first_seen": "2026-07-28"
+    },
+    {
+      "arxiv_id": "2607.25583v1",
+      "title": "How Small Can You Go? A Controlled Study of LoRA Rank, Target Modules, and Quantization Trade-offs for Text-to-SQL on a 60M-Parameter Model",
+      "abstract": "Parameter-efficient fine-tuning (PEFT) and low-bit quantization are now standard tools for adapting language models under tight compute budgets, yet their interaction is most often studied on billion-parameter models where the design space is expensive to explore. We ask a complementary question: on a specific, fully reproducible 60M-parameter encoder-decoder model (T5-small) and a single-table text-to-SQL benchmark (WikiSQL), how much task accuracy does each efficiency knob actually cost? We run a controlled, single-variable study over (i) LoRA rank r in {2, 4, 8, 16, 32}, (ii) the set of adapted modules, and (iii) numerical precision. We report task accuracy alongside system-level metrics including trainable parameters, peak training memory, inference latency, and throughput, and frame adaptation as a constrained trade-off rather than an accuracy-only objective. Our results show that LoRA with r=16 recovers within 11.6 percentage points of full fine-tuning accuracy (59.6% vs. 71.2% exact-match) while training fewer than 1% of parameters and consuming 31% less peak GPU memory. Within this setting, rank beyond r=16 yields no measurable accuracy gain. QLoRA with INT8 and NF4 quantization achieves comparable accuracy (52.8% and 53.2%) at dramatically lower memory cost (0.60 GB each), demonstrating a compelling trade-off for memory-constrained deployments. All code, configurations, and logs are released for full reproducibility.",
+      "authors": [
+        "Mahendra Singh Rathor",
+        "Anagheem Azzam"
+      ],
+      "published": "2026-07-28T11:12:03+00:00",
+      "updated": "2026-07-28T11:12:03+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25583v1",
+      "headline": "How Small Can You Go? A Controlled Study",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 27.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.699999999999999,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25489v1",
+      "title": "Agentic AI in medicine: architectures, applications, evaluation, and challenges for clinical translation",
+      "abstract": "Large language models and multimodal foundation models are enabling medical artificial intelligence (AI) systems to move beyond isolated prediction and undertake multistep clinical tasks that require planning, tool use, memory, iterative correction, and coordination among specialized agents. However, the scope of agentic AI in medicine remains unsettled, and current evaluation practices are not yet aligned with the requirements of clinical use. We conducted a scoping review with systematic evidence mapping across five electronic sources, screened 1,649 exportable records, and provisionally included 557 unique studies that met predefined criteria for goal-directed task execution, tool use, interaction with external resources, feedback-based refinement, or multi-agent collaboration. The included studies describe single agents that use external tools, workflows supported by retrieval and external knowledge, multimodal agents, and multi-agent systems applied to medical question answering, image interpretation, electronic health record analysis, drug safety, and clinical trial prediction. The evidence base remains dominated by public benchmarks, simulated settings, retrospective datasets, and small-scale expert evaluation. Process reliability, evidence traceability, uncertainty, safety, workflow impact, and external validity are evaluated less consistently. Clinical translation will depend on clearer definitions, reproducible evaluation, auditable oversight, interoperable system design, and prospective validation in real-world clinical workflows.",
+      "authors": [
+        "Zheng Tong",
+        "Yang Liu",
+        "Wanshu Fan",
+        "Jing Qin",
+        "Zhongbin Han",
+        "Haifan Gong",
+        "Congyu Liao",
+        "Xiaofeng Liu",
+        "Cong Wang"
+      ],
+      "published": "2026-07-28T09:25:25+00:00",
+      "updated": "2026-07-28T09:25:25+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25489v1",
+      "headline": "Agentic AI in medicine: architectures, a",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 23.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25962v1",
+      "title": "LaP-Forensics: Latent-Pixel Consistency Guided Multimodal Reasoning for Deepfake Detection",
+      "abstract": "Recent generative models can produce images with few obvious visual artifacts, weakening detectors and explanations that rely only on surface appearance. We present LaP-Forensics, a multimodal framework that augments RGB semantics with reconstruction-based forensic evidence. A frozen Stable Diffusion DDIM inversion-reconstruction model provides a fixed reconstruction reference, and its residual map measures local compatibility with that reference. Independent projectors encode the RGB image and residual map before a structured Where-What-Why model predicts a textual analysis and an artifact mask.Supervised fine-tuning is followed by Group Relative Policy Optimization (GRPO), whose reward combines mask overlap with output-structure and evidence-reference terms. These text-side terms encourage the model to refer to the consistency map but do not constitute a verifier of free-form textual truth. A separate image-level head fuses RGB and DDIM-residual class features. Experiments show cross-generator detection on UniversalFakeDetect and competitive artifact localization on the official SynthScars benchmark. Controlled cue-construction, inversion-horizon, component, reward-term, and counterfactual analyses support the utility of the residual stream under the evaluated settings, while free-form textual faithfulness and reliability under post-processing remain open limitations.",
+      "authors": [
+        "Can Wang",
+        "Yuhao Wang",
+        "Yushe Cao",
+        "Canran Xiao",
+        "Fei Shen"
+      ],
+      "published": "2026-07-28T16:45:52+00:00",
+      "updated": "2026-07-28T16:45:52+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25962v1",
+      "headline": "LaP-Forensics: Latent-Pixel Consistency ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 19.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25830v1",
+      "title": "Beyond Static Costs: Learning-Dynamics Aware Loss Functions for Long-Tailed Classification",
+      "abstract": "Deep learning models in computer vision face significant challenges when trained on long-tailed datasets, where a few majority classes dominate while many minority classes are severely underrepresented. Such imbalances frequently arise in real-world scenarios such as rare species recognition, manufacturing fault detection, and medical image understanding, leading to biased models that underperform on tail classes. Existing reweighting methods typically rely on static class frequencies to penalize the model, ignoring the dynamic nature of how effectively a network actually learns a class over time. We address this by introducing a novel Learning-Dynamics Aware Loss (LDAL) function that shifts the focus from static sample counts to dynamic learning progress. LDAL framework adjusts class weights continuously by leveraging: (i) the strength of learned feature representations (semantic scale), (ii) the intrinsic learning difficulty of each class, measured via the Shannon entropy of its predictions, and (iii) an inter-epoch regularizer term that tracks prediction shifts between consecutive epochs to stabilize training and avoid local minima. LDAL is purely a objective function which incurs negligible computational overhead while adapting to the feature learning of the model. Experimental results on multiple benchmark datasets demonstrate that our approach significantly surpasses state-of-the-art reweighting loss functions, providing an optimal trade-off between accuracy and generalizability. The source code is available at https://github.com/sdm2026/ldal",
+      "authors": [
+        "Varad Shinde",
+        "Nikhil Kumar Shrey",
+        "Magesh Rajasekaran",
+        "Md Saiful Islam Sajol",
+        "Harshil Bhargava",
+        "Subhajit Sidanta",
+        "Supratik Mukhopadhyay",
+        "Yimin Zhu"
+      ],
+      "published": "2026-07-28T15:10:33+00:00",
+      "updated": "2026-07-28T15:10:33+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25830v1",
+      "headline": "Beyond Static Costs: Learning-Dynamics A",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25656v1",
+      "title": "OrchBench: Evaluating Multi-Agent Orchestration Plans in Isolation via Deterministic Simulation",
+      "abstract": "Complex tasks often decompose into parallelizable yet interdependent subtasks, making orchestration critical to the performance of multi-agent systems (MAS). Existing evaluations typically rely on end-to-end execution, which conflates orchestration-plan quality with worker capabilities, tool reliability, and environmental noise. Moreover, the time and token costs of real execution grow rapidly with workflow scale, making systematic evaluation expensive. We present OrchBench, a simulation-based benchmark for evaluating multi-agent orchestration plans in isolation. Starting from real-world tasks, OrchBench constructs directed acyclic graphs (DAGs) that encode task dependencies, with controlled sizes and degrees of parallelism. Given a DAG, a per-agent context limit, and an agent budget, the evaluated planner assigns subtasks to agents and specifies cross-agent information transfers and their retention ratios. A deterministic simulator evaluates the resulting plan without invoking worker agents and returns interpretable measures of result quality, makespan, and token cost. The simulated scores produced by OrchBench correlate strongly with quality scores from Claude Code executions, achieving a Pearson correlation of \\(r=0.816\\), while requiring only \\(1.3\\%\\) of the tokens and \\(10.3\\%\\) of the wall-clock time. Across diverse planners and workflow scales, we find that preserving task-critical information is more important than simply increasing the number of agents, and the benefits of parallelism diminish as coordination failures accumulate. These results establish OrchBench as an efficient and interpretable benchmark for comparing and diagnosing multi-agent orchestration plans.",
+      "authors": [
+        "Zhenzhen Ren",
+        "Jiyan He",
+        "Xinpeng Zhang",
+        "Zhenxing Qian",
+        "Ke Han",
+        "Shuxin Zheng",
+        "GuoBiao Li",
+        "Xiaoqing Zhang"
+      ],
+      "published": "2026-07-28T12:43:34+00:00",
+      "updated": "2026-07-28T12:43:34+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25656v1",
+      "headline": "OrchBench: Evaluating Multi-Agent Orches",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25420v1",
+      "title": "MARS: Multi-Agent Re-ranking for Repeat-Order Food Delivery Recommendation",
+      "abstract": "Large language models (LLMs) are increasingly used in recommender systems, but it is often unclear how much performance can be obtained from strong pre-trained backbones alone when they are placed inside a structured recommendation pipeline. In this paper, we present MARS, a modular multi-agent re-ranking framework for repeat-order food delivery recommendation. MARS serves as a controlled hybrid framework for studying how far pre-trained LLMs can go in this setting when combined with lightweight collaborative retrieval and contextual filtering. MARS performs coarse-to-fine recommendation in two stages: cuisine prediction followed by vendor ranking. The framework combines LightGCN-based global preference signals, Swing-based local peer evidence, geospatial filtering, and prompt-driven LLM reasoning over behavioral, temporal, and geographic context. We evaluate MARS on two real-world Delivery Hero benchmarks, DHRD-SE and DHRD-SG, and compare it against heuristic, sequential, graph-based, and food-delivery-specific baselines. We also provide detailed implementation and evaluation protocols, including prompting and decoding. Our study makes three contributions. First, it presents a modular multi-agent framework for repeat-order food delivery recommendation that integrates collaborative signals and LLM-based re-ranking in a transparent pipeline. Second, it shows that strong pre-trained backbones can already be competitive in repeat-order recommendation when paired with lightweight collaborative retrieval. Third, it establishes a reproducible evaluation setting for hybrid LLM recommenders in food delivery.",
+      "authors": [
+        "Jiahao Tian",
+        "Zhenkai Wang"
+      ],
+      "published": "2026-07-28T08:18:08+00:00",
+      "updated": "2026-07-28T08:18:08+00:00",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25420v1",
+      "headline": "MARS: Multi-Agent Re-ranking for Repeat-",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25947v1",
+      "title": "A Cost-Effective Multimodal LLM Reasoning Framework for Question Answering over Irregular Clinical Time Series",
+      "abstract": "Question answering (QA) over irregular clinical time series (ICTS) plays a pivotal role in a wide range of healthcare applications. Although recent multimodal time-series large language models (LLMs) have shown considerable promise in general-purpose time-series QA, they remain poorly equipped to model the sparsity, asynchrony, and irregular sampling patterns of clinical observations. To fill this gap, we propose ClinPRISM, a cost-effective multimodal LLM reasoning framework for question answering over ICTS data. First, we devise an irregularity-aware multi-scale encoder to capture sparse clinical evidence at diverse temporal scales. Then, we propose a temporal evidence distiller to integrate representations across these scales and compress them into a small number of LLM-compatible tokens. Moreover, we introduce a progressive alignment strategy that sequentially aligns the irregular trajectories with the LLM's textual embedding space. To facilitate training, we construct 30,000 clinical time series paired with multi-scale descriptions, together with 41,000 instruction-tuning instances spanning 11 tasks. Using a 4-billion-parameter LLM backbone, ClinPRISM achieves state-of-the-art performance on the held-out evaluation benchmark while using only 16 time-series tokens and achieving an average inference latency of 0.15 seconds per question.",
+      "authors": [
+        "Frank Nie",
+        "Ethan B Liu",
+        "Yuan Zhu",
+        "Wei Fan",
+        "Jindong Han"
+      ],
+      "published": "2026-07-28T16:33:41+00:00",
+      "updated": "2026-07-28T16:33:41+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25947v1",
+      "headline": "A Cost-Effective Multimodal LLM Reasonin",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25921v1",
+      "title": "Evaluating VLMs for Autonomous Agent-Driven Geometry Clipping Detection in Video Game QA",
+      "abstract": "In this work, we study the use of Vision-Language Models (VLMs) for anomaly detection in an agent-driven game Quality Assurance (QA) pipeline focusing on geometry clipping. In this evaluation, a custom exploration agent navigates a game level to collect visual observations, while the automatic annotation pipeline provides frame-level clipping labels. This setup allows us to evaluate recent VLMs on a controlled anomaly detection task without manual annotation. We benchmark six recent VLMs (Gemini, GPT, Qwen, Gemma, Llama, and Ministral) under a zero-shot prompting setting and analyse their sensitivity to four prompt variants.\n  Our results show that while the VLMs can capture visual cues associated with geometry clipping, they all produce substantial false positives on visually ambiguous frames such as near-contact geometry and partial occlusions. Gemini-3.1-Flash achieves the best overall accuracy and is the most robust to prompt variation, while open-source models exhibit large precision--recall swings depending on the prompt design. These findings suggest that current VLMs are best suited as high-recall candidate filters within multi-stage QA pipelines rather than as standalone bug detectors.",
+      "authors": [
+        "Carlos Celemin",
+        "Benedict Wilkins",
+        "Adrián Barahona-Ríos",
+        "Saman Zadtootaghaj",
+        "Nabajeet Barman"
+      ],
+      "published": "2026-07-28T16:10:47+00:00",
+      "updated": "2026-07-28T16:10:47+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25921v1",
+      "headline": "Evaluating VLMs for Autonomous Agent-Dri",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25524v1",
+      "title": "ReLATE: Reliability-Guided Evidence Fusion for Robust UAV--Satellite cross-view Geo-Localization",
+      "abstract": "Unmanned aerial vehicle (UAV)-satellite cross-view geo-localization matches UAV images against satellite imagery and has achieved impressive accuracy on clean (non-degraded) image benchmarks. In real-world flights, however, UAV observations are frequently affected by adverse weather, illumination changes, platform motion, sensor noise, and compression, while the robustness of existing methods under such degradations remains largely unexamined. In this paper, we present UAVSat-Deg, a large-scale robustness benchmark for degraded UAV-satellite geo-localization, comprising University-1652-Deg and SUES-200-Deg. UAVSat-Deg covers 27 corruption types, including 19 core and 8 compound corruptions, at three severity levels, supports bidirectional drone-to-satellite and satellite-to-drone retrieval as well as multi-height UAV acquisition, and contains more than 11.7 million pre-generated corrupted test images. Benchmarking representative methods under this protocol reveals substantial robustness gaps, particularly under severe and compound corruptions. To address this problem, we propose ReLATE, a Reliable Evidence Learning framework with Adaptive Token Evidence Regulation, which realizes reliability-adaptive feature fusion during descriptor construction. ReLATE estimates a structure-smoothed reliability field over visual tokens, aggregates trustworthy local evidence, and adaptively integrates it into query-derived representations; the regulated query representations are then combined with the CLS-token and GeM-pooled branches to form the final cross-view descriptor. Across both test sets and retrieval directions, ReLATE achieves the best average corrupted-test performance among the compared methods while maintaining competitive accuracy on clean images. The code and dataset will be available at https://github.com/JHC626/ReLATE.",
+      "authors": [
+        "Haochen Jiang",
+        "Jialei Pan",
+        "Yuzhe Sun",
+        "Zhe Dong",
+        "Lecheng Ren",
+        "Yanfeng Gu",
+        "Tianzhu Liu"
+      ],
+      "published": "2026-07-28T10:07:18+00:00",
+      "updated": "2026-07-28T10:07:18+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25524v1",
+      "headline": "ReLATE: Reliability-Guided Evidence Fusi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25891v1",
+      "title": "Messier: A High-Resolution Corpus for Cross-Benchmark Agent Evaluation",
+      "abstract": "Evaluating AI agents in interactive environments is hindered by fragmented tasks, scaffolds, verifiers, and scoring rules. Existing efforts focus on narrow settings, remain limited in scale, or require costly reruns, leaving much of the empirical record incomparable. We introduce Messier, a unified corpus of 957,253 records that span 30 benchmarks, 714 agents, 11,891 tasks, and 74,205 verifiers. Messier consolidates public benchmark scores and supplements them with five-agent runs across six underrepresented professional and scientific domains, including a recent legal benchmark. Each record is standardized by model, scaffold, environment, task, verifier, and aggregation rule, with SOC/NAICS classifications for occupational and industry analysis. Using this corpus, we show frontier progress is uneven across benchmark types, with \"function calling\" saturated, \"programming\" improving the fastest, and \"enterprise workflows\" remaining the most challenging. Furthermore, counterfactual rescoring shows that strict all-pass aggregation in multi-verifier tasks can obscure progress and artificially alter agent rankings. From these standardized records, we derive capability scales that align with Epoch's Evaluation Capability Index rankings at Spearman \\r{ho} = 0.81 and can be specialized by domain, occupation, action space, or verifier type. Messier provides a foundational, reusable infrastructure for agent capability scaling, benchmark auditing, and fine-grained analysis of evaluation failures.",
+      "authors": [
+        "Stefan Krsteski",
+        "Charlotte Meyer",
+        "Guillaume Allegre",
+        "Tony O'Halloran",
+        "Alexandre Sallinen"
+      ],
+      "published": "2026-07-28T15:50:19+00:00",
+      "updated": "2026-07-28T15:50:19+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25891v1",
+      "headline": "Messier: A High-Resolution Corpus for Cr",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.DB"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25789v1",
+      "title": "Towards Faithful Sentimental Image Captioning via Evidence-Aware Multi-Agent Reasoning",
+      "abstract": "Sentimental Image Captioning (SIC) requires balancing emotional expression with visual fidelity. Existing methods often struggle with this trade-off, leading to hallucinations due to insufficient local grounding and the lack of sentimental verification mechanisms. To address these limitations, we propose SEA-Cap, a Sentiment-Evidence-Aware Multi-Agent System for faithful and evidence-grounded sentimental image captioning. SEA-Cap incorporates a Sentiment Evidence Miner that extracts structured, local affective cues to shift sentiment control from global attributes to verifiable object-level evidence. Leveraging this evidence, our framework orchestrates a collaborative workflow where a Generator, Hallucination Checker, and Arbitrator iteratively refine captions via a shared blackboard. By explicitly auditing generated content against mined visual evidence, SEA-Cap ensures both sentiment accuracy and factual consistency. Extensive experiments on two benchmark datasets demonstrate that SEA-Cap effectively mitigates hallucinations and achieves state-of-the-art performance.",
+      "authors": [
+        "Tiecheng Cai",
+        "Zexian Yang",
+        "Chao Chen",
+        "Shanshan Lin",
+        "Xiangwen Liao"
+      ],
+      "published": "2026-07-28T14:42:00+00:00",
+      "updated": "2026-07-28T14:42:00+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25789v1",
+      "headline": "Towards Faithful Sentimental Image Capti",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25915v1",
+      "title": "Penelope: Localized Latent Recurrence for Efficient Structured Reasoning",
+      "abstract": "Complex structured reasoning tasks often require additional computation, yet current language models obtain it mainly by increasing parameter scale or by serializing intermediate steps as chain-of-thought (CoT) tokens. The former raises training and deployment costs, while the latter ties reasoning computation to autoregressive output length. We introduce Penelope, an efficient latent-reasoning framework for pretrained decoder-only Transformers that localizes recurrent computation to a selected decoder interval. The lower decoder prefix is evaluated once to construct a problem-conditioned boundary memory, which is then iteratively refined through time-modulated GRU dynamics and recurrent readout states before answer generation. A progressive CoT-to-latent curriculum transfers visible reasoning into this internal recurrent path, allowing additional computation to be allocated in latent space without repeatedly executing the complete decoder or generating a long intermediate trace. Experiments on open-source structured-reasoning benchmarks show that, at validation-selected latent budgets, Penelope attains competitive accuracy relative to established latent-reasoning models while reducing measured inference latency. These results show that latent refinement can be localized to a narrow decoder interval, reducing repeated full-decoder execution without generating a long visible reasoning trace and providing a practical accuracy-efficiency tradeoff for decoder-only Transformer models.",
+      "authors": [
+        "Yutong Chen",
+        "Shouqian Shi",
+        "Xinran Liu",
+        "Haochen Wang",
+        "Jiaying Wang",
+        "Tianxing Xu",
+        "Yuanxi Wang",
+        "Zirui Ding"
+      ],
+      "published": "2026-07-28T16:06:46+00:00",
+      "updated": "2026-07-28T16:06:46+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25915v1",
+      "headline": "Penelope: Localized Latent Recurrence fo",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25912v1",
+      "title": "SAM3D-Guided Object-Centric Representation Alignment for Vision-Language-Action Models",
+      "abstract": "Vision-Language-Action (VLA) models have shown strong potential for general robot manipulation, but most existing models rely on 2D visual-language backbones and lack fine-grained 3D understanding of target objects, especially under occlusion, pose variation, scale changes, and precise spatial interaction. We propose an object-centric 3D representation alignment framework built upon $π_0$, using SAM3D as a frozen 3D teacher to provide target-object 3D priors during training. Specifically, we localize task-relevant objects with object recognition models, generate corresponding object masks, and use SAM3D to extract dense object-level 3D representations, which are aligned with intermediate visual features of $π_0$. This enables the policy to internalize target-object 3D information while preserving the original RGB-language-to-action inference pipeline without requiring depth, point clouds, masks, SAM3D, or additional 3D modules at test time. Simulation experiments show consistent improvements, achieving 99.1\\% on LIBERO and an average length of 4.11 on CALVIN. Real-world experiments further demonstrate that our method is particularly effective in long-horizon manipulation scenarios where the robot must focus on different target objects across multiple subtasks.",
+      "authors": [
+        "Zonghe Liu",
+        "Shanyuan Jie",
+        "Xiaoquan Sun",
+        "Chen Cao",
+        "Zetian Xu",
+        "Zongsheng Liu",
+        "Jiayu Chen"
+      ],
+      "published": "2026-07-28T16:05:32+00:00",
+      "updated": "2026-07-28T16:05:32+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25912v1",
+      "headline": "SAM3D-Guided Object-Centric Representati",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25870v1",
+      "title": "VAD to the Bone: Ultra-Tiny Speech Activity Detection for Edge Deployment",
+      "abstract": "Voice activity detection (VAD) triggers downstream speech processing in always-on systems under strict memory, latency, and compute constraints. Recent compact models report strong accuracy but rely on components that are not widely supported: learnable filterbanks, recurrent layers, or non-causal post-processing. We propose kiloVAD, designed for embedded inference using standard Mel features, CNN-only layers, and tunable context/spectral parameters. We introduce per-layer structured pruning with self-distillation and angle-based quantization-aware training (QAT) that outperforms standard QAT by 1-4%. Evaluated per-frame under causal conditions, kiloVAD achieves 0.850 AUC on AVA-Speech with 2.1 k parameters and 200 ms context, establishing a new state of the art for causal, deployment-ready VAD.",
+      "authors": [
+        "Stephen Bauer",
+        "Sheila Seidel",
+        "Shanza Iftikhar",
+        "Scott Veidenheimer",
+        "Gorkem Ulkar"
+      ],
+      "published": "2026-07-28T15:37:44+00:00",
+      "updated": "2026-07-28T15:37:44+00:00",
+      "categories": [
+        "eess.AS",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25870v1",
+      "headline": "VAD to the Bone: Ultra-Tiny Speech Activ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "eess.AS",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.0,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25820v1",
+      "title": "Food Image Segmentation with LLM-Derived Ingredient Labels and Multimodal Fusion",
+      "abstract": "Food image segmentation plays a vital role in health-related applications such as nutrition tracking and personalized health monitoring. However, existing models often underperform on visually similar ingredients and rare food categories. To address this issue, we propose two plug-and-play multimodal modules that enhance the segmentation performance by leveraging ingredient labels inferred from food images using large language models (LLMs). The first module, called LIM-F (Language Injection Module for Features), is designed to pair with any image encoder that produces multi-layer outputs (e.g., Swin Transformer), while the second module, LIM-Q (Language Injection Module for Queries), targets Mask2Former-style Transformer-based decoders. Both modules enable training without the need for pre-aligning images with text by directly injecting semantic ingredient information into the visual analysis pipeline. On the FoodSeg103 benchmark, the proposed method achieves state-of-the-art performance. Specifically, integrating LIM-Q into the Mask2Former decoder with a Swin-L image encoder yields a mean Intersection over Union (mIoU) of 55.0. LIM-F also demonstrates strong generalization and competitive performance, reaching an mIoU of 54.4 under the same model (Swin-L+Mask2Former). Furthermore, its applicability extends beyond Transformer-based decoders, as evidenced by an improvement from 47.7 to 49.8 mIoU when integrated into a CNN-based architecture. Notably, the improved segmentation accuracy is achieved with only a moderate (at most 3.8 GB) increase in the GPU memory consumption during training. Thus, the proposed approach offers a practical and scalable solution for fine-grained food understanding.",
+      "authors": [
+        "Jui-Feng Chi",
+        "Wei-Ta Chu",
+        "Sheng-Long Lin"
+      ],
+      "published": "2026-07-28T15:02:46+00:00",
+      "updated": "2026-07-28T15:02:46+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25820v1",
+      "headline": "Food Image Segmentation with LLM-Derived",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25765v1",
+      "title": "WorkSurface-Bench: Benchmarking Enterprise Agents on Multi-Surface Knowledge Routing",
+      "abstract": "Enterprise agents often need to integrate heterogeneous knowledge sources: documents for narrative facts, tables for computation, and dependency graphs for file relationships. Existing benchmarks typically evaluate retrieval or tool use without distinguishing whether an agent first selects the appropriate knowledge sources. We introduce WorkSurface-Bench, a benchmark for evaluating this capability as surface routing. It contains 1,151 atomic tasks derived from persona-scoped Workspace-Bench-Lite workspaces, spanning document, table, graph, and cross-surface questions. Its reference answers are auditable: table answers are reproduced through executed DuckDB queries, document answers are grounded in verified text spans, and graph answers are traced to source dependency annotations. We evaluate four model backbones across six controlled agent settings, yielding 27,624 protocol-error-free trajectories. Under gold-constrained tool access, agents achieve 98.7-99.8 Route F1, while Answer remains only 56.1-75.3 percent, showing that correct surface selection is necessary but insufficient for task completion. Matched interventions further show that surface hints improve Answer for three of four models, whereas removing irrelevant tools primarily improves routing and efficiency. In an independent three-annotator audit, all 200 sampled tasks pass all six quality criteria by majority vote, with 192 receiving unanimous judgments on every criterion. We release the dataset, construction pipeline, scoring code, and agent harness at https://github.com/haolpku/WorkSurface-Bench.",
+      "authors": [
+        "Hao Liang",
+        "Meiyi Qiang",
+        "Sizhe Qiu",
+        "Linzhuang Sun",
+        "Wentao Zhang"
+      ],
+      "published": "2026-07-28T14:19:59+00:00",
+      "updated": "2026-07-28T14:19:59+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.DB"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25765v1",
+      "headline": "WorkSurface-Bench: Benchmarking Enterpri",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.DB"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25600v1",
+      "title": "Beyond Self-Knowledge: Propagating Uncertainty Across Reasoning and Retrieval in LLMs",
+      "abstract": "Retrieval-augmented generation improves knowledge-intensive question answering, but indiscriminate retrieval can introduce irrelevant evidence and unnecessary computation. We investigate whether verbalized confidence from black-box language models can serve as an actionable signal for retrieval routing. Our method, BeyondUncertainty, first elicits a structured provisional answer and confidence estimate, then applies a model-specific threshold selected on held-out validation data and frozen before test evaluation. Low-confidence questions receive top-$5$ TF--IDF retrieval followed by a second answer call, whereas high-confidence questions return the provisional answer directly. We evaluate 27,000 policy instances across six QA benchmarks, three model families, and three retrieval policies. BeyondUncertainty achieves $0.483$ mean token-level F1, compared with $0.467$ for always retrieval and $0.401$ for no retrieval, while reducing retrieved passages by $20.4\\%$ relative to always retrieval. When matched on the number of questions routed to retrieval within each dataset--model cell, it outperforms a post-hoc random allocation in 17 of 18 settings, with an average gain of 0.024 F1. Although poorly calibrated as an absolute probability, probe uncertainty modestly predicts question-level retrieval benefit (AUROC $=0.628$). However, the additional probe increases total token usage by $28.2\\%$, revealing a trade-off between more selective evidence acquisition and end-to-end token efficiency.",
+      "authors": [
+        "Chandan Kumar Sah",
+        "Xiaoli Lian",
+        "Li Zhang"
+      ],
+      "published": "2026-07-28T11:30:25+00:00",
+      "updated": "2026-07-28T11:30:25+00:00",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25600v1",
+      "headline": "Beyond Self-Knowledge: Propagating Uncer",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25446v1",
+      "title": "Toward an Organizational Science of Multi-Agent LLM Systems: Decoupling Who, How, and Which Algorithm",
+      "abstract": "Multi-agent frameworks built on large language models (LLMs) routinely entangle three logically distinct concerns: who is on the team (organization), how members align (coordination), and which algorithm fuses their work (collaboration protocol). IMACS (Intelligent Multi-Agent Collaboration System) separates the three into orthogonal, independently swappable layers. Classic organizational theory (Belbin roles, Mintzberg coordination, RACI accountability) becomes executable, validated configuration, and the framework places six published collaboration algorithms behind a common interface while exposing roles, coordination, and accountability as independently configurable factors. We use this separation to conduct controlled comparisons in which organizational assignments vary while the collaboration protocol is held fixed. It also turns protocol choice into a variable that can be learned: Adaptive Org Routing, a contextual-bandit meta-protocol, selects a protocol per task under an explicit quality-cost tradeoff, outperforms every fixed protocol in a controlled study, and trains online on real benchmark and LLM-judge rewards. The ablations expose a mechanism. Accountability placement changes outcomes exactly when the protocol routes the deliverable through the accountable agent, and the winning placement flips across model families, so organizational design cannot be hard-coded; it must be revalidated, or learned, for each model binding.",
+      "authors": [
+        "Huan Chen",
+        "Xiang Song",
+        "Jian Jin",
+        "Pan Ren",
+        "Liang-Jie Zhang"
+      ],
+      "published": "2026-07-28T08:35:21+00:00",
+      "updated": "2026-07-28T08:35:21+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25446v1",
+      "headline": "Toward an Organizational Science of Mult",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.26017v1",
+      "title": "UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams",
+      "abstract": "Memory is essential for LLM agents to accumulate task experience and reuse task-specific execution strategies. However, real-world deployment over boundary-agnostic and evolving task streams exposes a fundamental stability-plasticity dilemma. External retrieval-based memory can rapidly absorb new evidence, but it often fails to internalize recurring execution patterns and incurs inference-time retrieval overhead. Parametric memory enables stable and efficient execution once learned, but typically relies on explicit task boundaries and fixed parameter budgets. Inspired by the human brain, which balances plasticity and stability through complementary episodic storage and gradual consolidation, we propose UniMem, a self-routing framework for autonomous memory management. UniMem uses learnable routing tokens as memory controllers, enabling adaptive coordination between complementary memory pathways: novel or sparse tasks are retained in an episodic buffer for retrieval-augmented execution, while recurring and reliable patterns are consolidated into expandable parametric memory. By decoupling task identification from task execution with routing tokens and parametric memory blocks, UniMem expands memory on demand without task labels during deployment or uncontrolled parameter growth. Experiments on long-horizon streaming task sequences show that UniMem consistently outperforms baselines while maintaining execution fidelity, achieving an average gain of 4.0 EM points across three backbone models.",
+      "authors": [
+        "Siyu Xia",
+        "Chenheng Zhang",
+        "Yanting Wu",
+        "Haoxuan Li",
+        "Jiajun Chai",
+        "Xiaohan Wang",
+        "Guojun Yin",
+        "Wei Lin",
+        "Zhouchen Lin",
+        "Haifeng Zhang",
+        "Jun Wang"
+      ],
+      "published": "2026-07-28T17:28:21+00:00",
+      "updated": "2026-07-28T17:28:21+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.26017v1",
+      "headline": "UniMem: Complementary Episodic-to-Parame",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25992v1",
+      "title": "MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents",
+      "abstract": "Recently, memory management has become a key infrastructure for LLM-based agents, as it directly affects long-horizon reasoning, personalized responses, and knowledge reuse. However, existing LLM memory systems typically adopt a coarse-grained (utility-agnostic) manner that treats heterogeneous user-LLM interaction records uniformly, leading to redundant and low-impact records persisting in the memory repository. To address this challenge, we present MemLens, a value-aware memory management system that takes memory records as first-class data objects. MemLens provides an end-to-end interactive analytics dashboard that exposes the complete memory lifecycle, including Shapley-style memory evaluation, value-aware storage, and memory-assisted response. Through a study-copilot application, the system enables users to inspect memory values, visualize hierarchical memory structures, and compare various memory management strategies in terms of response quality, retrieval latency, and token consumption. Therefore, our MemLens can serve as an efficient, interpretable, and personalized long-term memory management system for LLM-based agents.",
+      "authors": [
+        "Shuyue Wei",
+        "Chang Liu",
+        "Zimu Zhou",
+        "Yongxin Tong",
+        "Lizhen Cui"
+      ],
+      "published": "2026-07-28T17:08:56+00:00",
+      "updated": "2026-07-28T17:08:56+00:00",
+      "categories": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25992v1",
+      "headline": "MemLens: A Value-Aware Memory Management",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.DB",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25622v1",
+      "title": "Beyond Facial Consistency: Personalized Person Image Generation with Holistic Identity Preservation",
+      "abstract": "Personalized person image generation requires preserving subject identity across both local facial details and broader appearance cues. Existing methods typically emphasize only one level of identity information, leading to an inherent trade-off between facial fidelity and overall appearance consistency. To address this, we first propose a simple dual-branch baseline that unifies global appearance control and local facial control within a shared generation framework. This simple combination of different branches yields promising results, but suffers from instability in practice due to uncoordinated branch contributions. To this end, we propose Dynamic Balancing Scaling (DBS), a fine-tuning strategy for improving face and appearance identity coordination. DBS consists of two components: adaptive temporal gating, which dynamically modulates branch contributions along the denoising trajectory, and region-aware optimization, which improves the coordination of facial, appearance, and global supervision. Together, these designs alleviate persistent face-branch over-dominance and encourage more effective appearance-aware guidance. We also introduce Pexels-100, a benchmark for evaluating holistic identity consistency in personalized person generation. Experiments show that DBS achieves a better trade-off between facial fidelity and appearance consistency than existing open-source baselines, while providing a controllable basic framework for holistic identity modeling.",
+      "authors": [
+        "Yuxuan Xiao",
+        "Shanshan Zhang",
+        "Jian Yang",
+        "Shengcai Liao"
+      ],
+      "published": "2026-07-28T12:02:13+00:00",
+      "updated": "2026-07-28T12:02:13+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25622v1",
+      "headline": "Beyond Facial Consistency: Personalized ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25503v1",
+      "title": "Group Equivariant Diffusion for Anomaly Detection in Computational Cytology",
+      "abstract": "Computational cytology on whole-slide images is challenging because malignant cells are rare, heterogeneous, and annotated slides are scarce. Anomaly detection frameworks can be trained on normal slide-negative patches and then applied at test time to flag abnormal patches in held-out slides. Most unsupervised anomaly detection approaches including generative ones (GAN-based and diffusion-based), are tuned to organ-level imaging and require large curated datasets. In cytology the signal is cell-centric: rotating or flipping a single-cell patch does not change its diagnostic class, yet standard diffusion models treat transformed views as distinct inputs, leading to transformation-dependent reconstructions and unstable anomaly scores. We propose a D4-equivariant diffusion framework that enforces rotation and reflection symmetry both architecturally, via a D4-equivariant U-Net, and at inference, via equivariant noise coupling and (optionally) frame averaging. This alignment with biological invariance yields transformation-consistent pseudo-healthy reconstructions and more stable anomaly ranking under symmetry. On two publicly available cytology datasets of bone marrow and peripheral blood smears, our D4-equivariant diffusion models achieve higher AUC and retrieve more abnormal cells in the top K predictions than non-equivariant generative baselines, a deep one-class, and a multiple instance learning based method, while substantially reducing score variance across rotations and flips. Code is available at https://swchmida.github.io/D4diffCyto/.",
+      "authors": [
+        "Swarnadip Chatterjee",
+        "Ssharvien Kumar Sivakumar",
+        "Anirban Mukhopadhyay"
+      ],
+      "published": "2026-07-28T09:38:05+00:00",
+      "updated": "2026-07-28T09:38:05+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25503v1",
+      "headline": "Group Equivariant Diffusion for Anomaly ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25415v1",
+      "title": "A Control System, a Dataset, and a Recipe for Making Frozen LLM Agents Learn a Domain",
+      "abstract": "Production LLM agents are increasingly assembled from a frozen model wrapped in a harness: a prompt template, a tool set, a memory/retrieval layer, a planning strategy, and a verification policy. Two 2026 systems, Meta-Harness (Lee et al., 2026) and HyperAgents (Meta AI, 2026), show that this harness can itself be optimized or even self-rewritten by an agentic proposer -- at the cost of either an expensive code-search loop or unconstrained self-modifying code, neither of which is auditable or usable with a fully black-box model API. We take a narrower, more constrained position: treat the harness as a small, fixed, human-legible action space and learn a policy over it online with classic sample-efficient reinforcement learning (an $ε$-greedy contextual bandit and REINFORCE), scored against a multi-objective reward (task success, verifier score, policy compliance, cost, latency, and an unsupported-claim penalty). We instantiate this control system with DSPy (Khattab et al., 2024) as both the context assembler and the source of the strongest non-adaptive baseline (a DSPy BootstrapFewShot static prompt), and evaluate it across three verifiable task domains -- tool-use workflows, code generation (HumanEval), and multi-hop retrieval QA (HotpotQA) -- and two model providers (a local Ollama model and AWS Bedrock). We release the harness-control-system code, the cross-domain verifiable task suite, the full trajectory/reward-decomposition logs from training, and a provider-agnostic deployment recipe for applying this to a new organization's domain and verification setup.",
+      "authors": [
+        "Debjyoti Paul"
+      ],
+      "published": "2026-07-28T08:10:25+00:00",
+      "updated": "2026-07-28T08:10:25+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25415v1",
+      "headline": "A Control System, a Dataset, and a Recip",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25367v1",
+      "title": "Leak-Free Cross-Validated Stacking with Per-Architecture Calibration for Sand-Boil Segmentation in Earthen Levees",
+      "abstract": "Sand boils, points where water seeping beneath an earthen levee re-emerges at the surface, are early warnings of internal erosion, and deep segmentation networks are increasingly used to find them in inspection photographs. Annotated examples are scarce, and two common ways of working around that scarcity quietly inflate reported accuracy: tuning ensemble weights on the same images later used to score them, and training on synthetic images derived from the very photographs held out for testing. We present a sand-boil segmentation framework that closes both loopholes. Every synthetic image carries a pointer to its real parent, and a per-fold filter excludes any image whose parent is held out; five encoder-decoder backbones are trained under five-fold cross-validation, calibrated by one temperature scalar each, and combined by a per-pixel meta-learner fitted only on out-of-fold predictions. On the held-out test set the proposed Updated SandBoilNet reaches an intersection-over-union of 0.707 over three seeds, against 0.608 for the published original re-evaluated on the same split. Under the stacking protocol the calibrated stack reaches 0.681 against 0.694 for the strongest fold-averaged member, so it does not improve on the best single model; eight meta-learner families reproduce that outcome, which we trace to a mean pairwise error correlation of 0.894 among members. A synthetic pool filtered for label fidelity lifts the champion to 0.718 over three seeds against a 0.707 control. We also introduce a mask-conditioned synthesis route that makes the conditioning mask the label by construction, giving labelled training images at zero annotation cost.",
+      "authors": [
+        "Padam Jung Thapa",
+        "Anav Katwal",
+        "Ayon Dey",
+        "Abdullah Bin Naeem",
+        "Steve Sloan",
+        "Kendall Niles",
+        "Md Tamjidul Hoque"
+      ],
+      "published": "2026-07-28T07:21:02+00:00",
+      "updated": "2026-07-28T07:21:02+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25367v1",
+      "headline": "Leak-Free Cross-Validated Stacking with ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-07-29"
+    },
+    {
+      "arxiv_id": "2607.25791v1",
+      "title": "FLASH: Efficient Impact Fall Detection with Unified Hypergraph State-Space Model",
+      "abstract": "Falls represent a critical public health challenge, and accurate detection of the impact moment when an individual hits the ground is crucial for timely intervention. Existing skeleton-based methods rely on graph neural networks modeling only pairwise joint connections, failing to capture multi-joint coordination characteristic of fall impacts, while transformer-based temporal models suffer from quadratic complexity limiting real-time deployment. We propose FLASH, a novel framework integrating single-matrix hypergraph representations with Mamba's selective state-space models through adaptive feedback mechanisms for efficient impact detection. Our approach constructs biomechanically-grounded hyperedges to model functional joint coordination while leveraging Mamba's linear-time complexity to capture temporal dynamics. Experiments on UP-Fall and UMAFall datasets demonstrate that FLASH achieves state-of-the-art accuracy with real-time inference capability and strong zero-shot cross-dataset generalization, while significantly reducing computational cost compared to dual-representation and transformer-based methods. The model provides interpretable feedback through learned attention patterns aligned with biomechanical principles. Code is available at https://github.com/Tresor-Koffi/FLASH-Impact-Fall-Detection.",
+      "authors": [
+        "Tresor Y. Koffi",
+        "Youssef Mourchid",
+        "Yohan Dupuis"
+      ],
+      "published": "2026-07-28T14:43:07+00:00",
+      "updated": "2026-07-28T14:43:07+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2607.25791v1",
+      "headline": "FLASH: Efficient Impact Fall Detection w",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-07-29"
     }
   ]
 }
