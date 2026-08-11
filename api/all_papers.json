@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-08-10T19:57:25.115669+00:00",
-  "source_last_updated": "2026-08-10T19:57:18.542846+00:00",
-  "count": 3825,
+  "generated_at": "2026-08-11T20:04:47.234696+00:00",
+  "source_last_updated": "2026-08-11T20:04:40.184257+00:00",
+  "count": 3850,
   "papers": [
     {
       "arxiv_id": "2512.10674v1",
@@ -202450,6 +202450,1061 @@
       },
       "practicality_score": 2.8,
       "first_seen": "2026-08-10"
+    },
+    {
+      "arxiv_id": "2608.09789v1",
+      "title": "ADOPD: Reference-Privileged On-Policy Distillation for MLLM-Based Industrial Anomaly Detection",
+      "abstract": "Industrial anomaly detection (IAD) requires identifying fine-grained deviations from normal visual patterns. Multimodal large language models (MLLMs) can improve recognition accuracy by comparing query images with references at inference time, but these benefits rely on additional retrieval and processing. We investigate whether the benefits of reference comparison can instead be internalized in the model parameters. Access to references during training allows a reference-aware teacher to supervise a query-only student. However, the teacher may favor plausible responses based on query cues or language priors rather than valid visual information. We propose ADOPD, a reference-privileged on-policy distillation framework. The teacher evaluates student-generated rollouts under matched and mismatched references. The matched-reference teacher-to-student log-ratio defines the token-level learning direction, specifying what the student should learn. The likelihood gap between the two reference views estimates reference-specific support and calibrates the sequence-level weight. ADOPD achieves 77.31% average accuracy on the MMAD benchmark under zero-shot inference, improving the Qwen3-VL-4B backbone by 6.14 points and outperforming its one-shot setting by 2.64 points. Experiments show that ADOPD learns a fine-grained anomaly inspection strategy from reference comparison. The project will be available at https://github.com/withTai/ADOPD.",
+      "authors": [
+        "Jingtai He",
+        "Shiyuan Meng",
+        "Wenchao Meng",
+        "Qinmin Yang"
+      ],
+      "published": "2026-08-10T16:12:39+00:00",
+      "updated": "2026-08-10T16:12:39+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09789v1",
+      "headline": "ADOPD: Reference-Privileged On-Policy Di",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 21.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09779v1",
+      "title": "KGCaRe: Explainable Complex Conditional Question Answering using Automatic Knowledge Graph Construction and Context Retrieval with LLMs",
+      "abstract": "Answering complex conditional questions using Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) remains a challenge, particularly in domain-specific contexts where general-purpose LLMs and RAG tend to underperform. We hypothesize that augmenting RAG with unstructured and structured knowledge, extracted from both documents and knowledge graphs (KGs), can improve reasoning and answer accuracy for such tasks.\n  To test this, we propose KGCaRe, a hybrid approach that combines neural retrieval with symbolic reasoning over LLM-generated KGs. KGCaRe constructs a KG from documents using a multi-prompt extraction strategy and stores it in a graph database. Simultaneously, the documents are embedded into a vector store to enable neural retrieval. KGCaRe performs innovative iterative graph traversal guided by the LLM to extract relevant triples, prune irrelevant information, and uses additional clue entities to traverse the graph again if the initial traversal does not provide satisfactory context to generate the answer. The relevant triples extracted from the KG in path form, along with semantically retrieved text passages, are then fed into custom KGCaRe prompts to generate answers to the complex conditional questions with explanations.\n  We evaluate KGCaRe on two complex conditional QA datasets. Our results on these datasets show that KGCaRe consistently outperforms existing baselines, including Vanilla LLM, Code Prompt, Text Prompt, Think-on-Graph, Vanilla RAG, and HybridContextQA, across multiple LLMs such as Mistral, Mixtral, GPT-3.5, and GPT-4o. We publicly release the software pipeline that we developed to implement the proposed KGCaRe approach.",
+      "authors": [
+        "Ghanshyam Verma",
+        "Simanta Sarkar",
+        "Devishree Pillai",
+        "Hotaka Shiokawa",
+        "Yourong Xu",
+        "Fiona Veazey",
+        "Peter Hubbert",
+        "Hui Su",
+        "Paul Buitelaar"
+      ],
+      "published": "2026-08-10T16:05:58+00:00",
+      "updated": "2026-08-10T16:05:58+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09779v1",
+      "headline": "KGCaRe: Explainable Complex Conditional ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 20.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09867v1",
+      "title": "Stealing Reasoning Traces from Proprietary LLM APIs",
+      "abstract": "Leading large language model providers now conceal their models' step-by-step reasoning, or chain-of-thought, to protect intellectual property and limit information leakage. Rather than storing these traces server-side, providers return them to the client as blocks of encrypted text, which the client passes back with each subsequent request. Building on prior research, we identify an architectural vulnerability: these encrypted blocks are fully compatible and interchangeable across different sessions, users, and models within a provider's ecosystem. We exploit this compatibility to develop a scalable decryption jailbreak. By injecting an encrypted reasoning trace from a given model into a weaker, and less safeguarded model from the same provider, we force it to decode and output the trace verbatim in plaintext, without ever jailbreaking the more capable model directly. This vulnerability enables four distinct attack vectors. First, it circumvents anti-distillation mechanisms, allowing adversaries to extract a proprietary model's reasoning, as we demonstrate across Anthropic, OpenAI, and Google. Second, it allows for large-scale private data extraction. Developers frequently share session logs publicly, unaware of contents of the encrypted blocks. By decoding 315,320 reasoning blocks scraped from public repositories, we recovered 367 Personally Identifiable Information (PII) artifacts and 182 credentials. Third, it inadvertently reveals hazardous information hidden within the reasoning process, even in cases where the model's final, visible output safely rejects a malicious request. Fourth, attackers can leverage this flaw to execute invisible prompt injections, embedding malicious payloads entirely within encrypted blocks to poison public agentic rollouts. Following responsible disclosure, we propose concrete cryptographic and system-level mitigations to secure client-side reasoning.",
+      "authors": [
+        "Alexander Panfilov",
+        "David Schmotz",
+        "Ilia Shumailov",
+        "Luca Beurer-Kellner",
+        "Joachim Schaeffer",
+        "Ameya Prabhu",
+        "Jonas Geiping",
+        "Maksym Andriushchenko"
+      ],
+      "published": "2026-08-10T17:24:50+00:00",
+      "updated": "2026-08-10T17:24:50+00:00",
+      "categories": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09867v1",
+      "headline": "Stealing Reasoning Traces from Proprieta",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 19.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09682v1",
+      "title": "Thinking With Tools, Not With Pixels: Tool Calls as Text Scaffolds for Visual Reasoning",
+      "abstract": "Tool-augmented vision-language models increasingly \"think with images\": they call crop, zoom, or code tools and reason over the returned pixels. However, recent work using blind tests, gain decompositions, and attention analyses has shown that returned images contribute little, raising the question: if pixels do not carry the gain, what does? We hypothesize that the load-bearing signal is the structured text emitted before any returned pixel arrives: tool name, coordinates, target description, and intent. This textual scaffold encodes where to look and what to find. We introduce TextCall (call-but-no-return) to test this: it keeps the scaffold but replaces returned images with the text placeholder [Image output skipped]. Three studies support the hypothesis. (i) Non-necessity of returned pixels: across LoRA, full fine-tuning, and RL, TextCall matches or exceeds full thinking-with-images; under RL it preserves tool use at the reported checkpoint, avoiding the failure mode where, under matched settings, seeing the returned image causes the model to stop calling tools and answer directly. (ii) Sufficiency of the scaffold: on matched training queries, scaffold-only input yields equivalent accuracy to returned-image input. (iii) Component specificity: decomposing the scaffold into reasoning text and spatial code shows both components contribute, with the dominant one varying by task. Together these results support the Tool-Call Scaffold Hypothesis: in current thinking-with-images distributions, the active signal is the structured text emitted at tool-call time; the returned image is a redundant carrier. TextCall preserves accuracy while reducing latency by 29-46% and eliminating tool-execution API calls. Our claims hold for current thinking-with-images benchmarks; constructing tasks where pixels are genuinely load-bearing remains an open direction.",
+      "authors": [
+        "Jiahao Shao",
+        "Yuanbo Yang",
+        "Yiyi Liao",
+        "Yujun Shen",
+        "Ceyuan Yang",
+        "Yinghao Xu"
+      ],
+      "published": "2026-08-10T14:52:10+00:00",
+      "updated": "2026-08-10T14:52:10+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09682v1",
+      "headline": "Thinking With Tools, Not With Pixels: To",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09772v1",
+      "title": "PragMatch: Separating Pragmatic Incongruity from Cross-Modal Mismatch in Large Vision-Language Models",
+      "abstract": "Large Vision-Language Models (LVLMs) have demonstrated strong performance on multimodal benchmarks, yet it remains unclear whether they genuinely reason about relationships between images and text or rely on superficial correlations, known as shortcut learning. This question is particularly important for multimodal sarcasm detection, where successful prediction depends on recognizing pragmatic incongruity rather than treating sarcasm as simple image-text mismatch. We introduce PragMatch, a controlled benchmark of 3,000 image-text pairs derived from MMSD2.0, including original sarcastic examples and constructed literal and hard-negative pairs. We identify influential shortcut cues through systematic masking and evaluate their impact through targeted injection experiments. Our results show that LVLM predictions are sensitive to lexical, OCR-derived and stylistic cues, with injected surface signals causing substantial changes in model predictions despite unchanged underlying image-text relationships. Our findings reveal limitations in current LVLMs while PragMatch provides a systematic testbed for evaluating multimodal pragmatic reasoning beyond surface-level image-text alignment.",
+      "authors": [
+        "Zhanna Mukhametsharip",
+        "Vera Demberg",
+        "Varsha Suresh"
+      ],
+      "published": "2026-08-10T16:00:04+00:00",
+      "updated": "2026-08-10T16:00:04+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09772v1",
+      "headline": "PragMatch: Separating Pragmatic Incongru",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.0,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09510v1",
+      "title": "Build it, Break it, Repeat: Benchmarking and improving LLM-manipulated disinformation detection in social media posts",
+      "abstract": "Detecting machine-generated disinformation on social media is increasingly difficult as large language models (LLMs) make it easier to generate and rewrite misleading content at scale. Static benchmark evaluations, measuring detector performance on fixed held-out datasets, do not capture how detectors behave when posts are deliberately transformed to evade classification. This paper adapts the Build it, Break it, Fix it framework into Build it, Break it, Repeat (BiBiR): iterative sessions designed to stress-test detectors' robustness under iterative adversarial conditions, evaluating whether models remain reliable when disinformation posts are systematically transformed to evade classification. Across five iterations, the findings show that the best adversarial breakers' transformations came from a combination of back-translation and LLM persona-based rewriting, with the best performing technique achieving a 95% label flip rate (LFR), whilst still preserving the meaning of the original posts. The best builders' model was a triplet contrastive model with a dynamic anchor switching (DASS) architecture, which achieved an average accuracy of 72.68%, outperforming the strong baseline (a fine-tuned e5-small-LoRA) by 15 percentage points on the most robust set of breakers' adversarial attacks. The results demonstrate that an iterative framework best exposes detector weaknesses and pushes robustness improvements; however, it may still require semantic preservation analysis to distinguish valid adversarial evasion from transformations that changed the original disinformation claims' meaning.",
+      "authors": [
+        "Kevin Thomas",
+        "Milosz Kasprzyk",
+        "Reuel C Igbokwe Onuigbo",
+        "Elliott Pert",
+        "Cameron Tovey",
+        "João A. Leite",
+        "Olesya Razuvayevskaya",
+        "Carolina Scarton"
+      ],
+      "published": "2026-08-10T12:13:41+00:00",
+      "updated": "2026-08-10T12:13:41+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09510v1",
+      "headline": "Build it, Break it, Repeat: Benchmarking",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI",
+        "cs.SI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09432v1",
+      "title": "ZetaGPT: A Reference Implementation of Positional--Encoding--Free State--Space--Attention Language Models",
+      "abstract": "Transformer-based language models rely on self-attention, whose computation is permutation-equivariant and therefore lacks an intrinsic mechanism for representing token order. Existing architectures address this limitation by explicitly incorporating positional information through learned positional embeddings or hand-crafted positional encodings, such as rotary positional encoding (RoPE), treating positional information as an architecturally acquired capability rather than an inherent property of the model. Motivated by the pursuit of positional-encoding-free architectures, this work explores a language model architecture that integrates causal state-space equations to implicitly encode positional information before attention computation. Specifically, each model block applies a causal state-space equation before self-attention, allowing recurrent state dynamics to encode sequential information into token representations. Consequently, subsequent attention layers operate on position-aware representations without requiring explicit positional encodings while retaining the expressive modeling capacity of self-attention. We present \\textsc{ZetaGPT}, a compact hybrid language model designed for research, rapid prototyping, algorithm verification, and educational applications. In addition to the proposed architecture, \\textsc{ZetaGPT} provides a fully open-source, end-to-end training pipeline encompassing dataset construction, tokenizer training, pretraining, supervised fine-tuning, reinforcement learning from human feedback (RLHF), and chain-of-thought (CoT) reasoning via pure reinforcement learning. To the best of our knowledge, \\textsc{ZetaGPT} is the first open-source small language model without explicit positional encoding and establishes a compact, reproducible reference implementation for the development and empirical study of positional-encoding-free language models.",
+      "authors": [
+        "Róisín Luo"
+      ],
+      "published": "2026-08-10T11:05:16+00:00",
+      "updated": "2026-08-10T11:05:16+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09432v1",
+      "headline": "ZetaGPT: A Reference Implementation of P",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09650v1",
+      "title": "Listwise Cross-Encoder Fine-Tuning vs. Agentic Instruction Tuning for LLM Rerankers: A Systematic Study in Medical Procedure Reranking",
+      "abstract": "Reranking medical procedures against patient queries is a critical component of health insurance information retrieval, complicated by a substantial lexical gap between patient language and clinical nomenclature. We present a systematic comparison of two reranking paradigms for this production task: (1) small cross-encoders (MedCPT, MiniLM-L12) fine-tuned with listwise learning-to-rank objectives across layer freezing configurations, and (2) Qwen3-Reranker-4B, a 4B-parameter instruction reranker whose prompt is iteratively refined via an agentic optimization loop driven by GPT-4.1. On a purpose-built dataset of 2,647 queries across 708 insurance services, we find that a 109M-parameter cross-encoder fine-tuned with ListNet outperforms the 4B-parameter model by 2.6 percentage points on NDCG@3 and 13.3 points on Spearman correlation - at 37x fewer parameters. We report practical findings, a scalable LLM based dataset construction pipeline, and deployment trade-offs relevant to production reranking systems. We release our code and a sample dataset to support reproducibility and adaptation to other domains.",
+      "authors": [
+        "Matan Fainzilber",
+        "Shlomit Plavner"
+      ],
+      "published": "2026-08-10T14:28:30+00:00",
+      "updated": "2026-08-10T14:28:30+00:00",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09650v1",
+      "headline": "Listwise Cross-Encoder Fine-Tuning vs. A",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09579v1",
+      "title": "You Only Flow Once: Calibrated and Real-Time Radar Pose Estimation with Multi-Hypothesis Normalizing Flows",
+      "abstract": "Sparse and noisy millimeter-wave radar point cloud observations often correspond to multiple plausible human poses, making deterministic pose estimation fundamentally ill-posed. Yet existing radar methods remain deterministic, collapsing this ambiguity into a single estimate. Diffusion-based alternatives can model multi-hypothesis distributions but require costly sequential denoising for each distribution sample and lack calibrated uncertainty. We propose Multi-Hypothesis Normalizing Flow Pose Generator (MH-NFPG), which models pose distributions from radar point clouds using a conditional normalizing flow. Specifically, we combine a spatiotemporal transformer backbone with a normalizing flow that transforms a Laplace base distribution into an expressive posterior, generated in parallel through a single forward pass. Leveraging this efficiency, we outperform diffusion-based alternatives in calibration across three radar benchmarks (MM-Fi, mmRadPose, mRI), improve pose accuracy on two, and match it on the third, while achieving over 20x faster inference for applications and reducing calibration error by up to 85%. We find that calibration degrades substantially for diffusion models, whereas our flow-based approach maintains reliable coverage, also in cross-environment settings. These results demonstrate normalizing flows as a practical alternative to diffusion models for real-time, uncertainty-aware radar pose estimation. Our code will be made publicly available.",
+      "authors": [
+        "Jonas Leo Mueller",
+        "Sebastian Hoefler",
+        "Dario Zanca",
+        "Naga Venkata Sai Jitin Jami",
+        "Thomas Altstidl",
+        "Bjoern M. Eskofier"
+      ],
+      "published": "2026-08-10T13:15:09+00:00",
+      "updated": "2026-08-10T13:15:09+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09579v1",
+      "headline": "You Only Flow Once: Calibrated and Real-",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09374v1",
+      "title": "CircuitReason-1k: Benchmarking Long-Horizon Visual-to-Symbolic Reasoning inElectrical Circuits",
+      "abstract": "Electrical circuit analysis requires more than recognizing components in an image. A solver must ground symbols and labels, recover latent topology, select a physical model, formulate coupled equations, propagate intermediate quantities, and preserve units, signs, directions, and phase conventions. We introduce \\benchmark, a benchmark of 1,000 authentic textbook problems for evaluating this complete long-horizon visual-to-symbolic reasoning process. Each problem pairs one or more circuit diagrams with a self-contained question, a typed or semantically specified answer, and a reference worked solution. An evidence-first construction pipeline aligns questions, figures, and solutions, while a reasoning-oriented taxonomy organizes problems by circuit type and dependency depth. Evaluation combines conservative typed scoring with identity-blinded multi-model semantic consensus, retaining every problem in the denominator. Across three commercial chatbot systems and six open-source multimodal large language models, the highest-scoring system reaches 84.8\\% accuracy. However, performance consistently deteriorates on long-horizon problems, and qualitative analysis exposes persistent failures in topology-to-target binding, physical conventions, and late-stage output propagation. \\benchmark{} provides a focused testbed for measuring whether multimodal models can transform technical visual evidence into sustained, physically valid symbolic reasoning. Code are available at GitHub - CircuitReason/CircuitReason1K.",
+      "authors": [
+        "Xinqi Yang",
+        "Kang An",
+        "Tengyue Wang",
+        "Zhongyu Yang",
+        "Chenxu Du",
+        "Yuanchi Zhu",
+        "Hebao Zhu",
+        "Ziliang Wang",
+        "Faqiang Qian",
+        "Yunli Yang",
+        "Qibing Ren"
+      ],
+      "published": "2026-08-10T09:55:08+00:00",
+      "updated": "2026-08-10T09:55:08+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09374v1",
+      "headline": "CircuitReason-1k: Benchmarking Long-Hori",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09519v1",
+      "title": "XFeat Revisited: Reproducibility and Evaluation of a Lightweight Image Matcher",
+      "abstract": "We present a reproducibility study of XFeat, a lightweight local feature extractor and matcher designed to identify corresponding points across images efficiently on resource-constrained hardware. We re-implement the architecture based on the paper and supplementary material, re-evaluate the authors' released checkpoint alongside our re-implementation, and conduct additional architectural ablations to examine design choices that were not fully justified in the original work. This distinction between re-evaluation and reproduction is important, as the paper, supplement, and public code differ in several implementation details, including the backbone layout, fusion block, and training losses. Empirically, our reproduced models closely match and, in some cases, outperform the re-evaluated original checkpoint on MegaDepth-1500 and ScanNet-1500, supporting the main claim that XFeat provides a strong accuracy-efficiency trade-off for standard image-matching benchmarks. Our ablations provide a more nuanced view of two architectural arguments from the original paper. In particular, the parallel keypoint branch is important for semi-dense matching, but its benefit is less pronounced than originally claimed, while the evidence for the specific placement of the single skip-connection remains inconclusive. Finally, we reproduce the original downstream evaluations and find close agreement for homography estimation, while Aachen visual localization remains below the reported results, even for the released checkpoint, suggesting sensitivity to underspecified evaluation details. We then extend the analysis to zero-shot out-of-distribution and cross-modal matching across retinal, thermal-visible, and multimodal remote-sensing imagery, where XFeat remains effective in some settings but degrades sharply under severe modality shifts.",
+      "authors": [
+        "Lazar Đoković",
+        "Aimee Lin"
+      ],
+      "published": "2026-08-10T12:18:02+00:00",
+      "updated": "2026-08-10T12:18:02+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09519v1",
+      "headline": "XFeat Revisited: Reproducibility and Eva",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.699999999999999,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09638v1",
+      "title": "Avalon-ToM-Bench: Evaluating Fine-Grained Theory of Mind via Asymmetric Game Mechanics",
+      "abstract": "Theory of Mind (ToM) is essential for agent interactions, yet existing evaluations either rely on static scenarios that oversimplify mental-state reasoning or interactive settings that provide limited diagnostic insight. We present Avalon-ToM-Bench, a fine-grained benchmark that operationalizes ToM through the asymmetric-information mechanics of The Resistance: Avalon. Rather than evaluating end-to-end gameplay, it decomposes ToM into a 2$\\times$2 taxonomy -- epistemic versus motivational reasoning crossed with inference versus action -- using human-crafted, perspective-constrained queries. Benchmarking 28 LLMs reveals three insights: 1) Reasoning, not knowledge. Models show strong game-rule comprehension but markedly weaker ToM abilities, isolating failures to social reasoning rather than missing domain knowledge. 2) Expression, not representation. Mechanistic analyses via linear probing and activation steering show that models frequently represent correct mental-state inferences in their hidden states but fail to express them during generation -- linear probes recover 77-82% accuracy versus 62-70% from the models' own chain-of-thought. 3) Policy, not deliberation. Dedicated reasoning training yields substantial improvements whereas test-time chain-of-thought provides only marginal gains (+11.0 versus +1.1 points on average), suggesting that robust ToM depends on a learned reasoning policy rather than increased inference-time deliberation.",
+      "authors": [
+        "Yen-Shan Chen",
+        "Yu Chian Duan",
+        "Chih-En Kuo",
+        "Jian-Bin Wu",
+        "Yun-Nung Chen"
+      ],
+      "published": "2026-08-10T14:19:08+00:00",
+      "updated": "2026-08-10T14:19:08+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY",
+        "cs.GT"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09638v1",
+      "headline": "Avalon-ToM-Bench: Evaluating Fine-Graine",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09574v1",
+      "title": "The Politician, the Liar, and the Obedient Worker: Emerging Behavior of LLM Agents in Hierarchical Games",
+      "abstract": "LLMs are rapidly embedding themselves into daily life: drafting our emails, managing our schedules, and making decisions on our behalf. As they move from individual tools to participants in multi-agent organizations, an important question arises: do they reproduce the governance failures like free-riding, corruption, and entrenched leadership that plague human institutions? We introduce the Hierarchical Game (HG), a public goods game extended with managerial authority, democratic elections, and private communication. Testing six frontier models across twelve experiments that add institutions one at a time (speech, peers, government, wages, oversight, elections), we find distinct behavioral profiles: Qwen promises and lies (13.3\\% broken promises); Grok refuses to cooperate on its own but becomes fully cooperative once a manager can punish it (16\\%$\\to$100\\%); Claude and GPT-4o cooperate reliably at baseline. But honesty proves fragile. When the manager role comes with a salary, all models except GPT-4o start cutting private deals to win or keep the position. When punishment is made anonymous, honest models begin to cheat. When all agents share the same model family, the first elected manager stays in power indefinitely. Leadership change only happens in groups that mix different families.",
+      "authors": [
+        "Fatemeh Seyedin",
+        "Adrian Weller",
+        "Jinhyuk Yun",
+        "Mahmoudreza Babaei"
+      ],
+      "published": "2026-08-10T13:08:52+00:00",
+      "updated": "2026-08-10T13:08:52+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09574v1",
+      "headline": "The Politician, the Liar, and the Obedie",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09443v1",
+      "title": "Coupled Graph--Policy Distillation for Personalized Medication Safety in Older Adults with Multimorbidity",
+      "abstract": "Large language model (LLM) agents can support medication review between clinical visits, but safe choices for older adults with multimorbidity depend on conditions, medications, and geriatric risks that users may omit. We introduce ATLAS, a coupled graph--policy distillation framework for patient-adaptive medication safety. ATLAS structures guideline evidence as a medication-safety graph. Targeted questions update the patient state and distill relevant relations into a patient-specific medication conflict graph (PMCG). A risk-first multi-agent policy uses the PMCG to screen contraindications, assess cautions and monitoring needs, identify safer alternatives, and verify the final medication plan. We also introduce GeriMedBench, an interactive benchmark that tests safety-critical information acquisition and evidence-based decision revision. Across a European non-interactive multimorbidity benchmark, an Asian interactive multimorbidity benchmark, and an Asian non-interactive cross-guideline benchmark, ATLAS achieves the strongest complete-decision performance among the compared systems. On the European non-interactive multimorbidity benchmark, it exceeds the strongest proprietary LLM baseline by 53.73 points in Strict Success Rate and 14.63 points in overall safety reasoning score (OSRS), with no unsafe recommendations under the automated evaluator. A blinded clinician evaluation gives ATLAS higher mean ratings across all five criteria and flags potentially unsafe recommendations in one ATLAS case and two Gemini cases.",
+      "authors": [
+        "Zihan Wang",
+        "Anglin Liu",
+        "Rongyi Wang",
+        "Dantong Li",
+        "Yi Lu",
+        "Siqing Yuan",
+        "Hongxia Xu",
+        "Zhongtian Long",
+        "Jintai Chen"
+      ],
+      "published": "2026-08-10T11:19:44+00:00",
+      "updated": "2026-08-10T11:19:44+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09443v1",
+      "headline": "Coupled Graph--Policy Distillation for P",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09928v1",
+      "title": "Multimodal Model Diffing for Feature Discovery and Control",
+      "abstract": "Multimodal Large Language Models (MLLMs) exhibit strong visual understanding, yet the internal features that cause these behaviors remain difficult to identify, audit, or control. While applicable to post-hoc inspection, hidden states that are decomposed into interpretable feature directions using sparse autoencoders (SAEs) neither readily isolate which features are changed by multimodal training, nor are they directly useful for targeted control. We introduce MMDiff, a multimodal model-diffing framework that trains multimodal SAEs and turns them into feature-level interfaces for discovering and controlling multimodal behavior. MMDiff supports three uses: (i) feature isolation, by diffing a base-LM SAE against its multimodal-adapted counterpart to identify features altered by multimodal training; (ii) task-specific feature detection, via per-token contrastive firing analysis that isolates causal features; and (iii) feature-level control, by causally removing or steering the discovered feature directions. We train multimodal SAEs for three MLLM families, LLaVA-MORE, PaliGemma 2, and InternVL3.5, and evaluate on visual-spatial understanding, multimodal safety, and OCR. MMDiff discovers sparse, causally specific features whose removal selectively degrades target behaviors by an average of 12% on spatial tasks and 17% on OCR, and reduces attack success rate by 24% on multimodal safety attacks, with no impact on VQA performance. Steering these features improves spatial and OCR accuracy by +3.6% and +1.8% on average over a standard single-layer steering baseline. These results show that multimodal SAEs can serve not only as interpretability tools, but as mechanisms for auditing, steering, and controlling MLLMs behavior toward safer and more capable generations.",
+      "authors": [
+        "Hunar Batra",
+        "Lachin Naghashyar",
+        "Ashkan Khakzar",
+        "Philip Torr",
+        "Christian Schroeder de Witt",
+        "Constantin Venhoff",
+        "Ronald Clark"
+      ],
+      "published": "2026-08-10T17:59:30+00:00",
+      "updated": "2026-08-10T17:59:30+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09928v1",
+      "headline": "Multimodal Model Diffing for Feature Dis",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.3,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09706v1",
+      "title": "Test-Time Scaling for CAD Generation via Verifier-Free Consensus Selection",
+      "abstract": "Large language models can write parametric CAD programs from a natural-language description (text-to-CAD generation), but a single sample is often wrong. Increasing test-time compute by sampling multiple candidates only helps if a good candidate can be identified, yet no ground-truth model is available at generation time. Existing systems often require a separate verifier, such as a vision-language judge, to select among candidates. We investigate whether the candidate pool itself provides enough signal for effective selection and a verifier-free alternative. We introduce 3D CAD consensus selection, hereafter consensus selection: sample $N$ parametric CAD programs, compile them to 3D models, and return the candidate that agrees most with the rest of the pool. The method is training-free and compatible with existing CAD agents. We investigate geometric and topological notions of agreement, each of which improves its corresponding evaluation metric. On the exact candidate pools of a state-of-the-art CAD generation method, geometric consensus improves all three geometric metrics over the method's verifier, while topological consensus matches it on topology. Across every tested LLM and prompt variant, geometric consensus also improves geometric accuracy over random selection from the same pool, reducing Chamfer distance by $1-10\\%$.",
+      "authors": [
+        "Aaron Haag",
+        "Altay Kaçan",
+        "Bertram Fuchs",
+        "Oliver Lohse"
+      ],
+      "published": "2026-08-10T15:10:44+00:00",
+      "updated": "2026-08-10T15:10:44+00:00",
+      "categories": [
+        "cs.CE",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09706v1",
+      "headline": "Test-Time Scaling for CAD Generation via",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CE",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09594v1",
+      "title": "Illusion or Integrity? Geometrical Consistency Metric for AIGC Video Quality Evaluation",
+      "abstract": "Recently, AI-driven video generation has attracted considerable attention. This surge increases the demand for reliable video quality assessment (VQA) metrics to evaluate AI-generated content (AIGC) videos and guide model optimization. Existing studies assess video quality through visual harmony, video-text consistency, and domain-specific alignment, yet lack quantitative metrics for measuring fidelity to physical laws. To address this limitation, we present a novel benchmark that evaluates the quality of AIGC videos based on their compliance with physical principles by quantitatively measuring geometric consistency across frames extracted from generated sequences. This serves as a proxy for estimating the extent to which generated videos conform to real-world physical rules. Specifically, GeoCon-Bench captures global motion through translation estimation, fits homography or fundamental matrix models using background correspondences, and reports complementary metrics, including inlier ratio and geometric error. We also release a dataset containing 20 scenes across six motion categories. Experiments on state-of-the-art AIGC models demonstrate the reliability of GeoCon-Bench as a video quality assessment metric.",
+      "authors": [
+        "Yifei Xue",
+        "Yuanchen Fei",
+        "Hao Zhang",
+        "Chenzhi Nie",
+        "Tie ji",
+        "Yizhen Lao"
+      ],
+      "published": "2026-08-10T13:28:07+00:00",
+      "updated": "2026-08-10T13:28:07+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09594v1",
+      "headline": "Illusion or Integrity? Geometrical Consi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09474v1",
+      "title": "FaLCon: Facet-Anchored Retrieval with Late Consensus for Sim2Real Text-Based Person Anomaly Search",
+      "abstract": "Text-based person anomaly search requires retrieving real-world pedestrian images from detailed natural-language descriptions using models trained primarily on synthetic data. This Sim2Real setting is particularly challenging because visually similar candidates may differ only in subtle actions, object interactions, or appearance attributes, while applying multimodal large language models to the entire gallery is computationally expensive. We propose an anchor-constrained coarse-to-fine retrieval framework that combines global semantic matching with fine-grained verification. First, each query is represented by its original caption, a structured concatenation, and several semantic facets. Heterogeneous vision-language retrievers are then integrated through robust per-query score calibration and soft claim-aware fusion. Full and concatenated captions serve as anchors to preserve candidate recall, whereas appearance, action, and object facets provide bounded corrective evidence. The resulting candidate pool is further refined by a discriminative Qwen3 reranker and two complementary semantic verification modules based on anomaly-aware cloze completion and multi-agent evidence reasoning. Finally, an uncertainty-gated consensus module adaptively reweights the three experts on ambiguous queries. Experiments on the PAB benchmark show that the proposed soft claim-aware retrieval achieves 86.44% mAP@10, substantially outperforming individual retrieval backbones. The complete framework further improves performance to 95.41% mAP@10, 94.44% R@1, and 99.09% R@5. These results demonstrate that preserving strong global retrieval while restricting expensive semantic reasoning to a small candidate pool is effective for fine-grained Sim2Real person anomaly search. Our code will be available on Github.",
+      "authors": [
+        "Hieu Dinh Trung Pham",
+        "Phuong Huu Vu Tran",
+        "Thuan Duc Mai",
+        "Son Nguyen Minh Le",
+        "Khang Le Minh",
+        "Hoang Vo",
+        "Minh-Chi Phung",
+        "Huy Minh Nhat Nguyen",
+        "Cuong Tuan Nguyen"
+      ],
+      "published": "2026-08-10T11:42:52+00:00",
+      "updated": "2026-08-10T11:42:52+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09474v1",
+      "headline": "FaLCon: Facet-Anchored Retrieval with La",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09405v1",
+      "title": "MeanSR: Restoration Trajectory Learning for One-Step Perceptual Super-Resolution",
+      "abstract": "Diffusion-based super-resolution (SR) achieves strong perceptual quality but requires costly iterative denoising. Existing one-step distillation methods reduce inference time but depend on expensive pretrained teachers, whereas CTMSR avoids distillation through PF-ODE consistency training yet does not explicitly model the restoration dynamics from low-resolution (LR) inputs to high-resolution (HR) images. We propose MeanSR, a one-step perceptual SR method that learns an LR-conditioned average velocity field to directly capture the finite-time transition from degraded or noisy inputs to plausible HR outputs. We further reformulate distribution trajectory matching for average-velocity generation and introduce a Stage-Aware Temporal Sampling strategy to improve trajectory learning. Experiments on synthetic and real-world benchmarks show that MeanSR outperforms CTMSR on CLIPIQA, MUSIQ, and MANIQA while substantially reducing FLOPs and inference latency. MeanSR also reconstructs sharper structures and more realistic textures with fewer perceptual artifacts.",
+      "authors": [
+        "Axi Niu",
+        "Jiawei Kou",
+        "Kang Zhang",
+        "Qingsen Yan",
+        "Jinqiu Sun",
+        "Yanning Zhang"
+      ],
+      "published": "2026-08-10T10:33:18+00:00",
+      "updated": "2026-08-10T10:33:18+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09405v1",
+      "headline": "MeanSR: Restoration Trajectory Learning ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09528v1",
+      "title": "Robotic Fabric Alignment System for Sewing Using Global Local Weighted ICP",
+      "abstract": "Accurate fabric alignment is a critical step that must be performed before sewing. This paper presents a novel automated fabric alignment system. The system estimates the poses of top and bottom fabric panels, lying flat and wrinkle-free in arbitrary positions, using a new Global Local Weighted Iterative Closest Point (GLW-ICP) method. The system then manipulates the top panel to achieve precise alignment at both edges and sewing lines. Unlike conventional approaches, GLW-ICP robustly aligns both global edges and local sewing lines by globally aligning fabric edge points and locally aligning sewing line points to their corresponding CAD model points, while removing unmatched points in occluded regions. Real-world experiments with various fabric shapes show that the system consistently achieves millimeter-level alignment accuracy under both occlusion and non-occlusion conditions, demonstrating its effectiveness and suitability for automated fabric alignment in practical scenarios.",
+      "authors": [
+        "Wenbo Dong",
+        "Dipankar Bhattacharya Member",
+        "Kai Tang",
+        "Akinari Kobayashi",
+        "Fuyuki Tokuda",
+        "Akira Seino",
+        "Norman C. Tien",
+        "Kazuhiro Kosuge"
+      ],
+      "published": "2026-08-10T12:30:17+00:00",
+      "updated": "2026-08-10T12:30:17+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09528v1",
+      "headline": "Robotic Fabric Alignment System for Sewi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.8,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09366v1",
+      "title": "Beyond Binary: Continuous State Optimization with Graph-Structured Objectives",
+      "abstract": "Large-scale learning systems often face the challenge of balancing multiple,\n  potentially competing objectives, such as fairness, accuracy, and\n  latency. While recent work has formalized this as an optimization problem over\n  binary states, many real-world control parameters, such as fairness\n  thresholds, diversity mixing rates, or resource budgets, are continuous. In\n  this work, we extend the framework to \\emph{continuous state spaces}. We model\n  the problem as minimizing a sum of linear objectives subject to \\emph{movement\n  costs} that penalize system instability. We capture the local structure of\n  the objectives using a \\emph{dependency graph} (or factor graph), where each\n  objective is determined by a subset of the state attributes. To address the\n  tension between exploration and stability, we propose \\emph{Lazy\n  Graph-LinUCB}, an algorithm that performs lazy updates to minimize switching\n  costs while maintaining near-optimal regret. Beyond stability, we introduce\n  three advanced mechanisms to exploit the underlying graph structure: (1) an\n  \\emph{asynchronous} update schedule that eliminates synchronization overhead\n  in sparse graphs; (2) an \\emph{adaptive} algorithm that learns the graph\n  structure from data; and (3) a \\emph{joint estimator} that leverages data\n  sharing among correlated objectives to significantly tighten regret\n  bounds. Empirically, we demonstrate that these structural exploitations reduce\n  movement costs by more than a factor of three in heterogeneous systems while\n  maintaining similar cumulative losses.",
+      "authors": [
+        "Corinna Cortes",
+        "Yishay Mansour",
+        "Mehryar Mohri"
+      ],
+      "published": "2026-08-10T09:46:28+00:00",
+      "updated": "2026-08-10T09:46:28+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09366v1",
+      "headline": "Beyond Binary: Continuous State Optimiza",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09931v1",
+      "title": "Perception Before Supervision: Self-Contained Visual Distillation from Counterfactual Blind Spots",
+      "abstract": "Self-improvement for multimodal large language models (MLLMs) is typically driven by reward-based methods that provide only coarse scalar feedback. Distillation offers a richer alternative through dense token-level supervision, but in the visual domain it usually depends on privileged context constructed using external annotations and tools, or stronger models. We introduce \\textbf{CVPD} (Contrastive Counterfactual Visual Process Distillation), which, to the best of our knowledge, is the first fully self-contained framework for dense, on-policy, token-level visual self-distillation for MLLMs. CVPD identifies visual blind spots where zooming into a region changes and sharpens the model's answer distribution, while removing the same region leaves the full-image behavior largely unchanged. Such regions reveal perceptual information that the model can encode but fails to consistently utilize under full-image conditioning. We propose a three-gate Counterfactual Criterion that identifies these regions directly from the model's own responses and converts them into dense contrastive supervision for self-distillation. On Qwen3-VL-8B-Instruct, CVPD outperforms six self-evolving baselines across twelve benchmarks, including methods that rely on external GPT-4o supervision, without a single regression. It achieves gains of $+3.60$ on OCRBench, $+3.38$ on MMStar Fine-Grained Perception, and $+3.08$ on MMStar Logical Reasoning, while maintaining or improving performance on broader multimodal benchmarks.",
+      "authors": [
+        "Shravan Venkatraman",
+        "Omkar Thawakar",
+        "Ritesh Thawkar",
+        "Abdelrahman Shaker",
+        "Rao Muhammad Anwer"
+      ],
+      "published": "2026-08-10T17:59:56+00:00",
+      "updated": "2026-08-10T17:59:56+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09931v1",
+      "headline": "Perception Before Supervision: Self-Cont",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09819v1",
+      "title": "Macaron-V1: Towards Open Continual Learning with Self-Improvement and Mixture-of-LoRA",
+      "abstract": "Macaron-V1 is an open agent-model family for experiential intelligence: learning from experience in real environments and continuing to learn after deployment. It is organized around two system goals. Adaptation is pursued through recursive improvement of versioned model-harness pairs, where experience from one configuration is evaluated under an external contract and used to construct its successor. Collaboration is pursued via the Mixture-of-LoRA (MoL) architecture that freezes a base model, composes specialist LoRA adapters, and selects one LoRA per user turn. The flagship Macaron-V1-Venti combines a 744B GLM-5.2 base with four LoRAs for chat, agent, coding, and GenUI; the Qwen3.6-based Macaron-V1-Tall (50B) uses the same design for local deployment. This report presents Macaron-V1 as a co-designed system spanning architecture, algorithms, and infrastructure. The MoL architecture supports continual learning through extensible LoRA specialists. The algorithm combines Model-Harness Co-design and recursive self-improvement loop, including the UI4A component-native GenUI harness, a stateful action substrate, versioned HCP contract, and the agentic RL framework MindForge. The supporting infrastructure includes the post-training platform MinT, the long-context RL method LongStraw, and stability techniques for sparse MoE and DSA base models. We evaluate Macaron-V1 on Personal Intelligence, GenUI, and general capability benchmarks against frontier baselines. Our results validate the current system, while compounding gains from continual learning and collective intelligence remain open questions.",
+      "authors": [
+        "Mind Lab",
+        " :",
+        "Vin Bo",
+        "Asher Cai",
+        "Jingwei Cao",
+        "Song Cao",
+        "Vic Cao",
+        "Amelia Chen",
+        "Andrew Chen",
+        "Kaijie Chen",
+        "Cleon Cheng",
+        "Steven Chiang",
+        "Kaixuan Fan",
+        "Hera Feng",
+        "Huan Feng",
+        "Arthur Fu",
+        "Jun Gao",
+        "Pyke Han",
+        "Nolan Ho",
+        "Ori Hong",
+        "Hailee Hou",
+        "Piers Hua",
+        "Charles Huang",
+        "Miles Jiang",
+        "Nora Jiang",
+        "Yuyi Jiang",
+        "Qiuyu Jin",
+        "Fancy Kong",
+        "Kuss Koo",
+        "Jaron Lee",
+        "Andrew Lei",
+        "Alexy Li",
+        "Dawn Li",
+        "Lucian Li",
+        "Ray Li",
+        "Ricardo Li",
+        "Smith Li",
+        "Theo Li",
+        "Allen Lin",
+        "Elliot Lin",
+        "Fan Lin",
+        "Chen Ling",
+        "Kairus Liu",
+        "Kieran Liu",
+        "Logan Liu",
+        "Neo Liu",
+        "Xiang Liu",
+        "Yuxin Lu",
+        "Maeve Luo",
+        "Pony Ma",
+        "Verity Niu",
+        "Cole Qiao",
+        "Guian Qiu",
+        "Vince Qu",
+        " Sentry",
+        "Niko Song",
+        "Vincent Wang",
+        "Bo Wu",
+        "Rio Yang",
+        "Evelyn Ye",
+        "Fiona Ye",
+        "Ina Ye",
+        "Regis Ye",
+        "Josh Ying",
+        "Atlas Zeng",
+        "Danney Zeng",
+        "Salmon Zhan",
+        "Anya Zhang",
+        "Di Zhang",
+        "Mia Zhang",
+        "Sueky Zhang",
+        "Wei Zhao",
+        "Ada Zhou",
+        "Adrian Zhou",
+        "Yuhua Zhou",
+        "Juno Zhu",
+        "Murphy Zhuang"
+      ],
+      "published": "2026-08-10T16:39:55+00:00",
+      "updated": "2026-08-10T16:39:55+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09819v1",
+      "headline": "Macaron-V1: Towards Open Continual Learn",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09636v1",
+      "title": "NeuroRefiner: Morphology-Aware Multi-Agent Refinement for 3D Fluorescence Microscopy Neuron Segmentation",
+      "abstract": "Accurate 3D neuron segmentation in fluorescence microscopy is critical for neuroscience. However, the sparse and elongated morphology of neurons poses significant challenges to existing segmentation methods. These methods struggle to preserve both local details and global topology, leading to fragmented results. To address this, we propose NeuroRefiner, a multi-agent system that formalizes the human expert workflow involving iterative global observation and local editing. Specifically, NeuroRefiner comprises three collaborative agents dedicated to diagnosing topological errors, generating correction instructions, and validating refinement quality. To facilitate agent instruction-guided segmentation refinement, we propose TopoRefineNet, a dedicated 3D U-Net-based tool that leverages cross-modality feature fusion to generate refined masks. Through multi-round agent reasoning and voxel-level editing, NeuroRefiner produces topologically more accurate segmentations with enhanced interpretability. Experiments on the BigNeuron, CWMBS, and ZBFWB datasets demonstrate that NeuroRefiner outperforms state-of-the-art methods, notably achieving a 3.02% improvement in F1 score on the challenging ZBFWB dataset.",
+      "authors": [
+        "Haiyang Yan",
+        "Jinyue Guo",
+        "Yanchao Zhang",
+        "Bingqing Wang",
+        "Zhenchen Li",
+        "Jing Liu",
+        "Jiazheng Liu",
+        "Linlin Li",
+        "Hua Han"
+      ],
+      "published": "2026-08-10T14:14:47+00:00",
+      "updated": "2026-08-10T14:14:47+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09636v1",
+      "headline": "NeuroRefiner: Morphology-Aware Multi-Age",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-08-11"
+    },
+    {
+      "arxiv_id": "2608.09321v1",
+      "title": "Warp-free Cross-view Geo-localization via Feature-space Consensus Mining",
+      "abstract": "Cross-view geo-localization is challenging due to drastic viewpoint changes and large appearance discrepancies between street-level and satellite imagery. Although existing methods often use geometric warping to expose co-visible cues, such transformations rely on restrictive spatial assumptions and inevitably introduce severe visual distortions under view-dependent visibility, yielding noisy supervision and fragile correspondences. To overcome this, we propose a novel joint-view consensus-guided learning framework that entirely bypasses explicit geometric warping. Instead of forcing rigid spatial alignment, we dynamically mine and adaptively strengthen a semantic consensus directly within the feature space. Specifically, an auxiliary joint-view pathway during training enables direct cross-view interaction, allowing each view to selectively aggregate corroborative evidence into a unified consensus representation. To resolve feature heterogeneity among the single- and joint-view streams, we introduce global pattern probes acting as a semantic dictionary to project divergent modalities into a strictly aligned metric space. Guided by a consensus-mediated contrastive objective, single-view embeddings are explicitly pulled toward the joint-view anchor during training, distilling this consensus-mining capability into the single-view encoders for robust retrieval at inference. Extensive experiments demonstrate that our method achieves state-of-the-art performance across four standard benchmarks, underscoring the importance of discovering cross-view semantic consensus for reliable geo-localization.",
+      "authors": [
+        "Zhuo Song",
+        "Lian Xu",
+        "Runqing Jiang",
+        "Yongjian Zhang",
+        "Kunhong Li",
+        "Ye Zhang",
+        "Yulan Guo"
+      ],
+      "published": "2026-08-10T09:02:06+00:00",
+      "updated": "2026-08-10T09:02:06+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2608.09321v1",
+      "headline": "Warp-free Cross-view Geo-localization vi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-08-11"
     }
   ]
 }
