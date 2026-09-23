@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-09-22T21:55:22.335147+00:00",
-  "source_last_updated": "2026-09-22T21:55:13.928006+00:00",
-  "count": 4550,
+  "generated_at": "2026-09-23T22:10:07.048573+00:00",
+  "source_last_updated": "2026-09-23T22:09:58.696157+00:00",
+  "count": 4575,
   "papers": [
     {
       "arxiv_id": "2512.10674v1",
@@ -231310,6 +231310,983 @@
       },
       "practicality_score": 8.399999999999999,
       "first_seen": "2026-09-22"
+    },
+    {
+      "arxiv_id": "2609.25873v1",
+      "title": "AgenticSizing: A Large Language Model-based Multi-Agent Framework for Analog Circuit Sizing",
+      "abstract": "Analog circuit sizing remains a challenging and time-consuming task due to the large design space, strong performance trade-offs, and increasing circuit complexity in scaled technologies. Although recent large language model (LLM)-based methods show promise in improving sample efficiency and interpretability, existing approaches often lack explicit circuit-topology understanding and are mainly evaluated on relatively simple analog building blocks. This paper presents a multi-agent LLM-based framework for complex analog circuit sizing. The proposed framework first analyzes the circuit topology and decomposes the netlist into functional blocks and substructures. It also extracts lightweight design knowledge for reuse. Based on the extracted topology and knowledge, a planner coordinates multiple role-specialized sizing agents to update design variables and achieve global performance specifications. This workflow mimics the collaborative process of an expert analog design team and provides a structured, interpretable, and simulation-driven optimization procedure. The framework was validated on eight circuits, with the largest design containing up to 55 transistors and 60 sizing variables. Notably, for the LDO benchmark, the proposed method achieved a 60\\% success rate with an average of 83 iterations, where classical optimizers failed to find feasible solutions. Further, ablation studies demonstrate that topology understanding, design-knowledge infusion, and agent specialization provide complementary benefits. The source code is available to support reproducibility.",
+      "authors": [
+        "Yijia Hao",
+        "Pratibha Verma",
+        "Dongxu Guo",
+        "Cristian Sestito",
+        "Michael O'Boyle",
+        "Christos-Savvas Bouganis",
+        "Themis Prodromakis"
+      ],
+      "published": "2026-09-22T08:39:05+00:00",
+      "updated": "2026-09-22T08:39:05+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.AR"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25873v1",
+      "headline": "AgenticSizing: A Large Language Model-ba",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.AR"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 23.0,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26777v1",
+      "title": "SWE-Serve: Benchmarking Agentic Engineering For Production Inference Serving",
+      "abstract": "We introduce SWE-Serve, a benchmark for evaluating agents on production inference engineering tasks. Implementing an inference feature can require coordinating multiple changes across the serving stack, including model support, runtime execution, and public APIs. Existing benchmarks provide limited coverage of production inference engineering: repository-level software engineering benchmarks do not target inference, while general terminal-agent benchmarks include only a few inference tasks. Dedicated inference benchmarks, meanwhile, focus primarily on isolated kernel generation or performance optimization rather than repository-scale production feature implementation. SWE-Serve provides 53 repository-grounded tasks derived from recent production changes to SGLang, spanning six inference engineering families. Each task executes on either CPU or a single GPU (H100) and is evaluated with hidden functional and regression tests, including, where applicable, end-to-end (E2E) serving tests and calibrated performance gates. Executable no-op and oracle controls, adversarial verifier review, and closed-book execution support task validity and evaluation integrity. Across 11 models and 31 model-effort configurations, the best-performing configuration achieves 75% mean pass@1. SWE-Serve exposes a substantial gap between completing tasks locally and achieving production correctness. On 19 tasks with end-to-end coverage, model-serving E2E tests reject roughly one-third of patches that pass every other test (45.9% under the verifier versus 69.4% with E2E tests excluded from scoring), with pass rate increasing for each model's best-performing configuration. By making the production correctness gap directly measurable, SWE-Serve enables the field to track whether future agents move beyond completing tasks locally to achieving production correctness.",
+      "authors": [
+        "Jennifer Williams",
+        "Dave Farris",
+        "Jeff Farris",
+        "Jiantao Jiao"
+      ],
+      "published": "2026-09-22T17:54:59+00:00",
+      "updated": "2026-09-22T17:54:59+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26777v1",
+      "headline": "SWE-Serve: Benchmarking Agentic Engineer",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.SE"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26029v1",
+      "title": "CQ4OE: A benchmark for assessing LLM-assisted ontology generation from competency questions",
+      "abstract": "Ontology generation from Competency Questions (CQs) is a central yet labor-intensive phase of Ontology Engineering. While large language models (LLMs) offer promising automation capabilities, current evaluations remain fragmented. Task formulations are heterogeneous, gold standards often lack fine-grained CQ provenance, metrics conflate lexical overlap with structural and logical adequacy, and reference ontologies are not always explicitly designed around the evaluation CQs. Here, we address these limitations with CQ4OE, a benchmark for the systematic and reproducible evaluation of LLM-based ontology generation from CQs. For each ontology in the benchmark, we build a CQ-driven gold OWL ontology with explicit provenance linking each CQ to the classes, properties, and axioms required to answer it. From this resource, we define two complementary evaluation tasks. CQ2Term supports term-level evaluation of CQ-specific class and property prediction over 99 CQs, and CQ2Onto supports ontology-level evaluation over 118 CQs, including hierarchy, property modeling, and axiom-level structure. We demonstrate CQ4OE with experiments using nine LLMs under zero-shot, iterative, and multi-agent generation strategies, showing that LLMs recover explicit vocabulary terms more reliably than creating ontologies, particularly in property modeling, hierarchy construction, and axiom generation.",
+      "authors": [
+        "Jiayi Li",
+        "Ziyuan Wang",
+        "Daniel Garijo",
+        "María Poveda-Villalón"
+      ],
+      "published": "2026-09-22T11:32:44+00:00",
+      "updated": "2026-09-22T11:32:44+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26029v1",
+      "headline": "CQ4OE: A benchmark for assessing LLM-ass",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26355v1",
+      "title": "PACT: From Credit Assignment to Critic Alignment",
+      "abstract": "Reinforcement learning has become a central component of large language model (LLM) post-training, yet token-level credit lacks a generally accepted mathematical definition, leaving its relationship to commonly used training signals unclear. We formulate three regularity conditions, namely Completeness, Prefix Consistency, and Neutrality, and prove that they uniquely determine token-level credit. This characterization provides a unified basis for explaining phenomena across existing algorithms and guides the development of an improved actor-critic training procedure. Through this lens, an ideal teacher in On-Policy Distillation (OPD) acts as an implicit critic, yielding an expected policy gradient proportional to that induced by token-level credit. Response-level REINFORCE Leave-One-Out (RLOO) signals match the expected policy-gradient contribution of token-level credit despite their coarser granularity. We further establish approximate credit sparsity under bounded outcome rewards and show how intermediate critic errors in Generalized Advantage Estimation (GAE) can become comparable to the underlying credit. These motivate Policy Aligned Critic Training (PACT), which adopts an Actor-then-Critic update order to apply importance sampling correction to critic training and better align the critic with the updated policy. In agentic mathematical reasoning, PACT achieves 72.87% average accuracy across four benchmarks, outperforming GRPO and PPO by 8.80 and 13.16 percentage points, respectively. On SWE-bench Verified, PACT achieves a pass rate of 67.4%, outperforming PPO, GRPO, and SAO by 2.4, 2.0, and 3.8 percentage points, respectively.",
+      "authors": [
+        "Jiayan Fu",
+        "Hang Xu",
+        "Yong Zhang",
+        "Zhaokai Luo",
+        "Yao Hu",
+        "Dongyan Zhao",
+        "Mu Chuan"
+      ],
+      "published": "2026-09-22T12:58:28+00:00",
+      "updated": "2026-09-22T12:58:28+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26355v1",
+      "headline": "PACT: From Credit Assignment to Critic A",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26793v1",
+      "title": "HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis",
+      "abstract": "Compositional 3D scene reconstruction has recently been explored from two directions: agentic reasoning that provides semantic understanding of spatial relationships but lacks precise alignment with input images; and visual geometry foundation models that predict dense point maps from input images but the reconstruction quality is limited. Therefore, recovering a complete 3D scene from a single monocular image with accurate inter-object relationships and high-fidelity reconstruction quality remains challenging. In this paper, we present HARMONY, a hierarchical chain-of-thought framework that leverages both agentic reasoning and visual geometry foundation. Given an image of an indoor scene, starting from an empty 3D floorplan, HARMONY first calibrates the camera against the reference image to establish a semantically-grounded spatial frame, then uses agentic VLM reasoning to recover the 3D room layout and an initial placement order. It then places the objects in a hierarchical order, from wall-mounted elements, free-standing furniture, to dependent decorations on top of furniture. We also use depth-first traversal for furniture so each placement conditions on previously resolved structure and a reflective feedback loop to avoid error accumulation. After each object placement by VLM, we use the point cloud estimations to perform geometry-based refinement so that the rendered image aligns better with the input. HARMONY can produce 3D scenes that are semantically consistent and perceptually aligned with the reference image, extending single-image compositional reconstruction to complex indoor scene images. Experiments on synthetic and real-world images demonstrate that HARMONY outperforms the evaluated reconstruction baselines, while qualitative comparisons with GPT-6 Astra suggest more faithful object arrangements and better preservation of scene details.",
+      "authors": [
+        "Shufan Sun",
+        "Chen Wang",
+        "Enxin Song",
+        "Jiatao Gu",
+        "Lingjie Liu"
+      ],
+      "published": "2026-09-22T17:59:47+00:00",
+      "updated": "2026-09-22T17:59:47+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26793v1",
+      "headline": "HARMONY: Hierarchical Agentic Reasoning ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26381v1",
+      "title": "Layout-Guided Masking for GROBID: Lightweight Structural Gains in Large-Scale Scientific PDF Ingestion",
+      "abstract": "Transforming scholarly PDFs into machine-readable fulltext remains a bottleneck for large-scale information systems. Recent vision-based parsers improve accuracy, but need GPUs and may introduce noise into the extracted text. GROBID, a modular font-stream parser running on CPU, is the de-facto standard for structuring scientific articles and underpins several of the largest open scholarly corpora. We pair it with a lightweight CPU detector localising figure, table, and paratext (header, footer, page number) regions, encoded as typed-area masks whose tokens are routed to GROBID's specialised models or discarded. On two PMC corpora, Bioinformatics (1,926 articles) and Materials Science (2,595), scored against JATS with a section-aware structural protocol, our extension improves over plain GROBID on most metrics (NS $+0.025$/$+0.013$; $+0.086$ paragraph recall on Materials Science, $d_z{=}1.08$), and caption-linked figure recovery improves on both corpora. On the external Table-BRGM benchmark, table detection recovers F1 $0.16 \\to 0.94$ and table structure follows (GriTS-Top $0.27 \\to 0.78$, below the strongest GPU system). On body text, against four vision-based systems (Docling, MinerU, olmOCR, dots.ocr), it has the best paragraph precision on both corpora, the best section detection on Materials Science, and a character error rate within 0.004 of the best GPU parser. End-to-end on CPU, it costs $2.7$--$3.2\\times$ less than the cheapest GPU system (Docling) and $10$--$14\\times$ less than generative parsers.",
+      "authors": [
+        "Luca Foppiano",
+        "Sana Khamassi",
+        "Vipul Gupta"
+      ],
+      "published": "2026-09-22T13:24:30+00:00",
+      "updated": "2026-09-22T13:24:30+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.DL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26381v1",
+      "headline": "Layout-Guided Masking for GROBID: Lightw",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.DL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26399v1",
+      "title": "Combining Hierarchical Cognitive Process with Process Supervision for Interpretable Scene Safety Understanding",
+      "abstract": "Scene safety understanding plays a life-or-death role in situational awareness in various critical domains. Traditional methods that rely on learning direct mappings between scenes and safety levels often lack interpretability, limiting their reliability in critical applications. An effective approach to overcoming this challenge lies in interpreting human cognitive processes and equipping machine models with analogous cognitive capabilities. This work explores an effective way of integrating scene safety cognitive process modeling and process supervision. Specifically, we first construct a hierarchical cognitive safety structure, which motivates the development of a novel, high-quality scene safety understanding dataset based on multi-step reasoning with process labels. This dataset serves both as a benchmark and a resource to improve the safety reasoning capabilities of Large Language Models (LLMs), while also enabling a granular analysis of intermediate reasoning steps through information flow and saliency-based techniques. Building upon this foundation, we introduce a modular and flexible process supervision framework that reflects the hierarchical nature of human cognition. This framework leverages LLMs as the core architecture and incorporates Low-Rank Adaptation(LoRA) and Mixture-of-Experts (MoE) strategies to enable specialization and collaboration among expert modules, each tasked with specific sub-processes of the overall reasoning chain. Systematic experimental evaluations and analyses confirm that our framework exhibits superior interpretability and performance characteristics compared to traditional approaches.",
+      "authors": [
+        "Zhiyun Jiang",
+        "Hanyong Wang",
+        "Binbin Liang",
+        "Yu Xie",
+        "Zhengjie Wang",
+        "Menglong Yang",
+        "Wei Li"
+      ],
+      "published": "2026-09-22T13:34:53+00:00",
+      "updated": "2026-09-22T13:34:53+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26399v1",
+      "headline": "Combining Hierarchical Cognitive Process",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25937v1",
+      "title": "Calibrating Retrieval Geometry: Reliability-Guided Training-Free Aggregation for Visual Place Recognition",
+      "abstract": "Frozen visual foundation models provide transferable features for visual place recognition, but fixed aggregation can suppress useful distinctions in new environments. We introduce TFA, a reliability-guided, training-free aggregation method requiring neither place labels nor task-specific weight updates. Our key observation is that reproducible retrieval need not be discriminative: independent codebooks can consistently retrieve a few database hubs. TFA combines cross-codebook agreement, retrieval coverage, and spectral statistics to control residual assignment, spectral shaping, and global-feature fusion. Its spectral kernel exactly recovers original descriptor similarity at zero intervention. Database-only TFA fixes its rules before accessing queries; TFA-C64 uses 64 disjoint unlabeled target images to calibrate retrieval for subsequent queries. Across 20 ground protocols with a fixed DINOv2-B backbone and matched resolution, database-only TFA improves Recall@1 over AnyLoc by 17.39 percentage points on MSLS-val and 9.55 on SPED. C64 mitigates failures of database-only calibration in driving environments. Across eight aerial/cross-view protocols, TFA achieves the highest Recall@1 among compared training-free heads in 14 of 16 DINOv2/DINOv3 backbone-protocol combinations. In a separate native-system comparison, DINOv2-G-based TFA-C64 reaches 91.46% Recall@1 on Pitts30k and 76.29% on VPAIR, outperforming the displayed training-free comparators on all five benchmarks. These results show that reliability-guided aggregation can recover additional retrieval capability from frozen representations, providing a practical baseline for new environments with scarce place supervision.",
+      "authors": [
+        "Xin Li",
+        "Zhimin Mao",
+        "Shang Wang",
+        "Siyuan Duan",
+        "Geng Zhang"
+      ],
+      "published": "2026-09-22T09:43:37+00:00",
+      "updated": "2026-09-22T09:43:37+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25937v1",
+      "headline": "Calibrating Retrieval Geometry: Reliabil",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26325v1",
+      "title": "Leveraging Vision-Based Point Cloud Map Priors for Camera-Based 3D Object Detection and Online Vectorized HD Mapping",
+      "abstract": "Camera-based 3D object detection and online vectorized HD mapping provide compact scene representations for autonomous driving, but both depend on accurate metric geometry and remain limited by depth ambiguity. Over long-term deployment, observations from repeated traversals can be accumulated into persistent point cloud priors that provide geometric context beyond the current observations. Existing explicit point cloud prior approaches, however, rely on LiDAR-based map construction and therefore require expensive 3D ranging sensors. We propose a framework that constructs a static point cloud prior map from previous camera traversals using Pi3X and augments each point with DINOv3 features. At runtime, a local prior patch is retrieved using global localization, encoded with a sparse voxel backbone, and fused in bird's-eye view (BEV) with lifted multi-view camera features. Task-specific sparse transformer heads then predict 3D objects and vectorized map elements from the fused representation. On Argoverse 2, the vision-based prior improves a strong baseline from 0.287 to 0.299 CDS and from 0.669 to 0.750 vectorized mapping mAP. Ablations show that semantic DINOv3 features are particularly important for vectorized mapping. These results demonstrate that vision-built geometric-semantic priors provide an effective form of long-term scene memory for camera-based perception, improving both tasks without LiDAR for prior-map construction or online inference.",
+      "authors": [
+        "Markus Käppeler",
+        "Rohit Mohan",
+        "Abhinav Valada"
+      ],
+      "published": "2026-09-22T12:36:48+00:00",
+      "updated": "2026-09-22T12:36:48+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26325v1",
+      "headline": "Leveraging Vision-Based Point Cloud Map ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25788v1",
+      "title": "Evaluating Accuracy and Probabilistic Reliability of Zero-Shot Time Series Foundation Models",
+      "abstract": "Time Series Foundation Models (TSFMs) promise a paradigm shift toward zero-shot forecasting by eliminating task-specific training. However, existing works often overlook trade-offs between predictive accuracy and probabilistic calibration. This paper presents a benchmark study of six TSFMs evaluated on energy, traffic, and financial datasets. We contrast their performance against statistical baselines and a supervised DL model. The study reveals that while TSFMs outperform statistical methods and supervised models, they are subject to a fundamental trade-off between point accuracy and probabilistic reliability. Specifically, xLSTM architectures provide robust probabilistic calibration across horizons. In contrast, patch-based transformers offer competitive accuracy but face calibration issues at long horizons, while transformer-based models exhibit context saturation points for optimal zero-shot reasoning. These findings offer evidence-based guidance for balancing generalization and uncertainty quantification in real-world deployments.",
+      "authors": [
+        "Panagiotis Michael",
+        "Moysis Symeonides",
+        "Demetris Trihinas"
+      ],
+      "published": "2026-09-22T07:21:26+00:00",
+      "updated": "2026-09-22T07:21:26+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25788v1",
+      "headline": "Evaluating Accuracy and Probabilistic Re",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26443v1",
+      "title": "Mammo-LIFE: Longitudinal Mammographic Imaging and Clinical Feature Enrichment for Post-Radiotherapy Outcome Prediction",
+      "abstract": "Recent advances in Artificial Intelligence (AI)-powered Computer-Aided Diagnosis (CAD) systems have substantially improved breast cancer screening, diagnosis, and prognosis. Comparatively, postradiotherapy outcome prediction using paired longitudinal mammograms has received considerably less attention. This is largely due to the limited availability of well-annotated longitudinal datasets. Longitudinal mammograms, coupled with paired pre- and post-treatment information, provide a unique opportunity to characterize treatment-induced breast tissue changes following radiotherapy. The resulting learned representations can serve as a valuable asset for advancing personalized radiotherapy planning and post-treatment management. In this context, we propose Mammo-LIFE, a patient-level multimodal framework for post-radiotherapy outcome prediction that combines longitudinal mammographic features with patient-level clinical variables. The imaging branch processes paired pre- and post-treatment mammograms acquired from the four standard views using a mammography-specific encoder adapted via Low-Rank Adaptation (LoRA). Within each view, preand post-treatment representations are explicitly compared through a longitudinal comparison module to capture treatment-related changes. The resulting view-level embeddings are then aggregated using learned view-attention pooling to form a unified patient-level mammographic representation. Selected clinical variables are subsequently combined with the image-derived prediction probability through a late-fusion strategy. To evaluate the effectiveness of combining paired longitudinal mammograms with clinical information, experiments were conducted on an in-house clinical cohort using patient-level stratified five-fold cross-validation.",
+      "authors": [
+        "Farnoush Bayatmakou",
+        "Maryam Hosseini",
+        "Reza Taleei",
+        "Arash Mohammadi"
+      ],
+      "published": "2026-09-22T14:04:07+00:00",
+      "updated": "2026-09-22T14:04:07+00:00",
+      "categories": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26443v1",
+      "headline": "Mammo-LIFE: Longitudinal Mammographic Im",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "eess.IV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26474v1",
+      "title": "PP-Net: A Hybrid Physical-Prior Neural Network for Scattered Light Removal in Biomedical Images on Embedded Devices",
+      "abstract": "Scattered light is common in biomedical images, yet its removal remains challenging. The difficulty arises from three aspects: first, aligned scattered-light-free biomedical ground truth is often unavailable; second, scattering is coupled with weak illumination and sensor-induced noise; and third, many learning-based restoration models are computationally expensive for embedded devices in Internet of Medical Things (IoMT) scenarios. To address these issues, this paper proposes PP-Net, a hybrid physical-prior neural network for biomedical scattered light removal. The proposed method consists of three components: DFN-Net suppresses sensor-induced noise, ASAP estimates the scattering map and recovers a physics-based prior map, and GF-Net refines the prior map by fusing it with the denoised observation. To reduce the dependence on paired biomedical ground truth, a progressive synthetic training and cross-domain transfer strategy is developed. Experiments show that the physical-prior branch improves the peak signal-to-noise ratio (PSNR) by up to 1.26 dB on paired synthetic benchmarks. Under joint noise-and-scattering degradation, PP-Net improves PSNR by more than 10.8 dB and the structural similarity index measure (SSIM) by more than 0.62 compared with representative baseline methods. On real W2S biomedical images, the proposed method reduces the average Natural Image Quality Evaluator (NIQE) score by 43.3\\%. Edge deployment with RKNN conversion and INT8 quantization achieves an average inference latency of approximately 200 ms per $512\\times512$ image over 360 test images. These results demonstrate that PP-Net provides an effective and deployable solution for microscopic imaging, endoscopic inspection, and edge-assisted biomedical analysis in IoMT scenarios.",
+      "authors": [
+        "Yongfei Guo",
+        "Tingjin Chu",
+        "Mengzhuo Liu",
+        "Hongwei Lou",
+        "Yuanhao Gong"
+      ],
+      "published": "2026-09-22T14:19:16+00:00",
+      "updated": "2026-09-22T14:19:16+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG",
+        "eess.IV",
+        "eess.SP"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26474v1",
+      "headline": "PP-Net: A Hybrid Physical-Prior Neural N",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25836v1",
+      "title": "In-Context Guidance: Learning Inter-Task Synergies via Numerical Foundational Models for Few-Shot Multitask Optimization",
+      "abstract": "Multi-task optimization (MTO) addresses a set of optimization tasks simultaneously, often suffering from inaccurate inter-task relationship estimation under limited evaluation budgets, leading to negative transfer. This paper introduces In-Context Guidance Multitask Optimization (ICG-MTO), a novel framework that leverages numerical foundational models to improve inter-task coupling estimation in few-shot scenarios. Unlike conventional methods that rely solely on scarce observed data, ICG-MTO employs a frozen foundational model to infer auxiliary guidance through in-context learning. The framework operates through three stages: constructing an algorithm-specific in-context query from evaluated solutions, using the foundational model to infer a guidance signal characterizing predictive relationships among tasks, and translating this signal into algorithm-specific guidance for maximum-a-posteriori coupling estimation. This approach provides regularization during the early, data-scarce stages of optimization and gradually relinquishes control as task-specific observations accumulate. We instantiate the framework in multitask Bayesian optimization as ICG-MTBO, using directional fitness-class queries to guide inter-task coupling estimation, and further instantiate it in MFEA-II using decision-space-overlap queries to guide random mating probability estimation. Experiments across synthetic benchmarks and a real-world robot arm control problem, together with evaluations under different acquisition functions and evolutionary multitasking, demonstrate the effectiveness and generality of ICG-MTO for few-shot multitask optimization.",
+      "authors": [
+        "Tingyang Wei",
+        "Haofeng Wu",
+        "Jiao Liu",
+        "Zhao Wei",
+        "Puay Siew Tan",
+        "Yew-Soon Ong"
+      ],
+      "published": "2026-09-22T08:01:54+00:00",
+      "updated": "2026-09-22T08:01:54+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25836v1",
+      "headline": "In-Context Guidance: Learning Inter-Task",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.AI",
+        "cs.NE"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26590v1",
+      "title": "GTR: Gated Token Recurrence for Efficient Dense Prediction",
+      "abstract": "Self-attention-based vision backbones perform well on dense prediction, but the quadratic computational cost of global softmax attention limits their efficiency as image resolution increases. We introduce Gated Token Recurrence (GTR), a softmax-free recurrent vision backbone that combines gated linear attention, alternating spatial scan directions, and spatially enhanced SwiGLU blocks. GTR is distilled from a detection-specialized DINOv3 teacher using only final-layer patch-token alignment through a linear projection and squared $\\ell_2$ loss, without masked-token prediction or intermediate-layer supervision. With Objects365 detector pre-training, GTR-L achieves 58.9 box AP on COCO \\texttt{val2017} with 1.908\\,ms median batch-one latency under compiled FP16 execution on an RTX~4090. The same backbone also transfers to instance segmentation, pose estimation, oriented detection, semantic segmentation, and monocular depth estimation. In an isolated kernel benchmark, our specialized chunkwise CUDA operator is $4.0\\times$ faster than FLA v0.5.0 at 1.6K tokens on RTX~4090. TensorRT deployment on DRIVE AGX Thor achieves 2.282--8.769\\,ms median batch-one latency across the evaluated models. These results show that recurrent token mixing can provide an efficient alternative to global softmax attention for high-resolution dense prediction and edge deployment.Project page: https://intellindust-ai-lab.github.io/projects/GTR/",
+      "authors": [
+        "Zhe Feng",
+        "Longfei Liu",
+        "Wei Liu",
+        "Kai Chen",
+        "Jiangjiang Kong",
+        "Wei Zhou",
+        "Yifeng Qian",
+        "Dexiong Chen",
+        "Xuanlong Yu",
+        "Xi Shen"
+      ],
+      "published": "2026-09-22T15:34:20+00:00",
+      "updated": "2026-09-22T15:34:20+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26590v1",
+      "headline": "GTR: Gated Token Recurrence for Efficien",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26520v1",
+      "title": "MATE: Multi-Agent Virtual Teleoperation Platform for Humanoid Collaboration Data Collection",
+      "abstract": "Humanoid robots require diverse embodied experiences to acquire complex loco-manipulation and collaborative skills. However, existing humanoid data pipelines primarily focus on individual agents, while physical multi-robot collaboration remains difficult to scale due to costly hardware, dedicated spaces, and repeated resets. In this work, we introduce MATE, a Multi-Agent virtual TEleoperation platform for humanoid collaboration data collection that enables multiple geographically distributed operators to simultaneously control whole-body humanoids in a shared physics-based environment. MATE removes the need for multiple physical robots and co-located operation while preserving physically coupled interactions among humanoids, objects, and environments. Using MATE, we construct a multi-humanoid collaboration dataset comprising 24.1 hours of coordinated behavior across 2,500 joint episodes and five long-horizon tasks, including object handover, relay delivery, environment interaction, and cooperative transport. To improve learning from these interaction-rich demonstrations, we introduce EAIS, an Execution-Aligned Interaction Sampling strategy that computes sampling signals within an execution-aligned prefix and prioritizes task-progressing and interaction-critical behaviors. We evaluate MATE with representative imitation learning and vision-language-action policies across diverse collaboration tasks. Experiments demonstrate efficient data collection, effective policy learning, and zero-shot transfer from virtual demonstrations to a physical humanoid without real-world fine-tuning. Project page: https://yerik-yu.github.io/MATE/",
+      "authors": [
+        "Yichuan Yu",
+        "Youzhuo Wang",
+        "Yiming Ren",
+        "Di Feng",
+        "Yexuan Yang",
+        "Bingxi Yang",
+        "Shengxiao Gong",
+        "Yujing Sun",
+        "Yuexin Ma"
+      ],
+      "published": "2026-09-22T14:45:17+00:00",
+      "updated": "2026-09-22T14:45:17+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26520v1",
+      "headline": "MATE: Multi-Agent Virtual Teleoperation ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26375v1",
+      "title": "KwaiMind Technical Report",
+      "abstract": "Commercial image editing requires product identity preservation, accurate text rendering, and user appeal alongside general editing quality. We present KwaiMind, an image editing system combining general capabilities with e-commerce specialization. An agent-based data engine maintains approximately 1.8 million high-quality editing pairs. Built on a multimodal diffusion transformer, KwaiMind undergoes continued pre-training and supervised fine-tuning, followed by preference optimization and online reinforcement learning. A general-purpose vision-language judge and specialized rewards for click-through rate (CTR), text rendering, and product consistency guide specialized policies, which are consolidated through on-policy distillation. We introduce Ecom-Bench, covering 11 commercial editing tasks with task-specific visual evaluation and CTR-based ranking. KwaiMind achieves the strongest overall scores among evaluated open-source editors on ImgEdit, GEdit, both language splits of REDEdit, and Ecom-Bench visual quality, and the highest aggregate CTR ranking score among compared systems. Offline, CTR-guided optimization increases the proportion of generated images whose predicted CTR exceeds that of the original product image from 12.16% to 37.41%. In an online A/B experiment, CTR-based selection of product main images yields an approximately 2.44% relative increase in actual CTR. These results demonstrate the value of domain-specific data and reward-driven alignment for commercial image editing.",
+      "authors": [
+        "Junlong Wu",
+        "Zijun Li",
+        "Yuting Hu",
+        "Jia Sun",
+        "Pengcheng Wei",
+        "Yimin Zhou",
+        "Honglie Wang",
+        "Huaiqing Wang",
+        "Dewen Fan",
+        "Fei Zuo",
+        "Haixuan Gao",
+        "Lihui Peng",
+        "Tingxuan She",
+        "Yuqing Li",
+        "Boheng Zhang",
+        "Fan Yang",
+        "Wenwu Ou"
+      ],
+      "published": "2026-09-22T13:21:45+00:00",
+      "updated": "2026-09-22T13:21:45+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26375v1",
+      "headline": "KwaiMind Technical Report",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25930v1",
+      "title": "AT3D-AD: Anomaly Type-Aware 3D Anomaly Detection via Hierarchical Point-Language Alignment",
+      "abstract": "Detecting and localizing 3D point-cloud defects is essential for industrial inspection. However, existing methods often suffer from imprecise localization due to the lack of anomaly supervision and reliance on single-granularity representations. To address these limitations, we propose Anomaly Type-Aware 3D Anomaly Detection (AT3D-AD), a unified framework for joint detection, localization, and classification. Specifically, we first design the Physics-Driven Parametric Anomaly Synthesis (PDPAS) module employing multiple parametric functions to generate synthetic anomalies, providing explicit anomaly supervision. Then, we propose the Hierarchical Global-Local Anomaly Alignment (HiGLA) module to align global and local representations within the normal and anomalous groups. Finally, we propose the Semantic-Geometric Anomaly Classification (SGAC) module to jointly learn localization and classification, yielding spatially precise and type-discriminative anomaly representations. Extensive experiments establish new state-of-the-art performance on all four benchmarks. AT3D-AD achieves Object/Point AUROC scores of 98.1\\%/98.9\\% on Anomaly-ShapeNet and 95.0\\%/95.2\\% on Real3D-AD, while reaching 74.2\\% Macro-F1 for anomaly-type recognition on Real3D-AD.",
+      "authors": [
+        "Jingyu Zeng",
+        "Haoquan Lu",
+        "Can Gao"
+      ],
+      "published": "2026-09-22T09:35:12+00:00",
+      "updated": "2026-09-22T09:35:12+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25930v1",
+      "headline": "AT3D-AD: Anomaly Type-Aware 3D Anomaly D",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25860v1",
+      "title": "MatchFusion: Explicit-Implicit Instance Matching for Spatio-Temporal Multimodal Autonomous Driving",
+      "abstract": "Sparse instance representations provide a compact interface for spatial LiDAR-camera and temporal past-current interaction in multimodal perception and E2EAD. Effective interaction requires reliable instance correspondences despite geometric discrepancies and heterogeneous semantic representations. Attention-based methods exploit contextual semantics but often require specialized representation alignment, increasing computational overhead. In contrast, association based on structured object states is efficient and interpretable but lacks contextual evidence to resolve ambiguous matches. To combine these complementary strengths, we propose MatchFusion, a learnable instance matching and fusion module for spatio-temporal multimodal autonomous driving. MatchFusion initializes pairwise affinities using geometric similarity and category consistency, then selectively refines structurally plausible associations using instance embeddings. The resulting soft matchmap guides a common residual aggregation operator for adaptive information exchange. This unified matching-fusion formulation supports spatial LiDAR-camera and temporal past-current interaction, using multi-view image-plane geometry and motion-compensated BEV geometry as the respective structural priors. Experiments on nuScenes demonstrate consistent perception gains across diverse front-end configurations. Compared with a prior instance-centric fusion method, the MatchFusion-equipped system achieves higher perception accuracy while reducing FLOPs by 55.3% and GPU memory usage by 39.3%, with the matching-fusion module accounting for only 3.7% of total perception latency. Integrating temporal MatchFusion into SparseDrive further improves perception within an E2E framework without additional supervision. These results establish explicit-implicit matching as an effective and efficient mechanism for spatio-temporal instance interaction.",
+      "authors": [
+        "Xiaoyu Li",
+        "Jiajia Fu",
+        "Long Shi",
+        "Tianyu Du",
+        "Ruihang Li",
+        "Xian Wu",
+        "Lijun Zhao",
+        "Yingtao Zhang",
+        "Lining Sun",
+        "Ruifeng Li"
+      ],
+      "published": "2026-09-22T08:24:12+00:00",
+      "updated": "2026-09-22T08:24:12+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25860v1",
+      "headline": "MatchFusion: Explicit-Implicit Instance ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26360v1",
+      "title": "Hierarchical Floorplan-Guided Vision-Language Exploration for Embodied Question Answering",
+      "abstract": "Embodied Question Answering (EQA) requires an agent to explore a previously unseen environment, gather relevant information, and answer questions about the scene. Recent approaches leverage Vision-Language Models (VLMs) together with semantic maps or scene graphs to guide exploration. However, exploration is typically driven only by local observations, while structural priors about the environment remain largely unused. We propose HFLEX-EQA, a hierarchical EQA framework that combines online scene graph construction, VLM- based planning, semantic frontier exploration, and floorplan priors. The system incrementally builds a hierarchical scene graph and an open-vocabulary occupancy map from RGB-D observations, enabling a VLM to jointly reason over the scene graph, task-relevant visual observations, exploration history, and an estimated topological floorplan. Furthermore, we introduce a room-discovery strategy that leverages the floorplan and open-vocabulary frontier semantics to guide exploration toward semantically relevant yet currently unobserved room types. We evaluate HFLEX-EQA on the OpenEQA and ExploreEQA benchmarks and demonstrate deployment on a quadruped robot in real indoor environments. Our results demonstrate the benefit of combining VLM-based hierarchical planning with structural floorplan priors for the EQA task.",
+      "authors": [
+        "Albert Gassol Puigjaner",
+        "Kostas Alexis"
+      ],
+      "published": "2026-09-22T13:02:54+00:00",
+      "updated": "2026-09-22T13:02:54+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26360v1",
+      "headline": "Hierarchical Floorplan-Guided Vision-Lan",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25793v1",
+      "title": "When Point Clouds Outperform Pixels: Rethinking Zero-Shot Multimodal Anomaly Detection",
+      "abstract": "Zero-shot multimodal anomaly detection commonly assumes that RGB and point cloud modalities are equally reliable and can contribute uniformly to anomaly localization. We challenge this assumption. Using a set of recently proposed stringent metrics that penalize false anomaly responses in normal regions, we find that point clouds are substantially more reliable than RGB under zero-shot category shift. Motivated by this observation, we propose WOOPS (\\textbf{W}hen P\\textbf{o}int Cl\\textbf{o}uds Out\\textbf{p}erform Pixel\\textbf{s}), a reliability-aware zero-shot multimodal anomaly detection framework. To strengthen the more reliable geometric modality, we design a Multi-view Information Decoupling module to suppress heterogeneous information from multi-view point cloud projections and enhance point cloud feature quality. To avoid unconditional fusion, we further introduce a Modality Reliability Calibration module to adaptively calibrate modality contributions according to their reliability. Extensive experiments show that our method achieves the best or competitive performance under the new metrics in both unimodal and multimodal settings. Further analysis demonstrates that point cloud information also improves RGB-only inference, while ablations verify the effectiveness of both modules. Code will be released upon acceptance.",
+      "authors": [
+        "Chenglin Ye",
+        "Lupeng Liu",
+        "Dongbo Yu",
+        "Jun Xiao",
+        "Yunbiao Wang"
+      ],
+      "published": "2026-09-22T07:28:41+00:00",
+      "updated": "2026-09-22T07:28:41+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25793v1",
+      "headline": "When Point Clouds Outperform Pixels: Ret",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26547v1",
+      "title": "Topology-Stratified Materials Discovery with A Flow-Based Generative Model",
+      "abstract": "Accurate generation of crystal structures is the foundation to the discovery of high-performance materials for extreme-environment applications, such as aerospace, additive manufacturing, and fusion energy systems. Although generative modeling has emerged as a promising approach for crystal design, its performance remains limited by the complex crystal structures and diverse chemical compositions. In this work, we develop UFO-MGen, a universal flow-based generative model that learns topological features of Wyckoff representations and leverages this information to accurately generate crystals across vast structural and chemical spaces. Compared with state-of-the-art generative models, UFO-MGen achieves the highest crystal generation success rate under a rigorous multi-stability evaluation framework, the highest SUN (stable, unique, novel) rate, and a remarkable extrapolation capability that has not been reported by previous models. Furthermore, a fine-tuning module is implemented to UFO-MGen for property-constrained crystal generation, enabling the inverse materials design toward target properties. The UFO-MGen opens a new avenue for accelerated materials discovery and providing a foundation for universal materials intelligence.",
+      "authors": [
+        "Jingyi Zhou",
+        "Oyshee Chowdhury",
+        "Noah Oyeniran",
+        "Chongze Hu"
+      ],
+      "published": "2026-09-22T15:02:50+00:00",
+      "updated": "2026-09-22T15:02:50+00:00",
+      "categories": [
+        "cond-mat.mtrl-sci",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26547v1",
+      "headline": "Topology-Stratified Materials Discovery ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cond-mat.mtrl-sci",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26461v1",
+      "title": "Reproducible AI Requires Reproducible Randomness",
+      "abstract": "Pseudorandom number generators (PRNGs) constitute indispensable computational tools across multiple scientific domains, including Monte Carlo simulations, stochastic computing, and artificial intelligence (AI). The reproducibility of such applications critically depends on the ability of PRNG implementations to generate identical sequences across software environments when initialized from the same internal state. These algorithms enable the simulation of stochastic processes while providing deterministic and repeatable behaviour, thereby facilitating reproducible experiments. Modern PRNG implementations may be initialized through either a seed or, more accurately, an initial state that exceeds the capacity of a conventional integer seed. However, reliance on a simple seed alone frequently proves insufficient to ensure consistent program execution traces across different implementations. A natural assumption is that transferring the complete internal state of a generator should guarantee identical outputs regardless of the software library used. This study examines the validity of this assumption by investigating whether complete initial states can ensure cross-library fidelity and portability of PRNG streams. We focus on two widely deployed generators, Mersenne Twister and Philox, and evaluate their implementations across four major Python ecosystems-Random, NumPy, PyTorch, and TensorFlow. We compare the sequences produced by these implementations against those generated by the original reference algorithms under identical initialization conditions. Our results demonstrate that reproducibility cannot be assumed from PRNG state transfer alone, even when implementations claim to follow the same underlying algorithm. While fidelity was successfully achieved for several implementations, significant discrepancies were observed in others. Most notably, the Philox implementation in PyTorch exhibits fundamental incompatibilities with the reference algorithm, preventing exact reproduction of generator outputs across environments. These findings challenge the common expectation that access to a full internal state of a PRNG is sufficient to ensure reproducibility across software stacks. They further highlight that implementation-specific design choices can introduce hidden barriers to experimental replication, particularly in AI workflows that rely on multiple frameworks. This work shows that implementation fidelity of a PRNG is a necessary condition for scientific reproducibility and makes two primary contributions. First, it identifies practical guidelines for achieving reliable PRNG usage and reproducibility within the Python scientific and AI ecosystem. Second, it evaluates the extent to which cross-library portability and fidelity can be recovered through user-level techniques, without requiring modifications to library source code.",
+      "authors": [
+        "Anthony Bertrand",
+        "Tom Schmitt",
+        "Engelbert Mephu Nguifo",
+        "David Hill"
+      ],
+      "published": "2026-09-22T14:14:18+00:00",
+      "updated": "2026-09-22T14:14:18+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26461v1",
+      "headline": "Reproducible AI Requires Reproducible Ra",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 10.0,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26402v1",
+      "title": "OMatG-flash: An All-Atom Flow Map with Reinforce Adjoint Matching for Scalable Materials Discovery",
+      "abstract": "The discovery of novel inorganic materials drives technological breakthroughs in critical fields such as computing and energy storage. Generative AI has promised to accelerate the materials discovery pipeline, but state-of-the-art flow and diffusion models remain bottlenecked by the cost of proposing candidate materials. To address this, we introduce OMatG-flash, an all-atom flow map for inorganic crystal structure prediction (CSP) and de novo generation (DNG). OMatG-flash is a Pareto-optimal inference engine for materials, sampling candidate materials with an order of magnitude fewer inference steps and less wall-clock time than existing flow and diffusion models while demonstrating benchmark performance on par with the state-of-the-art. To enable post-training fine-tuning we apply Reinforce Adjoint Matching to flow maps, further improving match rates and RMSE on the unconditional CSP task. OMatG-flash showcases the potential of flow maps to accelerate generation of high-quality candidate inorganic materials and demonstrates a step forward in sample throughput necessary for data-hungry materials discovery workflows.",
+      "authors": [
+        "Thomas Egg",
+        "Harry Winston Sullivan",
+        "Ellad B. Tadmor",
+        "Stefano Martiniani"
+      ],
+      "published": "2026-09-22T13:36:33+00:00",
+      "updated": "2026-09-22T13:36:33+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26402v1",
+      "headline": "OMatG-flash: An All-Atom Flow Map with R",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.26347v1",
+      "title": "TransBERT: A Framework for Synthetic Translation in Domain-Specific Language Modeling",
+      "abstract": "The scarcity of non-English language data in specialized domains significantly limits the development of effective Natural Language Processing (NLP) tools. We present TransBERT, a novel framework for pre-training language models using exclusively synthetically translated text, and introduce TransCorpus, a scalable translation toolkit. Focusing on the life sciences domain in French, our approach demonstrates that state-of-the-art performance on various downstream tasks can be achieved solely by leveraging synthetically translated data. We release the TransCorpus toolkit, the TransCorpus-bio-fr corpus (36.4GB of French life sciences text), TransBERT-bio-fr, its associated pre-trained language model and reproducible code for both pre-training and fine-tuning. Our results highlight the viability of synthetic translation in a high-resource translation direction for building high-quality NLP resources in low-resource language/domain pairs.",
+      "authors": [
+        "Julien Knafou",
+        "Luc Mottin",
+        "Anaïs Mottaz",
+        "Alexandre Flament",
+        "Patrick Ruch"
+      ],
+      "published": "2026-09-22T12:53:35+00:00",
+      "updated": "2026-09-22T12:53:35+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.26347v1",
+      "headline": "TransBERT: A Framework for Synthetic Tra",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.699999999999999,
+      "first_seen": "2026-09-23"
+    },
+    {
+      "arxiv_id": "2609.25916v1",
+      "title": "Beyond Scalar Sensitivity: Activation-Aware Mixed-Precision LLM Quantization with Cross-Layer Refinement",
+      "abstract": "Mixed-precision weight quantization is commonly formulated as a Multiple-Choice Knapsack Problem (MCKP), yet existing solvers rely on scalar sensitivity proxies that collapse each weight matrix's Hessian into a single number and treat every module independently. We prove that even the optimal scalar proxy incurs multiplicative distortion up to $\\sqrt{κ(\\mathbf{A})κ(\\mathbf{B})}$ relative to the full activation-aware quadratic, where $κ(\\mathbf{A})$ and $κ(\\mathbf{B})$ denote the condition numbers of the input- and output-side Hessian factors. This bound varies from $10^1$ to $10^{13}$ for typical LLM modules, making inter-module sensitivity ranking unreliable. To address these limitations, we propose Cross-layer Activation-aware Sensitivity Allocation (CASA), a two-phase method. In Stage 1, the scalar proxy is replaced by an activation-aware metric derived from the Kronecker-factored Hessian, reducing the MCKP to a form whose continuous relaxation admits a closed-form solution. In Stage 2, a cross-layer-aware local search evaluates bit-width updates using the end-to-end model loss. Experiments on multiple LLMs across different bit budgets show that CASA achieves lower perplexity than the latest scalar-proxy baselines, especially at ultra-low bit-widths ($<3$ bits per weight). Moreover, the performance gain in zero-shot accuracy tracks the per-model average condition-number over modules, confirming the distortion bound as a practical indicator of scalar-proxy failure.",
+      "authors": [
+        "Akihiro Yoshida",
+        "Yuma Ichikawa"
+      ],
+      "published": "2026-09-22T09:22:39+00:00",
+      "updated": "2026-09-22T09:22:39+00:00",
+      "categories": [
+        "cs.LG",
+        "stat.AP",
+        "stat.ME",
+        "stat.ML"
+      ],
+      "abs_url": "http://arxiv.org/abs/2609.25916v1",
+      "headline": "Beyond Scalar Sensitivity: Activation-Aw",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "stat.AP",
+        "stat.ME"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-09-23"
     }
   ]
 }
