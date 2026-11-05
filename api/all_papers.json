@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-03T23:55:27.425731+00:00",
-  "source_last_updated": "2026-11-03T23:55:18.787003+00:00",
-  "count": 5225,
+  "generated_at": "2026-11-05T00:14:53.430729+00:00",
+  "source_last_updated": "2026-11-05T00:14:44.653154+00:00",
+  "count": 5250,
   "papers": [
     {
       "arxiv_id": "2512.10674v1",
@@ -258080,6 +258080,967 @@
       },
       "practicality_score": 1.4,
       "first_seen": "2026-11-03"
+    },
+    {
+      "arxiv_id": "2611.05304v1",
+      "title": "LoopVQ: Sub 1-bit KV Cache Quantization for Looped Transformers",
+      "abstract": "Looped transformers are a parameter-efficient alternative to standard transformers for language modeling. By reapplying the same layers across multiple loop steps, recent looped language models match the performance of non-looped models several times their size. While this architecture effectively reduces parameter memory, each loop step still stores its own keys and values, so the key-value (KV) cache grows linearly with the number of loop steps and becomes the main memory bottleneck. We observe that the KV cache of looped models is highly redundant along the loop axis and that the loop steps differ substantially in their sensitivity to quantization. Based on these observations, we propose $\\textbf{LoopVQ}$, a KV cache vector quantization method for looped transformers that codes channels of multiple loop steps jointly, and fine-tunes the codebooks to match the output of the full-precision model. At 0.5 bits per element, LoopVQ outperforms existing KV cache vector quantization methods for standard LLMs on general, long chain-of-thought reasoning, and long-context retrieval tasks with Ouro and Huginn models. Its design is orthogonal to these methods, and combined with TaSQ, it retains much of the BF16 accuracy even at 0.25 bits per element. We also implement LoopVQ in SGLang, where it nearly halves the decode latency at a 32K-token context and raises the peak serving throughput by up to $4.3\\times$ and $6.1\\times$ on the 1.4B and 2.6B Ouro models compared to the BF16 baseline.",
+      "authors": [
+        "Minsoo Cheong",
+        "Sungjoo Yoo"
+      ],
+      "published": "2026-11-03T18:16:29+00:00",
+      "updated": "2026-11-03T18:16:29+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05304v1",
+      "headline": "LoopVQ: Sub 1-bit KV Cache Quantization ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 20.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.0,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04977v1",
+      "title": "GeoFaham: Domain-Specialized Multi-Agent Geospatial Analytics for Disaster Response",
+      "abstract": "Real-world geospatial decision support requires more than single-step retrieval or code generation. Disaster-response questions often involve multi-source workflows that combine spatial databases, map-derived features, satellite imagery, raster products, and reusable geospatial artifacts, where correctness depends on preserving spatial scope, temporal context, and intermediate execution state. While large language models and coding agents offer a promising interface for such workflows, they struggle with geospatial-specific failure modes, including handling large artifacts, selecting the wrong evidence source, losing spatial or temporal metadata, and applying invalid geometric operations. We introduce GeoFaham, a domain-specialized multi-agent system for geospatial disaster analytics. GeoFaham decomposes workflows into specialist agents for vector operations, map feature retrieval, imagery discovery, and raster analysis, coordinated by an Orchestrator with a dual-ledger control loop for dependency-aware planning, progress tracking, validation, and replanning. To support artifact-centric collaboration, GeoFaham uses a Response Store that persists full geospatial outputs and typed metadata outside the LLM context window while agents exchange compact identifiers and summaries. We also introduce GeoFaham-Bench, a 40-task benchmark grounded in 17 real-world disaster records, designed to evaluate multi-step geospatial reasoning, cross-source integration, raster-vector computation, artifact generation, and recovery under non-rigid ground truth. We evaluate GeoFaham on GeoFaham-Bench against strong general-purpose coding-agent baselines, including Codex, Claude Code, and OpenCode. GeoFaham achieves the best overall performance, scoring 0.940 versus the next-best 0.879, while using 7.5 times fewer tokens. Our code and benchmark are publicly available at https://github.com/microsoft/GeoFaham.",
+      "authors": [
+        "Muhammad Sohail Danish",
+        "Gilles Q. Hacheme",
+        "Akram Zaytar",
+        "Satej S. Soman",
+        "Inbal Becker-Reshef",
+        "Juan Lavista Ferres",
+        "Salman Khan",
+        "Girmaw Abebe Tadesse"
+      ],
+      "published": "2026-11-03T14:32:03+00:00",
+      "updated": "2026-11-03T14:32:03+00:00",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04977v1",
+      "headline": "GeoFaham: Domain-Specialized Multi-Agent",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 20.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05197v1",
+      "title": "Robust Reconstruction of Power Lines from Incomplete Mobile and Aerial LiDAR Data",
+      "abstract": "Accurate vegetation-encroachment assessment and risk mitigation require electric utilities to accurately locate and characterize distribution-network assets, including poles and power lines, and distinguish among medium-voltage, low-voltage, neutral, and telecommunication lines. Mobile and aerial Light Detection and Ranging (LiDAR) point clouds provide detailed 3D representations of these assets and their surroundings. However, power-line detection and reconstruction remain challenging because conductor returns are often sparse, incomplete, noisy, or occluded by vegetation. These challenges are especially significant in distribution networks, where lower pole heights and complex line configurations place conductors close to trees. In addition, mobile and aerial LiDAR datasets differ substantially in point density, viewing geometry, spatial coverage, and occlusion patterns. We propose a robust and automated reconstruction method combining scaled density-based clustering, robust polynomial fitting, and iterative fragment merging to recover individual conductors under severe data incompleteness and occlusion. Following semantic classification, the same reconstruction pipeline processes both mobile and aerial LiDAR data without modality-specific code or parameter tuning. The method is evaluated through degradation experiments, benchmarking, parameter sensitivity analysis, and large-scale validation. On the aerial dataset, it achieves 96.87% precision, 96.66% recall, a 96.76% F$_1$-score, and a geometric RMSE of 0.127 m. On the mobile dataset, where conductor-level reference annotations were unavailable, it achieves a point-to-model RMSE of 0.045 m and a reconstruction coverage of 95.27%. Source code, documentation, and evaluation data are publicly available at https://github.com/varen-project.",
+      "authors": [
+        "Mohamed Gaha",
+        "Damos Ayobo Abongo",
+        "Philippe Massicotte",
+        "Eya Ben Kacem",
+        "Wael Jaafar",
+        "Rami Langar",
+        "Christian Buteau"
+      ],
+      "published": "2026-11-03T16:48:56+00:00",
+      "updated": "2026-11-03T16:48:56+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05197v1",
+      "headline": "Robust Reconstruction of Power Lines fro",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 19.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05361v1",
+      "title": "Visibility-Aware Reference Generation for Benchmarking Visual 3D Reconstruction in Vegetation-Rich Environments",
+      "abstract": "Reliable evaluation of visual 3D reconstruction and depth estimation in vegetation-rich outdoor environments is limited by the scarcity of geometric ground-truth data and the cost of complete scanner surveys. We present a LiDARbased reference-generation pipeline for evaluating the zero-shot performance of feed-forward visual-geometry models alongside conventional structure-from-motion (SfM) methods. The pipeline reuses camera images, LiDAR scans, and reference poses from existing multi-sensor localization datasets to generate per-view depth maps and visible reference point clouds. To address visibility errors in accumulated LiDAR scans, we introduce the LargeDepth-Gap Visibility Score (LDGVS) for point-wise visibility filtering and automatic scale selection in Hidden Point Removal(HPR). Experiments on TartanAirV2 and TartanGround show that, compared with Poisson surface reconstruction, which is an approach suited to completed scan surveys, the combined HPR and LDGVS filtering retains approximately three times the point density at comparable absolute relative error. We also apply the pipeline to the BotanicGarden dataset to systematically compare depth estimation and 3D reconstruction methods. Feedforward methods produce dense depth predictions efficiently, but their 3D reconstructions can contain duplicated structures. Conventional SfM generally produces more coherent geometry, but its reconstructions remain sparse and more prone to failure in challenging vegetated scenes. The benchmark toolkit and datasets will be released.",
+      "authors": [
+        "Zhipeng Zhong",
+        "Matthew Coombes",
+        "Cunjia Liu"
+      ],
+      "published": "2026-11-03T18:54:52+00:00",
+      "updated": "2026-11-03T18:54:52+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05361v1",
+      "headline": "Visibility-Aware Reference Generation fo",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05083v1",
+      "title": "Manifold Embedding of Deep Image Features for Image Matching via Neural Adjoint Maps",
+      "abstract": "Estimating semantic correspondences between different object instances of similar categories in real-world images is a fundamental challenge in computer vision. While the recent progress in foundation models has significantly advanced solutions for such difficult image correspondence problems, respective methods are often insufficiently regularised. For example, common nearest-neighbour matching with foundation model features often results in noisy correspondences, which is particularly prominent when solving for dense correspondences. In this work, we tackle image matching via functional maps, which have been popularised for 3D shape matching due to their powerful spectral formalism utilising an efficient low-dimensional linear representation. However, functional maps require that domains (in our cases the rectangular image grids) are equipped with an informative and non-trivial geometry. To define a meaningful manifold structure for images, we use Galerkin's method from finite elements to derive a discrete Laplace-Beltrami operator (LBO) based on a manifold embedding of deep image features. Further, we leverage a neural adjoint map that allows to represent non-linear mappings. We demonstrate that our method sets the new state of the art among zero-shot image correspondence methods on multiple dense correspondence benchmarks of real-world images. Our code is publicly available: https://github.com/NafieAmrani/NAMI",
+      "authors": [
+        "Nafie El Amrani",
+        "Moritz Heep",
+        "Florian Bernard"
+      ],
+      "published": "2026-11-03T15:42:20+00:00",
+      "updated": "2026-11-03T15:42:20+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05083v1",
+      "headline": "Manifold Embedding of Deep Image Feature",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04687v1",
+      "title": "CardioVascBench:Prioritized Diagnosis Generation from Real-World Chinese Cardiovascular Records",
+      "abstract": "Identifying the primary diagnosis alone does not fully characterize a model's diagnosis-generation performance. We introduce CardioVascBench, a retrospective benchmark for prioritized diagnosis generation from real-world Chinese cardiovascular inpatient records. It contains 3,262 de-identified cases, with 2,174 for training and 1,088 for evaluation, linking clinical narratives and textual ECG reports to expert-verified, ordered discharge diagnoses standardized to ICD-10. An English translation of the evaluation set supports aligned cross-lingual comparison. Our evaluation protocol combines terminology normalization and rank-aware scoring to separately assess primary-diagnosis identification, reference-diagnosis coverage, and list precision. Evaluation across 36 systems shows that higher primary-diagnosis accuracy does not necessarily imply higher list precision against discharge references. We also provide CardioKG-Agent, a knowledge-enhanced baseline combining entity normalization, constrained graph retrieval, and guideline evidence. In a staged comparison of three baseline models, supervised fine-tuning plus the agent achieves a 73.5% higher mean composite score than fine-tuning alone, representing a system-level gain. These results measure retrospective agreement with recorded diagnoses; agreement between metric rankings and physician judgments remains to be validated. CardioVascBench supports research on diagnosis prioritization and knowledge-enhanced generation.",
+      "authors": [
+        "Minghao Kong",
+        "Muyao Chen",
+        "Jianhao Wu",
+        "Yuqiang Zhang",
+        "Xiangbin Meng",
+        "Zirong Liu",
+        "Ting Cao",
+        "Kaida Ning",
+        "Zhen Song",
+        "Rongjie Wang"
+      ],
+      "published": "2026-11-03T11:09:56+00:00",
+      "updated": "2026-11-03T11:09:56+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04687v1",
+      "headline": "CardioVascBench:Prioritized Diagnosis Ge",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 17.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04734v1",
+      "title": "TEXMET: A Deep Learning Benchmark for Archaeological Textile Reconstruction",
+      "abstract": "The reconstruction of fragmented historical textiles presents a significant challenge in computational archaeology. The Oseberg ship burial, dating to 834 CE, yielded hundreds of degraded textile fragments that have resisted systematic computational analysis. While deep learning has revolutionized image-based puzzle solving, progress on archaeological textiles has been limited by the lack of domain-specific datasets and systematic evaluation of modern architectures. To address this gap, we present TEXMET, a curated dataset of 18,644 historical textile images from the Metropolitan Museum of Art's Open Access collection, representing the first textile-specific benchmark for puzzle-solving research. Using TEXMET, we conduct a systematic evaluation of three state-of-the-art puzzle-solving models: JPDVT, FCViT, and DiffAssemble. Our experiments reveal that the transformer-based models pre-trained on standard datasets fail to generalize to textiles, but domain-specific fine-tuning proves highly effective. The graph-based DiffAssemble model, when fine-tuned on TEXMET, achieves 85.89% puzzle accuracy on textile data. Most significantly, applying this fine-tuned model to 45 highly degraded Oseberg fragments yields a performance increase from 26.67% to 64.44% puzzle accuracy. These results establish TEXMET as a new benchmark for textile reconstruction and demonstrate that domain adaptation is essential for applying puzzle-solving methods to imagery of real archaeological materials.",
+      "authors": [
+        "Muhammad Hamza Zafar",
+        "Davit Gigilashvili",
+        "Jon Yngve Hardeberg"
+      ],
+      "published": "2026-11-03T11:53:18+00:00",
+      "updated": "2026-11-03T11:53:18+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.DL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04734v1",
+      "headline": "TEXMET: A Deep Learning Benchmark for Ar",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.DL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04811v1",
+      "title": "NightIQA: A Comprehensive Dataset and Benchmark for MLLM-Based Nighttime Image Quality Assessment",
+      "abstract": "Nighttime images are inherently susceptible to complex, compound degradations, making accurate quality assessment exceptionally challenging. Score-based IQA methods condense quality into a single number, lacking the multi-dimensional, language-grounded reasoning required for nighttime evaluation. Multimodal Large Language Models (MLLMs) offer a more comprehensive alternative, yet remain constrained by a critical data gap: existing real-world IQA datasets are overwhelmingly daytime-centric and often built from outdated captures, while synthetic alternatives lack nighttime-specific degradation modeling, yielding artifacts far removed from authentic nighttime conditions. To bridge this gap, we present NightIQA, a dataset and benchmark suite purpose-built for MLLM-based nighttime IQA. It comprises three core components: NightIQA-Real, a real-world dataset of 1,769 high-resolution images that we captured ourselves with modern equipment, encompassing six canonical distortion types and structured multi-dimensional annotations; NightIQA-Bench, a benchmark of 1,078 visually grounded multiple-choice questions tailored to MLLM-based nighttime IQA, organized around a four-level evaluation hierarchy spanning Perception, Technical Assessment, Localization, and Reasoning; and NightIQA-Syn, an inherently scalable, scene-aware synthesis pipeline that jointly models global-level and instance-level degradations, with an initial release of 80k high-fidelity images alongside the full generation code. Fine-tuned on NightIQA with Supervised Fine-Tuning (SFT) and Group Relative Policy Optimization (GRPO), Qwen3-VL-8B outperforms open-source IQA methods and achieves higher overall accuracy than leading closed-source models, highlighting the value of domain-specific data and structured supervision.",
+      "authors": [
+        "Yiding Tian",
+        "Jiaojiao Yi",
+        "Jiayuan Lu",
+        "Pufan Xu",
+        "Jinlin Wu",
+        "Changyuan Wen",
+        "Hongyuan Yu"
+      ],
+      "published": "2026-11-03T12:42:30+00:00",
+      "updated": "2026-11-03T12:42:30+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04811v1",
+      "headline": "NightIQA: A Comprehensive Dataset and Be",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04814v1",
+      "title": "Think Less, Locally: Local Preference Learning for Reasoning Compression",
+      "abstract": "Large reasoning models achieve strong performance on challenging tasks, but their long chain-of-thought often incurs substantial inference costs by continuing to deliberate after sufficient information has been obtained. Existing reasoning compression methods primarily operate on reasoning trajectories, paying less attention to the local decision of whether further reasoning is necessary given the current state. We propose LoCo, a local preference learning method for reasoning compression. LoCo detects candidate overthinking states from the model's own traces, freezes the corresponding reasoning prefixes, regenerates shorter verified continuations from the same states, and trains on the resulting state-conditioned preference pairs with DPO. This formulation teaches the model when to continue reasoning and when to conclude, rather than simply encouraging shorter trajectories overall. We construct training data entirely from self-generated mathematical traces and evaluate LoCo on five mathematical and three code generation benchmarks. LoCo reduces completion length by 41.7\\%--45.4\\% on mathematics and 23.4\\%--36.3\\% on code, while maintaining or improving accuracy and achieving the best AUC across all code benchmarks. LoCo consistently improves the accuracy-efficiency trade-off on mathematics and transfers effectively to code generation despite math-only training, demonstrating the cross-domain generality of local preference learning for reasoning compression. The code and model will be publicly released at https://github.com/MuyaoYuan/LoCo.",
+      "authors": [
+        "Muyao Yuan",
+        "Liyan Xu",
+        "Weizhan Zhang",
+        "Muyan Jiao",
+        "Jiangnan Li",
+        "Jinchao Zhang",
+        "Jie Zhou"
+      ],
+      "published": "2026-11-03T12:44:50+00:00",
+      "updated": "2026-11-03T12:44:50+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04814v1",
+      "headline": "Think Less, Locally: Local Preference Le",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05309v1",
+      "title": "$Φ$asmaNet: A Staged Spectral Token-Refinement Architecture for Fast Gravitational-Wave Signal-to-Noise Ratio Prediction",
+      "abstract": "Quantifying selection effects in gravitational-wave population studies requires millions of costly signal-to-noise ratio (SNR) calculations. We present $Φ$asmaNet, a compact neural architecture for structured tabular regression, with staged spectral refinement as an explicit architectural prior. Learned input tokens are refined through ordered attention-based $Φ$-Stages, each augmented by a $Φ$-Refractor subspace-mixing module, then revisited through gated top-down $Φ$-Feedback. Applied to the 11-dimensional parameters of precessing, higher-mode binary black hole signals (IMRPhenomXPHM), it predicts phase-averaged optimal SNR for a single detector at fixed Advanced LIGO design sensitivity. With approximately 732k parameters, it outperforms MLP, 1D-ResNet and Transformer-encoder baselines under matched training across $10^5$--$10^6$ samples. At $10^6$ samples, it achieves $100-\\mathrm{MAPE}=98.73\\%$ on the held-out test set, $99.29\\%$ after rank-preserving monotonic (PCHIP) calibration, and $99.39\\%$ ($R^2=0.9998$) in the detection-relevant regime $ρ>8$, with stable accuracy across independent dataset realizations. On a single GPU, it sustains approximately $1.2\\times10^5$ SNR evaluations per second and processes a $10^6$-injection catalogue end-to-end in approximately 8.3 s, about two orders of magnitude faster than conventional waveform-and-inner-product calculations on a 16-core CPU. Exact distance rescaling through $ρ\\propto1/d_L$ supports repeated catalogue-wide detectability evaluations. The fully documented pipeline is intended as a reproducible benchmark, while results on public tabular datasets indicate competitiveness beyond gravitational-wave applications. Although demonstrated for a fixed single-detector configuration, the construction supports extensions to detector networks and epoch-specific sensitivities. (Abridged)",
+      "authors": [
+        "Ioannis Tsioulis",
+        "Anastasios Tefas",
+        "Nikolaos Stergioulas"
+      ],
+      "published": "2026-11-03T18:19:11+00:00",
+      "updated": "2026-11-03T18:19:11+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05309v1",
+      "headline": "$Φ$asmaNet: A Staged Spectral Token-Refi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04980v1",
+      "title": "ProAlign: Progressive Positional and Prototype-Guided Alignment for Aerial-Ground Person Re-Identification",
+      "abstract": "Aerial-Ground Person Re-Identification (AG-ReID) aims to match pedestrian images captured by unmanned aerial vehicles (UAVs) and ground-based surveillance cameras. The task remains highly challenging due to severe viewpoint discrepancies, frequent occlusions, and substantial domain gaps between aerial and ground imagery. Beyond these observable factors, existing methods often overlook two fundamental structural issues: cumulative positional drift during hierarchical feature extraction and semantic inconsistency across cross-view feature distributions. To address these challenges, we propose ProAlign, a Progressive Positional and Prototype-Guided Alignment Network for AG-ReID. ProAlign comprises two key components: a Layer-wise Progressive Positional Embedding (LPPE) module and a View-Aware Prototype Contrastive Learning (PCL) module. LPPE performs adaptive positional calibration throughout transformer layers by employing conditional positional encoding in shallow layers to mitigate local spatial distortions, while introducing learnable static positional embeddings in deeper layers to reinforce global semantic priors. Meanwhile, PCL maintains view-specific aerial and ground prototypes for each identity and enforces cross-view semantic consistency via a dual-prototype contrastive objective. Extensive experiments on CARGO and two real-world AG-ReID benchmarks demonstrate the effectiveness of ProAlign, achieving state-of-the-art overall retrieval performance on CARGO with improvements of 1.60% in Rank-1 accuracy and 5.01% in mAP over the strongest competing methods.",
+      "authors": [
+        "Qiao Li",
+        "Jing Chen",
+        "Cong Wu",
+        "Kun He",
+        "Ruiying Du",
+        "Lei Tan"
+      ],
+      "published": "2026-11-03T14:33:13+00:00",
+      "updated": "2026-11-03T14:33:13+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04980v1",
+      "headline": "ProAlign: Progressive Positional and Pro",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04932v1",
+      "title": "VISTA: Vision-Language Integrated Semantic Triage Architecture for Online Face Clustering in Long Videos",
+      "abstract": "Clustering faces by identity in long, continuous video streams is a challenging task that serves as a building block for human-centric video analysis. The majority of existing face clustering models are offline, i.e., they assume the entire data to be available altogether. In many practical scenarios, however, the entire data is either unavailable or poses computational challenges to be processed in its entirety. A handful of online methods that exist rely on geometric visual features and simple thresholding techniques, which fail when the faces exhibit significant appearance variations in long, unconstrained videos. To this end, we present VISTA, the first vision language framework for online face clustering in long videos. VISTA leverages semantic reasoning in a controlled, uncertainty aware fashion to maintain both high cluster purity and long range identity continuity. This makes it robust to the variations in illumination, pose, and costume changes that the faces and characters exhibit in long real world videos. Extensive experiments on the VPCD benchmark dataset (with 15 full episodes from The Big Bang Theory [2007-2019], Buffy the Vampire Slayer [1997-2003], and Sherlock [2010-2017]) demonstrate that VISTA achieves a robust precision and recall balance, consistently improving over the strongest matched online unsupervised baseline (COFC) under identical detector, embeddings, and evaluation protocol. Code and supplementary material: https://github.com/SkyJiashu/VISTA.",
+      "authors": [
+        "Jiashu Liao",
+        "Joanne Garde-Hansen",
+        "Sanjay Sharma",
+        "Tanaya Guha"
+      ],
+      "published": "2026-11-03T14:02:57+00:00",
+      "updated": "2026-11-03T14:02:57+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04932v1",
+      "headline": "VISTA: Vision-Language Integrated Semant",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.MM"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 9.1,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05193v1",
+      "title": "Factorized MLLM Embeddings for Composed Image Retrieval",
+      "abstract": "Composed Image Retrieval (CIR) aims to retrieve a target image given a reference image and a modification text. Although recent approaches leveraging Multimodal Large Language Models (MLLMs) have shown significant progress, we argue that the MLLM's compositional understanding remains underutilized. This stems from directly mapping composed queries into a retrieval embedding via contrastive supervision alone, without explicitly resolving the intended visual modifications. In this work, we introduce Factorized MLLM Embeddings (FactEmbed), which decouples compositional query comprehension from building discriminative embeddings. Rather than directly projecting the composed query into a single embedding without internal reasoning, FactEmbed employs a set of factorized latents that simulate the intended visual modifications via an intermediate target imagination objective. This process encourages the latents to ground into target semantics before forming discriminative representations for retrieval. Subsequently, to propagate these factorized representations throughout the model for retrieval, we optimize a factor-level contrastive loss while distilling the decomposed representations into a deeper attention layer of the MLLM. Finally, for efficient inference, we retain the [EOS] token to establish a global-level embedding on top of these factorized latents, while we exploit the mean-pooled factorized latents to rerank a short candidate list at negligible cost, as both are produced by the same forward pass. Extensive evaluations demonstrate that FactEmbed outperforms prior works across CIR benchmarks.",
+      "authors": [
+        "WonJun Moon",
+        "Seongchan Kim",
+        "Dahun Kim",
+        "Seungryong Kim"
+      ],
+      "published": "2026-11-03T16:46:45+00:00",
+      "updated": "2026-11-03T16:46:45+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.IR"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05193v1",
+      "headline": "Factorized MLLM Embeddings for Composed ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.IR"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04755v1",
+      "title": "iMED: A Multi-Endoscope Dataset for Surgical 3D Perception",
+      "abstract": "We introduce iMED, the first synchronized multi-endoscope dataset for robot-assisted minimally invasive surgery (RAMIS), designed to address a fundamental limitation in surgical vision benchmarking: the absence of independent held-out viewpoints. Existing surgical datasets capture single-trajectory sequences from a single endoscope, making it impossible to distinguish geometric generalization from photometric interpolation along a narrow forward-facing path. iMED provides 340 sequences ~170K synchronized timepoints with 4 views per timepoint) recorded simultaneously from two independent stereo endoscopes across ex vivo, postmortem, and live surgical settings, spanning 14 specimens with diverse anatomical regions and motion regimes. The dataset includes calibrated camera intrinsics, ArUco-based frame-wise pose estimates with uncertainty quantification, instrument segmentation masks, and rich clinical metadata. Using a train-on-one-endoscope, test-on-another evaluation protocol, we benchmark 23 state-of-the-art methods across rigid and deformable novel view synthesis, pose estimation, feature matching, and monocular depth estimation. Our experiments show that methods relying primarily on photometric supervision degrade substantially under this held-out-endoscope setting, while methods with explicit geometric regularization are more robust across views in our benchmark. Notably, large-scale foundation models transfer surprisingly well to surgical imagery, often outperforming domain-specific models, suggesting pitfalls in current fine-tuning protocols. iMED establishes a new evaluation protocol for geometric generalization in surgical vision.",
+      "authors": [
+        "Sierra Bonilla",
+        "Fengyi Jiang",
+        "Chinedu Nwoye",
+        "Jingpei Lu",
+        "Kailey Reardon",
+        "Humphrey W. Chow",
+        "Francisco Vasconcelos",
+        "Sophia Bano",
+        "Adam Schmidt",
+        "Omid Mohareri"
+      ],
+      "published": "2026-11-03T12:06:58+00:00",
+      "updated": "2026-11-03T12:06:58+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04755v1",
+      "headline": "iMED: A Multi-Endoscope Dataset for Surg",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05179v1",
+      "title": "OperAItor: An Agentic Framework for Fault-Tolerant Operation of Chemical Processes",
+      "abstract": "OperAItor, an open-source framework for developing and evaluating large language model agents for supervisory fault management in chemical processes. The framework is demonstrated on a dynamic reactor-distillation process representing isopropanol dehydrogenation, with physically based thermodynamics and modified reaction kinetics to permit liquid-phase operation. The process is represented by a 113-variable differential-algebraic model and operates at a nominal feed rate of 100kmol/h, producing approximately 4t/h of acetone. The simulated plant includes 8 PI control loops, 22 process alarms, 5 duty-standby pump trains, and 11 independent safety instrumented functions. The agent architecture integrates multivariate statistical process monitoring, fault diagnosis, knowledge-graph retrieval, action planning, and supervisory action generation. Five action-validation configurations are investigated, comprising operation without validation, an LLM-based judge, digital-twin simulation, and deterministic admissibility checks with and without consequence projection. The framework is evaluated using four LLMs across 20 scenarios involving single and multiple simultaneous faults. Without agent intervention, 18 scenarios result in plant stops, corresponding to an economic loss of $399,000 relative to fault-free operation under the assumed benchmark economics. For GPT-5 nano, Qwen3 8B, and Mistral 7B, validated agent configurations reduce the number of stops to 5-8 and recover $265,000 of the loss. The study provides a reproducible benchmark for comparing agent architectures, language models, and action-validation methods for supervisory fault management in chemical processes.",
+      "authors": [
+        "Javal Vyas",
+        "Mehmet Mercang{ö}z"
+      ],
+      "published": "2026-11-03T16:40:46+00:00",
+      "updated": "2026-11-03T16:40:46+00:00",
+      "categories": [
+        "eess.SY",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05179v1",
+      "headline": "OperAItor: An Agentic Framework for Faul",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "eess.SY",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.699999999999999,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04685v1",
+      "title": "MIMIC-Note-Extract: A Large-Scale Structured Dataset Extracted from MIMIC-IV-Note Discharge Summaries",
+      "abstract": "MIMIC is one of the most widely used public hospital datasets for machine learning on electronic health records, yet clinically important information, such as past medical history, allergies, and diagnostic findings, remains confined to free-text discharge summaries. Studies requiring this information must therefore build their own extraction pipelines, duplicating substantial effort across projects. We release MIMIC-Note-Extract (MNE), a large-scale dataset that uses a hybrid extraction pipeline combining deterministic parsing with schema-guided large language model generation to transform 16 sections from 300,720 discharge summaries into structured tables. MNE adds information that has no structured MIMIC counterpart and enriches related tables with broader coverage and greater clinical detail, including 10 times more patient-history entries and medication histories for more than twice as many admissions. Validation by medical doctors confirms extraction accuracy above 92% across sections. Using MNE, we construct a clinical decision-making benchmark for LLM agents, demonstrating how reusable structured representations of clinical narratives reduce data curation effort.",
+      "authors": [
+        "Kristian Schwethelm",
+        "Jonas Kuntzer",
+        "Conrad Ketzer",
+        "Eva Wende",
+        "Moritz Schlager",
+        "Daniel Rueckert",
+        "Georgios Kaissis",
+        "Friederike Jungmann",
+        "Paul Hager"
+      ],
+      "published": "2026-11-03T11:08:51+00:00",
+      "updated": "2026-11-03T11:08:51+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04685v1",
+      "headline": "MIMIC-Note-Extract: A Large-Scale Struct",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05291v1",
+      "title": "Low-Density 3D Point Cloud Classification",
+      "abstract": "3D point cloud classification, a task in computer vision, has recently gained substantial interest due to its extensive applications across various domains such as augmented and virtual reality, robotics, and autonomous driving. However, classifying 3D point clouds becomes challenging in real-world scenarios where the density levels vary. These variations are due to limitations inherent to current sensing technologies and variable environmental conditions, which often prevent the capture of detailed and comprehensive geometric representations. Existing classification methods, which have demonstrated impressive results on dense point clouds, may be affected and could experience reduced performance when dealing with low-density point clouds. Addressing this challenge, this paper introduces LD-PointNet++, an architecture optimized for the classification of low-density point clouds. To pave the way for LD-PointNet++, we conduct the first benchmarking study that systematically evaluates state-of-the-art point cloud classification methods across varying densities, revealing significant performance declines in low-density environments. Experimental results on the ModelNet benchmark dataset demonstrate that LD-PointNet++ not only outperforms these methods in low-density scenarios but also demonstrates consistent accuracy above 90% across different density levels.",
+      "authors": [
+        "Ahmed Baha Ben Jmaa",
+        "Faten Chaieb"
+      ],
+      "published": "2026-11-03T18:07:11+00:00",
+      "updated": "2026-11-03T18:07:11+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05291v1",
+      "headline": "Low-Density 3D Point Cloud Classificatio",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04960v1",
+      "title": "An Agentic Framework for Quality-Aware and Scenario-Adaptive Image Compression",
+      "abstract": "Despite decades of progress, image codecs remain difficult to adapt to diverse real-world compression scenarios for two main reasons. First, most image codecs are optimized for a specific objective and require substantial redevelopment when the compression goal changes. Second, they typically assume clean inputs, whereas sensor-captured images often contain degradations that alter rate-quality behavior. To address these challenges, we propose Practical Image Coding Agents (PICA), a multi-agent framework that adapts existing codecs to diverse user requirements and potentially degraded inputs. PICA consists of four collaborative agents: a Perception agent that interprets user intent and analyzes image content, an Improvement agent that jointly considers bitrate and reconstruction quality to guide pre-coding restoration, a Coding agent that refines quality-control settings from global to regional levels, and an After-coding improvement agent that addresses residual degradations and compression-induced artifacts through restoration guided solely by image quality. To enable codec-agnostic regional adaptation, we introduce Agentic ROI Coding (AROIC), which treats the codec as a black box and allows the agent to automatically schedule, execute, evaluate, and reflect ROI coding plans without architectural modifications or codec-specific retraining. We integrate these four agents with a Scenario-Guided Quality-Rate (SGQR) evaluation strategy to enable more effective scenario-adaptive compression across heterogeneous codecs. Comprehensive experiments on clean, noisy, and blurred images across standard, perceptual, and machine-vision compression scenarios demonstrate that PICA consistently enhances the compression performance of both the conventional H.266/VVC codec and the neural Cheng2020 codec, outperforming competing compression methods on the Kodak, CLIC2020, and HEVC datasets.",
+      "authors": [
+        "Zhenghao Chen",
+        "Lebin Zhou",
+        "Zicong Chen",
+        "Naifu Xue",
+        "Jiahao Li",
+        "Bin Li",
+        "Dong Xu",
+        "Yan Lu"
+      ],
+      "published": "2026-11-03T14:19:39+00:00",
+      "updated": "2026-11-03T14:19:39+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04960v1",
+      "headline": "An Agentic Framework for Quality-Aware a",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.699999999999999,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04807v1",
+      "title": "Asymptotic Optimality of $cμ$-Rule for LLM Inference Scheduling under Memory Constraint",
+      "abstract": "Large language model (LLM) inference, the process by which a pre-trained model receives an input prompt and generates output tokens sequentially, has become increasingly important with the widespread deployment of LLM-based applications. As inference workloads continue to scale, GPU memory has emerged as a critical bottleneck: the long input prompts and generation sequences common in agentic and reasoning workloads lead to substantial key-value (KV) cache usage. In this paper, we study the resulting online scheduling problem from a queueing perspective. Requests arrive stochastically with heterogeneous prompt and output lengths, undergo prefill and autoregressive decode, and compete for a finite KV-cache capacity. Unlike classical queueing models, the duration of a processing step depends on both prefill computation and KV-cache I/O, so service capacity is jointly determined by computation, memory access, and memory occupancy. We develop a fluid model that reduces the system to a multiclass single-server queue with effective service rates capturing computation, memory access, and memory capacity. This fluid analysis yields a $cμ$ priority rule, where the effective service rate $μ$ is jointly determined by computational speed, memory bandwidth, and memory capacity. We prove that this rule minimizes cumulative holding cost in the fluid model and, for a finite workload, also minimizes completion time and maximizes full-run output-token throughput. We then construct a feasible scheduling policy for the original finite system and prove that its scaled dynamics converge to the optimal fluid policy. Finally, experiments on a real LLM serving engine using an NVIDIA H800 show that practical implementations of the proposed priority rule substantially reduce average latency while maintaining high throughput relative to existing scheduling policies.",
+      "authors": [
+        "Zhenghao Li",
+        "Shengbo Wang",
+        "Nian Si"
+      ],
+      "published": "2026-11-03T12:41:05+00:00",
+      "updated": "2026-11-03T12:41:05+00:00",
+      "categories": [
+        "math.OC",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04807v1",
+      "headline": "Asymptotic Optimality of $cμ$-Rule for L",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "math.OC",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05344v1",
+      "title": "A Circuit for In-Context Learning",
+      "abstract": "In-context learning (ICL) lets a pretrained language model perform a task specified by demonstrations in its prompt, with no parameter updates. With arbitrary labels the model must acquire a mapping it cannot have memorized, so the learning happens within a single forward pass. Prior work found candidate parts but not how they compose. We give the composition for few-shot sentence classification with arbitrary labels in three 3-4B-parameter transformers. The model implements a key-value memory over label-token positions: each label token's residual stream encodes the label's identity, and middle-layer attention heads write into it the class of the preceding demonstration as its key. At the query, upper-layer heads match the query's class against the stored keys and copy out the matching labels. An early-layer signal encoding whether any label has repeated gates this readout; in its absence the readers attend to the start of the prompt and no label is favored. A separate set of heads suppresses the most recently seen label. Each step is established causally by activation patching, head ablations against random-head baselines, and steering with the model's own signals. A softmax model of the readout with two constants per head, fit on one prompt distribution, predicts another. The computation is conserved across the three models, the named heads alone reproduce the behaviour, and a transformer trained from scratch grows the same parts. The circuit transfers to semantic concepts and to labels with meaning, and the same parts, with a causal gate, appear from 0.6B to 8B in one family and survive instruction tuning. ICL in this setting is a gated associative lookup built from a few identifiable component types, traced causally from demonstrations to prediction.",
+      "authors": [
+        "Andrew Gao",
+        "William Gao"
+      ],
+      "published": "2026-11-03T18:44:34+00:00",
+      "updated": "2026-11-03T18:44:34+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05344v1",
+      "headline": "A Circuit for In-Context Learning",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.7,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05080v1",
+      "title": "CRONOS: Benchmarking Non-Episodic Reinforcement Learning for Robotic Manipulation",
+      "abstract": "Reinforcement learning (RL) is promising for adapting robot policies to unstructured real-world environments. However, standard RL pipelines rely on episodic training with frequent scene resets, which is impractical for real-world deployment due to the need for substantial human intervention. While prior work has studied non-episodic RL in relatively small policies trained from scratch, its behavior when fine-tuning modern large-scale pre-trained vision-language-action (VLA) models remains underexplored. In this work, we introduce CRONOS, a simulation benchmark for RL fine-tuning of VLAs under non-episodic scene resets. CRONOS leverages high-fidelity physics simulators and adopts shared-scene multi-task settings. Using CRONOS, we show that naively fine-tuning pre-trained policies fails in non-episodic settings due to shifts in object configurations and end-effector poses; however, these challenges can be mitigated through targeted reset allocation and by addressing biases in pre-trained models. Moreover, we find that non-episodic training enhances long-horizon manipulation and improves generalization to previously unseen object configurations and task sequences. Project page: https://embodiedai-ntu.github.io/cronos/",
+      "authors": [
+        "Po-Yi Wu",
+        "Djengo Cyun-Jyun Fang",
+        "Dian Cheng",
+        "Tsung-Wei Ke"
+      ],
+      "published": "2026-11-03T15:41:07+00:00",
+      "updated": "2026-11-03T15:41:07+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05080v1",
+      "headline": "CRONOS: Benchmarking Non-Episodic Reinfo",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04797v1",
+      "title": "Training Specialist LLMs on Your Phone: Forward-Only Optimization via Block-Spectral Coordinates",
+      "abstract": "Large language models (LLMs) on personal devices keep user data local, but limited memory restricts their general capability. Since most user-specific tasks do not require the breadth of frontier models, a practical solution is to adapt a shared on-device model into lightweight specialists. However, backpropagation is prohibitive in memory, and users rarely provide labeled data. We present MobileSpec, a system that trains specialists with forward passes alone and learns from automatically checked task outcomes, as in reinforcement learning with verifiable rewards (RLVR). Because forward-only updates are built from random perturbations, training is efficient only when these perturbations resemble the weight changes of RLVR, which largely preserve the singular values of pretrained weights and rotate their singular vectors. The core algorithm of MobileSpec, FuRA-S, produces such perturbations while training only the block-spectral coordinates of pretrained weights, namely the singular values of their column blocks. As we show theoretically and empirically, rescaling these blocks independently shifts their relative contributions to each weight matrix and thereby rotates its singular vectors. Since this update can be rewritten as a transformation of the layer input, FuRA-S also adapts INT4 models without modifying their weights. With specialists of only 1-5 MB that update 0.015-0.05% of the parameters, MobileSpec raises the success rate of a phone-use agent from 6-23% up to 89-100% and trains a personalized 8B model on an iPhone 16 Pro overnight. On RLVR benchmarks, FuRA-S is competitive with full-parameter evolution strategies (ES) and outperforms ES over LoRA adapters and quantized ES on INT4 models.",
+      "authors": [
+        "Liyan Tan",
+        "Yequan Zhao",
+        "Ziyue Liu",
+        "Yupeng Su",
+        "Ruijie Zhang",
+        "Zheng Zhang"
+      ],
+      "published": "2026-11-03T12:32:03+00:00",
+      "updated": "2026-11-03T12:32:03+00:00",
+      "categories": [
+        "cs.LG",
+        "eess.SY"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04797v1",
+      "headline": "Training Specialist LLMs on Your Phone: ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "eess.SY"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04654v1",
+      "title": "BhopalMLS: A LiDAR Dataset for Semantic Scene Understanding in Heterogeneous Urban Environments",
+      "abstract": "We introduce BhopalMLS, a large-scale Mobile Laser Scanning (MLS) dataset from a dense, heterogeneous urban environment in Bhopal, India, with mixed traffic, informal structures, and narrow unplanned streets. It spans approximately 10 km of road corridors with over 1.2 billion points and 19,518 annotated instances across 62 fine-grained static categories, grouped into 12-class and 21-class benchmark taxonomies; 6 optional moving-class subclasses support dynamic-object analysis. Existing 3D datasets, collected in well-planned cities, are structurally more uniform than such unplanned settings, and lack their subtype diversity. On semantic and instance segmentation at both granularities, fine-tuned foundation models surpass supervised baselines: Utonia(L) reaches 71.28% mIoU (vs. PTv3's 68.04% from scratch) and 44.07% mAP50 on the 12-class benchmark. Cross-region experiments against four established datasets (Ke-MLS, Toronto-3D, Paris-Lille-3D, SemanticKITTI) reveal a consistent asymmetric transferability: models trained on BhopalMLS transfer better than the reverse on every pair, for both Utonia(L) and Concerto(L) (mean 21.5, up to 36 mIoU points), holding even when the target is denser. Factor-controlled retraining at a fixed label budget, repeated on both models, attributes this to the coverage of BhopalMLS's subtype inventory rather than to dataset size or corridor geometry: collapsing each class to a single subtype costs 13.0 and 13.3 mIoU points for Utonia(L) and Concerto(L). BhopalMLS therefore offers a testbed for 3D perception beyond well-planned cities. Data and an interactive viewer are at https://geoai4cities.github.io/bhopalmls.",
+      "authors": [
+        "Pyare Lal Chauhan",
+        "Vaibhav Kumar",
+        "Bharat Lohani"
+      ],
+      "published": "2026-11-03T10:41:37+00:00",
+      "updated": "2026-11-03T10:41:37+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04654v1",
+      "headline": "BhopalMLS: A LiDAR Dataset for Semantic ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.05306v1",
+      "title": "You don't need long context",
+      "abstract": "Later tokens are costlier to generate than earlier tokens. On frontier open weight models, the disparity in cost may rise to as much as 7x. Through frequent compaction, we show across a broad range of long-horizon and long-input tasks that frontier language models sacrifice little to no task accuracy when maintaining short contexts. We further demonstrate that LLM performance does not collapse on long-horizon software engineering tasks even when taking at most one action per context, and based on that we outline the concept of semantic state space models (SSSMs). Our findings question the need for long-context language models.",
+      "authors": [
+        "Peter Belcak",
+        "Saurav Muralidharan",
+        "Jindong Jiang",
+        "Yonggan Fu",
+        "Wonmin Byeon",
+        "Hanrong Ye",
+        "Ryan Angilly",
+        "Ali Taghibakhshi",
+        "Shih-Yang Liu",
+        "Siru Ouyang",
+        "Greg Heinrich",
+        "Pavlo Molchanov"
+      ],
+      "published": "2026-11-03T18:17:23+00:00",
+      "updated": "2026-11-03T18:17:23+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.05306v1",
+      "headline": "You don't need long context",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-05"
+    },
+    {
+      "arxiv_id": "2611.04968v1",
+      "title": "Who is the Pronoun Pro? Comparing LLMs and Humans at Number-Disambiguation of 'they'",
+      "abstract": "This study evaluates whether large language models (LLMs) can reliably replace or complement human research assistants in linguistically complex annotation. In a controlled annotation task, 73 human annotators (local students and crowdworkers with and without a background in linguistics) and more than 40 LLM configurations number-disambiguated 174 authentic uses of 'they' from Reddit, including innovative and context-sensitive cases. The best LLM, Kimi K3, reached 94.5% accuracy, above the human majority vote (86.2%) and the mean of the top half of human annotators (78.5%); only the single best human annotator scored higher (95.7%). LLMs also offer substantial practical advantages in cost and speed. However, qualitative error analysis reveals a crucial complementarity: human reasoning in low-agreement cases exposes inconsistencies in the annotation typology and thereby improves the methodological framework itself. The study contributes (i) a benchmark-style human-LLM comparison for a semantically demanding task, (ii) transparent cost and time evidence, and (iii) a methodological argument against a purely replacement-oriented view of automation. LLMs are viable for large-scale annotation support in linguistics, but their responsible use requires human critical oversight. The dataset with its gold-standard labels, all human and LLM annotations, and the fully reproducible code are openly available as a Quarto-based, public repository.",
+      "authors": [
+        "Carlos Hartmann"
+      ],
+      "published": "2026-11-03T14:26:17+00:00",
+      "updated": "2026-11-03T14:26:17+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.04968v1",
+      "headline": "Who is the Pronoun Pro? Comparing LLMs a",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI",
+        "cs.HC"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-11-05"
     }
   ]
 }
