@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-08T22:43:07.424100+00:00",
-  "source_last_updated": "2026-11-08T22:42:59.886133+00:00",
-  "count": 5300,
+  "generated_at": "2026-11-10T01:57:49.728629+00:00",
+  "source_last_updated": "2026-11-10T01:57:37.797830+00:00",
+  "count": 5325,
   "papers": [
     {
       "arxiv_id": "2512.10674v1",
@@ -261010,6 +261010,971 @@
       },
       "practicality_score": 4.8999999999999995,
       "first_seen": "2026-11-06"
+    },
+    {
+      "arxiv_id": "2611.09170v1",
+      "title": "FIND: Frequency Invariance Disentanglement for Test-Time Adaptation in LiDAR 3D Detection",
+      "abstract": "LiDAR-based 3D Object Detection (L3OD) is a fundamental 3D perception task, yet its performance is often compromised by domain shifts arising from diverse sensor configurations and environmental conditions. Existing Test-Time Adaptation (TTA) methods primarily leverage self-supervision in the spatial domain, yet they frequently confound semantic content with domain style due to the sparse, non-Euclidean nature of point clouds. To overcome this limitation, we propose FIND (Frequency INvariance Disentanglement), a novel TTA framework that precisely disentangles domain-invariant content from domain-specific interference within the frequency domain. Our methodology utilizes B-Spline fitting to construct locally adaptive filters integrated into a dual-stream architecture: an Invariant Stream extracts robust features to guide pseudo-labeling, while a Specific Stream enforces consistency against domain perturbations. By combining invariance-driven alignment with stability-guided regularization, our approach dynamically extracts robust domain-invariant features while suppressing domain-specific interference. Extensive experiments on cross-dataset adaptation and robust corruption benchmarks demonstrate that FIND significantly outperforms state-of-the-art methods. The source code is publicly available at https://github.com/llldx03/FIND.",
+      "authors": [
+        "Dongxiao Li",
+        "Zixuan Hu",
+        "Ling-Yu Duan"
+      ],
+      "published": "2026-11-06T08:51:47+00:00",
+      "updated": "2026-11-06T08:51:47+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09170v1",
+      "headline": "FIND: Frequency Invariance Disentangleme",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 21.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 8.399999999999999,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09490v1",
+      "title": "CucumberVision at the Edge: Accuracy, Throughput, and Energy of RGB-D Cucumber Sizing on Jetson Orin Nano and Raspberry Pi 4",
+      "abstract": "Non-contact fruit sizing from RGB-D imagery reaches sub-centimetre accuracy on workstation hardware, but in-field grading requires the same pipeline to run on a low-power single-board computer, and the cost of that transition is rarely reported. We deploy a curvature-aware cucumber length-measurement pipeline (YOLO26n detection, prompt-based segmentation and a medial arc spline estimator) on an NVIDIA Jetson Orin Nano and a Raspberry Pi 4, and characterize both against an RTX 3050 Ti workstation by replaying 50 identical greenhouse captures of 7 specimens, with specimen-level cluster-bootstrap statistics. Accuracy is preserved: mean absolute error (MAE) is 0.58 cm (95% CI 0.46-0.69) on both the workstation and the Jetson at matched precision, with a paired difference of zero. TensorRT FP16 compilation cuts Jetson detection latency 2.57x, giving two operating points on one board: 72 ms per fruit at 0.84 cm, or 2.74 s at 0.64 cm. Four ablations map the design space. For prompted segmentation backends, measurement accuracy is fixed by the backend and reproduces across platforms to within 0.01 cm, while its cost is fixed by the platform and varies 214x, so the two choices are separable. Whole-graph INT8 quantization of the NMS-free detection head fails structurally, returning no detections, because one output tensor carries both pixel coordinates and confidences; we show that no calibration strategy can avoid this. Excluding the head restores function at 1.37x. Energy per fruit is 42.2 J on the Jetson, and its 7 W mode consumes 73% more than its 15 W mode. The Raspberry Pi with MobileSAM costs 2.5x more per fruit than the Jetson with SAM despite drawing 47% less power, and it runs without thermal throttling under sustained load. The results define an accuracy-throughput-energy envelope with three non-dominated configurations and give rules for selecting among them.",
+      "authors": [
+        "Manveen Kaur",
+        "Rajmeet Singh",
+        "Saeed Mozaffari",
+        "Majid Ahmadi",
+        "Shahpour Alirezaee"
+      ],
+      "published": "2026-11-06T14:13:04+00:00",
+      "updated": "2026-11-06T14:13:04+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09490v1",
+      "headline": "CucumberVision at the Edge: Accuracy, Th",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 20.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.0,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09521v1",
+      "title": "Embedding Predictive Adaptation and Refinement for Multi-Modal Industrial Anomaly Detection",
+      "abstract": "Industrial Anomaly Detection (IAD) has evolved from 2D image-based approaches to multi-modal methods that leverage the complementary nature of RGB images and 3D point clouds. Among these, memory bank-based methods, which identify anomalies by the discrepancy between each query patch feature and its nearest normal prototype, have proven particularly effective. However, two limitations remain: (i) employing frozen pretrained encoders yields insufficient discrimination between normal and anomalous features due to the domain gap, while existing contrastive learning-based adaptation struggles to capture the spatial relationships required for precise localization; and (ii) pixel-level anomaly maps interpolated from patch-level distance scores remain coarse, lacking fine-grained detail. To address these limitations, we propose EPAR (Embedding Predictive Adaptation and Refinement). We adapt encoders by predicting the embeddings of masked regions to capture spatial relationships, together with patch-level Variance-Invariance-Covariance (VIC) regularization, resolving the poor discriminability between normal and anomalous features caused by the domain gap. We further propose a Noise Suppression Network that refines coarse maps by learning the relational discrepancy between each patch feature and its nearest normal prototype, rather than the anomaly's appearance. This relational signal remains valid for unseen real defects, despite being learned from synthetic anomalies. EPAR demonstrates strong practical applicability, excelling in few-shot settings and improving AUPRO@1% on MVTec 3D-AD and Eyecandies by +1.8% and +1.9%, respectively.",
+      "authors": [
+        "Jaeho Cho",
+        "Jinsik Bang",
+        "Taehwan Kim"
+      ],
+      "published": "2026-11-06T14:36:31+00:00",
+      "updated": "2026-11-06T14:36:31+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09521v1",
+      "headline": "Embedding Predictive Adaptation and Refi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 19.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09298v1",
+      "title": "Towards an Autonomous AI Steward for Large-Scale Physics Experiments: Integrating Causal Diagnostics, RAG, and Conformal Prediction",
+      "abstract": "Long-term particle physics experiments face critical operational challenges: monitoring non-stationary machine data streams and preserving tacit expert knowledge. We present the \"Helmholtz Co-Pilot,\" a hybrid Multi-Agent System (MAS) acting as an autonomous experiment steward. The system can be triggered interactively by human operators or autonomously by an asynchronous causal diagnostics engine that runs independently of the MAS reasoning core. Continuously monitoring live hardware streams such as data acquisition and slow control, this engine performs dynamic causal discovery to trace cascading alarms back to their root causes and applies adaptive model selection to keep forecasts reliable across shifting machine states; upon detecting an anomaly, it hands a structured diagnostic report to the MAS. The reasoning layer itself relies on a high-throughput C++ core and a Python edge architecture orchestrating a directed acyclic graph (DAG) of specialized ReAct workers. It integrates a Retrieval-Augmented Generation (RAG) backbone for institutional memory and leverages conformal prediction to bound its evidence-based recommendations with mathematical coverage guarantees. This extended abstract outlines the architecture, the integration of software-enforced Human-in-the-Loop (HitL) guardrails, and ongoing shadow-testing within the KATRIN experiment.",
+      "authors": [
+        "Oliver Noll",
+        "Nicholas Tan Jerome",
+        "Alexander Lehnen",
+        "Frank Simon",
+        "Frank Maas"
+      ],
+      "published": "2026-11-06T10:52:19+00:00",
+      "updated": "2026-11-06T10:52:19+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09298v1",
+      "headline": "Towards an Autonomous AI Steward for Lar",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.0,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09866v1",
+      "title": "GRAC: Graph-Based Retrieval-Augmented Captioning for Surgical Scene Description",
+      "abstract": "Purpose: Surgical operative reports support procedural documentation, surgical training, performance assessment, and workflow review. However, extracting meaningful information often requires extensive manual review and clinical expertise. Automated surgical scene descriptions could reduce this burden by leveraging recurring surgical activities and prior knowledge.\n  Methods: We propose GRAC (Graph-Based Retrieval-Augmented Captioning), a framework that represents surgical scenes as graphs capturing relationships among instruments, actions, and anatomical structures. Given an input scene graph, GRAC learns to retrieve relevant graph-caption pairs from training data. It compares instrument-tissue interactions between retrieved examples and the input scene, using comparison features to condition retrieved-caption representations during generation.\n  Results: On the EndoVis-18 benchmark, GRAC achieved a CIDEr-D of 5.88, compared with 4.23 for SGT and 3.36 for the strongest conventional Transformer baseline. Exact instrument-action-target triplet-set accuracy reached 52.6%, compared with 32.7% for SGT and 26.2% for the strongest conventional baseline. These results demonstrate improvements in language quality and factual agreement. On TORS, GRAC achieved a CIDEr-D of 5.06, compared with 3.80 for the strongest baseline.\n  Conclusion: GRAC demonstrates that combining structured surgical scene representations with retrieved examples improves surgical scene captioning and produces more contextually meaningful descriptions.",
+      "authors": [
+        "Rochak Dhakal",
+        "Chen Zhao",
+        "Soup Cobb",
+        "Xin Qian",
+        "Xiaofeng Yang",
+        "Weihua Zhou"
+      ],
+      "published": "2026-11-06T18:47:23+00:00",
+      "updated": "2026-11-06T18:47:23+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09866v1",
+      "headline": "GRAC: Graph-Based Retrieval-Augmented Ca",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09863v1",
+      "title": "Flow-Guided Target-Space Alignment via Path Consistency",
+      "abstract": "Many multimodal alignment problems require mapping a source modality into a fixed space defined by a target modality, where the target space is not merely an intermediate embedding but is used directly for downstream analysis. In this setting, successful alignment should preserve both the global structure of the target distribution and the instance-level correspondence observed in paired source--target training data. Existing objectives typically address only part of this goal: contrastive losses encourage relative similarity, distribution-matching losses improve marginal agreement, and pointwise regression fits each source sample to its paired target without explicitly modeling target-space path geometry. We propose FlowAlign, a flow-guided target-space alignment method that repurposes conditional flow matching as a training-time alignment signal rather than an inference-time transport model. FlowAlign uses the learned flow field to guide the alignment of source-side representations with the fixed target space, encouraging them to preserve paired correspondence while remaining compatible with the global target-space structure. We further provide theoretical analysis showing how FlowAlign helps improve paired correspondence by controlling endpoint accuracy and capturing local target-space geometry. Experiments on synthetic data, paired single-cell multiome benchmarks, and image--text alignment demonstrate that FlowAlign improves instance level correspondence while preserving target-space structure across different modality settings.",
+      "authors": [
+        "Ruizhi Yuan",
+        "Zeqiu Yu",
+        "Wei Gao",
+        "Wei Chen",
+        "Xiwei Tang",
+        "Lu Tang"
+      ],
+      "published": "2026-11-06T18:44:08+00:00",
+      "updated": "2026-11-06T18:44:08+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09863v1",
+      "headline": "Flow-Guided Target-Space Alignment via P",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 5.6,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09722v1",
+      "title": "FOSCAR: Accelerating Decode Attention over 2- and 4-Bit KV Caches through Affine Folding",
+      "abstract": "Large-language-model decode attention streams the key-value (KV) cache for every generated token. Packing that cache into 2-bit or 4-bit quantized integers reduces memory traffic but does not automatically translate into latency saving. Existing 2-bit fused kernels reach under 31%/15% of peak HBM throughput on H100/B200. Converting each value and applying its scale and offset before feeding Tensor Cores is a major bottleneck because instruction-issue throughput is scarce on modern GPUs. Instead of applying scale and offset to each KV value, FOSCAR uses affine folding to apply them to the other operand or the output of decode-attention matrix products, depending on the quantization scheme (token-wise or channel-wise). This reduces scale-and-offset operations by up to two orders of magnitude while preserving the dequantized attention output in exact arithmetic. FOSCAR also uses bit manipulation to feed KV operands to Tensor Cores efficiently, requiring only 1 and 0.19 ALU instructions per INT2 element on H100 and B200, respectively. Finally, FOSCAR builds warp-specialized GPU pipelines for Hopper (H100) and Blackwell (B200) using wgmma and tcgen05. On H100, FOSCAR INT2 and INT4 kernels achieve geo-mean speedups of $3.36\\times$ and $2.83\\times$ over FlashInfer BF16, and $2.03\\times$ and $1.71\\times$ over TensorRT-LLM FP8. On B200, the corresponding INT2 and INT4 speedups are $2.67\\times$ and $2.30\\times$ over FlashInfer BF16, $1.48\\times$ and $1.28\\times$ over TensorRT-LLM FP8, and $1.16\\times$ and $1.00\\times$ over TensorRT-LLM NVFP4. We integrate FOSCAR into SGLang to benchmark serving efficiency. On long-context serving workloads, FOSCAR increases peak aggregate throughput by up to 170% and 341% over 2-bit and 16-bit baselines, respectively. We open-source FOSCAR as a kernel library at https://github.com/FutureMLS-Lab/FOSCAR.",
+      "authors": [
+        "Donglin Zhuang",
+        "Pragaash Ponnusamy",
+        "Xiaoxia Wu",
+        "Shuaiwen Leon Song",
+        "Zhongzhu Zhou"
+      ],
+      "published": "2026-11-06T17:00:25+00:00",
+      "updated": "2026-11-06T17:00:25+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09722v1",
+      "headline": "FOSCAR: Accelerating Decode Attention ov",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09528v1",
+      "title": "StockASkill: A Local-First AgentSkill for Intelligent Stock Selection",
+      "abstract": "Quantitative equity selection and portfolio construction in emerging and cross-border markets frequently suffer from computational bottlenecks, remote API fragility, survivorship bias, and rigid execution constraints such as discrete board lots and investor-mandated drawdown limits. In this paper, we present StockASkill, a local-first, full-data-driven AgentSkill engineered as a specialized Quant Co-Processor for autonomous AI agents and quantitative researchers. Tailored for agile portfolios (10^5 ~ 10^7 RMB) where discrete lot execution and capital protection are mandatory, StockASkill embeds a columnar DuckDB OLAP engine over 42.44 million historical price records and 186,432 financial disclosures spanning 26 years across China A-shares, Hong Kong, US equities, and ETFs. By eliminating ad-hoc network dependencies during analysis, StockASkill reduces cross-sectional screening latency across 5,400+ equities from over 25 seconds to sub-0.5 seconds (a 95%+ reduction). We formalize an end-to-end mathematical pipeline integrating a 7+1 factor alpha model, an SLSQP convex optimizer under smooth CVaR drawdown surrogates with exact path projection, dynamic 100-share board lot integer quantization, and an autonomous thesis lifecycle finite-state machine. Furthermore, we provide a zero-disk, strongly-typed JSON streaming interface designed for high-throughput LLM tool-calling. Open-sourced at https://github.com/axjing/stockaskill, comprehensive empirical benchmarks from 2018 to 2024 demonstrate that the architecture achieves annualized Sharpe ratios exceeding 1.48 and Calmar ratios up to 2.17, while reducing max drawdown by up to 85% relative to benchmark indices.",
+      "authors": [
+        "Xiangjing An",
+        "Zhibin Jiao",
+        "Aiting Chen"
+      ],
+      "published": "2026-11-06T14:39:25+00:00",
+      "updated": "2026-11-06T14:39:25+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09528v1",
+      "headline": "StockASkill: A Local-First AgentSkill fo",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 10.0,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09372v1",
+      "title": "Enabling Privacy-Preserving Natural Language Access to Industrial Smart Meter Data",
+      "abstract": "Energy management officers and grid operators increasingly rely on smart meter data for anomaly detection, performance monitoring, and strategic decision-making. However, extracting actionable insights from large-scale, heterogeneous telemetry databases requires advanced SQL and data engineering expertise, creating a critical bottleneck for non-technical personnel. Furthermore, the strict data privacy regulations and security constraints inherent to critical energy infrastructure often prohibit the routing of sensitive consumer data through cloud-based Large Language Models (LLMs). To address these challenges, we present OpenMeter, a schema-agnostic Multi-Agent System (MAS) designed to translate natural language queries into executable code and human-readable insights. This architecture lowers the technical barrier for day-to-day utility operations by empowering non-expert personnel to interact with complex databases through intuitive natural language dialogue, transforming raw telemetry into a highly valuable tool for routine grid workflows and strategic decisions. Multi-scenario ablation studies over this environment demonstrate that full multi-agent orchestration shows its largest observed accuracy gains on resource-constrained local hardware (+6.1 pp EX-R over the strongest single-agent configuration); at frontier scale, individual components retain value but should be enabled selectively, indicating that the cost of full orchestration is justified specifically where privacy demands local execution.",
+      "authors": [
+        "Carlos Martín-Abellán",
+        "Mark Kröll"
+      ],
+      "published": "2026-11-06T12:11:34+00:00",
+      "updated": "2026-11-06T12:11:34+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.DB",
+        "cs.MA"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09372v1",
+      "headline": "Enabling Privacy-Preserving Natural Lang",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.DB"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09476v1",
+      "title": "LEMMO: A Large Electromagnetic Model leveraging Pretrained LLMs for Million-Sample Signal Understanding",
+      "abstract": "Large language models have expanded beyond text to vision, audio, and other modalities, but understanding raw electromagnetic (EM) signals remains challenging. Wideband recordings can contain millions of samples, whereas existing waveform-based EM models are primarily evaluated on short in-phase and quadrature (IQ) segments, leaving long-recording understanding and detailed description insufficiently explored. We introduce LEMMO, a large EM model for instruction-driven recognition and description of long raw IQ recordings. LEMMO combines a linear-attention EM encoder with anti-aliased temporal resampling to process up to eight million complex samples. Its EM-text interaction module conditions learnable queries on instructions before retrieving signal evidence. Compact queries support recognition, while structured queries with auxiliary factual supervision organize scene-level properties, signal attributes, and cross-signal relationships for detailed description. We also construct and release a unified 1.38-TB corpus of real-world and synthetic EM signals, including LEMMO-ShortQA and LEMMO-LongDesc. Compared with MERLIN-LoRA, LEMMO improves mean EM-Bench perception accuracy by 15.77 %, mean strategy-generation ROUGE-L F1 by 4.38 points, and mean LEMMO-ShortQA accuracy by 14.31 %. It also improves categorical and numerical fact F1 on both LEMMO-LongDesc tasks while preserving its language backbone's MMLU performance. Our code and datasets are available at https://github.com/N1rv4n4/LEMMO and https://huggingface.co/datasets/DaftJun/RFLAS, respectively.",
+      "authors": [
+        "Mingkai Li",
+        "Jiajun Wu",
+        "Yihan Mao",
+        "Zilin Sang",
+        "Taosong Yu",
+        "Yuan Ma",
+        "Minghe Liu",
+        "Qianqian Yang",
+        "Zhiguo Shi"
+      ],
+      "published": "2026-11-06T13:56:33+00:00",
+      "updated": "2026-11-06T13:56:33+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.SD"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09476v1",
+      "headline": "LEMMO: A Large Electromagnetic Model lev",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.SD"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09892v1",
+      "title": "On Agentic Manipulation Policies",
+      "abstract": "Recent work on robot manipulation has focused on specialist policies trained on demonstrations. We show that generalist AI models can control manipulators more reliably than specialist policies such as vision-language-action models (VLAs) and world-action models (WAMs). We systematically analyze agentic manipulation policies (AMPs), in which a generalist AI model commands the manipulator directly, adapting its actions as the task unfolds. We present AMP1, a reference harness that runs unchanged across single-arm, bimanual, and mobile manipulation. AMP1 achieves state-of-the-art results on the RoboLab-120 and CaP-Gym benchmarks, with no demonstrations or task-specific training. On RoboLab-120, AMP1 reaches an 85.6\\% success rate zero-shot, compared to 49.2\\% and 42.9\\% for leading VLA and WAM policies. The agent succeeds zero-shot in 104 of 108 real-world trials spanning twelve tasks and three robot instances, reducing failure rates by 20x and 15x relative to strong VLA and WAM baselines. The basic harness supplies no grasping, pushing, or placing skills; the agent develops its own strategies, such as searching for hidden objects, using objects as tools, and calibrating its cameras. With the addition of a persistent memory store, the agent can also learn from experience: an augmented harness with a memory representation that is carried across episodes lowers the failure rate on RoboDojo bimanual manipulation tasks by 4.6x relative to zero-shot deployment. Our analysis suggests that AMPs are substantially more general and robust than specialist manipulation policies, providing a promising foundation for robot manipulation.",
+      "authors": [
+        "Chen Chen",
+        "Omid Bagherieh",
+        "Naveen Nikamanth Appiah Balaji",
+        "Jesse T. Gonzalez",
+        "Negin Heravi",
+        "Fahad Islam",
+        "Xueting Li",
+        "Jean-Baptiste Regli",
+        "Kejia Ren",
+        "Petr Švec",
+        "David J. Yoon",
+        "Matthias Müller",
+        "Vladlen Koltun"
+      ],
+      "published": "2026-11-06T18:59:34+00:00",
+      "updated": "2026-11-06T18:59:34+00:00",
+      "categories": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09892v1",
+      "headline": "On Agentic Manipulation Policies",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09746v1",
+      "title": "Continuous wavelet-based feature extraction for laser-induced breakdown spectroscopy classification of human plasma samples",
+      "abstract": "Extracting discriminative features from laser-induced breakdown spectroscopy (LIBS) spectra is important for the classification of complex biological samples. This study evaluates continuous wavelet transform (CWT)-based spectral peak extraction for distinguishing human plasma samples labeled as SARS-CoV-2-positive or negative. Plasma specimens from 181 individuals, comprising 53 positive samples and 128 negative controls, were deposited as 5 μL droplets on silicon substrates and dried before analysis. Spectra were acquired using a nanosecond Nd:YAG laser operating at 1064 nm, with 100 single-shot measurements collected per specimen and averaged after intensity-based outlier rejection. CWT-based peak detection was coupled with a support vector machine (SVM) classifier. The reported leave-one-out evaluation yielded an accuracy of 93.00%, sensitivity of 94.67%, and specificity of 91.61%; these estimates remain provisional pending reconciliation with specimen-level predictions. Features identified by the CWT pipeline included emission lines assigned to Ca II, K I, and N I. The workflow provides a basis for examining spectral features associated with the studied plasma groups. Independent validation and assessment of specimen, substrate, and acquisition-related variability are required to establish generalizability and diagnostic relevance.",
+      "authors": [
+        "Md Mahmudur Rahman",
+        "Atqiya Munawara Mahi",
+        "Nazim Ahmed Belabbaci",
+        "Mohammad Arif Ul Alam"
+      ],
+      "published": "2026-11-06T17:17:07+00:00",
+      "updated": "2026-11-06T17:17:07+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09746v1",
+      "headline": "Continuous wavelet-based feature extract",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09597v1",
+      "title": "RuACT: Recovering Inactive Rubrics as Adaptive Critics and Teachers",
+      "abstract": "Rubric-based reinforcement learning (RL) extends RL with verifiable rewards to open-ended tasks by scoring each response against query-specific rubrics. Under group-relative optimization, however, a rubric that every sampled response fails (unreachable) or passes (saturated) gives all responses the same outcome and no learning signal; in Qwen3-4B medical training, 60.88% of query-rubric observations are inactive. We find that the two states lack different supervision: stating an unreachable rubric in the prompt raises its satisfaction from 1.13% to 91.25%, whereas responses that all pass a saturated rubric still differ in quality. We therefore propose RuACT (Rubrics as Adaptive Critics and Teachers), which assigns each inactive rubric the role that supplies what it lacks. Rubric as Teacher uses unreachable rubrics as privileged information for reward-gated on-policy self-distillation, and Rubric as Critic decomposes saturated rubrics into child rubrics that separate current responses while sharing the parent's weight. RuACT outperforms GRPO, rubric reweighting, and rubric-guided exploration on all four medical and scientific benchmarks with Qwen3-4B and achieves the best average with Qwen3-1.7B. On initially unreachable rubrics, unguided recovery rises from 35.02% to 42.86%, while child refinement improves reward-quality alignment on independent rollouts from 57.74% to 60.77%. Code is available at https://github.com/ZJU-REAL/RuACT.",
+      "authors": [
+        "Yijun Li",
+        "Zhengxi Lu",
+        "Zhipiao Liu",
+        "Jinzheng Yu",
+        "Xutao Weng",
+        "Jian Shao",
+        "Yongliang Shen"
+      ],
+      "published": "2026-11-06T15:27:17+00:00",
+      "updated": "2026-11-06T15:27:17+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09597v1",
+      "headline": "RuACT: Recovering Inactive Rubrics as Ad",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09729v1",
+      "title": "One Run Is Not Enough: A Monte Carlo Protocol for Evaluating LLM Reliability on Data Science Tasks",
+      "abstract": "Large language models (LLMs) have shown promise for automating data science workflows. Benchmarks such as DataSciBench (2026) and StatQA (2024) have advanced the evaluation of their capabilities across data science and statistical tasks. Assessing their reliability requires examining both the quality of their responses and their consistency across repeated runs, task types, and difficulty levels. With this aim, we introduce DS-QA, a benchmark comprising 100 data science and statistics questions drawn from UK university courses, spanning 16 datasets and three difficulty levels. We develop a three-layer evaluation framework that combines general response properties (runtime, verbosity and text similarity), coarse-grained metrics (accuracy, code executability and completeness), and task-specific metrics. We evaluate OpenAI models using a Monte Carlo protocol with 100 repeated runs. The results reveal substantial variability in responses to data visualisation and supervised learning tasks, particularly at medium and hard difficulty levels, highlighting the importance of evaluating consistency alongside response quality. We also find that an increase of 0.1 in the word verbosity ratio corresponds to an increase of about 0.013 in the token verbosity ratio.",
+      "authors": [
+        "Wenqi Ni",
+        "Ozan Evkaya",
+        "Miguel de Carvalho"
+      ],
+      "published": "2026-11-06T17:06:21+00:00",
+      "updated": "2026-11-06T17:06:21+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09729v1",
+      "headline": "One Run Is Not Enough: A Monte Carlo Pro",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09652v1",
+      "title": "Breaking the Privacy Promise: Gradient Inversion Attacks on Federated Low-Rank Adapted Vision Transformers",
+      "abstract": "Parameter-efficient fine-tuning (PEFT) has been increasingly adopted to fine-tune pretrained models with low computational cost and is therefore also preferred in the federated learning paradigm to reduce computational and communication overhead. In this work, we investigate the sparsely explored problem of the risk of private data leakage in LoRA-adapted Vision Transformers (ViTs), where low-rank updates weaken the gradient signal available to a server with access to individual client updates. We show that quality of reconstruction is limited by two coupled ambiguities: reduced information in LoRA gradients and missing spatial cues from frozen positional embeddings. To address this, we propose a spatially anchored generative inversion framework that incorporates server-prescribed trainable positional embeddings into ViT blocks during fine-tuning at clients. The resulting positional gradients act as layer-wise spatial anchors, providing additional positional cues, while the generative prior keeps reconstructions on a realistic image manifold, reducing duplicate-data and patch-permutation artifacts, {which produce similar gradients as those produced when the target client images are used}. Adding our proposed spatial anchoring to GIAS improves PSNR by 10.14 dB, SSIM by 0.45, and LPIPS by 0.098 on CIFAR-10, as well as PSNR gains of 7.83 and 11.74 dB on high-resolution CelebA and CARS datasets, respectively, in the FedSGD setting. Such gains in reconstructed image quality metrics are also maintained at higher batch sizes and in FedAvg settings. These results indicate that LoRA-based PEFT does not, by itself, prevent data leakage in FL, and carefully incorporated positional embeddings can help in exposing private information.",
+      "authors": [
+        "Ritik K. Badiya",
+        "Siladittya Manna",
+        "Ashmit Sinha",
+        "M Yashwanth",
+        "Anirban Chakraborty"
+      ],
+      "published": "2026-11-06T16:02:20+00:00",
+      "updated": "2026-11-06T16:02:20+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CR",
+        "cs.DC",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09652v1",
+      "headline": "Breaking the Privacy Promise: Gradient I",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI",
+        "cs.CR"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09516v1",
+      "title": "Benchmarking Speaker Embedders in the Sub-Second Regime for Real-Time Voice AI Agents",
+      "abstract": "Real-time Voice AI agents must separate the active user from intelligible background speech that survives conventional noise suppression. Background sources include television audio, family members, and colleagues. Production denoisers remove non-stationary environmental noise effectively. Background speech shares the spectral characteristics of the target and passes through, causing false acceptances in downstream speaker verification (SV) and automatic speech recognition (ASR). We benchmark open-source speaker embedders TitaNet-Large, TitaNet-Small, ECAPA-TDNN, CAM++, and SpeakerNet under a strict sub-second latency budget. Evaluation combines a controlled benchmark with a weighted human-annotated production set. Our controlled benchmark is built from real calls in which a second real speaker is injected into silence intervals at modulated amplitude. We report three findings. First, denoising before embedding is generally harmful and raises equal error rate (EER) across architectures. Second, truncating audio below the full voice-activity segment degrades every model. Third, roughly half of the TitaNet embedding is redundant for this task. Trailing dimensions encode population attributes such as language and gender. Such attributes carry little discriminative value in a demographically homogeneous user base. We distill these results into deployment guidance. Verification should run on raw audio with full voice-activity chunks. Thresholds should favor precision over F1. Truncated embeddings reduce the cost of similarity search.",
+      "authors": [
+        "Abhishek Gautam"
+      ],
+      "published": "2026-11-06T14:29:11+00:00",
+      "updated": "2026-11-06T14:29:11+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09516v1",
+      "headline": "Benchmarking Speaker Embedders in the Su",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.699999999999999,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09491v1",
+      "title": "An Effective Spoken Language Understanding Approach Leveraging Query-Adaptive Intent Detection",
+      "abstract": "Large language models enable fine-tuning-free spoken language understanding (SLU) through in-context learning, but direct query-based retrieval may select semantically similar yet intent irrelevant demonstrations. This paper presents Query-Adaptive Intent Detection via Prototype Extraction (APEX), a two-stage retrieval framework that first selects candidate intents using intent-level prototypes and then retrieves contextual exemplars within the selected intent space. Experiments on the SLURP dataset evaluate joint SLU performance using Exact Match Accuracy (EMA) under full-transcript and perplexity-stratified conditions, with additional retrieval analysis on ASR-generated transcripts. Compared with query-based retrieval, APEX improves EMA by 4.34 and 3.97 percentage points with Qwen3 4B and Gemma-3-4B, respectively, on full transcripts. Under high-perplexity inputs, APEX also yields EMA gains of 7.66 and 2.13 percentage points. Retrieval analysis further indicates that prototype-guided candidate selection achieves higher ground truth intent coverage across multiple input conditions.",
+      "authors": [
+        "Bing-Long Kuo",
+        "Yu-Hsuan Fang",
+        "Tien-Hong Lo",
+        "Hsueh-Wei Liao",
+        "Berlin Chen"
+      ],
+      "published": "2026-11-06T14:13:17+00:00",
+      "updated": "2026-11-06T14:13:17+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09491v1",
+      "headline": "An Effective Spoken Language Understandi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09825v1",
+      "title": "BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design",
+      "abstract": "The key-value (KV) cache dominates memory capacity and bandwidth in long-context LLM serving. While 4-bit microscaling formats (NVFP4, MXFP4) shrink the cache and run attention on FP4 Tensor Cores, a fundamental gap remains between algorithmic quantization and system-aware acceleration: existing FP4 KV systems use vanilla quantization that causes severe accuracy drops, whereas accuracy-oriented 4-bit algorithms rely on vector codebooks whose lookup overhead degrades decoding throughput. We present BitDecoding-FP4, an algorithm--system co-design for accurate and efficient native FP4 KV decoding. We mitigate three error sources: Dual-Residual Query Quantization splits queries into two FP4 tensors, cutting query logit error from 60% to 1%; Underflow-Aware Probability Scaling prevents E4M3 scales from rounding long-context probabilities to zero; and Outlier-Aware Key Quantization combines static smoothing, Hadamard rotation, and scale search to suppress key outliers under token-wise scaling. At the system level, we remove the softmax bottleneck via transposed softmax with fused probability quantization and stacked query MMA on paged KV caches. Across dense and MoE models with GQA and MLA, BitDecoding-FP4 stays within 0.5 points of BF16 KV accuracy with NVFP4 (1 point with MXFP4), and tracks BF16 KV in RL training rollouts. In end-to-end serving on NVIDIA B300 with Qwen3-4B and Qwen3-30B-A3B, it delivers 2.4-3.0$\\times$ higher peak serving throughput than BF16 KV. The implementation is available at https://github.com/OpenBitSys/BitDecoding-FP4.",
+      "authors": [
+        "Dayou Du",
+        "Woon Yee Ng",
+        "Guangming Sheng",
+        "Nick Lau",
+        "Jianyi Cheng",
+        "Luo Mai"
+      ],
+      "published": "2026-11-06T18:13:54+00:00",
+      "updated": "2026-11-06T18:13:54+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.AR",
+        "cs.CL",
+        "cs.PF"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09825v1",
+      "headline": "BitDecoding-FP4: Native FP4 KV Cache Dec",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.AR",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09598v1",
+      "title": "Transformer-FSQ: Discrete Latents for Extreme KV-Cache Compression",
+      "abstract": "Private, personalised language models must run on local consumer devices, where large, frontier models cannot fit, and retaining long contexts is non-trivial. Sequential memory---the key-value (KV) cache---grows linearly with context length, quickly dwarfing the model itself: for Qwen3-1.7B-Base, 200,000 retained entries require 21 GiB, 6.6 times more than the model weights. Yet the KV-cache compression methods we measured fail beyond moderate compression ratios. We introduce Transformer-FSQ, addressing extreme KV-cache compression by replacing standard key and value projections with a finite scalar quantisation bottleneck. Our cache stores a packed vector of discrete integer codes per token, with no per-token quantisation metadata. Converting a pretrained transformer trains only these projections on 0.25 tokens per original parameter. We evaluate Transformer-FSQ against five baseline families on models from 0.6B to 8B parameters. On long-context retrieval (RULER), from 12$\\times$ to 97.5$\\times$ Transformer-FSQ is the most accurate method we evaluate, across scales. A fused Triton kernel decodes directly from the integer codes; with baselines given their authors' kernels where available, it decodes at $1.01\\times$ (95% interval $0.98$--$1.05$) the throughput of native SDPA attention on the uncompressed Qwen3-8B-Base at $32\\times$ and $1.54\\times$ at $97.5\\times$. Extreme KV-cache compression is therefore a practical way to extend how much context a fixed device can hold.",
+      "authors": [
+        "Andras Szecsenyi",
+        "Thomas L. Lee",
+        "Vaisakh Shaj",
+        "Elliot J. Crowley",
+        "Amos Storkey"
+      ],
+      "published": "2026-11-06T15:27:24+00:00",
+      "updated": "2026-11-06T15:27:24+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09598v1",
+      "headline": "Transformer-FSQ: Discrete Latents for Ex",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09448v1",
+      "title": "Not All Entropy Is Equal: Reward-Conditioned Entropy Allocation in Reinforcement Learning with Verifiable Rewards",
+      "abstract": "Policy entropy is widely used to diagnose exploration and collapse in reinforcement learning with verifiable rewards (RLVR), yet its magnitude does not consistently track reasoning performance across optimization objectives. We argue that this ambiguity arises because global token entropy conflates uncertainty in successful and failed trajectories, diversity across correct solution strategies, and variation among realizations of the same strategy. We introduce \\textbf{Reward-Conditioned Entropy Allocation (RCEA)}, a hierarchical diagnostic framework that separates complete-trajectory entropy from average token entropy, conditions uncertainty on verifier outcome and process validity, measures correct-solution-mode retention, and connects these population-level quantities to local covariance-driven updates. In controlled sweeps over six RLVR objectives at two model scales, entropy trajectories do not induce a stable ordering of reasoning accuracy. Token entropy is higher for verifier-failed than successful trajectories under both broad separately aggregated estimates and a common-question paired analysis, whose confidence intervals exclude equality at 10 of 12 displayed endpoints. A local covariance approximation predicts the direction of adjacent-checkpoint entropy change in 95.5\\% of nonfailed transitions; a reward-stratified endpoint proxy further shows that positive chosen-token covariance is more tail-concentrated within failed prefixes. Every reportable trained endpoint exhibits some contraction in independently audited correct-solution-mode breadth, whose positive association with large-\\(k\\) coverage remains exploratory. These results show that entropy collapse should be diagnosed by which uncertainty is removed, rather than by global entropy alone.",
+      "authors": [
+        "Song Yu",
+        "Li Li",
+        "Zhenming Wu"
+      ],
+      "published": "2026-11-06T13:22:42+00:00",
+      "updated": "2026-11-06T13:22:42+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09448v1",
+      "headline": "Not All Entropy Is Equal: Reward-Conditi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09232v1",
+      "title": "RAG-Enhanced LLMs for Interactive Explainability in Clinical Decision Support Systems",
+      "abstract": "Artificial Intelligence (AI) is increasingly embedded in high-risks decision-making systems across domains such as healthcare, finance, and the judicial system. As reliance on predictive models grows, so does the demand for Explainable AI (XAI) to ensure transparency, trust, and interpretability. However, existing XAI approaches often fail to present explanations in a format accessible to domain experts, limiting their practical utility. Large Language Models (LLMs) have recently emerged as a bridge between complex models and end-users, offering natural language explanations. Yet, their use introduces new risks, including hallucinated outputs and lack of source traceability. To address these challenges, we propose a Clinical Decision Support System (CDSS) that not only combines standard predictive models with XAI techniques but also incorporates a Retrieval-Augmented Generation module as an interactive enhancer. This module grounds explanations in verified medical knowledge, reformulates technical outputs into a human-like format, and enables users-such as clinicians-to actively query the system. By fostering an interactive, human-in-the-loop environment, our approach empowers domain experts to explore model decisions, contextualize explanations, and build trust in AI-assisted diagnostics. The study concludes with preliminary experiments validating the proposed methodology.",
+      "authors": [
+        "Lorenzo Mannocci",
+        "Francesca Naretto",
+        "Lucia Passaro",
+        "Anna Monreale"
+      ],
+      "published": "2026-11-06T09:50:51+00:00",
+      "updated": "2026-11-06T09:50:51+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09232v1",
+      "headline": "RAG-Enhanced LLMs for Interactive Explai",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.HC",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09655v1",
+      "title": "Decoupled Mode Connectivity for Base-to-Novel Generalization in Vision-Language Models",
+      "abstract": "Prompt learning adapts vision-language models such as CLIP by optimizing a short learnable prompt. The cross-entropy objective pulls this prompt toward\n  base-class specialization, whereas generalization to unseen classes benefits from staying close to CLIP's zero-shot feature space. Because both objectives\n  act on the same prompt, their gradients conflict at convergence, and in our experiments no single-prompt loss design clearly improves on the cosine\n  baseline. We propose Decoupled Mode Connectivity (DMC), which gives each objective its own prompt. Starting from a base-trained prompt, DMC trains a\n  specialization prompt and a generalization prompt, and merges their text features with a fixed coefficient at test time, at the inference cost of a single\n  prompt. A linear mode connectivity (LMC) corridor in text-feature space keeps the classification loss low for every classifier interpolated between the two\n  endpoints, and a Visual Anchor KL term preserves CLIP's zero-shot class-similarity distribution of each image during specialization. We further argue that\n  such regularizers should satisfy class-permutation invariance (CPI), and show via Fano's inequality, in an idealized model, that violating CPI\n  lower-bounds the drop in novel accuracy by a term proportional to the mutual information between the prompt and the base-class labels. Across 11 datasets,\n  DMC improves the average harmonic mean of base and novel accuracy over MergeTune for both CoOp and KgCoOp, and its interpolation curves pass beyond the\n  single-prompt operating point, shifting the base-novel frontier rather than trading along it. Code is available at https://github.com/IemProg/DMC.",
+      "authors": [
+        "Imad Eddine Marouf",
+        "Khalid Oublal",
+        "Enzo Tartaglione",
+        "Stéphane Lathuilière"
+      ],
+      "published": "2026-11-06T16:04:41+00:00",
+      "updated": "2026-11-06T16:04:41+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09655v1",
+      "headline": "Decoupled Mode Connectivity for Base-to-",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09189v1",
+      "title": "RoleWalk: training-free structural embeddings for directed graphs that transfer across graphs",
+      "abstract": "Structural role embeddings describe a node by its position in a graph - hub, bridge, periphery, member of a dense core - rather than by who its neighbours are. Existing methods either learn coordinates specific to one graph (struc2vec, Role2Vec, RESD) or read scales and normalisations from the whole graph (GraphWave, Digraphwave), so the same neighbourhood can receive different coordinates in two graphs; few read edge directions. We present RoleWalk, a training-free embedding that follows a short lazy random walk from each node and records, at each step, two distributions: that of the transition probabilities, through its characteristic function at a fixed grid of frequencies, and that of the walker's distance to its starting node. On directed graphs, walks that go forward then backward add who shares a node's targets or sources. The embedding depends only on a node's neighbourhood within a fixed radius, so its coordinates mean the same thing in every graph. We show that, without curvature, it is the kernel mean embedding of the walk's footprint, that it separates graphs that the Weisfeiler-Leman test cannot, and that pruning small probabilities comes with a per-node error certificate. Empirically, RoleWalk is competitive with the best role embeddings on five classification benchmarks at a fraction of their cost, has the highest scores on real directed roles in Wikipedia adminship, exceeds the published accuracy of Digraphwave at every noise level of its own Enron network-alignment benchmark, transfers centrality predictors to graphs four times larger better than existing inductive embeddings, hand-made features and a trained GIN, and embeds a million nodes in 20 s to 3 min on one CPU core. The code is open source (BSD license): https://github.com/kerighan/rolewalk",
+      "authors": [
+        "Maixent Chenebaux"
+      ],
+      "published": "2026-11-06T09:10:58+00:00",
+      "updated": "2026-11-06T09:10:58+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.SI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09189v1",
+      "headline": "RoleWalk: training-free structural embed",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.SI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09511v1",
+      "title": "V-STORM: A Structure-Aware Grounded Chain of Thought Dataset for Faithful and Fine-Grained Spatio-Temporal Video Reasoning",
+      "abstract": "While MLLMs can often identify what happens in a video, they still struggle with fine-grained spatio-temporal reasoning, which requires precise grounding when and where the supporting evidence appears and composing such evidence into a coherent reasoning chain. This challenge is exacerbated by the lack of scalable data construction and evaluation pipelines that provide granular, verifiable supervision linking reasoning steps to explicit spatio-temporal evidence.To address this gap, we present V-STORM, a structure-aware framework that transforms videos into Spatio-Temporal Scene Graphs (STSGs) and derives Grounded Chain of Thought (GCoT) from validated evidence paths, making each reasoning step traceable to structured and verifiable spatio-temporal evidence.Under this framework, we construct a 260K-sample training set and a 3K-sample human-verified benchmark, both featuring GCoT annotations that link reasoning to explicit spatio-temporal evidence.Experiments reveal a clear separation between evidence localization and evidence composition: current MLLMs can often identify relevant spatio-temporal cues, yet still fail to integrate them into correct multi-step reasoning, exposing a bottleneck that answer-only evaluation largely obscures. Moreover, fine-tuning with V-STORM substantially improves both answer accuracy and grounding faithfulness, validating its effectiveness as supervision for faithful and evidence-grounded video reasoning. Our dataset, benchmark, and source code will be publicly released.",
+      "authors": [
+        "Dian Jiao",
+        "Yuqian Yuan",
+        "Jiaqi Zhu",
+        "Mingjian Gao",
+        "Siwen Tan",
+        "Yunqi Cao",
+        "Jinhui Li",
+        "Sijing Li",
+        "Zhenxuan Fan",
+        "Haoyang Wang",
+        "Wenqiao Zhang",
+        "Siliang Tang"
+      ],
+      "published": "2026-11-06T14:27:06+00:00",
+      "updated": "2026-11-06T14:27:06+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09511v1",
+      "headline": "V-STORM: A Structure-Aware Grounded Chai",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-11-10"
+    },
+    {
+      "arxiv_id": "2611.09414v1",
+      "title": "Typed-Centrality Grounding for Agentic GraphRAG: A Symbolic Approach for Agentic Reasoning",
+      "abstract": "Knowledge Graphs (KGs) and Large Language Models (LLMs) represent two approaches for knowledge representation and reasoning over heterogeneous data. Recent research has explored their integration through Graph Retrieval-Augmented Generation (GraphRAG) systems, which use KGs to provide structured context to LLMs. However, existing GraphRAG approaches treat KGs as homogeneous graphs and rely on textual similarity between the input prompt and the context, rather than using it as a source of deterministic knowledge.\n  This work proposes an agent-based GraphRAG system that introduces a symbolic layer to integrate deterministic reasoning alongside text similarities. This approach is based on the definition of typed centralities for KGs, where centrality measures are computed separately for each specific KG's class. This information is used to construct a symbolic representation that is provided to the LLM as a deterministic source. The proposed system was mathematically validated and evaluated on a real-world POLE (Person, Object, Location, Event) dataset, comparing reasoning and information retrieval with and without the symbolic layer. The results indicate that the our approach leads to responses that are more consistent with the context, improving the generated outputs.",
+      "authors": [
+        "Rosario Napoli",
+        "Antonio Celesti",
+        "Massimo Villari",
+        "Maria Fazio"
+      ],
+      "published": "2026-11-06T12:45:23+00:00",
+      "updated": "2026-11-06T12:45:23+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.09414v1",
+      "headline": "Typed-Centrality Grounding for Agentic G",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.0,
+      "first_seen": "2026-11-10"
     }
   ]
 }
