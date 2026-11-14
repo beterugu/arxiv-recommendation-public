@@ -1,36 +1,164 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-13T00:12:22.149154+00:00",
-  "source_date": "2026-11-13",
+  "generated_at": "2026-11-14T00:16:29.189446+00:00",
+  "source_date": "2026-11-14",
   "count": 25,
   "papers": [
     {
-      "arxiv_id": "2611.14357v1",
-      "title": "The Unused Input: The Initial State as a Conditioning Interface for Recurrent TSFMs",
-      "abstract": "Time series foundation models (TSFMs) forecast unseen series without task-specific training. Increasingly they are built on recurrent backbones, whose constant per-step cost makes long-context inference cheap, and which, unlike transformers, carry a state. A recurrent backbone computes its prediction from two inputs: the observed context window and the initial recurrent state. In practice only the first is utilised and the initial state is unused by convention. We ask whether the initial state can be utilised in recurrent TSFMs. Using the xLSTM-based zero-shot forecaster TiRex as a case study, we freeze the backbone and train only a small head that writes a context vector into the initial state, so that any change in accuracy is attributable to the injected state rather than to adapted weights. A spectral summary of the input window, learned once and applied unchanged to every series, lowers mean GiftEval MASE by 0.175%, with every seed improving, which neither a parameter-matched LoRA adapter nor a learnable static state reproduces. An embedding of text attached to each series, evaluated on six MoTime datasets, reveals two roles for the state. As a per-dataset adaptation surface, a static state lowers MASE by 0.04-6.96% of the zero-shot baseline (8-70% of the gain of full fine-tuning). As a channel for exogenous information, the text-conditioned state lowers it by a further 0.15-0.41% of the zero-shot baseline on four of six datasets and, combined with a LoRA adapter, exceeds full fine-tuning, which has no access to the text, on one of them. In TiRex, the effect concentrates in the mLSTM blocks and is strongest at short context. The results are preliminary and the improvements small, but they point to the initial state as a direction for further research.",
+      "arxiv_id": "2611.16451v1",
+      "title": "HIFC-IQA: Train-Free Cross-Domain Image Quality Assessment via Dual-Process Cognition",
+      "abstract": "The gap between controlled synthetic distortions and complex real-world degradations introduces a critical domain shift challenge for No-Reference Image Quality Assessment. Although Unsupervised Domain Adaptation (UDA) approaches attempt to address this issue, they remain constrained by substantial retraining overhead and cumulative error propagation inherent in iterative pseudo-labeling. Inspired by the dual-process theory of human cognition for remarkable generalization ability, we propose Hierarchical Intuitive and Fuzzy Consensus (HIFC), a completely train-free Cross-Domain IQA framework. HIFC employs asymmetric perceptual decomposition to disentangle semantic content from distortion-sensitive representations. The final quality score is fused through the synergy of two complementary branches: a memory consensus branch that retrieves a stable Fuzzy Quality Centroid from a synthetic reference gallery, and an intuitive branch that captures aesthetic polarization via zero-shot vision-language alignment. Extensive experiments show that HIFC achieves state-of-the-art performance across multiple benchmarks, attaining the highest average SRCC and PLCC among competing UDA methods. Most notably, in the challenging synthetic-to-authentic cross-domain setting, HIFC achieves a substantial performance margin over competing methods, demonstrating remarkable robustness and generalization.",
       "authors": [
-        "Bernhard Voggenberger",
-        "Christian Ganhör",
-        "Levente Zólyomi",
-        "Sebastian Böck",
-        "Sepp Hochreiter"
+        "Yu Li",
+        "Zhengran Shen",
+        "Puchao Zhou",
+        "Yukang Ding",
+        "Yachun Mi",
+        "Boyuan Yang",
+        "Xi Zhai",
+        "Shaohui Liu"
       ],
-      "published": "2026-11-10T17:16:54+00:00",
-      "updated": "2026-11-10T17:16:54+00:00",
+      "published": "2026-11-12T08:04:40+00:00",
+      "updated": "2026-11-12T08:04:40+00:00",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14357v1",
-      "headline": "The Unused Input: The Initial State as a",
+      "abs_url": "http://arxiv.org/abs/2611.16451v1",
+      "headline": "HIFC-IQA: Train-Free Cross-Domain Image ",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.LG"
+        "cs.CV"
       ],
       "who_should_read": [],
       "application_ideas": [],
       "implementation_difficulty": "高",
-      "relevance_score": 21.5,
+      "relevance_score": 23.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16534v1",
+      "title": "Context-Predictive Low-Rank Adaptation for Face Presentation Attack Detection",
+      "abstract": "Face presentation attack detection requires representations that distinguish physical spoofing cues across changes in acquisition devices, subjects, and attack media. Large visual encoders offer transferable representations, but conventional binary fine-tuning supervises their final decisions without explicitly constraining how local facial evidence is represented under partial observation. We present CP-JEPA, a context-predictive adaptation framework that combines low-rank tuning of a pretrained CLIP image encoder with a joint-embedding predictive objective. A student predicts complete-image teacher features at masked spatial locations, while unmasked classification, masked classification, and prediction consistency retain the connection to the live/spoof task. An exponential-moving-average teacher supplies evolving latent targets. The auxiliary components are used only during training; inference requires only the LoRA-adapted CLIP visual encoder and binary classifier. {We evaluate CP-JEPA under single-source and multi-source OCIM transfer, additional CelebA-Spoof training, transfer to CelebA-Spoof, two-source training, and unseen-attack evaluation on SiW-Mv2.} On the standard OCIM benchmark, CP-JEPA achieves 3.74\\% mean HTER and 98.73\\% mean AUC. {Single-source evaluation achieves 11.36\\% mean HTER across twelve source--target combinations.} With CelebA-Spoof added to the three OCIM training sources, CP-JEPA reduces mean HTER from 3.45\\% to 2.35\\% and increases mean AUC from 98.68\\% to 99.32\\%. On SiW-Mv2, it achieves 3.36\\% mean HTER across the held-out attack categories. Controlled loss ablations examine the contributions of latent prediction, masked classification, and prediction consistency. The results show that context-predictive adaptation can improve cross-dataset PAD performance, although the gains vary with the training sources and evaluation setting.",
+      "authors": [
+        "Aminu Yusuf",
+        "Shakeel Muhammad Ibrahim",
+        "Sulaimon Oyeniyi Adebayo",
+        "Muhammad Sohail Ibrahim",
+        "Muhammad Shahid Jabbar",
+        "Shujaat Khan"
+      ],
+      "published": "2026-11-12T09:32:38+00:00",
+      "updated": "2026-11-12T09:32:38+00:00",
+      "categories": [
+        "cs.CV",
+        "eess.IV",
+        "eess.SP",
+        "stat.ML"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16534v1",
+      "headline": "Context-Predictive Low-Rank Adaptation f",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "eess.IV",
+        "eess.SP"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 19.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16861v1",
+      "title": "Visual Cipher Bench: Benchmarking LLM Agents on Long-Horizon Visual Reasoning",
+      "abstract": "While language-model agents excel at long-horizon coding and terminal tasks, this success relies on two conditions: explicit text specifications and immediate execution feedback. However, neither condition holds in real-world problems where critical information exists only in images, leaving it unclear whether long-horizon capability transfers from text to visual reasoning. In such visual settings, because rules and clues resist text transcription and lack test-case feedback, agents must repeatedly inspect images, simulate spatial transformations, and autonomously cross-check clues. Despite this challenge, existing evaluations fail to capture such capability: visual reasoning benchmarks largely reduce tasks to single-turn, short-chain question answering, whereas agent benchmarks focus on text-based environments or interactive states that permit trial-and-error. To bridge this gap, we introduce Visual Cipher Bench, a collection of 40 original visual puzzles across four categories: spatial manipulation and simulation, logical constraints and planning, rule induction, and knowledge-based decoding. Each puzzle provides only one to three black-and-white line drawings and a minimal submission instruction, requiring agents to discover the underlying solving mechanism entirely from the images. Across 29 reasoning-effort configurations of eight frontier models, even the strongest model, GPT-6 Astra (max), achieves only 26.7% accuracy, while five of the eight models score below 1%. Yet on a ten-task subset, providing a single non-spoiler mechanism hint boosts accuracy from 7.8% to 55.6%. This sharp contrast shows that the primary bottleneck of current agents lies not in executing multi-step plans, but in autonomously discovering rules from visual evidence. Visual Cipher Bench thus provides a rigorous benchmark for measuring long-horizon visual reasoning in agents.",
+      "authors": [
+        "Deyao Hong",
+        "Jiayi Jiang",
+        "Yuchun Chen",
+        "Yixuan Shi",
+        "Wenyi Li",
+        "Zheng Jiang",
+        "Chengxing Xie",
+        "Mingyu Su",
+        "Qingle Liu",
+        "Mingju Gao",
+        "Yizhe Chi",
+        "Youjie Zheng",
+        "Calvin Xiao",
+        "Kaisen Yang",
+        "Huan-ang Gao"
+      ],
+      "published": "2026-11-12T14:33:46+00:00",
+      "updated": "2026-11-12T14:33:46+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16861v1",
+      "headline": "Visual Cipher Bench: Benchmarking LLM Ag",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16522v1",
+      "title": "PISim: A Unified Photonic Inference Simulator for Hardware-Aware Cross-Layer Design-Space Exploration",
+      "abstract": "Photonic neural accelerators offer ultra-low latency linear algebra, yet their usable numerical precision, sustainable throughput, and application accuracy remain tightly bounded by surrounding electro-optical interfaces and physical non-idealities. Pre-fabrication design-space exploration (DSE) requires a cross-layer electronic design automation (EDA) framework capable of evaluating disparate optical topologies under identical neural workloads and physical assumptions. We present \\textbf{PISim}, a unified Photonic Inference Simulator that couples pretrained deep neural network execution with physics-based models of six accelerator architecture families, six electro-optic modulator technologies, four optical source organizations, and direct or coherent readout schemes. PISim embeds stage-resolved impairment operators---covering control and analog-to-digital quantization, finite extinction ratio, shot noise, correlated relative-intensity noise (RIN), thermal drift, propagation loss, and channel crosstalk---alongside an analytical cycle-level interface timing model to expose electronic-optical bottlenecks. Using simulated MNIST multilayer perceptron (MLP) benchmarks, we demonstrate how PISim identifies optimal precision operating points under multi-impairment stress (peaking at 6 bits for Mach--Zehnder and microring modulators), quantifies a 52.5 percentage-point accuracy gap between VCSEL-array and parallel-fanout laser architectures arising, under the modeled conditions, from power partitioning and correlated source noise, and models interface-limited throughput scaling across emitter-array widths from 32 to 128 channels. This comprehensive framework establishes an extensible, reproducible foundation for accuracy-constrained Pareto optimization prior to photonic tape-out.",
+      "authors": [
+        "Andreas Falkenberg"
+      ],
+      "published": "2026-11-12T09:18:27+00:00",
+      "updated": "2026-11-12T09:18:27+00:00",
+      "categories": [
+        "physics.optics",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16522v1",
+      "headline": "PISim: A Unified Photonic Inference Simu",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "physics.optics",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -38,44 +166,39 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 0.0,
-      "first_seen": "2026-11-12"
+      "practicality_score": 5.6,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14492v1",
-      "title": "ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows",
-      "abstract": "Business process automation runs the same Standard Operating Procedure (SOP) again and again on new inputs. Large Language Model (LLM) agents can follow an SOP written in natural language, but they call an LLM to choose every step of every run, which adds latency and cost at scale. We present ReTrace, which turns an SOP and a few logged agent runs into a reusable workflow in which code, not an LLM, selects the next step. The agent's reasoning, the explanation it writes with each tool call, often states why it took an action; the tool calls alone do not. ReTrace extracts the condition behind each step, merges these conditions across runs into a compact rule document, and generates an executable workflow from it. Only this last stage depends on the platform, so rule documents can be compiled for different orchestration platforms. On $79$ procedures from our production platform, ReTrace workflows reach $93.8\\%$ completion, against $96.8\\%$ for the agent, at $24\\%$ lower cost per task. On $τ^2$-Bench, they reach $75.8\\%$ task success (agent: $80.6\\%$) and run in $1.3$s instead of $170$s; three rounds of repair on training failures lift $k{=}2$ workflows from $66.7\\%$ to $81.2\\%$. On eight SOP-Bench procedures, ReTrace without repair trails few-shot generation ($80.6\\%$ vs. $83.6\\%$), but repair from labeled training failures lifts it to $87.8\\%$ at $0.40$s per task, compared to $85.5\\%$ in $46.6$s for the agent.",
+      "arxiv_id": "2611.16789v1",
+      "title": "ScrewSense: Mapping the Invisible - Anomaly Detection and Error Classification in Screwdriving Processes",
+      "abstract": "The growing volume of process data generated by screwdriving systems, combined with advancements in computing power, data storage, and algorithms, is facilitating the application of artificial intelligence in this field. Accurately detecting and classifying screwdriving errors is crucial for ensuring product quality, avoiding costly rework in manufacturing, and supporting sustainability by facilitating the maintenance, reuse, and recycling of screw-connected products. In this context, machine learning approaches offer a promising alternative to traditional monitoring techniques, such as window-based methods or envelope curves. This study examines the use of deep learning techniques for anomaly detection and error classification in screwdriving processes. The data corpus consists of multivariate time series capturing process parameters, such as torque and rotation angle. For anomaly detection, the embedding space of a vector quantized variational autoencoder was analyzed. In terms of error classification, four different model architectures were evaluated. The results demonstrate the effectiveness of anomaly detection and confirm that deep learning models can distinguish between multiple error categories beyond traditional binary classification. This extends the capabilities of conventional monitoring approaches, achieving accuracies of up to 100%. Additionally, real-world data material was examined in order to further demonstrate model robustness. Overall the results indicate strong generalization capability and highlight the practical potential of the developed models for use in industrial screwdriving processes, eliminating the need for expert knowledge in error identification and significantly reducing manual effort and analysis time.",
       "authors": [
-        "Kaiyuan Hou",
-        "Yang Ping Kuo",
-        "Indranil Bhattacharya",
-        "Rohith Nama",
-        "Arushi Gupta",
-        "Carlos D. Castillo",
-        "Prathap Ramachandra",
-        "Xiaofan Jiang",
-        "Francesco Carbone"
+        "Tobias Lettner",
+        "Tatyana Ivanovska",
+        "Anwar Al Assadi",
+        "Christian Bergler"
       ],
-      "published": "2026-11-10T18:49:47+00:00",
-      "updated": "2026-11-10T18:49:47+00:00",
+      "published": "2026-11-12T13:35:41+00:00",
+      "updated": "2026-11-12T13:35:41+00:00",
       "categories": [
-        "cs.AI",
         "cs.LG",
-        "cs.MA"
+        "cs.RO",
+        "eess.SP"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14492v1",
-      "headline": "ReTrace: Distilling Tool-Using Agents in",
+      "abs_url": "http://arxiv.org/abs/2611.16789v1",
+      "headline": "ScrewSense: Mapping the Invisible - Anom",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.AI",
         "cs.LG",
-        "cs.MA"
+        "cs.RO",
+        "eess.SP"
       ],
       "who_should_read": [],
       "application_ideas": [],
       "implementation_difficulty": "高",
-      "relevance_score": 18.3,
+      "relevance_score": 17.8,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -83,29 +206,33 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 3.5,
-      "first_seen": "2026-11-12"
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.13814v1",
-      "title": "Swanada: Split-Encoder Capability-Routed Conformer CTC and Sub-30 MB On-Device Speech Recognition Across Twelve Scripts",
-      "abstract": "Client-side automatic speech recognition (ASR) across Indic and Classical scripts eliminates cloud transcription costs, network tail latency, and server-side audio retention, yet neural exports face four systems bottlenecks in browsers and mobile runtimes: (1) monolithic per-language Conformer checkpoints require ~177 MiB per script (> 2.1 GiB across 12 scripts), exhausting CacheStorage quotas; (2) static relative positional encoding tables embed 10.2-20.5 MB of FP32 constants while 1x1 Conv1d layers trigger slow or unsupported ConvInteger kernels in WebAssembly SIMD; (3) sliding-window CTC flickers on boundary tokens; and (4) mobile WebAudio pipelines suffer 44.1/48 kHz sample-rate mismatches and silent AudioWorklet stalls under iOS WKWebView.\n  We present Swanada, an open-source 16 kHz streaming ASR system spanning Classical Sanskrit, Indian English, and ten Indian languages (sa, en, hi, kn, mr, bn, ta, te, ml, gu, pa, or) across browser WebAssembly, Node.js, and Python. Swanada pairs capability-routed shared INT8 Conformer encoders (a 17-layer 177.38 MiB Studio tier at $d = 512$ for desktop/servers and a distilled 14-layer 25.35 MiB Mobile tier at $d = 256$ for phones) with twelve hot-swappable 515.0 KiB native-script linear CTC heads ($257 \\times 512$), cutting 12-language storage by $11.6\\times$ (183.4 MiB) and $67.8\\times$ (31.39 MiB; 25.85 MiB first load). Runtime protobuf tail surgery exposes the shared representation in $< 2$ ms, while dynamic positional synthesis, MatMul pointwise convolutions, and post-quantization QInt8 head calibration preserve sub-30 MB accuracy. Across $N = 480$ held-out and $N = 1,280$ open public test clips (FLEURS, LibriSpeech, GLOBE, AMI, wild Sanskrit), Swanada achieves 5.43% held-out and 8.87% 12-language open CER on Studio (18.56% and 19.23% on Mobile) at $0.0097\\times$-$0.0264\\times$ RTF, with 30.6 ms median TTFT and 0.00% committed-prefix churn.",
+      "arxiv_id": "2611.16590v1",
+      "title": "AstroMemBench: A Benchmark for Memory Systems in Embodied Spacecraft Agents",
+      "abstract": "Long-term spacecraft autonomy requires embodied agents to use operational history under communication delays, time-critical operations, environmental uncertainty, complex physical interactions, power and computational constraints, and safety and reliability requirements. We introduce AstroMemBench and a Scenario-Challenge-Capability design method that maps these requirements to executable memory tests. The benchmark covers 16 memory subchallenges through 140 templates and 2240 instances across nine tasks in planetary surface operations, on-orbit servicing, and deep-space exploration. A deterministic environment scores actions for task completion, state changes, safety, and resource use. Ablations under nine conditions show that the benchmark is sensitive to how accurately agents recover and use historical information and to differences in memory-system design. Main experiments compare six configurations. Mem0, Chain-of-Memory, LightMem, and retrieval-augmented generation (RAG) improve same-session mean scores over native Pi Agent, with no clear advantage of the three memory systems over RAG. After a session restart, Mem0 outperforms RAG by 12.25 points. Benefits favor instruction retention and result reuse over ongoing state tracking and energy reservation. AstroMemBench supports the design, development, and selection of memory systems for embodied spacecraft agents. AstroMemBench 1.0 and its evaluation code are publicly available: https://github.com/flyingView/AstroMemBench-v1.",
       "authors": [
-        "Hemanth HM"
+        "You Wu",
+        "Guhong Zhang",
+        "Hongwei Li",
+        "Xinyue Hong",
+        "Yuan Jia"
       ],
-      "published": "2026-11-10T09:43:36+00:00",
-      "updated": "2026-11-10T09:43:36+00:00",
+      "published": "2026-11-12T10:23:15+00:00",
+      "updated": "2026-11-12T10:23:15+00:00",
       "categories": [
-        "cs.SD",
-        "cs.AI"
+        "cs.AI",
+        "cs.RO"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.13814v1",
-      "headline": "Swanada: Split-Encoder Capability-Routed",
+      "abs_url": "http://arxiv.org/abs/2611.16590v1",
+      "headline": "AstroMemBench: A Benchmark for Memory Sy",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.SD",
-        "cs.AI"
+        "cs.AI",
+        "cs.RO"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -118,71 +245,74 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 2.0999999999999996,
-      "first_seen": "2026-11-12"
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14263v1",
-      "title": "Chain of Physics: Supporting Fault Diagnosis with Engineering-Inspired Large Language Model Reasoning",
-      "abstract": "Fault diagnosis in complex systems requires linking observed changes in physical quantities to the failure mechanisms that produce them. Experienced engineers perform this task by combining sensor information with knowledge of system behavior and fault propagation. Large Language Models (LLMs) can support this process, but their diagnostic reasoning depends on the availability of asset-specific engineering knowledge and on how this knowledge is represented and used during inference. This work introduces Chain of Physics (CoP), an LLM-based fault-diagnosis framework built around a Constrained Knowledge Graph (CKG) generated automatically from asset-specific reference documentation. CoP addresses failure-sensor association from textual engineering knowledge. The CKG stores diagnostic chains connecting failure modes, changes in physical quantities, and monitoring sensors. During inference, semantically similar graph paths are retrieved for each question and used as both information and in-context examples for the reasoning process. Candidate failure modes are extracted from the question and analysed independently through dedicated LLM calls, which generate plausible failure-to-observation chains. A final decision module compares these chains with the available answer choices. CoP is evaluated on the FailureSensorIQ benchmark across four industrial asset classes and three LLMs. Compared with direct prompting and conventional Retrieval-Augmented Generation (RAG), CoP improves diagnostic accuracy across all evaluated models, with gains ranging from 7.8 to 19.6 percentage points and from 11.7 to 18.2 percentage points, respectively. The results show that structured engineering knowledge can improve LLM-based diagnostic reasoning when graph retrieval is combined with in-context examples of fault propagation.",
+      "arxiv_id": "2611.16502v1",
+      "title": "SignRot: LLM Quantization with Massive Outlier-Aware Sign-Adjusted Rotation",
+      "abstract": "While quantization compresses LLMs and accelerates inference, outlier activations impede efficient low-bit representation. In particular, massive outliers cause substantial performance degradation. Although rotation-based methods that rely on randomized Hadamard transforms for online inference aim to mitigate this, they can produce fragmented distributions with empty bins when a massive outlier dominates a token's activation. This fragmentation severely undermines uniform quantization performance. Moreover, massive outliers concentrate in the down-projection input, where the preceding nonlinearity requires the rotation to be applied at inference time. This constraint prevents training-based approaches such as SpinQuant from learning the online rotation at this position, as a learned dense matrix cannot use the Fast Walsh-Hadamard Transform and would require a full matrix multiplication during inference. To address this, we propose SignRot (Sign-adjusted Rotation), which identifies massive outlier channels and constructs a sign adjustment vector that unifies the signs of the corresponding Hadamard row, collapsing the bimodal distribution into a unimodal profile amenable to quantization. Since the aligned outlier shifts the activation mean away from zero, we pair SignRot with asymmetric activation quantization, whose zero-point absorbs this shift. As a lightweight, drop-in improvement compatible with any Hadamard-based quantization method, SignRot requires only a single calibration forward pass and adds only element-wise sign flips at inference, without an additional matrix multiplication. Applying SignRot to QuaRot achieves a WikiText2 perplexity of 5.88 and an average zero-shot reasoning accuracy of 72.73, surpassing SpinQuant on the LLaMA3-70B model. Code is available at https://github.com/HYU-ARK-Lab/SignRot.",
       "authors": [
-        "Wenqi Zhou",
-        "Leonardo Baldo",
-        "Kai Goebel",
-        "Manuel Arias Chao"
+        "Jaehun Gim",
+        "Jaewoo Kim",
+        "Gyuwan Kim",
+        "Seo Yeon Park"
       ],
-      "published": "2026-11-10T16:09:44+00:00",
-      "updated": "2026-11-10T16:09:44+00:00",
+      "published": "2026-11-12T09:05:14+00:00",
+      "updated": "2026-11-12T09:05:14+00:00",
       "categories": [
-        "cs.LG",
-        "eess.SP"
+        "cs.AI"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14263v1",
-      "headline": "Chain of Physics: Supporting Fault Diagn",
+      "abs_url": "http://arxiv.org/abs/2611.16502v1",
+      "headline": "SignRot: LLM Quantization with Massive O",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.LG",
-        "eess.SP"
+        "cs.AI"
       ],
       "who_should_read": [],
       "application_ideas": [],
       "implementation_difficulty": "高",
-      "relevance_score": 16.5,
+      "relevance_score": 17.0,
       "domain_relevance": {
         "drawing_ai": "なし",
-        "bim_cim": "なし",
+        "bim_cim": "高",
         "manufacturing": "なし",
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
       "practicality_score": 2.0999999999999996,
-      "first_seen": "2026-11-12"
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.13946v1",
-      "title": "TreeAgent: Structure-Aware Memory Agent for Processing Long Hierarchical Data",
-      "abstract": "Practical Web applications increasingly require agents to interpret long conversations or documents. For inputs exceeding the context windows of large language models (LLMs), memory agents process segments sequentially and retain past information in bounded memory. However, they typically divide inputs into flat token segments without preserving structure or hierarchy, causing three limitations for structured data such as API responses or HTML documents. First, fixed-length segmentation can split fields of the same record, breaking their relationships. Second, segments lack hierarchical information, obscuring their structural context and positions. Third, successive memory updates may discard details of earlier sibling records needed for reasoning on later segments. To address these limitations, we propose TreeAgent, a structure-aware agent that uses the input hierarchy to guide both segment-wise context processing and access to past information. Specifically, TreeAgent constructs segments from complete subtrees and groups of adjacent sibling subtrees to preserve local structural relationships. We provide theoretical guarantees on segment counts to guide token budget selection toward matching the segment count of fixed-length segmentation. We further attach structural paths to the segments for the agent to identify their ancestors and hierarchical positions. We also introduce residual memory links from the segments of low-level children to the segments of high-level parents, enabling direct information flows beyond successive memory updates. We evaluate TreeAgent with four representative memory agents on eight retrieval and aggregation tasks. The inputs are derived from real-world application data in JSON, HTML, YAML, and JavaScript and range from 8K to 1M tokens. TreeAgent improves the average score across the four datasets for all four agents, with 3.61% performance gain on average.",
+      "arxiv_id": "2611.17041v1",
+      "title": "From Delegation to Coordination: Learning Efficient Multi-Agent Deep Research",
+      "abstract": "Multi-agent deep-research systems use delegation to parallelize search and keep long tool traces out of the main agent's context. Yet delegation helps only when task allocation and subtask execution are coordinated: the main agent must issue useful subtasks, while subagents must return reliable evidence. Existing training either optimizes only the main agent or broadcasts the same team advantage to all agents, which can reward misleading subagent reports and penalize useful ones. We introduce LEAD-RL (Learning Effective Agent Delegation with Reinforcement Learning), a joint main-agent-subagent training framework with contribution-aware credit assignment. A training-time rubric evaluates the research utility of each subagent report and gates its inherited team advantage, while final-answer correctness remains the only team reward; no token, step, or speedup reward is used. Across five benchmarks and two model families, LEAD-RL improves answer quality. On BrowseComp, it improves accuracy by 2.49 percentage points and reduces critical-path cost by 24.5% over joint training with shared team credit. During validation, accuracy increases by 6.78 points at approximately constant critical-path cost. These results show that contribution-aware credit assignment improves the quality-efficiency trade-off of multi-agent deep research.",
       "authors": [
-        "Wei Gu",
-        "Weiwei Qi",
-        "Jiajun Tang",
-        "Tianhang Zheng",
-        "Bo Chen",
-        "Zhibo Zhang",
-        "Jinfei Liu",
-        "Kui Ren"
+        "Yuyang Wu",
+        "Yang Liu",
+        "Zequn Xie",
+        "Junjie Wang",
+        "Dan Yang",
+        "Zehao Tan",
+        "Ding-Chu Zhang",
+        "Junming Yang",
+        "Yue Shen",
+        "Jian Wang",
+        "Jinjie Gu"
       ],
-      "published": "2026-11-10T11:33:05+00:00",
-      "updated": "2026-11-10T11:33:05+00:00",
+      "published": "2026-11-12T16:26:27+00:00",
+      "updated": "2026-11-12T16:26:27+00:00",
       "categories": [
+        "cs.MA",
         "cs.AI"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.13946v1",
-      "headline": "TreeAgent: Structure-Aware Memory Agent ",
+      "abs_url": "http://arxiv.org/abs/2611.17041v1",
+      "headline": "From Delegation to Coordination: Learnin",
       "one_liner": "",
       "key_points": [],
       "tags": [
+        "cs.MA",
         "cs.AI"
       ],
       "who_should_read": [],
@@ -196,41 +326,97 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 4.8999999999999995,
-      "first_seen": "2026-11-12"
+      "practicality_score": 3.5,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.13997v1",
-      "title": "Specify Privacy Yourself: Assessing Inference-Time Personalized Privacy Preservation Ability of Large Vision-Language Models",
-      "abstract": "Large Vision-Language Models (LVLMs) have demonstrated remarkable capabilities but raise significant privacy concerns due to their abilities to infer sensitive personal information from images with high precision. While current LVLMs are relatively well aligned to protect universal privacy, e.g., credit card data, we argue that privacy is inherently personalized and context-dependent. This work pivots towards a novel task: can LVLMs achieve Inference-Time Personalized Privacy Protection (ITP$^3$), allowing users to dynamically specify privacy boundaries through language specifications? To this end, we present SPY-Bench, the first systematic assessment of ITP$^3$ ability, which comprises (1) 32,700 unique samples with image-question pairs and personalized privacy instructions across 67 categories and 24 real-world scenarios, and (2) novel metrics grounded in user specifications and context awareness. Benchmarking the ITP$^3$ ability of 21 SOTA LVLMs, we reveal that: (i) most models, even the top-performing o4-mini, perform poorly, with only $\\sim$24% compliance accuracy; (ii) they show quite limited contextual privacy understanding capability. Therefore, we implemented initial ITP$^3$ alignment methods, including a novel Noise Contrastive Alignment variant which achieves 96.88% accuracy while maintaining reasonable general performance. These results mark an initial step towards the ethical deployment of more controllable LVLMs. Code and data are available at https://github.com/achernarwang/specify-privacy-yourself",
+      "arxiv_id": "2611.16840v1",
+      "title": "Kosmo-GFM: A Production-Ready Geometry Foundation Model",
+      "abstract": "We present Kosmo-GFM, a scene reconstruction system that integrates a geometry foundation model (GFM), a pose optimization engine (PoseEngine), and reconstruction-derived supervision from KosmoWorld. GFM predicts camera parameters, depth, cross-view correspondences, and dynamic 3D points from images and videos. PoseEngine combines these predictions with geometric optimization to recover scene-level camera poses and geometry for downstream 3D and 4D Gaussian Splatting. KosmoWorld generates images and geometric supervision from reconstructed real-world scenes to improve GFM's geometric predictions. On the Sparse and Medium subsets of SpatialBench, GFM achieves the lowest absolute relative depth error and the highest relative-pose AUC at 5 degrees among the compared methods. It also achieves the lowest mean endpoint errors for dynamic points and scene flow across the five evaluated datasets. Across 34 scenes completed by all compared reconstruction systems, PoseEngine achieves the highest scene-averaged pose AUC at thresholds of 1, 3, and 5 degrees, with a cumulative runtime of 14.07 hours, approximately 20% of GLUEMAP's 69.67 hours. PoseEngine Flash provides a further accuracy-efficiency trade-off, with a measured mixed-precision runtime of 2.62 hours, approximately 4% of GLUEMAP's runtime. Separate scaling experiments show generally favorable trends with increased data, model computation, and training budgets. These results support the use of learned geometric priors within a scene-level reconstruction pipeline.",
       "authors": [
-        "Xingqi Wang",
-        "Xiaoyuan Yi",
-        "Xing Xie",
-        "Jia Jia"
+        "Sheng Tang",
+        "Shengzhe Wei",
+        "Tiancheng Chen",
+        "Wenhua Jin",
+        "Xinyang Lu",
+        "Tinghao Jiang",
+        "Shuoxuan Feng",
+        "Yupeng Liu",
+        "Yu Zhang",
+        "Xingshuo Chang",
+        "Keren Zhou",
+        "Yuhan Xiong",
+        "Jiahao Li",
+        "Haoming Liu",
+        "Jituo Tian",
+        "Hui Liang",
+        "Chaoqun Tang",
+        "Feng Tian",
+        "Wentao Ouyang",
+        "Kaojin Zhu",
+        "Xiaolin Chai",
+        "Peihuang Fu",
+        "Miao Zheng",
+        "Yunbo Hu",
+        "Feixue Cai",
+        "Zizhen Zou",
+        "Weigang Wang",
+        "Yexuan Yang",
+        "Haoyu Feng",
+        "Weiqi Zhang",
+        "Juntong Fang",
+        "Zesong Li"
       ],
-      "published": "2026-11-10T12:41:02+00:00",
-      "updated": "2026-11-10T12:41:02+00:00",
+      "published": "2026-11-12T14:17:22+00:00",
+      "updated": "2026-11-12T14:17:22+00:00",
       "categories": [
-        "cs.CV",
-        "cs.AI",
-        "cs.CL",
-        "cs.CY",
-        "cs.LG"
+        "cs.CV"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.13997v1",
-      "headline": "Specify Privacy Yourself: Assessing Infe",
+      "abs_url": "http://arxiv.org/abs/2611.16840v1",
+      "headline": "Kosmo-GFM: A Production-Ready Geometry F",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.CV",
-        "cs.AI",
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16500v1",
+      "title": "EvenVLM: A Text and Multimodal Dataset for the Even Language with Vision-Language Fine-Tuning",
+      "abstract": "We present EvenVLM, the first text and multimodal (VQA) dataset for Even (Lamut), an endangered Northern Tungusic language spoken by approximately 6,800 people in Siberia. Our dataset comprises 50,521 structured Even-Russian entries extracted from dictionary and phrasebook sources via GPT-4o Mini-based parsing, from which we synthetically generate 107,543 training examples spanning translation, grammar, reading comprehension, and semantic classification. To address tokenization inefficiency on Even's agglutinative morphology, we propose a three-step tokenizer expansion algorithm that adds Even-specific graphemes (eng, oe, o-umlaut), whitelisted vocabulary, and BPE merges, reducing average tokens per word by 27% (4.99 to 3.64). Using LoRA fine-tuning of Qwen3-VL-4B, we adapt the model for text tasks (0.53% trainable parameters, rank 32) and separately for visual question answering (rank 64, frozen vision encoder). Our best configuration achieves 11.4% exact match and a 13.6 weighted score on text benchmarks, 0.1283 chrF for sentence translation, and 65% accuracy on VQA (up from 0% for the base model and text-only fine-tuning). We release our datasets, evaluation benchmarks, and training pipeline to support further research on Even and other low-resource languages.",
+      "authors": [
+        "Daniil Makovetskii",
+        "Ivan Bondarenko"
+      ],
+      "published": "2026-11-12T09:03:06+00:00",
+      "updated": "2026-11-12T09:03:06+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16500v1",
+      "headline": "EvenVLM: A Text and Multimodal Dataset f",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
         "cs.CL"
       ],
       "who_should_read": [],
       "application_ideas": [],
       "implementation_difficulty": "高",
-      "relevance_score": 15.0,
+      "relevance_score": 16.0,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -238,37 +424,168 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 4.8999999999999995,
-      "first_seen": "2026-11-12"
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14493v1",
-      "title": "Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents",
-      "abstract": "Deploying LLM-based analytics agents in enterprise settings requires evaluation frameworks that can reliably detect failures across complex, multi-tool workflows. We present a three-phase comparative study of three evaluation frameworks, each representing a distinct evaluation paradigm (trace-based LLM judging, text-only LLM judging with red-teaming, and deterministic heuristics), applied to two analytics agents in a controlled research setting using frozen execution traces. Phase 1 quantifies evaluation harness stability through repeated measurements, finding that 97% of configurations meet the stability threshold and that stability patterns are agent-independent. Phase 2 measures known risk detection on 72 ground-truth test cases, where the trace-based framework achieves the best precision-recall balance (F1=0.90) while text-only evaluation matches on recall but generates 5x more false alarms. Phase 3 evaluates unknown risk discovery, uncovering 24 novel failures with zero overlap between functional testing and security red-teaming. Our results demonstrate that (1) the information available to the evaluation harness determines evaluation quality, (2) functional and security evaluation are complementary, and (3) LLM-based evaluation harnesses surface subtle errors that human reviewers miss. We recommend a two-framework strategy: trace-based evaluation for functional assessment and adversarial red-teaming for security validation.",
+      "arxiv_id": "2611.16872v1",
+      "title": "ACE-CaP-0: Real-World Code-as-Policies in the Era of Experience",
+      "abstract": "Recent advances in frontier models have pushed the boundaries of agentic robot control, enabling agents to perform complex robotic tasks through reasoning and interaction. However, repeated calls to these models during execution can substantially increase task completion time. Code as Policies (CaP) offers a route for coding agents to acquire physical skills through experience and retain them in executable programs, allowing the reasoning invested in development to be reused across runs. Developing reliable code policies while limiting the cost of physical experimentation remains a central challenge. We investigate human guidance as a source of priors for feasible actions and simulation as an auxiliary environment for exploring and testing candidate policies. Our findings favor robot demonstrations available on request and simulation used selectively during real-world policy refinement. These findings inform ACE-CaP-0, an agentic recipe that couples policy revision with experience acquisition through Demonstrations on Request and Simulation on Demand. Across eight real-world manipulation tasks spanning alignment, multi-object handling, and bimanual coordination, the resulting frozen programs achieve 92.1\\% success (221/240 trials). Mean execution times across tasks range from 0.97 to 2.27 minutes. The programs execute with runtime perception and control, without a human or coding agent in the loop. These results highlight CaP's potential to turn experience into reliable, reusable physical skills.",
       "authors": [
-        "Howard Zhang",
-        "Chuck Arvin",
-        "Logan Brown",
-        "Mihir Bhatia",
-        "Neelu Choudhary",
-        "Lily Miao"
+        "ACE-CaP Team",
+        "Changxu Wei",
+        "Yunpeng Qing",
+        "Guozheng Ma",
+        "Bowen Liu",
+        "Zexin He",
+        "Yilun Kong",
+        "Haoming Gu",
+        "Jingyuan Liu",
+        "Tianyu Zhu",
+        "Jianfei Wang",
+        "Junqiang Kou",
+        "Huinan Mo",
+        "Hao Lv",
+        "Pengbin Li",
+        "Yuesong Wang",
+        "Bo Li",
+        "Huan Zhou",
+        "Shunyu Liu",
+        "Chunxiao Liu",
+        "Bixuan Jin",
+        "Shaopeng Yin",
+        "Fei Wang",
+        "Zhi Hou",
+        "Jiaxing Huang",
+        "Changqing Zou",
+        "Dacheng Tao",
+        "Xiaogang Wang"
       ],
-      "published": "2026-11-10T18:50:06+00:00",
-      "updated": "2026-11-10T18:50:06+00:00",
+      "published": "2026-11-12T14:38:40+00:00",
+      "updated": "2026-11-12T14:38:40+00:00",
       "categories": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG",
-        "cs.SE"
+        "cs.RO"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14493v1",
-      "headline": "Comparative Analysis of Agent Evaluation",
+      "abs_url": "http://arxiv.org/abs/2611.16872v1",
+      "headline": "ACE-CaP-0: Real-World Code-as-Policies i",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.AI",
-        "cs.CL",
-        "cs.LG"
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16525v1",
+      "title": "ZONOS3-Mini Technical Report",
+      "abstract": "ZONOS3-Mini is an ultra-compact, ultra-fast, zero-shot voice-cloning TTS model. The model can run in real time on a laptop or smartphone. For its latency and size, it achieves state-of-the-art accuracy and cloning fidelity. To achieve this we propose a latent MoE backbone with only 886M parameters (100M active per token) and a new audio codec, Zyphra Audio Codec 1 (ZAC-1), which represents 44.1 kHz audio at a 15 Hz frame rate. On the new ZTTS2-Eval benchmark, ZONOS3-Mini reaches a 6.71% macro-average WER over 55 language sets (35 clean and 20 in the wild), which is competitive with larger and slower state-of-the-art models. We release the model weights, inference, and training code.",
+      "authors": [
+        "Gabriel Clark",
+        "Sofian Mejjoute",
+        "George Close",
+        "Beren Millidge"
+      ],
+      "published": "2026-11-12T09:24:22+00:00",
+      "updated": "2026-11-12T09:24:22+00:00",
+      "categories": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16525v1",
+      "headline": "ZONOS3-Mini Technical Report",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.SD",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16433v1",
+      "title": "daVinci-Prover: Agent-Native Mid-Training for Formal Theorem Proving",
+      "abstract": "Advances in large language models (LLMs) are rapidly transforming formal theorem proving. Yet further progress remains constrained by the lack of a transparent and effective data recipe for systematically improving theorem-proving models. In this work, we argue that effective agentic provers require strong mathematical skill priors to ground theorem proving and agentic trajectories to enable long-horizon, interactive proof construction. To this end, we synthesize an agent-native 33.7B-token mid-training corpus covering decomposition, search, self-verification, and revision, together with verifier-grounded agentic trajectories. We further introduce the daVinci-Prover harness, which enables models to construct proofs and interact with a Lean verifier in an isolated workspace, and use it to collect approximately 36K high-quality agent trajectories for supervised fine-tuning. Our mid-training recipe yields an average improvement of 13.7 points over the matched Qwen3-8B SFT-only baseline across MiniF2F, FATE-M, and ProofNet. When applied to the Qwen3.5 series, our approach also yields strong performance across theorem-proving benchmarks and achieves near-saturating MiniF2F performance with memory compaction. The results highlight agent-native mid-training as an effective foundation for developing stronger interactive theorem-proving agents.",
+      "authors": [
+        "Wenhong Zhu",
+        "Xuefeng Li",
+        "Jiashuo Zhang",
+        "Yu Chen",
+        "Tiantian Mi",
+        "Qipeng Guo",
+        "Pengfei Liu"
+      ],
+      "published": "2026-11-12T07:44:09+00:00",
+      "updated": "2026-11-12T07:44:09+00:00",
+      "categories": [
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16433v1",
+      "headline": "daVinci-Prover: Agent-Native Mid-Trainin",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.17172v1",
+      "title": "SpotDiff: A Plug-and-Play Framework for Zero-Shot Change Detection in Remote Sensing Imagery",
+      "abstract": "Remote sensing change detection usually relies on large collections of temporally aligned, pixel-level annotations, which limits its scalability across regions, imaging platforms and application domains. Recent zero-shot approaches reduce the need for supervision, but they often localize fine-grained changes poorly because their features are coarse or inconsistent across time. We present SpotDiff, a training-free, plug-and-play framework for zero-shot change detection built by composing complementary vision foundation models. SpotDiff uses DINOv3 for semantically robust features, AnyUp to reconstruct them at pixel resolution, and SAM 3 for text-guided region-of-interest proposals, which an inference-time multi-scale strategy (SWIMS) makes reliable on small objects. Change is then measured by comparing the reconstructed features of the two dates inside the proposed regions, with no learnable components, fine-tuning or change labels. To our knowledge, SpotDiff is the first change detection method to use a universal feature upsampler, which alone adds 13.8 F1 over bilinear upsampling of the same features. On LEVIR-CD, SpotDiff reaches 82.46 F1, 2.06 points above the strongest prior training-free method, and on the multi-class SECOND benchmark it improves building change detection by 10.3 IoU and the six-class average by 2.2 IoU. Qualitative results on PlanetScope (3 m) and Sentinel-2 (10 m) imagery show that the same pipeline transfers across resolutions without modification. Our results indicate that composing modern foundation models is an effective route to scalable, label-free change detection.",
+      "authors": [
+        "Anit Upadhyaya",
+        "Ata Akbari Asanjan",
+        "Chaitanya Jalluri",
+        "Subash Yeggina",
+        "Jeremy Kravitz"
+      ],
+      "published": "2026-11-12T17:45:37+00:00",
+      "updated": "2026-11-12T17:45:37+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.17172v1",
+      "headline": "SpotDiff: A Plug-and-Play Framework for ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -281,35 +598,35 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 6.3,
-      "first_seen": "2026-11-12"
+      "practicality_score": 5.6,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14491v1",
-      "title": "TimeSeek: Multi-Task and Multi-Domain Pretraining for Generalized Time Series Analytics",
-      "abstract": "Time series analytics has been widely applied across various domains. While existing time series foundation models (TSFMs) have demonstrated promising results, they still face two major challenges: 1) Most TSFMs mainly rely on stacking Transformer layers to increase parameter size, lacking the ability to adaptively model complex time series patterns from multi-domain data. 2) Current TSFMs are primarily pre-trained for specific tasks, e.g., forecasting or anomaly detection, and a few models support multiple tasks, but they fail to fully leverage task specificity and commonality, resulting in suboptimal performance. To address these challenges, we propose TimeSeek, a novel generalized time series analytics model that adaptively models time series patterns from multi-domain data and unifies multiple tasks in pre-training. Conceptually, TimeSeek is guided by selective information sharing under domain and task heterogeneity. From the perspective of multi-domain data, we propose a Multi-Domain Feature Extractor that adaptively captures temporal dependencies and channel correlations based on domain-specific characteristics, including progressive multi-scale modeling and adaptive slot channel modeling. From the perspective of the diversity of tasks, we propose multi-task collaborative training, which leverages task specificity and task commonality through task customization and cross-task training, effectively unifying multiple tasks in pre-training and better adapting to diverse downstream scenarios. After pre-training on large-scale time series data, TimeSeek achieves state-of-the-art performance in forecasting, anomaly detection, and classification tasks across both few-shot learning and zero-shot situations, together with favorable inference efficiency.",
+      "arxiv_id": "2611.16742v1",
+      "title": "Fog-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Recovering Fog-Hidden Objects",
+      "abstract": "LiDAR is a core sensor for autonomous driving, yet it is highly vulnerable to fog. Fog scattering produces strong backscatter near the sensor and attenuates reflections from objects behind it, so weak object returns are often discarded by the peak detection that converts received signals into point clouds. Full-waveform LiDAR (FWL), which records the received optical signal before peak detection, retains these weak returns, but the lack of suitable data has prevented research on recovering fog-hidden objects from FWL. We present Fog-FWL, a dataset foundation for this task that consists of a real-world benchmark, Fog-FWL-Real, and a large-scale synthetic training set, Fog-FWL-Sim. Fog-FWL-Real contains 7,527 real foggy FWL frames from 8 scenes and 58 sequences, which is 579x larger than the only existing real foggy FWL data, together with histogram-level Object/Fog/Noise labels, 10,719 3D bounding boxes, and three difficulty levels defined by the attenuation of object reflections. Fog-FWL-Sim contains 12,000 frames generated by our physics-based simulator, Fog-FWL-Simulator, which integrates spatially heterogeneous fog density fields, time-resolved light transport including multiple scattering, and a photon-counting SPAD receiver model. The two subsets share the same sensor format and annotation protocol, enabling a strict sim-to-real evaluation in which no real waveforms are used for training. Our analysis shows that, under the hardest condition, object returns are included in the three strongest peaks for only 34.9% of object rays, underscoring the need for waveform-level recovery. Fog-FWL-Real, Fog-FWL-Sim, and the Fog-FWL-Simulator will be publicly released to facilitate research on fog-robust LiDAR perception.",
       "authors": [
-        "Peng Chen",
-        "Yihang Wang",
-        "Zhongwen Rao",
-        "Yang Shu",
-        "Yuying Qiu",
-        "Yuxuan Chen",
-        "Lujia Pan",
-        "Bin Yang",
-        "Chenjuan Guo"
+        "Kazuma Ikeda",
+        "Kotaro Oishi",
+        "Ryosei Hara",
+        "Ryo Yoshida",
+        "Takahiro Kado",
+        "Ibuki Fujioka",
+        "Taro Beppu",
+        "Mariko Isogawa",
+        "Kentaro Yoshioka"
       ],
-      "published": "2026-11-10T18:49:26+00:00",
-      "updated": "2026-11-10T18:49:26+00:00",
+      "published": "2026-11-12T12:56:55+00:00",
+      "updated": "2026-11-12T12:56:55+00:00",
       "categories": [
-        "cs.LG"
+        "cs.CV"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14491v1",
-      "headline": "TimeSeek: Multi-Task and Multi-Domain Pr",
+      "abs_url": "http://arxiv.org/abs/2611.16742v1",
+      "headline": "Fog-FWL: A Large-Scale Full-Waveform LiD",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.LG"
+        "cs.CV"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -317,50 +634,42 @@
       "relevance_score": 14.5,
       "domain_relevance": {
         "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "高",
+        "bim_cim": "高",
+        "manufacturing": "なし",
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
       "practicality_score": 4.199999999999999,
-      "first_seen": "2026-11-12"
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14356v1",
-      "title": "EngineAgent: Agentizing On-Device LLM Inference Engines with Inference Stack Hierarchy Awareness and Hardware Abilities",
-      "abstract": "Rapidly evolving LLM architectures and heterogeneous mobile hardware make supporting new models in on-device inference engines a recurring and costly system challenge. Each model may require coordinated changes across conversion, graph construction, operators, and hardware backends. Existing coding agents often miss these cross-layer dependencies and struggle to diagnose failures across host--device execution paths. We present EngineAgent, an agentic system for automating on-device LLM model enablement. Its key insight is to separate reusable engine and hardware knowledge from model-specific implementation. Before enablement, EngineAgent constructs a hierarchy-aware engine index that captures engine abstraction layers and cross-layer dependencies, and pre-validates backend-specific build, execution, and debugging workflows using already supported models. For each new model, a builder uses this knowledge to coordinate cross-layer changes, while an auditor checks implementation completeness and drives iterative debugging through device-side validation. Across 12 tasks spanning three mobile LLMs and four engine--backend pairs on CPUs, GPUs, and NPUs, EngineAgent achieves 75% end-to-end success with either of two underlying LLMs, versus 33.3% for the strongest coding-agent baseline. Success requires compilation, on-device execution, and output-logit agreement with reference implementations. EngineAgent also reduces average per-task time and model-API cost relative to baselines using the same underlying LLMs.",
+      "arxiv_id": "2611.16574v1",
+      "title": "HALight: Heterogeneous Multi-Agent Reinforcement Learning for Traffic Signal Control under Lane-Level Missing Observations",
+      "abstract": "Multi-agent reinforcement learning has shown great promise for traffic signal control. However, most existing methods rely on two key assumptions: (i) agents are assumed to be homogeneous with unified observation/action spaces; (ii) full and reliable lane-level traffic observations are available to all agents. In practice, urban road networks exhibit substantial structural heterogeneity (e.g., lane configurations and phase designs), while sensor failures and incomplete detector coverage often result in missing incoming lane measurements. Such issues can severely impair coordination and destabilize learning. To address these challenges, we propose HALight, a communication-enhanced heterogeneous multi-agent reinforcement learning framework for traffic signal control under lane-level missing observations. HALight supports intersection-specific observation and action modeling to accommodate heterogeneous intersections, and incorporates a lightweight one-hop neighborhood communication module to enrich spatial context when lane-level observations are partially unavailable. Moreover, HALight adopts a sequential policy update scheme to improve coordination among heterogeneous agents. Experimental results on two real-world road networks demonstrate that HALight outperforms representative homogeneous and heterogeneous baselines in terms of traffic efficiency and convergence behavior. The code and datasets used in this work are available at https://github.com/Huchenkaii/HALight.",
       "authors": [
-        "Zhengxiang Huang",
-        "Yujie Sun",
-        "Shengheng Chen",
-        "Zhaode Wang",
-        "Chaoyue Niu",
-        "Zeyu Zhao",
-        "Chengfei Lv",
-        "Fan Wu",
-        "Guihai Chen"
+        "Chenkai Hu",
+        "Yingqian Zhang",
+        "Ming Xie",
+        "Yi Fang",
+        "Chengxiang Jin",
+        "Chao Li"
       ],
-      "published": "2026-11-10T17:16:47+00:00",
-      "updated": "2026-11-10T17:16:47+00:00",
+      "published": "2026-11-12T10:02:01+00:00",
+      "updated": "2026-11-12T10:02:01+00:00",
       "categories": [
-        "cs.OS",
-        "cs.AI",
-        "cs.CL",
-        "cs.SE"
+        "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14356v1",
-      "headline": "EngineAgent: Agentizing On-Device LLM In",
+      "abs_url": "http://arxiv.org/abs/2611.16574v1",
+      "headline": "HALight: Heterogeneous Multi-Agent Reinf",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.OS",
-        "cs.AI",
-        "cs.CL"
+        "cs.LG"
       ],
       "who_should_read": [],
       "application_ideas": [],
       "implementation_difficulty": "高",
-      "relevance_score": 14.3,
+      "relevance_score": 14.5,
       "domain_relevance": {
         "drawing_ai": "なし",
         "bim_cim": "なし",
@@ -368,32 +677,186 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 3.5,
-      "first_seen": "2026-11-12"
+      "practicality_score": 5.6,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.13903v1",
-      "title": "Persistent Metric-Semantic Maritime Scene Memory from Open-Vocabulary 3D Scene Graphs",
-      "abstract": "Three-dimensional scene graphs (3DSGs) can provide robots with persistent metric-semantic representations for spatial reasoning, but the existing methods have primarily been developed for indoor and terrestrial environments. In this paper we investigate how a representative outdoor open-vocabulary method transfers to maritime environments and which adaptations are needed. Our experiments show that zero-shot representative outdoor 3DSG descriptions agree with our labeled ground truth for a majority of geometry-supported objects on our data, but the resulting map exhibits considerable physical-entity fragmentation, and its terrestrial higher-level assumptions don't capture maritime spatial organization needs. We therefore keep the underlying mapping method and post-process its accumulated evidence. We show a metric-semantic consolidation method followed by geometry-grounded multi-view vision-language model (VLM) reasoning that reconciles remaining fragments into physical entities and groups entities through observations into local places. In parallel, we construct maritime macro regions using map priors and onboard water and structure observations, and associate them with the local places. The resulting representation reduces physical-entity fragmentation beyond both the baseline and our geometry-semantic consolidation component alone, supports correspondence of fixed local places across repeated maritime traversals, and improves contextual retrieval on our reviewed queries over tested baselines. These results show how an outdoor open-vocabulary map can be adapted into persistent maritime scene memory with our methods for object/place identity and spatial abstractions.",
+      "arxiv_id": "2611.16492v1",
+      "title": "Time and Space: A Dual-Axis, Evidence-Grounded Context Substrate for Personal Agents",
+      "abstract": "We argue that a binding constraint for personal agents is not model capacity but the form in which context is represented: the agent does not know which entity a phrase denotes, when a fact held, or which source record licenses a claim. We call the missing representation spatio-temporal context (STC) and define it on two axes. The temporal axis carries event time, validity intervals and ingestion time. The spatial axis is a relational space in which entities are points, typed relations are edges, and distance is semantic rather than geographic; physical places are one entity type among many. Every relation is anchored to immutable source records, and every answer must be closed over those records. We formalise the substrate and six invariants, a context operator that composes temporal intersection with relational expansion, an ambiguity-preserving resolution state machine, a conflict detector that converts mutually exclusive facts into user adjudication rather than silent overwrite, and a four-regime consumption taxonomy spanning query, insight, triage and proactive reminder. We describe a local-first prototype of the retrieval layer built on SQLite with on-device embeddings and hybrid lexical-dense recall, report measurements from a deployed store of 341 documents, 340,079 chunks and 190,271 embedded vectors, and specify, but do not yet implement, the analytic layer on which the framework depends. We close with an evaluation protocol with per-invariant metrics for evidence coverage, temporal correctness, conflict precision and interruption cost. The proposal targets the representation of context rather than the volume of it.",
       "authors": [
-        "Kim Alexander Christensen",
-        "Dina Zimmermann",
-        "Martin Steinert",
-        "Eleni Kelasidi"
+        "Haitao Cheng",
+        "Jerry Hu",
+        "Longdong Mao",
+        "Dong Huang",
+        "Dongming Li",
+        "Lijuan Zhang",
+        "Mengting Zhang"
       ],
-      "published": "2026-11-10T10:59:07+00:00",
-      "updated": "2026-11-10T10:59:07+00:00",
+      "published": "2026-11-12T09:01:06+00:00",
+      "updated": "2026-11-12T09:01:06+00:00",
       "categories": [
-        "cs.CV",
-        "cs.RO"
+        "cs.AI"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.13903v1",
-      "headline": "Persistent Metric-Semantic Maritime Scen",
+      "abs_url": "http://arxiv.org/abs/2611.16492v1",
+      "headline": "Time and Space: A Dual-Axis, Evidence-Gr",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16918v1",
+      "title": "CT-SGAL-LIO: Causal Continuous Time Refinement of Discrete LiDAR Inertial Odometry",
+      "abstract": "State-of-the-art LiDAR-inertial odometry methods, including those on richer state manifolds, achieve strong global accuracy, yet their pose stream alternates between propagation and correction and can oscillate over short horizons even when globally accurate. Most existing methods follow these approaches: they either modify the filter to enable faster updates or estimate a continuous-time trajectory from raw LiDAR and inertial data. The latter involves extra optimization, delaying state updates and becoming less robust during rapid rotations or accelerations. We propose CT-SGAL-LIO, a continuous-time refinement module that smooths the posterior pose stream of a discrete SGal(3) estimator without modifying the estimator itself. The key novelty is to perform continuous-time trajectory refinement directly on the projected SGal(3) posterior: we fit a cubic trajectory over a bounded window of recent poses and evaluate it at a small fixed lag. This places the query time within the observed interval, so the refined pose is obtained by interpolation rather than extrapolation, while preserving causal operation. CT-SGAL-LIO improves relative trajectory accuracy on 17 sequences from three public benchmarks. Across 17 sequences from GRAND-TOUR, MCD, and GEODE, CT-SGAL-LIO improves short-term motion accuracy while largely preserving global accuracy. RTE improves by up to 70% on GRAND-TOUR and on all seven GEODE sequences, with 9.9-51.1% reductions. A 19.5-min R-Campus run also reduces posterior jumps by 85.4% with only a 4.7 mm change in the end-to-start gap. We plan to release our source code and results to support community validation and reproducibility.",
+      "authors": [
+        "Nam Tran",
+        "Thu Tran",
+        "Toan Nguyen",
+        "William J Beksi",
+        "Tuan Dang"
+      ],
+      "published": "2026-11-12T15:07:17+00:00",
+      "updated": "2026-11-12T15:07:17+00:00",
+      "categories": [
         "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16918v1",
+      "headline": "CT-SGAL-LIO: Causal Continuous Time Refi",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.17052v1",
+      "title": "Auditing AI peer reviewers: a benchmark on real scientific papers",
+      "abstract": "LLM-based peer review is now used at production scale, but its evaluation remains limited. We introduce a benchmark that injects objective, localisable errors of four types (general issues, mathematics, numerics, citations) at three severity levels into real papers and measures each reviewer's detection rate by error type and severity, together with its false-positive rate on clean copies. We also present Skepthical, a multi-agent reviewer that verifies citation-backed claims by retrieving the cited papers, mathematics with computer algebra, and numerical claims with executed code. We apply the benchmark to two corpora of 15 recent arXiv preprints each, one in astrophysics and one in machine learning (ML), injecting a total of 357 errors, and evaluate twelve reviewer systems: six single-LLM reviewers, two Claude Code configurations, three publicly available reviewers, and Skepthical. The choice of model has the largest impact on detection rate: given the same prompt, three frontier LLMs differ by about 50 percentage points in total detection on both corpora. Tools and scaffolding help when they contribute what the model cannot supply on its own. In particular, on astrophysics, Claude Code improves on a single Claude call in mathematics and numerics detection, and enforced citation retrieval gives Skepthical the highest citation error detection rate of all systems by a large margin. This citation lead, however, is not observed on ML, where the models appear to know the literature better and Skepthical's citation detection rate is statistically indistinguishable from that of the best single LLM. False-positive rates are below 10% for most systems, but vary with prompt, model, and scaffolding, with mathematics flags the main source of false positives. The evaluation pipeline, the injected errors, and the adjudication logs are released as a benchmark.",
+      "authors": [
+        "Íñigo Zubeldia",
+        "Boris Bolliet",
+        "Francisco Villaescusa-Navarro",
+        "Pablo Villanueva-Domingo",
+        "Miles Cranmer"
+      ],
+      "published": "2026-11-12T16:33:51+00:00",
+      "updated": "2026-11-12T16:33:51+00:00",
+      "categories": [
+        "cs.CL",
+        "astro-ph.IM",
+        "cs.AI",
+        "cs.DL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.17052v1",
+      "headline": "Auditing AI peer reviewers: a benchmark ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "astro-ph.IM",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 7.0,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.17072v1",
+      "title": "Reasoning Supervision and Capability Retention in LoRA Domain Adaptation",
+      "abstract": "Fine-tuning foundation models on financial data has a wide range of applications, including identifying event types from news, monitoring risk and compliance language, and answering questions over filings and earnings calls. In this setting, the main challenge is to improve task performance without degrading the generalization capabilities of the model. In this paper, we present an extensive set of ablations for fine-tuning Qwen3-8B with low-rank adaptation (LoRA). We compare three training regimes: (1) response-only LoRA, where the supervised response is the label alone; (2) single-adapter reasoning, where reasoning traces from a teacher model are included alongside the labels in the training loss; and (3) dual-adapter composite training, where separate LoRA adapters are trained on traces and labels. Response-only LoRA improves in-domain performance and leaves general capabilities near those of the frozen model. The in-domain change is largest for calibration and argmax accuracy. Under single-adapter reasoning, the in-domain metrics remain behind those of the response-only regime, while MMLU-Pro can rise slightly and the other retention benchmarks stay within ordinary variation. Dual-adapter composite training remains on the same side of this comparison and yields no further gain. Finally, we compress the teacher traces by summarizing them before training, and show that shorter summaries move calibration toward the response-only regime without reaching it.",
+      "authors": [
+        "Saleh Ashkboos",
+        "Dhruv Desai",
+        "Lavinia Ghita"
+      ],
+      "published": "2026-11-12T16:45:12+00:00",
+      "updated": "2026-11-12T16:45:12+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.17072v1",
+      "headline": "Reasoning Supervision and Capability Ret",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.16764v1",
+      "title": "Efficient Periocular Recognition through Model Scaling and Cross Spectral VIS NIR Verification",
+      "abstract": "Periocular recognition offers an efficient alternative to full-face verification when facial regions are occluded or image resolution is limited. We present AdaEye, a systematic study of input and backbone scaling for periocular verification in visible-spectrum (VIS) and cross-spectral (VIS/NIR) settings. Using an AdaFace-style framework, we compare full-face, masked-face, and dedicated 80x40 periocular inputs while varying backbone width and embedding dimensionality. Across four VIS/VIS and VIS/NIR protocols, we assess verification accuracy, computational cost, inference throughput, training memory, template size, and training stability. Direct periocular processing reduces recognition cost from 6.30 to 1.64 GMACs per image and increases measured throughput by approximately threefold. Its effectiveness depends on the evaluation protocol: periocular models perform better on native UFPR periocular images, whereas face-based protocols favor retaining more input information. Moderate backbone width reductions maintain comparable mean verification performance on CASIA and ND-NIVL while reducing computation. Embedding compression decreases template-storage requirements, primarily benefiting deployment. Multi-seed experiments reveal that some configurations require numerical stabilization, particularly when embedding and backbone reductions are combined. These findings support selecting compact periocular architectures according to the target protocol and deployment constraints, balancing accuracy, efficiency, storage, and robustness.",
+      "authors": [
+        "Fabian Stockhard",
+        "Juan E. Tapia",
+        "Christoph Busch"
+      ],
+      "published": "2026-11-12T13:14:40+00:00",
+      "updated": "2026-11-12T13:14:40+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.16764v1",
+      "headline": "Efficient Periocular Recognition through",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -406,33 +869,30 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 0.0,
-      "first_seen": "2026-11-12"
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14059v1",
-      "title": "HandsOnAid: Building and Evaluating an Offline First-Aid Assistant for Emergency Response Scenarios",
-      "abstract": "Emergencies can occur where there is no phone signal and no ambulance nearby. A small language model on a phone can be helpful in such situations, but its advice needs to be safe and accurate. We built HandsOnAid, a 4-bit Gemma 2B model fine-tuned with QLoRA on FirstAidQA dataset, a corpus of 5,550 first-aid question-answer pairs. We compared seven configurations, including the base, 4-bit and 8-bit fine-tuned models, and versions with a length floor, safety gate, or retrieval. We used a 41-pair question-answer bank with medically reviewed references that followed ANZCOR guidelines, and a strict 0-5 score rubric, with twelve safety overrides. Four frontier LLM judges (GPT-5.6 Sol, Claude Opus 5, DeepSeek V4 Pro, GLM-5.3) blindly scored every answer, with 45 hidden controls used to check judge reliability. Fine-tuning improved the mean score by +1.08 over the base model to 2.34. The best configuration scored 2.51 out of 5 which was the fine-tuned 4-bit model with retrieval. A medical professional also conducted a blind evaluation of 40 answers across the base, the 4-bit fine-tuned, and the retrieval configurations, and the scores were similar to the LLM judges' average scores. A keyword audit found limited coverage of several details of ANZCOR guidelines in the training corpus, that are required by the rubric, which suggests that missing information in the training data could be a cause of the low scores. On a smartphone device (Pixel 7 Pro) with six CPU threads and no network connection, the 4-bit fine-tuned model produced its first displayable text in 6.86 seconds and a complete answer in 14.88 seconds on average over ten questions.",
+      "arxiv_id": "2611.16871v1",
+      "title": "DPA: Decentralized Primal Averaging with Quasi-Global Momentum for Highly Heterogeneous Data",
+      "abstract": "Decentralized training of deep learning models keeps training data local and supports on-device learning over networks. In realistic scenarios, heterogeneity across agents' local data poses an optimization challenge and can severely degrade test accuracy, especially on sparse communication graphs. Building on recent advances in centralized primal averaging, we propose Decentralized Primal Averaging (DPA), a decentralized learning algorithm that combines primal averaging with a local quasi-global momentum buffer. DPA maintains three coupled sequences for optimization, gradient evaluation, and output averaging, while using consecutive mixed iterates to construct a network-aware momentum direction without transmitting an auxiliary tracking variable. For smooth nonconvex objectives, we establish a convergence bound for DPA and identify conditions for linear speedup in the number of agents for sufficiently many iterations. We also introduce DPA-1G, a variant that uses one communication round per iteration and matches the per-iteration communication cost of DSGD-style baselines. Experiments following the GUT decentralized image-classification benchmark show that DPA compares favorably with DSGD, gradient tracking, QG-DSGDm, momentum tracking, and QG-GUTm across datasets, architectures, topologies, and heterogeneity levels, with the largest gains under high heterogeneity on sparse rings. At the same total communication cost, both DPA variants achieve higher mean test accuracy than the best baseline on CIFAR-10 and CIFAR-100 with ResNet-20. Our code is publicly available.",
       "authors": [
-        "Rezwan Islam Salvi",
-        "Saiyma Sittul Muna",
-        "Mushfiqur Rahman Mushfique"
+        "Diyako Ghaderyan",
+        "Stefan Werner"
       ],
-      "published": "2026-11-10T13:25:28+00:00",
-      "updated": "2026-11-10T13:25:28+00:00",
+      "published": "2026-11-12T14:38:34+00:00",
+      "updated": "2026-11-12T14:38:34+00:00",
       "categories": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
+        "cs.LG",
+        "cs.AI"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14059v1",
-      "headline": "HandsOnAid: Building and Evaluating an O",
+      "abs_url": "http://arxiv.org/abs/2611.16871v1",
+      "headline": "DPA: Decentralized Primal Averaging with",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.CL",
-        "cs.AI",
-        "cs.LG"
+        "cs.LG",
+        "cs.AI"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -445,34 +905,29 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 2.8,
-      "first_seen": "2026-11-12"
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14498v1",
-      "title": "Measuring Robustness and Efficiency in a Connectome-Constrained Fly Visual System Model: Linking an Adversarial and a Perceptual Illusion",
-      "abstract": "Biological visual systems compute reliably under tight metabolic and wiring constraints, whereas artificial vision systems consume far more energy and can be sensitive to adversarial perturbations. Whether networks with brain-like wiring are more robust at lower computational cost is unclear. We address this by benchmarking a task-optimized, continuous-time recurrent neural network of the fly visual system constrained by its synaptic connectome (FlyNet) against artificial neural networks. We compare it against CNNs, RAFT, and continuous-time recurrent neural networks without detailed connectome constraints (sCTRNN, CTRNN) on a collision-detection task within a differentiable 3D rendering pipeline. FlyNet is adversarially vulnerable but, relative to its compute, more robust to common video corruptions than RAFT, while using up to five orders of magnitude fewer FLOPs. The CTRNNs remain more robust than FlyNet across almost all tested perturbations, suggesting that connectome constraints benefit efficiency, through their low edge count, over robustness. Recurrence improves robustness to white-box attacks in RAFT and temporal context improves robustness to common corruptions. FlyNet's position and velocity representations degrade under adversarial textures but recover under counterfactual textures that restore correct classification while staying equally far from training, ruling out unfamiliar textures as the cause of failure. The reverse-phi illusion similarly disrupts these representations and inverts the same low-level motion statistic as the adversarial textures. Optimizing this input statistic alone, without access to the network, suffices to induce classification failure, attributing both perturbations to the same circuit vulnerability. Connectome-constrained models can thus surface adversarial failure mechanisms as testable hypotheses about biological perceptual vulnerabilities.",
+      "arxiv_id": "2611.16608v1",
+      "title": "Towards Democratising Low-Data Medical Image Classification: CPU-Trainable ZACH-ViT and Its Geometric Variants",
+      "abstract": "Medical image classification in resource-constrained settings must contend with limited annotations and computational capacity. We evaluate four ZACH-ViT variants with linear, Euclidean prototype, Poincare and spherical heads alongside two compact multiple-instance-learning baselines. All models are trained from scratch with fewer than 260,000 parameters across seven MedMNIST+ datasets and three external benchmarks (PCam, ISIC2017 and Shenzhen tuberculosis radiographs). The low-data protocol uses 50 training images per class and five seeds, with validation-selected checkpoints at 23 and 47 epochs; a full-data reference uses one seed. Compact-TransMIL achieves the highest ten-dataset mean test Macro-F1 at 23 epochs (53.34%) and with full data (73.93%). At 47 epochs, ZACH-Linear narrowly leads (57.76% versus 57.54% for Compact-TransMIL). Extending training improves Macro-F1 in 239 of 300 paired comparisons. On ISIC2017, hZACH-Spherical has the highest 47-epoch low-data Macro-F1 (44.09% with SD 4.09%), whereas ZACH-EuclideanProto leads with full data (51.27%). We additionally conduct 40 CPU-only training runs on ISIC2017 and Shenzhen using four CPU threads; model-only single-image inference requires approximately 4-9 ms, while image decoding and preprocessing substantially increase end-to-end latency. The results demonstrate the feasibility of CPU-only training on the tested platform and the task- and regime-dependence of compact medical imaging under strict resource constraints.",
       "authors": [
-        "Alexandre Garcia-Duran",
-        "Alejandro Rodriguez-Garcia",
-        "Manuel Molano-Mazón",
-        "Alexandre Hyafil",
-        "Srikanth Ramaswamy",
-        "Janne K. Lappalainen"
+        "Athanasios Angelakis"
       ],
-      "published": "2026-11-10T18:51:31+00:00",
-      "updated": "2026-11-10T18:51:31+00:00",
+      "published": "2026-11-12T10:46:53+00:00",
+      "updated": "2026-11-12T10:46:53+00:00",
       "categories": [
         "cs.CV",
-        "q-bio.NC"
+        "cs.LG"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14498v1",
-      "headline": "Measuring Robustness and Efficiency in a",
+      "abs_url": "http://arxiv.org/abs/2611.16608v1",
+      "headline": "Towards Democratising Low-Data Medical I",
       "one_liner": "",
       "key_points": [],
       "tags": [
         "cs.CV",
-        "q-bio.NC"
+        "cs.LG"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -485,205 +940,28 @@
         "civil_infra": "なし",
         "ai_knowhow": "高"
       },
-      "practicality_score": 0.7,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14210v1",
-      "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
-      "abstract": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair. Their GPT-6 Astra agent corrected the reasoning loops of Qwen3.5-0.8B without gradients, using 158 agent turns, 89.7 million tokens, and 50 forward-pass requests. Our method, Tree-Ising, casts this repair as a sparse discrete optimization problem over the model's own BF16 weights. Forward statistics define an objective that weakens a loop direction, strengthens a concluding direction, and preserves the layer's output on productive tokens. Within a state-tree representation, where lossless BF16 storage acts as a special case, the admissible edits are sign flips and exponent shifts that preserve all shared group exponents and mantissas. We decompose this objective exactly into independent QUBO (Ising) problems, one per output row, which we solve on a GPU using simulated annealing or quantum-inspired simulated bifurcation. On the agent's two layers, Tree-Ising achieves 54.6% on MATH-500, outperforming the agent's edit (51.7%) under the same evaluation protocol, while the base model scores 7.9% as reported. The simulated bifurcation solver yields a statistically indistinguishable repair at 55.1%. Both solvers outperform the agent edit across all five math benchmarks, with statistically significant improvements on MATH-500 and GSM8K after correcting for multiple comparisons. Our approach modifies 13% to 17% fewer weights and reduces BF16 bit flips by a factor of 2.2 to 2.3. It requires only four forward-pass requests and zero LLM tokens, with the annealing recipe costing about $0.90 in GPU time. On Qwen3.5-2B, with layers and dose selected using only the base model, the same recipe increases greedy GSM8K accuracy from 21.6% to 69.4%. As a proof of concept, we execute an eight-variable repair subproblem using QAOA on an IBM Heron processor.",
-      "authors": [
-        "Hadi Salloum",
-        "Ammar Ali"
-      ],
-      "published": "2026-11-10T15:32:04+00:00",
-      "updated": "2026-11-10T15:32:04+00:00",
-      "categories": [
-        "cs.LG"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14210v1",
-      "headline": "Tree-Ising: Repairing Language Models wi",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.LG"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.7,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 1.4,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.13966v1",
-      "title": "Controlled Knowledge Engineering for Taxonomy Induction with Tool-Grounded LLM Agents and Runtime-Adaptive Policies",
-      "abstract": "Taxonomies are structured knowledge representations that support semantic search, recommendation, product catalog organization, and retrieval-augmented generation. Their automated construction from a fixed set of candidate entities requires more than plausible text generation: the resulting hierarchy must be complete, structurally valid, and semantically coherent. Large Language Models (LLMs) are promising for this task, but iterative free-form generation remains vulnerable to omitted or hallucinated entities, invalid hierarchical relations, and inconsistent organizational principles. We introduce TIGA (Taxonomy Induction with Tool-Grounded Agents), a knowledge-engineering architecture that formulates taxonomy induction as an iterative decision process over an explicit state and constrained action space. TIGA combines executable taxonomy-editing tools, an memory that records tool calls, rationales, and outcomes, and a runtime-adaptive organizational policy that the agent revises during inference. An optional global reviewer evaluates the constructed taxonomy against the candidate set and the active policy. We evaluate TIGA on four benchmark taxonomies using two LLM backbones and compare it with single-shot and iterative prompting-based baselines. TIGA achieves the strongest structural-quality results in most evaluated configurations, but does not dominate on every precision measure. The gains are accompanied by substantially higher token consumption, API-call volume, and inference time. Ablation results show consistent benefits from the policy and interaction-memory components, whereas the effect of global review depends on the dataset and the available revision budget. These findings characterize tool grounding and runtime policy adaptation as promising but costly mechanisms for improving the controlled construction of structured knowledge representations.",
-      "authors": [
-        "Jonas Limniatis",
-        "Bennet Schaarmann",
-        "Georg Reuber",
-        "Robert Stahlbock"
-      ],
-      "published": "2026-11-10T12:04:54+00:00",
-      "updated": "2026-11-10T12:04:54+00:00",
-      "categories": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.13966v1",
-      "headline": "Controlled Knowledge Engineering for Tax",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.IR",
-        "cs.AI"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.7,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 3.5,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14518v1",
-      "title": "Toward Foundation Detection Models via Example-Based Grounding in EM-DETR",
-      "abstract": "DeepLearning (DL)-based Computer-Aided Diagnostic (CAD) systems have shown great promise in supporting clinicians, but their performance heavily depends on the availability of large, well-annotated datasets. In medical lesion detection, the scarcity of comprehensive, stan dardized annotations and the heterogeneity of existing datasets limit the development of robust foundation models. In this work, we introduce a novel approach to building a multi-domain foundation model for le sion detection by integrating diverse medical image datasets annotated for both anatomical structures and abnormalities. We first propose a student-teacher training strategy to effectively combine datasets with heterogeneous label spaces, mitigating catastrophic forgetting, and im proving feature learning. In addition, building on our previously pro posed example-based EM-DETR framework, we adapt it to jointly learn from multiple domain-specific datasets, enabling fine-grained, example driven detection across modalities. Our model achieves state-of-the-art (SOTA) results, with image-level AUC scores exceeding previous SOTA by 1% point on four key findings in CXRs. We achieve a leading mAP50 in CXRs and mammography, surpassing EM-DETR trained on a single dataset by 2-3% points. This approach paves the way for scalable foundation models in medical imaging that leverage heterogeneous data while maintaining robust and generalizable performance.",
-      "authors": [
-        "Sheethal Bhat",
-        "Bogdan Georgescu",
-        "Awais Mansoor",
-        "Florin C. Ghesu",
-        "Sasa Grbic",
-        "Andreas Maier"
-      ],
-      "published": "2026-11-10T18:59:17+00:00",
-      "updated": "2026-11-10T18:59:17+00:00",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14518v1",
-      "headline": "Toward Foundation Detection Models via E",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.5,
-      "domain_relevance": {
-        "drawing_ai": "高",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
       "practicality_score": 2.8,
-      "first_seen": "2026-11-12"
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.14364v1",
-      "title": "ARE-bench: Benchmarking Agents' Research Ability in Real-World Researcher Sessions and Workspaces",
-      "abstract": "Research agents achieve increasingly strong benchmark scores, yet these scores do not necessarily translate into reliable delivery in ongoing research projects. Many research-agent benchmarks emphasize standalone tasks and relatively self-contained workflows in clean or curated workspaces. However, researchers ask agents to complete one step within an ongoing project, where requests depend on earlier session decisions and workspaces contain unfinished files, outdated versions, and failed attempts. We introduce ARE-bench to evaluate whether research agents advance ongoing projects while respecting prior decisions and existing workspace state, grounded in real session context and in-progress workspaces. ARE-bench includes 75 tasks built on agent sessions and full workspaces from recruited researchers' own projects, spanning seven research stages, 33 requirements, and 150 sub-requirements, with 1,173 binary checklist items in total. Each task is anchored at a real user request, preserves its requirements, and summarizes the earlier requests still in effect as background. The complete workspace is replayed to that boundary without cleanup, preserving artifacts from earlier turns. Each checklist is compiled from an intent-aligned rubric and credits any valid solution. Across seven frontier models, the strongest passes every checklist item on only 66.2% of tasks, and Design and Execution rank among the hardest stages for every model. Three models pass about 69% of tasks when only delivery contracts and general norms are checked, but just 28.4% to 40.0% once historical and material or workspace requirements are also checked. Evaluating delivery without these contextual requirements can therefore overestimate research agents and mask differences between them.",
+      "arxiv_id": "2611.17190v1",
+      "title": "Consensus Capture in Reference-Based UAV Video Stabilization: A Benchmark on Dynamic Urban Scenes",
+      "abstract": "Reference-frame stabilization registers every frame of a hovering-drone video onto one reference frame, keeping object positions comparable. The registration pipelines it relies on are selected on feature-matching benchmarks in which only the camera moves. Over a busy intersection, vehicles moving together supply mutually consistent correspondences that can draw the robust homography estimate toward their motion: consensus capture, which inlier statistics cannot flag. A two-part benchmark measures it and the object masking meant to prevent it. A static protocol scores ten pipelines under exactly known homographies on 4K aerial frames, tuned on a site-disjoint split at a matched resolution and feature budget. A dynamic protocol scores them at an offline and a real-time budget on hovers selected from the video alone to span the amount and coherence of moving foreground, plus a stationary control. It measures background alignment, object position error and the share of a moving group's displacement an estimate follows, against a pseudo-ground-truth reference audited with manually annotated ground control points, which also score every candidate. On static scenes, tuned AKAZE, RootSIFT, SIFT and BRISK lead, retuning the matcher thresholds raises the mean average accuracy (mAA) by at most 0.0062, and masking costs less than 0.005. Unmasked ORB is captured on 28 of 304 real-time dynamic pairs and on 6 offline; its real-time captured estimates have a median corner error of 18.8 px yet typical inlier counts and ratios. Masking removes capture for every pipeline and leaves the leading pipelines unchanged. Code, data and results are released.",
       "authors": [
-        "Jiahang Lin",
-        "Wanying Ren",
-        "Wanghan Xu",
-        "Huayu Sha",
-        "Yang Shu",
-        "Zhonghang Lu",
-        "Chengjun Pan",
-        "Yi Dong",
-        "Shichun Liu",
-        "Yuyang Hu",
-        "Shihan Dou",
-        "Honglin Guo",
-        "Huijie Lv",
-        "Pujun Zheng",
-        "Zhe Sun",
-        "Yuankai Ying",
-        "Yiding Wang",
-        "Jiahao Chen",
-        "Zhixiong Yang",
-        "Dingbo Yuan",
-        "Yicheng Zou",
-        "Zhecan Wang",
-        "Guoxiu He",
-        "Xiaoyu Xing",
-        "Qi Zhang",
-        "Tao Gui",
-        "Xuanjing Huang"
+        "Robert Fonod",
+        "Nikolas Geroliminis"
       ],
-      "published": "2026-11-10T17:21:31+00:00",
-      "updated": "2026-11-10T17:21:31+00:00",
+      "published": "2026-11-12T17:55:06+00:00",
+      "updated": "2026-11-12T17:55:06+00:00",
       "categories": [
-        "cs.CL"
+        "cs.CV"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.14364v1",
-      "headline": "ARE-bench: Benchmarking Agents' Research",
+      "abs_url": "http://arxiv.org/abs/2611.17190v1",
+      "headline": "Consensus Capture in Reference-Based UAV",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.CL"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.5,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 0.7,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14309v1",
-      "title": "MMDM: Measuring Massive Multitask Decision Making",
-      "abstract": "System-1 Decision Models directly make structured probabilistic decisions over query-specified options given a state in a single forward pass, without autoregressively generating reasoning trajectories or textual responses. Recent evaluations cover diverse tasks but often rely on existing benchmarks, where prior exposure to test material can obscure generalization. Moreover, real-world decision making often involves long contexts, large option spaces, and complex logical dependencies, challenges that existing benchmarks do not adequately capture together. Thus, we introduce MMDM (Massive Multitask Decision Making), a benchmark of 5,448 high-quality questions across 16 task categories, combining newly constructed tasks with source-grounded recompositions and rewrites for single-select, multi-select, and soft-label decision making in fresh contexts. It covers realistic scenarios such as agent state tracking, tool and skill selection, preference judgments, and rubric scoring, with option spaces ranging from 2 to 1,024 and inputs extending to 64,817 tokens. With MMDM, we conduct a comprehensive quantitative evaluation of 28 decision models, showing that many perform well on common knowledge yet struggle with interdependent options, constrained decisions, and multi-select tasks. For example, Perplexity Decider-V1.2 reaches 78.75% Hard Single-select Accuracy on world knowledge, but only 53.95% on option logic and 47.95% on constraint planning, while the best Hard Multi-select Accuracy across all models is 36.81%. These results highlight joint reasoning, constraint-aware selection, and complete multi-select recovery as key priorities for decision model development, with MMDM providing a testbed for measuring this progress.",
-      "authors": [
-        "Junhao Shen",
-        "Qing Zong",
-        "Yue Guo",
-        "Zhanqiu Zhang",
-        "Yiwen Guo",
-        "Hong Cheng"
-      ],
-      "published": "2026-11-10T16:40:50+00:00",
-      "updated": "2026-11-10T16:40:50+00:00",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14309v1",
-      "headline": "MMDM: Measuring Massive Multitask Decisi",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.LG",
-        "cs.CL"
+        "cs.CV"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -697,35 +975,28 @@
         "ai_knowhow": "高"
       },
       "practicality_score": 2.8,
-      "first_seen": "2026-11-12"
+      "first_seen": "2026-11-14"
     },
     {
-      "arxiv_id": "2611.13945v1",
-      "title": "Chem World: A Large-Scale Benchmark and Physics-Aware Framework for Trustworthy Molecular Property Prediction",
-      "abstract": "Molecular property prediction is fundamental to computational chemistry and drug formulation research, yet existing benchmarks remain fragmented across datasets, properties, and evaluation protocols, limiting systematic evaluation of model generalization. We introduce Chem World, a large-scale benchmark integrating 17 public datasets with over 800,000 molecular and chemical-system instances across 10 property tracks, covering single-molecule and multi-component systems, including drug solubility. Chem World provides a unified testbed for evaluating molecular representations and compositional modeling across diverse chemical properties. Building on the benchmark, we propose PACM (Physics-Aware Compositional Modeling), which combines molecular representations with composition-aware modeling and domain-specific physical constraints. Extensive experiments show that molecular language models provide strong and transferable representations, while PACM consistently improves prediction across diverse chemical systems. Chem World and our PACM-powered drug-property prediction Agent support generalizable chemical modeling and offer a foundation for AI-assisted biomedical research and drug formulation development.",
+      "arxiv_id": "2611.16583v1",
+      "title": "ReFineR: Single image to dense point cloud registration at pixel level with point splatting",
+      "abstract": "Cameras and LiDARs (Light Detection and Ranging) provide complementary observations of the same scene: cameras capture rich appearance cues while LiDAR sensors provide accurate geometric measurements. In this work, we address the problem of fine image-to-point cloud registration from a single image and a roughly estimated camera pose. On robotic platforms, residual reprojection errors of several pixels are commonly observed even after calibration due to temporal desynchronization, mechanical vibrations, or inaccuracies in point cloud reconstruction. Such errors can lead to decimeter-level geometric discrepancies at moderate distances and significantly affect multiple downstream tasks, such as dense cross-modal supervision, texture mapping, and semantic label transfer. To address this challenge, we introduce ReFineR: an offline framework to finely register individual images to pre-reconstructed point clouds. ReFineR builds upon differentiable point splatting rasterization and a smooth Gradient Orientation Measure (GOM) to iteratively refine the camera pose through analysis-by-synthesis optimization. We evaluated the method on a curated dataset of manually calibrated images collected from heterogeneous data sources. Furthermore, we show that an automatic point cloud rescale factor can be estimated prior to optimization, enabling robust refinement across a wide range of scenarios using a single scale-invariant formulation. The project page can be found at https://refiner-project.github.io/",
       "authors": [
-        "Tianyou Bai",
-        "Huan Wang",
-        "Mingchen Gao",
-        "Tongrui Yang",
-        "Fangyue Lin",
-        "Pinze Ren",
-        "Zhenlin Zhao",
-        "Siming Dong"
+        "Ugo Insalaco",
+        "Jean-Emmanuel Deschaud",
+        "Pierre Dellenbach"
       ],
-      "published": "2026-11-10T11:30:39+00:00",
-      "updated": "2026-11-10T11:30:39+00:00",
+      "published": "2026-11-12T10:15:00+00:00",
+      "updated": "2026-11-12T10:15:00+00:00",
       "categories": [
-        "cs.LG",
-        "cs.AI"
+        "cs.CV"
       ],
-      "abs_url": "http://arxiv.org/abs/2611.13945v1",
-      "headline": "Chem World: A Large-Scale Benchmark and ",
+      "abs_url": "http://arxiv.org/abs/2611.16583v1",
+      "headline": "ReFineR: Single image to dense point clo",
       "one_liner": "",
       "key_points": [],
       "tags": [
-        "cs.LG",
-        "cs.AI"
+        "cs.CV"
       ],
       "who_should_read": [],
       "application_ideas": [],
@@ -733,282 +1004,13 @@
       "relevance_score": 12.5,
       "domain_relevance": {
         "drawing_ai": "なし",
-        "bim_cim": "なし",
+        "bim_cim": "高",
         "manufacturing": "なし",
         "civil_infra": "なし",
-        "ai_knowhow": "高"
+        "ai_knowhow": "なし"
       },
-      "practicality_score": 2.8,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.13776v1",
-      "title": "DisasterAgent: An Evidence-Driven Agent for Verifiable Disaster Report Generation From Remote Sensing Imagery",
-      "abstract": "Remote sensing disaster assessment is moving from simple damage classification toward comprehensive report-level analysis. In this setting, responders need not only damage descriptions but also verifiable evidence to guide response and recovery. Recent vision-language models (VLMs) and tool-augmented agents offer strong multimodal reasoning and perception, but they struggle to provide the evidence required for high-stakes verification. To address these limitations, we propose DisasterAgent, an evidence-driven agent that uses a Perception-Augmentation-Generation workflow to generate verifiable disaster reports from bitemporal optical imagery. DisasterAgent first invokes a specialized vision expert toolkit in the perception phase to build a Spatiotemporal Perception Graph (STPG), serving as a structured memory to store and organize disaster-induced changes across space and time. Evidence-based Augmentation (EA) then extracts evidence from the STPG, attaching inline citations that form a closed evidence loop from each statement to the supporting visual evidence. Extensive experiments on the DisasterM3 and RSCC benchmarks demonstrate that DisasterAgent consistently outperforms general-domain VLMs, remote sensing-specialized models, and existing remote sensing agents. Notably, compared with the original model, it improves the average score for disaster report generation on DisasterM3 by 13.5\\% and ST5-SCS on RSCC by 15.34\\%, providing a more accurate and verifiable solution for disaster emergency response. The code will be available at https://github.com/ZhijianLi2003/DisasterAgent.",
-      "authors": [
-        "Zhijian Li",
-        "Jiawei Song",
-        "Chao Ren",
-        "Yidan Zhang",
-        "Peijin Wang",
-        "Xian Sun",
-        "Kun Fu"
-      ],
-      "published": "2026-11-10T09:15:06+00:00",
-      "updated": "2026-11-10T09:15:06+00:00",
-      "categories": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.13776v1",
-      "headline": "DisasterAgent: An Evidence-Driven Agent ",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.CV",
-        "cs.AI"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.2,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 9.1,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14515v1",
-      "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
-      "abstract": "Reinforcement learning with verifiable rewards (RLVR) produces rich training experience, yet outcome rewards reduce each attempt to a single number and leave most of this information unused. Training-time scaffolds, such as strategies or hints added to the prompt during training, offer a natural way to turn this information into guidance, but their design and adaptation are largely left to humans and tailored to specific domains. We introduce AutoScaffold, a unified AI-for-AI framework that turns a student's training experience into adaptive scaffolds, with minimal domain-specific information and no human intervention during training. A frozen teacher periodically examines this experience, diagnoses bottlenecks, and designs scaffolds in two forms: (i) strategies shared across a class of tasks and (ii) hints for individual hard tasks, adjusting the content and amount of support as the student learns. The scaffolds are removed at evaluation. We apply the same framework to ALFWorld, search-based QA, mathematical reasoning, and GPU kernel generation. When evaluated without scaffolds, students trained with AutoScaffold outperform those trained with the corresponding RL baselines in all four domains, with gains of 7.2 points in ALFWorld success and 4.0 points in average QA exact match. On GPU kernel generation, AutoScaffold increases the fraction of tasks with a correct kernel that runs faster than the PyTorch reference by up to 5.0 points. On math, our student surpasses QuestA's reported accuracy using approximately one-third as many student training steps. Analyses show that the teacher identifies a different failure in each task class and shifts its scaffolds from step-by-step workflows to targeted fixes as the student improves, and that its revised scaffolds help the student learn more than keeping the previous scaffold or using no scaffold.",
-      "authors": [
-        "Zijian Zhang",
-        "Rizhen Hu",
-        "Jiangweizhi Peng",
-        "Shiyang Li",
-        "Sujay Bhatt",
-        "Sihan Zeng",
-        "Mingyi Hong"
-      ],
-      "published": "2026-11-10T18:58:46+00:00",
-      "updated": "2026-11-10T18:58:46+00:00",
-      "categories": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14515v1",
-      "headline": "AutoScaffold: AI-Guided Scaffolding for ",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.LG",
-        "cs.CL"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 6.3,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14420v1",
-      "title": "OnlyAct: Extracting Action Representations from Foundation Models for World Models",
-      "abstract": "Video world models promise general-purpose interactive simulators, but their training is limited by action supervision: action labels are scarce, fragmented across incompatible specifications, and do not scale with the unlabeled video pretraining corpus. A common workaround jointly trains an action encoder to compress consecutive frames into a latent action and a decoder to reconstruct the next frame from the previous frame and that latent, forcing the latent to capture only new information. This has two limitations: learning the action space from scratch can limit generalization to unseen domains, and the bottleneck trades expressiveness for separation, with tighter settings losing nuance and looser ones risking scene leakage under domain shifts. We argue for a different starting point: rather than learning actions from scratch, we start from a pretrained foundation model (V-JEPA 2), whose embeddings of a frame pair already carry substantial action information after large-scale, diverse video pretraining. The remaining challenge is to extract the action while discarding the scene. We propose a label-free contrastive adaptation framework that pulls together frame pairs sharing the same motion under a different scene and pushes apart pairs from the same scene with different motion, reshaping the geometry of the pretrained space without imposing a reconstruction bottleneck. We introduce a unified evaluation protocol along three axes (action expressiveness, scene invariance, and action-conditioned video generation quality) across robot manipulation, camera navigation, game, and driving benchmarks, most of which are unseen during adaptation. Compared with annotation-free latent-action methods, our representations are substantially more expressive while matching their scene invariance, and they yield world models that transfer demonstrated actions to new scenes more faithfully.",
-      "authors": [
-        "Runjia Li",
-        "Minghao Chen",
-        "Junyu Xie",
-        "Philip Torr",
-        "Andrea Vedaldi",
-        "Tomas Jakab"
-      ],
-      "published": "2026-11-10T17:59:19+00:00",
-      "updated": "2026-11-10T17:59:19+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14420v1",
-      "headline": "OnlyAct: Extracting Action Representatio",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.CV"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 6.3,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14122v1",
-      "title": "Hx2Dx: From Anamnesis to Diagnosis - A Multimodal Arena for Conversational Clinical Reasoning in LLMs",
-      "abstract": "Large language models (LLMs) achieve expert-level diagnostic accuracy in static evaluations, where the model receives a curated vignette or case report that already condenses the diagnostically relevant findings. Such evaluations measure inference over already selected evidence; the evaluations do not account for the inquiry used to obtain it. In clinical practice, however, diagnosis is an iterative process of inquiry. Clinicians take the patient's history, or anamnesis (Hx), through targeted questioning, examine the patient, and request and interpret tests, progressively narrowing the differential until they reach a final diagnosis (Dx). We introduce Hx2Dx ARENA, an interactive benchmark of 1'000 clinical cases from the New England Journal of Medicine (NEJM). Each case is a simulated encounter that proceeds from initial presentation through history taking and physical examination to diagnostic workup. We evaluate open- and closed-source LLMs under multiple configurations. Performance varies considerably across models in the interactive setting, and every model loses diagnostic accuracy relative to the static setting, where the full case is presented upfront. The ability to ask the right questions accounts for much of both the gap between models and the loss of accuracy: diagnosis improves as questions become more targeted and build a more complete clinical picture. LLMs thus reason well once the relevant data are available but remain limited in hypothesis-driven information gathering, in knowing what to ask in order to know. Closing this gap is a prerequisite for their safe integration into real-world diagnostic workflows.",
-      "authors": [
-        "Federico Ravenda",
-        "Mirko Cesarini",
-        "Daniele Montagnani",
-        "Volodymyr Karpenko",
-        "Antonietta Mira",
-        "Andrea Raballo"
-      ],
-      "published": "2026-11-10T14:09:33+00:00",
-      "updated": "2026-11-10T14:09:33+00:00",
-      "categories": [
-        "cs.AI"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14122v1",
-      "headline": "Hx2Dx: From Anamnesis to Diagnosis - A M",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.AI"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 1.4,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.14068v1",
-      "title": "What a CAGE 4 Score Measures: An Audit of a Learned Cyber-Defense Benchmark, Its Reference Defenders, and the Tables Built on Them",
-      "abstract": "CAGE Challenge 4 is the benchmark on which learned multi-agent cyber defenders are compared. We reproduce its two reference defenders, KEEP and H-MARL Expert, in a pinned container and show that three things read from it measure less than they are taken to measure. First, the simulator silently discards any action asserted for an agent whose previous action is still running, and charges one point for a discarded Restore as for one that runs. The documented observation does not expose the busy flag. Both reference defenders read it in their own wrappers, and switching that check off at evaluation costs KEEP's released policy 99.58 points per episode and H-MARL's 145.98, in both cases the charge for Restores sent to busy agents, with H-MARL's executed actions unchanged step for step. On a supervisory harness, holding interventions until the agent is idle is worth 25.3 and 27.6 points per episode at the published setting. In training, the check decides how a busy step enters the trajectory. Trained without it, KEEP leads at a hundred updates in all four paired seeds and trails from two hundred on in all four. Continued to two thousand updates on three seeds, the repaired recipe ends inside the released interval on one seed and short on two, by 27 and 125 points, a spread across training seeds far wider than the released reproduction interval. Second, the evaluation seeds the environment but not the policy, so a reported mean is one draw, and 88.9% of per-episode outcome variance is the policy's own sampling draw. Third, recovery precision depends on the truth it is scored against. Across five published comparison tables, none states the artifact, sampling, criterion and adversary that would make its numbers comparable. We release the instrument, our patches to both defenders, the traces and checkpoints behind every number, and a five-item disclosure checklist.",
-      "authors": [
-        "James Rice",
-        "Ji Hwan Park",
-        "Andres Kwasinski"
-      ],
-      "published": "2026-11-10T13:32:18+00:00",
-      "updated": "2026-11-10T13:32:18+00:00",
-      "categories": [
-        "cs.CR",
-        "cs.LG"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.14068v1",
-      "headline": "What a CAGE 4 Score Measures: An Audit o",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.CR",
-        "cs.LG"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 5.6,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.13851v1",
-      "title": "Towards Text-Only Remote Sensing Scene Classification via Semantic Proxy",
-      "abstract": "Remote sensing scene classification (RSSC) is traditionally formulated as a vision-centric problem, where inference relies on rich visual representations extracted from images. In this work, we revisit this assumption by introducing text-only RSSC, a new problem setting that investigates whether remote sensing scenes can be recognized using only textual semantic representations. To enable this study, we propose SeProRS, which reformulates RSSC as a text-only classification task through semantic proxy generation. Specifically, a vision-language model (VLM) is first employed to convert remote sensing images into textual descriptions, termed semantic proxies, which are then encoded by a text embedding model for scene classification. This decoupled pipeline provides a unified and reproducible benchmark for evaluating text-only scene understanding. Furthermore, we investigate representative prompting strategies and proxy generators, and analyze their impact on classification performance, text embedding behavior, cross-generator transferability, and efficiency. Extensive experiments on three well-known RSSC datasets show that semantic proxies can preserve substantial discriminative information, while also revealing inherent limitations of purely text-based scene understanding. This paper does not aim to replace image-based RSSC, but instead establishes a new research direction by quantifying the feasibility and boundaries of semantic proxy-based scene recognition. The proposed benchmark and analysis provide a foundation for future research on efficient and modality-reduced remote sensing scene understanding. The source code and datasets will be accessible at https://github.com/sstary/SSRS.",
-      "authors": [
-        "Xianping Ma",
-        "Kunlin Wu",
-        "Xiaofeng Liu",
-        "Xiaokang Zhang",
-        "Yuanxin Ye"
-      ],
-      "published": "2026-11-10T10:13:00+00:00",
-      "updated": "2026-11-10T10:13:00+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.13851v1",
-      "headline": "Towards Text-Only Remote Sensing Scene C",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.CV"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 12.0,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 4.8999999999999995,
-      "first_seen": "2026-11-12"
-    },
-    {
-      "arxiv_id": "2611.13907v1",
-      "title": "EVAThink: Evidence Sufficiency-Guided Training for Adaptive Thinking in Video Understanding",
-      "abstract": "Under a fixed frame budget, video understanding with vision-language models (VLMs) depends on whether the sampled frames provide sufficient evidence for the question. Sufficient frame evidence supports direct answering, whereas less informative observations may benefit from reasoning that connects the available cues. We introduce EVAThink, which enhances video understanding through evidence sufficiency-guided training for adaptive thinking. First, Recoverable Evidence Gap Mining constructs evidence-dense and evidence-sparse video views that share the same question and answer under an identical frame budget. It retains pairs where sparse views yield lower direct-answer accuracy than dense views but benefit from explicit reasoning, providing supervision for response-mode selection. Second, Evidence-Guided Two-Stage Reinforcement Learning uses stage-specific rewards to guide training with evidence-based mode preferences and then refine response efficiency, while first-token advantage regularization mitigates mode collapse. Trained on only 6.7K curated samples, EVAThink consistently improves upon the base model across video understanding benchmarks under both 32- and 64-frame budgets, while outperforming strong baselines on average. The code, model, and datasets are available at \\href{https://github.com/ChangtiWu/EVAThink}{EVAThink}.",
-      "authors": [
-        "Changti Wu",
-        "Ruizhe Fan",
-        "Bin Wang",
-        "Lei Zhang",
-        "Yuxiang Zhang"
-      ],
-      "published": "2026-11-10T11:01:57+00:00",
-      "updated": "2026-11-10T11:01:57+00:00",
-      "categories": [
-        "cs.CV"
-      ],
-      "abs_url": "http://arxiv.org/abs/2611.13907v1",
-      "headline": "EVAThink: Evidence Sufficiency-Guided Tr",
-      "one_liner": "",
-      "key_points": [],
-      "tags": [
-        "cs.CV"
-      ],
-      "who_should_read": [],
-      "application_ideas": [],
-      "implementation_difficulty": "高",
-      "relevance_score": 11.7,
-      "domain_relevance": {
-        "drawing_ai": "なし",
-        "bim_cim": "なし",
-        "manufacturing": "なし",
-        "civil_infra": "なし",
-        "ai_knowhow": "高"
-      },
-      "practicality_score": 4.8999999999999995,
-      "first_seen": "2026-11-12"
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-14"
     }
   ]
 }
