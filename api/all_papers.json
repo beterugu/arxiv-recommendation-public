@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-11-15T23:20:45.950159+00:00",
-  "source_last_updated": "2026-11-15T23:20:34.152181+00:00",
-  "count": 5400,
+  "generated_at": "2026-11-17T02:23:56.780493+00:00",
+  "source_last_updated": "2026-11-17T02:23:48.162277+00:00",
+  "count": 5425,
   "papers": [
     {
       "arxiv_id": "2512.10674v1",
@@ -264985,6 +264985,990 @@
       },
       "practicality_score": 4.199999999999999,
       "first_seen": "2026-11-14"
+    },
+    {
+      "arxiv_id": "2611.18908v1",
+      "title": "MemeEconomy: Do LLM Agents Trade Ethics for Survival?",
+      "abstract": "Alignment-trained large language model (LLM) agents are increasingly deployed in autonomous, multi-round settings where ethical compliance can come into direct tension with task success. While safety literature extensively documents failure modes like sycophancy and reward hacking, it largely overlooks a critical vulnerability: how agents behave under simulated existential economic pressure. We introduce MemeEconomy, a multimodal agentic market simulation in which LLM agents act as meme investors. Agents select content from a five-tier harm taxonomy and target communities under low-pressure and high-pressure (survival) environments. Each decision is logged in a Belief-Desire-Intention (BDI) schema that we use as a diagnostic instrument, externalizing the agent's event understanding, declared priorities, and harm acknowledgment. Across ten models from four frontier model families, harmful selection rates remain consistently high and rise by +15 percentage points on average under an economic survival incentive. Frontier alignment-trained models commit to harm-tolerant selection at initialization while suppressing the explicit harm acknowledgment that previously accompanied it. In competitive tournaments, ethical agents finish higher overall, yet moderation penalties fail to suppress harm: harmful selection rates remain elevated in rounds following a removal, indicating the moderation mechanism does not function as a deterrent. We further train MemeAgent, a 2B-parameter verifier on the simulation's BDI logs, which outperforms zero-shot frontier verifiers on in-distribution audits (97.5% vs. 63-74% accuracy on the Pass vs. Block decision) and generalizes to external multimodal harm benchmarks (78% vs. 50-56% on Hateful Memes). The same logs that surface the failure mode also help train the model that detects it.",
+      "authors": [
+        "Syed Nazmus Sakib",
+        "Nafiul Haque",
+        "Ahnaf Tahmid Manan",
+        "M M Mahabub Morshed",
+        "Shifat E. Arman"
+      ],
+      "published": "2026-11-13T20:12:24+00:00",
+      "updated": "2026-11-13T20:12:24+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18908v1",
+      "headline": "MemeEconomy: Do LLM Agents Trade Ethics ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CY"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.7,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18516v1",
+      "title": "StreamEmbed: Real-Time Indexing from Pixels for Screenshot Retrieval",
+      "abstract": "Screen history can serve as searchable visual memory for people and agents, but unlike an offline corpus, it must be encoded and indexed as each screenshot arrives. OCR-based indexing is fast but loses visual information; visual encoding takes over two seconds. Yet screens change incrementally: most pixels repeat within and across screenshots. This raises a question: do visual encoders need to recompute their representations from scratch for every new screenshot? We present StreamEmbed, a system for incremental visual embedding that exploits this redundancy. Guided solely by pixel differences, it combines spatial token pruning, which skips blocks that repeat a neighbor, with temporal KV reuse, which reuses cached keys and values for blocks unchanged across screenshots. A small learned adapter compensates for pruning and reuse to preserve fidelity to full-screenshot embeddings. On ScreenMemEval, our benchmark of 10,426 questions over 184 hours of screen histories from two humans and a computer-use agent, StreamEmbed sets a new accuracy-latency Pareto frontier on an M2 Pro GPU: it encodes up to 3.7x faster than full-screenshot encoding without sacrificing accuracy and improves accuracy over OCR-based indexing by up to 6.3 Recall@10 points at matched latency. A memory-efficient vector index stores a simulated year of screenshots in 0.13 GB of RAM. Together, these results make real-time indexing of screen history in its native visual form practical, laying a foundation for fully local visual assistants.",
+      "authors": [
+        "Dayoon Ko",
+        "Yichuan Wang",
+        "Soyeong Jeong",
+        "Joseph E. Gonzalez",
+        "Gunhee Kim",
+        "Sewon Min"
+      ],
+      "published": "2026-11-13T18:35:17+00:00",
+      "updated": "2026-11-13T18:35:17+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18516v1",
+      "headline": "StreamEmbed: Real-Time Indexing from Pix",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.5,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18397v1",
+      "title": "Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent",
+      "abstract": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning. A shared training and deployment pipeline supports interaction with both conventional 2D graphical interfaces and complex 3D simulated worlds. We first continue pre-training on a dataset constructed from tens of thousands of hours of device-level keyboard and mouse interaction. These trajectories span simulated games and embodied environments, allowing the model to learn environmental dynamics across both physical and virtual domains. Sparse-thinking instruction tuning then substantially reduces redundant computation while preserving the reasoning needed for complex decisions. We train the policy for long-horizon interaction with a stable multi-turn reinforcement learning method that addresses finite context windows, accumulated rollout errors, and sparse rewards. For real-time interaction, a cloud-edge inference engine serves numerous simulated game environments concurrently, supports unbounded-context execution, and keeps online inference latency low. Across multiple challenging 3D open-world games, Gamer demonstrates solid generalization and operational efficiency comparable to skilled players. It also achieves competitive results on a range of conventional 2D game benchmarks. These results suggest that even repetitive keyboard and mouse trajectories can support substantial gains from scaling data and learning algorithms. Training on these trajectories helps Gamer learn complex skills more steadily in environments with both physical and digital properties. This approach offers a path toward generalist agents that can interact across digital and physical worlds.",
+      "authors": [
+        "Run Luo",
+        "Kuan Zhang",
+        "Qi Deng",
+        "Yukun Chen",
+        "Zhihao Yang",
+        "Yufei Zhang",
+        "Renrong Hu",
+        "Yi Zhang",
+        "Guiyu Ma",
+        "Tianyu Fan",
+        "Longze Chen",
+        "Hao Sun",
+        "Jiaming Li",
+        "Jiaming Yang",
+        "Xiaohao Liu",
+        "Tao Tan",
+        "Minzheng Wang",
+        "Hangtian Jia",
+        "Shuai Yuan",
+        "Lvdi Wang",
+        "Xiao Liu",
+        "Chao Ma",
+        "Yuting Zou",
+        "Yinhe Zheng",
+        "Xiaobo Xia",
+        "Dawei Jiang",
+        "Shaoqing Ren"
+      ],
+      "published": "2026-11-13T16:39:30+00:00",
+      "updated": "2026-11-13T16:39:30+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18397v1",
+      "headline": "Gamer: A Generalist Vision-Language-Acti",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI",
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 18.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18883v1",
+      "title": "SPLICE: Structured Prompt Local Iterative Combinatorial Evolution",
+      "abstract": "Natural language optimization (NLO) improves an agent by having a model critique and rewrite its natural language policy parameters: system prompts, tool instructions, reasoning directives, few-shot demonstrations. These artifacts are multi-section documents in which some sections encode contracts (safety clauses, tool schemas, output formats) that must not drift, while others are legitimate optimization targets. Most iterative NLO methods treat the artifact as a single editable string, producing three recurrent failure modes: unsafe global rewrites, beam collapse onto a single lineage, and unchecked bloat, none addressed by formal guarantees. We introduce SPLICE, a unified NLO framework that poses optimization as constrained combinatorial search over an edit graph of block-structured, selectively-mutable states. We map each failure mode to a matched guarantee: (i) per-block mutability preserves contract text verbatim, with a price-of-freezing bound; (ii) elitist beam search with diversity slots never lets the leader regress on validation, bounds regression under noisy re-evaluation by an exponential tail, and keeps a competitive candidate from a different parent whenever one exists; (iii) a ratio length regularizer comes with an explicit accuracy-length bias bound. Candidates are proposed from dual section-local textual gradients; under a proposer-competence condition whose proxy we measure, edit-graph reachability and a convergence rate bound how quickly improving children arrive. Across seven public benchmarks under five reproduced protocols, SPLICE wins on four and matches the strongest prior method on three. On a production-style contract stress test it keeps the contract clauses that unconstrained optimizers trade away to raise the proxy metric, and ablations attribute gains to critique and elitist search.",
+      "authors": [
+        "Anish Acharya",
+        "Phillip Studans",
+        "Amit Dhanda",
+        "Sina Amini Niaki",
+        "Ninad Vivek Rao",
+        "Vishal Amarlal Khatri",
+        "Brian Verkhovsky"
+      ],
+      "published": "2026-11-13T19:43:02+00:00",
+      "updated": "2026-11-13T19:43:02+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18883v1",
+      "headline": "SPLICE: Structured Prompt Local Iterativ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 8.399999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18851v1",
+      "title": "KUDEX: A Zero-Shot Decompositional Framework for Logical Analysis in Natural Language",
+      "abstract": "While Large Language Models (LLMs) excel at generating fluent text, they often struggle with multi-step logical reasoning with inferential connections among statements. We introduce KUDEX (Knowledge-Upward-Downward Reasoning Extension), a novel zero-shot, decompositional framework for analyzing and verifying logical relationships in natural language. Unlike traditional approaches that rely on surface-level entailment checks, KUDEX leverages LLMs to decompose reasoning into atomic primitives and constructs transparent reasoning graphs that serve both as execution traces and audit logs. Our framework includes a general prompt adaptation pipeline that adapts to diverse reasoning tasks without additional fine-tuning or domain-specific pipelines. Through comprehensive experiments on benchmarks across four domains, we demonstrate that KUDEX provides superior performance compared to existing methods, offering a more granular and robust framework for assessing logical relationships between statements.",
+      "authors": [
+        "Zixu Zhao",
+        "Tianhang Zhang",
+        "Tong He",
+        "Zheng Zhang"
+      ],
+      "published": "2026-11-13T19:05:42+00:00",
+      "updated": "2026-11-13T19:05:42+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18851v1",
+      "headline": "KUDEX: A Zero-Shot Decompositional Frame",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18494v1",
+      "title": "ARCHER: From Rationale Imitation to Executable Reasoning in Small Language Models",
+      "abstract": "Small language models are attractive for local, low-cost, and privacy-sensitive deployment, but they remain unreliable on mathematical reasoning tasks that require decomposition, exact computation, tool use, and verification. We introduce \\textbf{ARCHER}: \\textbf{A}ction-trace \\textbf{R}einforcement for \\textbf{C}alculator-grounded \\textbf{H}ierarchical \\textbf{E}xecutable \\textbf{R}easoning, a two-stage framework for training small language models (SLMs) to produce executable and auditable reasoning trajectories. In the first stage, ARCHER compiles free-form chain-of-thought rationales into typed action traces containing reasoning steps, calculator calls, deterministic runtime observations, verification actions, and final answers. This shifts the supervision target from imitating explanatory text to learning a tool-grounded reasoning policy. In the second stage, ARCHER refines this policy through asymmetric hierarchical reinforcement learning, using grouped and conditionally gated trajectory rewards for answer correctness, tool grounding, process discipline, and trace alignment. Across five standard sub-10B backbones, ARCHER improves over the strongest tool-augmented baseline by 5.51 percentage points on macro-average across benchmark accuracies, including gains of 8.95 points on MATH-500 and 5.33 and 5.34 points on AIME-2024 and AIME-2025. Evaluations on two additional reasoning-specialized 7B backbones further show that executable grounding remains beneficial after reasoning-focused reinforcement learning or distillation. These results demonstrate that executable supervision and reward-guided behavioral refinement provide a general and effective training paradigm for compact mathematical reasoners.",
+      "authors": [
+        "Dhruv Dixit",
+        "Khushi Patel",
+        "Congcong Xu",
+        "Min Song"
+      ],
+      "published": "2026-11-13T18:05:33+00:00",
+      "updated": "2026-11-13T18:05:33+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18494v1",
+      "headline": "ARCHER: From Rationale Imitation to Exec",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 16.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 8.399999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18963v1",
+      "title": "SpecRelay: Amortize or Avoid the Round Trip in Edge-Cloud Speculative Decoding",
+      "abstract": "Edge-cloud speculative decoding moves autoregressive drafting to an edge device while a larger cloud model verifies draft tokens in parallel, so that edge drafting and cloud verification overlap under a synchronous draft-verify schedule. Beyond low-latency local networks, however, the next verification request of that schedule can be sent only after the previous reply arrives, so every round still waits out a full round trip, and throughput falls as the network RTT grows. To recover this loss, we present SpecRelay, an edge-cloud LLM inference system that addresses this cost at two levels: it amortizes round trips when cloud verification is necessary and avoids them when local reasoning suffices. For cloud-bound queries, an asynchronous verification pipeline keeps fixed-budget draft trees in flight while earlier replies are still outstanding, and the cloud rejects stale requests before the target-model forward pass (the asynchronous schedule). At the query level, an RTT-conditioned router (the Latency-Aware Router) estimates quality and completion latency for three on-device modes (direct generation, Chain-of-Draft, and full reasoning) and cloud speculative decoding, selecting among them under a configurable accuracy-latency objective without adding latency during inference, since the router runs concurrently with the draft-model prefill. The asynchronous schedule alone improves decoding throughput by up to 50% over a reproduced synchronous baseline across multiple benchmarks. At matched target-model accuracy and 250 ms of added round-trip latency, the full system with the router delivers 1.95x and 1.55x the throughput of the same baseline on SPROUT and OlympiadBench, respectively, while sending only 47% and 39% of the queries to the cloud.",
+      "authors": [
+        "Jai Jain",
+        "Chihyo Ahn",
+        "Yong Liu",
+        "Charles Chen",
+        "Duc N. M Hoang",
+        "Ajay Kumar Jaiswal",
+        "Fatih Ilhan",
+        "Han-Byul Kim",
+        "Lauren Hannah",
+        "Richa Dixit",
+        "Minsik Cho",
+        "Yingyan Celine Lin",
+        "Hyesoon Kim"
+      ],
+      "published": "2026-11-13T21:40:06+00:00",
+      "updated": "2026-11-13T21:40:06+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18963v1",
+      "headline": "SpecRelay: Amortize or Avoid the Round T",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18868v1",
+      "title": "SLICES: A Benchmark and Evaluation Framework for Self-Supervised Learning on Sparse ICU Time Series",
+      "abstract": "Self-supervised learning (SSL) results for intensive care unit (ICU) time series are hard to compare when data processing, encoders, and adaptation vary together. We present SLICES, a benchmark and evaluation framework for comparing and extending SSL methods under a shared clinical setup. It fixes 24-hour value and observation-mask inputs, a Transformer encoder, patient-level splits, four endpoints, two adaptation protocols, and five matched seeds across MIMIC-IV, eICU-CRD, and their pooled union. Masked autoencoding (MAE), joint-embedding prediction (JEPA), and contrastive learning provide reference implementations. Among these objectives, MAE leads mean AUPRC in all nine frozen classification comparisons, also under converged probes, and in seven of nine fine-tuning comparisons. Fine-tuned MAE leads hospital mortality at full labels and scores higher than a supervised Transformer of the same architecture at every label fraction, and SSL fine-tuning gives the lowest length-of-stay error. Supervised baselines remain strong elsewhere: GRU-D leads 24-hour mortality and XGBoost leads acute kidney injury in all three regimes. Rankings depend on the adaptation protocol, the comparator set, and whether the probe loss matches the metric. A two-seed MIMIC-IV rerun with the maintained code stays within two across-seed SDs of the reference in all 48 downstream runs. The code repository supports new objectives, shared downstream evaluation, and regeneration of the reference results, so new SSL methods can be compared with these references under the same conditions. Generalization to unseen hospitals is not tested here and is the natural next extension.",
+      "authors": [
+        "Hannes Ill",
+        "Dimitrios Proios",
+        "Leo Anthony Celi",
+        "Peter J. Schüffler"
+      ],
+      "published": "2026-11-13T19:16:06+00:00",
+      "updated": "2026-11-13T19:16:06+00:00",
+      "categories": [
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18868v1",
+      "headline": "SLICES: A Benchmark and Evaluation Frame",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18471v1",
+      "title": "Do Verifier Judgments Survive Abstraction? Measuring Verification Transport for LLM Agent Evaluation",
+      "abstract": "LLM-based verifiers are increasingly used to evaluate agent executions, but their reliability is typically measured under a single representation of the trajectory. In deployed agent systems, the same execution may be exposed through composed tools, delegation boundaries, or compacted histories, changing what execution evidence is directly observable to the verifier. It therefore remains unclear whether correct verifier judgments persist across such abstraction boundaries. We introduce Verification Transport, a reliability test that measures judgment stability under abstraction-induced changes in execution observability. We construct matched native, abstracted, and restored views of the same frozen executions while holding the task, realized trajectory, outcome, ground truth, evaluation criterion, and verifier fixed. Across four agent-evaluation benchmarks, seven verifier backbones, four verification protocols, and three abstraction boundaries, we find substantial transport failure, reaching about 31% under macro abstraction and delegation. Verification protocols exhibit distinct failure modes: direct verification more often produces incorrect verdicts, whereas evidence-grounded and deliberative protocols tend to abstain under limited observability. This suggests that lower transport failure rates do not necessarily imply greater reliability. Restoring the corresponding execution provenance recovers 85.5% of transport failures, while recovery is lower when provenance is lossy or unavailable. These results show that native-view accuracy alone is insufficient to characterize verifier reliability when execution evidence crosses abstraction boundaries.",
+      "authors": [
+        "Disha Sheshanarayana",
+        "Sai Linisha Reddy Goli"
+      ],
+      "published": "2026-11-13T17:44:01+00:00",
+      "updated": "2026-11-13T17:44:01+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18471v1",
+      "headline": "Do Verifier Judgments Survive Abstractio",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 15.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18321v1",
+      "title": "Causal AI-Driven Secure mmWave Beam Alignment with Defensive Variational Autoencoders",
+      "abstract": "Efficient and secure beam alignment is essential for mmWave communication systems. However, existing deep learning (DL)-based beam alignment methods often neglect causal relationships between inputs and outputs, resulting in limited interpretability, poor generalization, and excessive beam sweeping. Moreover, these DL solutions are vulnerable to adversarial attacks, where small perturbations in received power measurements can mislead beam classifiers. To overcome these issues, we propose a causally-aware DL framework integrating causal discovery into beam alignment. A two-stage causal beam selection algorithm learns a Bayesian graph capturing dependencies between received signal strength indicators (RSSI) as inputs and the optimal beam index as the target variable, then uses it to select a minimal set of relevant input features for the DL classifier. To mitigate adversarial attacks, we introduce a defensive variational autoencoder (DVAE) that maps potentially perturbed inputs back to their clean versions. End-to-end fine-tuning of the downstream beam classifier on the DVAE-reconstructed RSSI representations further boosts prediction accuracy. Simulation results show that causal beam selection achieves accuracy comparable to conventional methods while providing an \\(\\mathbf{829\\times}\\) lower per-sample computational cost than SHAP (Shapley Additive Explanations), a widely used explainable AI (XAI)-based feature selection method. It further reduces beam-sweeping overhead by \\(\\mathbf{59.4\\%}\\) and \\(\\mathbf{89.8\\%}\\), compared to conventional DL-based beam selection and exhaustive search, respectively. The DVAE-based defense effectively denoises adversarial inputs, sustaining 85\\% accuracy across different perturbation bounds, retains baseline performance on unperturbed RSSI inputs and surpasses defensive distillation defense scheme by 15--20\\% on average under different attack scenarios.",
+      "authors": [
+        "Nasir Khan",
+        "Asmaa Abdallah",
+        "Abdulkadir Celik",
+        "Ahmed M. Eltawil",
+        "Sinem Coleri",
+        "Cicek Cavdar"
+      ],
+      "published": "2026-11-13T15:34:32+00:00",
+      "updated": "2026-11-13T15:34:32+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18321v1",
+      "headline": "Causal AI-Driven Secure mmWave Beam Alig",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.8,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 1.4,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18561v1",
+      "title": "FETTUCCINE: Fast and efficient brain-to-text decoding on mobile devices",
+      "abstract": "Recent advances in speech neuroprostheses have enabled new communication avenues for people who have lost the ability to speak due to neurological illness or injury. These systems can decode neural activity during attempted speech into text by relying on language priors to achieve high decoding accuracy. This performance currently comes at the cost of using a compute-intensive language modeling stack, presenting a major bottleneck for real-world use. Further, current language models incur highly variable and disruptive inference latencies, limiting communication throughput and preventing users from reliably participating in natural conversation. We introduce FETTUCCINE, an end-to-end brain-to-text framework that leverages the speed and portability of automatic speech recognition (ASR) models to address the aforementioned practical challenges, while achieving usable (<10%) word error rates (WER), efficient adaptation to neural non-stationarities, and reliable performance on mobile devices. When evaluated using publicly available data from an intracortical speech neuroprosthesis user, FETTUCCINE outperforms previous end-to-end methods, achieving as low as 4.39% WER. Most notably, our models successfully run on a commercially-available mobile device with throughput reaching up to 370x real-time, providing the first demonstration of brain-to-text decoding on a mobile device. We also show that our models can be successfully finetuned to extend usable performance to future days. Beyond performance, our approach enables localization of the neural features most relevant for decoding via gradient-based saliency maps, which we show align with well-established physiological priors across different ASR model families. Taken together, our results show that FETTUCCINE overcomes core infrastructural and computational barriers, yielding a new class of portable brain-to-text communication.",
+      "authors": [
+        "Jonathan D. McCart",
+        "Pranav I. Deevi",
+        "Mehdi Azabou",
+        "Nanda H. Krishna",
+        "Caleb A. McKinney",
+        "Nicholas S. Card",
+        "Sergey D. Stavisky",
+        "Chethan Pandarinath"
+      ],
+      "published": "2026-11-13T18:59:02+00:00",
+      "updated": "2026-11-13T18:59:02+00:00",
+      "categories": [
+        "q-bio.NC",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18561v1",
+      "headline": "FETTUCCINE: Fast and efficient brain-to-",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "q-bio.NC",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18438v1",
+      "title": "Toward On-Device Markerless 6DoF Tracking of a Physical Manipulative on a Mixed-Reality Headset: A Preliminary Study",
+      "abstract": "AR-Classroom uses physical models and virtual overlays to help learners explore spatial transformations. To align these overlays on a standalone headset, we developed a markerless six-degree-of-freedom(6DoF) tracker for a LEGO airplane on the Meta Quest 3. A compact YOLO model trained on synthetic Unity renders predicts 20 keypoints from dynamic RGB crops resized to 128 by 128 pixels. A perspective-n-point solver estimates the airplane's pose from these predictions and the corresponding 3D landmarks. In a paired evaluation on 1,000 synthetic validation images, cropping guided by ground-truth boxes increased the detection rate on annotated images from 32.5 to 46.2 percent. Mean keypoint F1 increased from 42.9 to 44.6 percent, with lower keypoint precision in the cropped view. In preliminary headset tests, 2 Hz was the highest tested tracking target at which the application maintained approximately 72 frames per second. A headset demonstration illustrates virtual overlay alignment with the physical airplane before and after a manual rotation. Quantitative 6DoF pose accuracy on real headset footage will be measured in future work.",
+      "authors": [
+        "Guangxi Feng",
+        "Philip Yasskin",
+        "Wei Yan"
+      ],
+      "published": "2026-11-13T17:13:56+00:00",
+      "updated": "2026-11-13T17:13:56+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18438v1",
+      "headline": "Toward On-Device Markerless 6DoF Trackin",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.HC"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 14.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18859v1",
+      "title": "Exstill: The Most Efficient Single-Chip Processor for the Next Token",
+      "abstract": "Generating a token with a language model requires a fixed amount of arithmetic, whose energy sets a floor beneath any hardware. For Qwen3-1.7B at a 16K-token context, gate-level measurements at 5 nm place this floor at 0.89 mJ per token, yet an NVIDIA B300 spends 391-1,120x that. The excess is the price of generality, software layers, programmable hardware and moving weights and key-value (KV) caches from external memory, and it widens with each process generation. We present a co-design approach that brings token generation close to this floor and then lowers the floor itself, optimizing silicon and model together in a gate-level search loop. Fixing one model architecture in the datapath, with weights still loadable, and holding weights and every conversation's KV cache on-die, a pre-silicon 5 nm design brings an unchanged Qwen3-1.7B token to 3.4x its floor. Co-designing the model with the circuits at fixed quality lowers the floor to 0.29 mJ and the token to 0.52 mJ, 1.8x the new floor and less than the baseline model's arithmetic alone, while on-die capacity grows from one user to twelve. Against a measured B300 serving the same twelve users, the design decodes each user's tokens 110x faster at 690x lower energy. To show that one fixed architecture can serve, as a co-processor, the latency-critical workloads around a frontier model, we introduce Polyglot-DC (1.7B and 4B, each with its own design), specialized for each job by distillation and task-specific training into its own weights. As a drafter it speeds single-user speculative decoding of large open models by up to 6.6x at the maximum reasoning effort. Its guard returns multilingual verdicts in a millisecond or less, within a point of the strongest open guard. Its agent and financial-reasoning models lead comparable open models on established benchmarks, with a reasoning turn falling from seconds to tens of milliseconds.",
+      "authors": [
+        "Valavan Manohararajah",
+        "Vithursan Thangarasa"
+      ],
+      "published": "2026-11-13T19:10:17+00:00",
+      "updated": "2026-11-13T19:10:17+00:00",
+      "categories": [
+        "cs.AR",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18859v1",
+      "headline": "Exstill: The Most Efficient Single-Chip ",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AR",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.7,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.19061v1",
+      "title": "Large Language Models for AI Infrastructure",
+      "abstract": "Large language models (LLMs) are increasingly used to design, optimize, and operate the infrastructure behind AI training and serving, yet the literature remains fragmented across hardware design, machine learning systems, electronic design automation, and high-performance computing. We present a comprehensive survey of LLM-assisted AI infrastructure across its lifecycle, from accelerator design and kernel engineering to compilation, deployment, operations, data management, and energy optimization. We organize the literature by the primary resource the LLM manages: artifact-centric methods for computational artifacts, operational-centric methods for deployment context and system state, and resource-centric methods for data and energy. These categories span the lifecycle and cover AI-specific concerns such as distributed-training configuration, inference serving, GPU-cluster scheduling, and data loading. Building on this taxonomy, we conduct a cross-study quantitative synthesis of reported results. Because studies adopt heterogeneous benchmarks, baselines, hardware, and metrics, we compare methods only where evaluation conditions permit and align results along common dimensions: functional correctness, execution performance, throughput, resource and energy consumption, operational outcomes, and optimization cost, keeping each result's native metric, baseline, and setting rather than collapsing them into a single score. This comparison reveals where LLM-driven methods yield consistent gains, how reported gains in workload orchestration depend on the evaluation environment, from simulators to real clusters and production, and where evidence is still lacking. Together, the taxonomy, lifecycle perspective, and quantitative evaluation provide an evidence-grounded reference for LLM-driven engineering of AI infrastructure.",
+      "authors": [
+        "Bolin Shen",
+        "Shaoyi Huang",
+        "Yushun Dong"
+      ],
+      "published": "2026-11-14T01:12:36+00:00",
+      "updated": "2026-11-14T01:12:36+00:00",
+      "categories": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.19061v1",
+      "headline": "Large Language Models for AI Infrastruct",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.19140v1",
+      "title": "When the Mythical Man-Month Meets Agentic Web Systems: Structured Coordination for Scalable Development",
+      "abstract": "As agentic systems are increasingly deployed to support complex Web tasks, multi-agent architectures offer greater parallelism, specialization, and task coverage. However, increasing the number of agents does not necessarily improve system performance, as communication, synchronization, redundant work, and coordination overhead may offset the benefits of additional agents. This presents a fundamental scaling challenge for agentic Web systems: how can agent populations be organized to balance task performance and coordination costs? To address this challenge, we systematically investigate the relationship between agent population size, per-agent token consumption, and coordination overhead in collaborative agentic systems. Experiments on complex Web-oriented software development tasks reveal a non-linear scaling pattern: per-agent token consumption initially decreases as the agent population grows, but eventually exhibits diminishing returns. Motivated by these findings, we introduce the Surgical Team Model (STM), a structured coordination framework that organizes agents through role specialization, constrained inter-agent communication, and coordinator-mediated task aggregation. Experiments on full-stack Web application development tasks show that STM achieves competitive task completion quality and comparable token consumption relative to representative baselines, while incurring higher execution latency.",
+      "authors": [
+        "Zhiyao Wu",
+        "Zi Liang",
+        "Haibo Hu"
+      ],
+      "published": "2026-11-14T04:02:21+00:00",
+      "updated": "2026-11-14T04:02:21+00:00",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.19140v1",
+      "headline": "When the Mythical Man-Month Meets Agenti",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18865v1",
+      "title": "FiReIQ: Field-Level Confidence Estimation with Reasoning and Image Quality in Document Extraction",
+      "abstract": "Vision-Language Models (VLMs) have demonstrated strong performance in structured document extraction, yet their deployment in high-stakes applications requires reliable confidence estimates for individual fields. Existing uncertainty estimators often aggregate signals across an entire generation, obscuring field-specific reasoning uncertainty while overlooking visual degradations that may lead to confident extraction errors. To address these limitations, we introduce FiReIQ, a field-level confidence estimation framework that combines field-aligned reasoning signals from a single VLM generation with local and global image-quality features through quality-conditioned visual fusion. To facilitate systematic evaluation, we further introduce FiReIQ-Bench, a benchmark spanning financial receipts and legal contracts. Experiments with two reasoning VLMs show that FiReIQ consistently improves confidence discrimination, selective prediction, and probabilistic accuracy over existing estimators. These gains extend to private financial service data, where FiReIQ improves AUROC by 6.8% and coverage at 95% precision by 10.6% over an existing baseline. Together, these results highlight the potential of FiReIQ to reduce manual review while enabling more reliable document automation.",
+      "authors": [
+        "Xiao Liu",
+        "Yage Wang",
+        "Qi Yu",
+        "Giri Iyengar"
+      ],
+      "published": "2026-11-13T19:12:50+00:00",
+      "updated": "2026-11-13T19:12:50+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18865v1",
+      "headline": "FiReIQ: Field-Level Confidence Estimatio",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 13.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.19184v1",
+      "title": "Do VLMs Really Look at the Road? A Diagnostic Evaluation for Autonomous Driving",
+      "abstract": "Vision-language models (VLMs) are increasingly being evaluated for autonomous driving through question-answering benchmarks, yet high benchmark accuracy does not necessarily reflect visually grounded reasoning. We present a diagnostic evaluation framework that systematically probes whether VLMs base safety-critical driving decisions on visual evidence or instead rely on language priors, answer biases, and dataset regularities. Our benchmark comprises two task categories, Adverse Weather and Junctions \\& Intersections, with a nuScenes spatial reasoning extension, and evaluates open-source (general, driving, and spatial-reasoning) VLMs along four diagnostic protocols: image versus no-image evaluation, counterfactual weather sensitivity, linguistic robustness under paraphrasing and negation, and spatial reasoning. All ground-truth labels are derived programmatically from BDD100K and DriveLM annotations, enabling reproducible evaluation without manual labeling. Across all models, we find that competitive overall accuracy conceals systematic failure modes, including strong affirmation bias, limited sensitivity to counterfactual scene changes, near-chance performance on negated questions despite high paraphrase consistency, and confident driving decisions even without visual input. These results demonstrate that current open-source VLMs remain insufficiently grounded for safety-critical autonomous driving and underscore the need for diagnostic evaluation beyond aggregate accuracy.",
+      "authors": [
+        "Shankar Gangisetty",
+        "Muskan Singh",
+        "C V Jawahar"
+      ],
+      "published": "2026-11-14T06:07:18+00:00",
+      "updated": "2026-11-14T06:07:18+00:00",
+      "categories": [
+        "cs.CV"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.19184v1",
+      "headline": "Do VLMs Really Look at the Road? A Diagn",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.5,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 8.399999999999999,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18964v1",
+      "title": "Context Matters: Improving LLM-Based Code Summarization with Hierarchical Information",
+      "abstract": "Source code documentation plays an important role in software quality activities, such as code review, program comprehension, maintenance, and bug fixing. However, it is often fragmented across individual code elements and focuses on local implementation details, providing little information about their surrounding context. This limits both developers' understanding of software systems and the effectiveness of Large Language Models (LLMs), whose reasoning is constrained by finite context windows. Enriching documentation with hierarchical context has the potential to improve software comprehension and support downstream, quality-related tasks for both developers and LLM-based tools. In this paper, we present an in silico study that showcases the impact of augmenting context on the generation of code-level documentation, using a variety of LLMs. By varying the function, class, and module hierarchy visible to the LLMs, we assess whether this variation produces a significant difference in the resulting code documentation compared with the existing documentation, which serves as a proxy for developer intent. Our results show that Documentation-Aware prompts with class or module-level context consistently yield summaries that are closest to the original documentation. Adding surrounding documentation yields statistically significant improvements over the baseline across models, with effect sizes ranging from negligible (DeepSeek) through weak (GPT-4o-mini) to medium (Gemini). We restrict the study to this immediate hierarchical context; call-graph traversal and cross-module dependency context fall outside our scope and are left to future work. These findings provide a clear path to improve automated documentation tools and enhance LLMs' ability to reason about codebases for downstream tasks, such as code retrieval.",
+      "authors": [
+        "Alexandre Petrachini",
+        "Breno Bernard Nicolau de França",
+        "Guido Araujo"
+      ],
+      "published": "2026-11-13T21:40:43+00:00",
+      "updated": "2026-11-13T21:40:43+00:00",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18964v1",
+      "headline": "Context Matters: Improving LLM-Based Cod",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.SE",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.3,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18811v1",
+      "title": "CARET: Clinical Assertion-Aware Residual Calibration for Medical Image-Text Alignment",
+      "abstract": "Medical vision--language models align radiographs with free-text reports, but radiology language distinguishes explicit findings, negation, uncertainty, and omission. Treating these report states as interchangeable during feature adaptation can change image predictions without supporting visual evidence. We introduce CARET, a parameter-efficient image-side adaptation method that retains pretrained image and text encoders and uses paired positive and negative clinical statements to define a low-dimensional semantic correction space. A bounded residual adjusts image features along these directions, while assertion-aware supervision distinguishes explicitly present and absent findings from uncertain or unmentioned ones. At inference, the adapter requires only an image; textual references remain fixed. In zero-shot classification, CARET achieves 67.80\\% accuracy on CheXpert 5$\\times$200 and 65.20\\% on RSNA. These scores exceed the published CLEFT-LoRA results by 1.06 and 0.27 percentage points, respectively. Comparisons to literature baselines are informative but not controlled for differences in pretraining and evaluation protocols. Ablations across eight components identify the four-state distinction and assertion objective as major contributors, with task-dependent effects for nonmention preservation and pair alignment.",
+      "authors": [
+        "Yifan Jin",
+        "Tao Liu"
+      ],
+      "published": "2026-11-13T16:16:49+00:00",
+      "updated": "2026-11-13T16:16:49+00:00",
+      "categories": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18811v1",
+      "headline": "CARET: Clinical Assertion-Aware Residual",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CV",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.2,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.19151v1",
+      "title": "MarineSparkLM-4B: A Lightweight Language Model for Marine and Offshore Engineering Built by Parameter-Efficient Adaptation",
+      "abstract": "Marine and offshore engineering text is spread across preprints, open-access journals, encyclopedias and institutional documents, and the amount of it is small by pretraining standards. We ask how far a lightweight language model for marine and offshore engineering can be taken with parameter-efficient adaptation on a single workstation-class device. Starting from the 4-billion-parameter OceanGPT-basic-4B-Instruct, we train two independent LoRA adapters, each updating 33.0 million of 4.06 billion parameters (0.81%). Training took 4 hours 40 minutes for the first adapter and 10 minutes for the second on one NVIDIA DGX Spark. The first adapter is trained by next-token prediction on a 61.6-million-token corpus covering ten engineering themes. The corpus was built from 13,879 source documents, of which 7,069 were retained after deduplication and a two-tier keyword filter that removes cross-domain lexical collisions. Its validation loss falls from 2.082 to 1.976 over 1,500 steps. Direct testing showed that this adapter could still drift off topic on a retrieval-grounded ballast-water prompt, so we trained a second adapter on 2,295 question-answer pairs (114 hand-written and 2,181 generated by the base model from corpus passages) with the loss restricted to answer tokens. On 20 held-out prompts scored by hand for accuracy, topicality and specificity (maximum 120), the plain base model, the continuation adapter, the instruction adapter and the instruction adapter with retrieval scored 42, 56, 84 and 88. Absolute accuracy stays low (14 of 40 without retrieval and 20 of 40 with it). We report the full pipeline, two negative results (a reverted keyword fix and an instruction run that overfit within 100 steps), and the limits of the evaluation, which uses one small prompt set, no inter-rater agreement measure and model-generated reference answers.",
+      "authors": [
+        "Cheng Siong Chin"
+      ],
+      "published": "2026-11-14T04:24:20+00:00",
+      "updated": "2026-11-14T04:24:20+00:00",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.19151v1",
+      "headline": "MarineSparkLM-4B: A Lightweight Language",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 0.7,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.19078v1",
+      "title": "Assume/Guarantee Contracts for the Compositional Multi-Agent Reinforcement Learning of Heterogeneous Teams",
+      "abstract": "Multi-agent reinforcement learning (MARL) problems for heterogeneous teams require agents to collaborate to complete team tasks while making the best use of diverse agent capabilities. We introduce assume/guarantee contracts for heterogeneous multi-agent systems (AGC-MAS) and Iterative Heterogeneous Assignment for MARL (IHA-MARL). AGC-MAS contracts are compositional objects that encode the assumptions provided to, and the guarantees required of, each subtask contributing to the overall team task. We formulate contracts as tuples that specify a subtask, an automaton, timeout and success-probability requirements, and dispatch behavior. The automaton tracks an agent's high-level progress through the subtask associated with its contract and provides a natural mechanism for synchronization across contracts. Our abstraction enables robust interaction across heterogeneous low-level subtask implementations, allows heterogeneous agents to substitute for one another in satisfying contracts, and supports reuse of previously satisfied contracts in new team contexts. Having defined our theoretical framework, we develop a decomposition algorithm that breaks down a team task into a set of contracts. We then propose an iterative algorithm for task assignment and MARL that alternates between assigning contracts representing subtasks to individual agents, training the assigned agents to satisfy their contracts, and assessing their resulting capabilities to inform the next round of task assignments until the team's success probability meets the desired threshold. Our experimental results demonstrate the versatility of contracts in enabling agent substitution and contract reuse. Across three benchmarks with five seeds each, IHA-MARL achieves observed $100\\%$ final evaluation success. In CPU timing pilots, comparable baselines required approximately $7$--$11\\times$ more training-loop time.",
+      "authors": [
+        "Dominic Klukas",
+        "Cyrus Neary"
+      ],
+      "published": "2026-11-14T01:27:53+00:00",
+      "updated": "2026-11-14T01:27:53+00:00",
+      "categories": [
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.19078v1",
+      "headline": "Assume/Guarantee Contracts for the Compo",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 6.3,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.19074v1",
+      "title": "TokenFormer V2: Breaking the Resolution-Complexity Dilemma in Unified Recommendation",
+      "abstract": "Industrial recommendation faces a resolution--complexity dilemma: dense interactions make detailed modeling of long behavior histories expensive, while compact history summaries restrict the evidence available to prediction. A unified backbone must preserve rich behavioral details within strict serving budgets. We introduce \\textbf{TokenFormer V2}, a unified architecture that explicitly decouples \\emph{representation resolution} from \\emph{interaction density}. Its group-wise token layout jointly encodes behavior segments with non-sequential context, expands interaction ranges via hierarchical group merging, and coordinates distributed groups through \\emph{NS Fusion} and \\emph{Global Sync} modules. Through this \\emph{local--global decomposition} paradigm, computation is concentrated on structured interactions while preserving fine-grained evidence, ensuring that every encoded event remains directly accessible to the \\emph{Full-Resolution Readout} module. On the Tencent Advertising Algorithm Competition 2026 (TAAC 2026) benchmark, TokenFormer V2 achieves top-ranking accuracy among unified recommendation baselines while using \\textbf{5.1$\\times$ fewer FLOPs} than leading baselines, sustaining its advantage across long histories and imbalanced behavior domains. Furthermore, in billion-parameter evaluations on WeChat Channels advertising, it consistently outperforms state-of-the-art industrial baselines, yielding up to a \\textbf{+0.07 pp} overall AUC gain. In live online A/B testing against the production model, TokenFormer V2 delivers a statistically significant \\textbf{2.33\\% increase in GMV}. These results establish TokenFormer V2 as a battle-tested blueprint for scalable, full-resolution behavior modeling in industrial recommendation.",
+      "authors": [
+        "Kaihui Wu",
+        "Guoming Li",
+        "Liang Guo",
+        "Yifeng Zhou",
+        "Yuehong Hu",
+        "Junwei Pan",
+        "Zhixiang Feng",
+        "Chengguo Yin",
+        "Wenqi Fan",
+        "Haijie Gu",
+        "Jie Jiang"
+      ],
+      "published": "2026-11-14T01:24:46+00:00",
+      "updated": "2026-11-14T01:24:46+00:00",
+      "categories": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.19074v1",
+      "headline": "TokenFormer V2: Breaking the Resolution-",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.IR",
+        "cs.LG"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "高",
+        "bim_cim": "なし",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.8999999999999995,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18919v1",
+      "title": "Correcting Persistent Failures in Point-Cloud Grasping Policies using Human Demonstrations in Virtual Reality",
+      "abstract": "Robots in homes, warehouses and farms must pick up objects they have never seen, usually without a 3D model or a category label. A grasping policy that works directly on the point cloud from a depth sensor needs only the geometry the robot observes, so it applies to any new object. Offline grasp generators such as Contact-GraspNet work this way, but they rank grasps by learned plausibility rather than by whether the grasp actually lifts the object. Reinforcement learning (RL) can optimize for that directly and make a point-cloud grasping policy much better on average, yet it leaves specific grasps persistently unsolved. We present a human-in-the-loop failure loop that targets those grasps: situations an RL policy keeps failing are mined automatically, sent to a virtual-reality application where a person picks the object up with their own hands, and returned to training as two grasp points. The person contributes only where to grasp; the robot chooses its own approach. In simulation, RL raises success on unseen objects from 55% with Contact-GraspNet to 83%. Adding 58 human demonstrations nearly doubles success on the hard cases RL kept failing, from 24% to 45%, and recovers performance that RL alone loses on similar cases that were never demonstrated, without reducing success on unseen objects.",
+      "authors": [
+        "Achyuthan Unni Krishnan",
+        "Karthik Rengarajan",
+        "Bharath Narasimhan",
+        "Chris von Csefalvay"
+      ],
+      "published": "2026-11-13T20:22:39+00:00",
+      "updated": "2026-11-13T20:22:39+00:00",
+      "categories": [
+        "cs.RO"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18919v1",
+      "headline": "Correcting Persistent Failures in Point-",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.RO"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "高",
+        "manufacturing": "なし",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.0999999999999996,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18890v1",
+      "title": "Benchmark Factory: Agentic Benchmark Creation via Dataset Curation and Label-Free Quality Anchors",
+      "abstract": "Teams deploying coding agents need benchmarks built from their own code, but curating and validating them by hand is resource intensive, and an unvalidated benchmark can mislead silently. We present Benchmark Factory, an autonomous meta-agent loop with human checkpoints: an LLM agent writes sourcing queries over landed production code changes, runs models of known relative strength on each candidate, diagnoses why a candidate fails, and repairs it by editing its queries, prompts, and configuration until it clears quality anchors that need no per-task human labels. We used Benchmark Factory to build benchmarks for five developer cohorts at our organization. Engineering raters scored a 5% sample 2.3 for task quality and 2.6 for grader verdicts on a 1-to-3 scale. On configurations never used to build them, the benchmarks ranked Claude Opus~4.7 at high reasoning effort above low effort (60.6% vs. 54.4% of tasks passed, $p=0.002$) and GPT-5.5 above GPT-5.4 (65.8% vs. 60.5%, $p=0.004$); 9 of the 10 per-cohort comparisons pointed the same way. A deliberately trivial benchmark failed the anchors; five broken graders failed them, even under a relaxed rule fixed in advance that the real grader passes; and with model labels shuffled so that no true ordering existed, random redraws of a candidate passed in at most 1.4% of simulations. The anchors are necessary, not sufficient, conditions for a valid benchmark, designed to focus human review on what the loop cannot repair.",
+      "authors": [
+        "Shervin Shahidi",
+        "James Poon",
+        "Hang Xie",
+        "Kenneth O. Xu",
+        "Robin Håkanson",
+        "Vikram Nair",
+        "Jens Pillgram-Larsen",
+        "Nachiappan Nagappan"
+      ],
+      "published": "2026-11-13T19:49:01+00:00",
+      "updated": "2026-11-13T19:49:01+00:00",
+      "categories": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18890v1",
+      "headline": "Benchmark Factory: Agentic Benchmark Cre",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.SE",
+        "cs.AI"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 2.8,
+      "first_seen": "2026-11-17"
+    },
+    {
+      "arxiv_id": "2611.18370v1",
+      "title": "f-Divergence Self-Play for Tabular Anomaly Detection via Large Language Models",
+      "abstract": "Anomaly detection in tabular data poses significant challenges due to heterogeneous feature types-mixing numerical, categorical, and textual attributes, which complicate learning meaningful representations of normality. Recent work has applied large language models (LLMs) to this problem by serializing table rows as text sequences, yet these approaches rely on one-shot supervised fine-tuning that offers limited signal to tighten the model's description of normality. We propose DiSPaT, a self-play fine-tuning framework that strengthens the model's understanding of normal data. Building on the theoretical foundation of f-divergence minimization, we derive a tight approximation connecting our training objective to reducing the distributional gap between real normal data and model-generated samples. DiSPaT operates through an alternating optimization: at each iteration, the current policy generates synthetic samples that serve as pseudo-anomalies, while a critic discriminator learns to distinguish these from real normal samples; this signal drives policy updates that progressively align the model distribution with the true normal-data distribution. Extensive experiments on diverse benchmarks demonstrate that DiSPaT consistently outperforms prior LLM-based methods, deep learning approaches, and classical unsupervised detectors for tabular anomaly detection.",
+      "authors": [
+        "Hoang Tran Vuong",
+        "Linh Ngo Van",
+        "Dang Nguyen",
+        "Thin Nguyen",
+        "Phuoc Nguyen",
+        "Mehrtash Harandi",
+        "Trung Le"
+      ],
+      "published": "2026-11-13T16:16:03+00:00",
+      "updated": "2026-11-13T16:16:03+00:00",
+      "categories": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "abs_url": "http://arxiv.org/abs/2611.18370v1",
+      "headline": "f-Divergence Self-Play for Tabular Anoma",
+      "one_liner": "",
+      "key_points": [],
+      "tags": [
+        "cs.LG",
+        "cs.CL"
+      ],
+      "who_should_read": [],
+      "application_ideas": [],
+      "implementation_difficulty": "高",
+      "relevance_score": 12.0,
+      "domain_relevance": {
+        "drawing_ai": "なし",
+        "bim_cim": "なし",
+        "manufacturing": "高",
+        "civil_infra": "なし",
+        "ai_knowhow": "高"
+      },
+      "practicality_score": 4.199999999999999,
+      "first_seen": "2026-11-17"
     }
   ]
 }
